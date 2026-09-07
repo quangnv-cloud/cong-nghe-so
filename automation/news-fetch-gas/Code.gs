@@ -16,6 +16,9 @@
  *  - GET ?image=<newsId>       the article's lead photo (fetched + cached
  *                              server-side, so the sandbox never hits a news
  *                              CDN — see the News-image cache section)
+ *  - GET ?article=<newsId>     the article's readable text, fetched + cleaned
+ *                              server-side (routine translates/rewrites it
+ *                              without the news domain in the egress allowlist)
  *  - POST {"action":"claim_style"}  the next construction-style slot, handed
  *                              out under a lock so parallel runs don't collide
  *
@@ -455,10 +458,87 @@ function claimStyle_(videoSlug) {
   }
 }
 
+/**
+ * GET ?article=<newsId> handler. Fetches the article page server-side (from Google's IPs, which
+ * some sources block for foreign datacenters), strips it to readable plain text, returns it as
+ * {"ok": true, "source": "...", "title": "...", "url": "...", "text": "<plain text>"}.
+ * Same design as serveNewsImage_: NOT an arbitrary-URL proxy — newsId must already be a row in
+ * news_queue, and the URL fetched is the <link> this script parsed from its own hardcoded FEEDS.
+ * Lets the video routine read + translate/rewrite an item without the news domain being in the
+ * cloud sandbox's egress allowlist — it only ever talks to script.google.com.
+ */
+function serveArticleText_(newsId) {
+  var out = function (obj) {
+    return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+  };
+  var sheet = getSheet_();
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) return out({ ok: false, error: 'news_queue empty' });
+
+  var idIdx = HEADERS.indexOf('id');
+  var linkIdx = HEADERS.indexOf('link');
+  var titleIdx = HEADERS.indexOf('title');
+  var srcIdx = HEADERS.indexOf('source');
+  var data = sheet.getRange(2, 1, lastRow - 1, HEADERS.length).getValues();
+  var rec = null;
+  for (var i = 0; i < data.length; i++) {
+    if (String(data[i][idIdx]) === newsId) { rec = data[i]; break; }
+  }
+  if (!rec) return out({ ok: false, error: 'news id not found: ' + newsId });
+
+  var articleUrl = String(rec[linkIdx] || '').trim();
+  if (!articleUrl) return out({ ok: false, error: 'no article link for ' + newsId });
+
+  var page;
+  try {
+    page = UrlFetchApp.fetch(articleUrl, {
+      muteHttpExceptions: true, followRedirects: true,
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; TechNewsBot/1.0; +https://quangnv-cloud.github.io/cong-nghe-so/)' }
+    });
+  } catch (e) {
+    return out({ ok: false, error: 'fetch threw: ' + e, url: articleUrl });
+  }
+  if (page.getResponseCode() !== 200) {
+    return out({ ok: false, error: 'source returned HTTP ' + page.getResponseCode(), url: articleUrl });
+  }
+
+  var html = page.getContentText();
+  // Drop the parts that never carry article prose.
+  html = html.replace(/<script[\s\S]*?<\/script>/gi, ' ')
+             .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+             .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ')
+             .replace(/<!--[\s\S]*?-->/g, ' ')
+             .replace(/<(header|footer|nav|aside|form|figure|figcaption)[\s\S]*?<\/\1>/gi, ' ');
+  // Keep paragraph/heading boundaries as newlines so the routine sees structure.
+  var text = html.replace(/<\/(p|div|li|h[1-6]|section|article|br)\s*>/gi, '\n')
+                 .replace(/<br\s*\/?>/gi, '\n')
+                 .replace(/<[^>]+>/g, ' ')
+                 .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"')
+                 .replace(/&#39;|&rsquo;|&lsquo;/g, "'").replace(/&ldquo;|&rdquo;/g, '"')
+                 .replace(/&hellip;/g, '...').replace(/&mdash;/g, '—').replace(/&ndash;/g, '–')
+                 .replace(/&#(\d+);/g, function (m, n) { try { return String.fromCharCode(parseInt(n, 10)); } catch (e) { return ' '; } })
+                 .replace(/[ \t ]+/g, ' ')
+                 .replace(/\n[ \t]+/g, '\n').replace(/[ \t]+\n/g, '\n')
+                 .replace(/\n{3,}/g, '\n\n')
+                 .trim();
+  // Drop very short lines (menu items, share labels) but keep real sentences.
+  text = text.split('\n').filter(function (ln) {
+    ln = ln.trim();
+    return ln.length >= 40 || /[.!?…:"”]$/.test(ln);
+  }).join('\n').trim();
+
+  if (text.length > 12000) text = text.slice(0, 12000) + '\n…[truncated]';
+  if (text.length < 120) {
+    return out({ ok: false, error: 'could not extract readable text (page may be JS-rendered)', url: articleUrl });
+  }
+  return out({ ok: true, source: String(rec[srcIdx] || ''), title: String(rec[titleIdx] || ''),
+    url: articleUrl, chars: text.length, text: text });
+}
+
 // ---- HTTP API -------------------------------------------------------------
 
 /**
- * GET ?category=business|general (omit for both)
+ * GET ?category=vn|intl (omit for both)
  * Returns unused items published within MAX_AGE_HOURS_FOR_API, newest first.
  */
 function doGet(e) {
@@ -472,6 +552,12 @@ function doGet(e) {
   // hardcoded RSS feeds at ingest, never anything the caller supplies.
   if (e && e.parameter && e.parameter.image) {
     return serveNewsImage_(String(e.parameter.image));
+  }
+  // GET ?article=<news id> — the article's readable text, fetched + cleaned server-side so the
+  // routine can translate/rewrite an item (esp. an English 'intl' source) without the news
+  // domain being in the cloud sandbox egress allowlist. Same id-not-URL contract as ?image=.
+  if (e && e.parameter && e.parameter.article) {
+    return serveArticleText_(String(e.parameter.article));
   }
   // GET ?style_state — read-only peek at the construction-style rotation cursor (diagnostic).
   if (e && e.parameter && e.parameter.style_state) {
