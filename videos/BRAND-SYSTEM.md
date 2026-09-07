@@ -70,6 +70,28 @@ Hai anchor này dựng ở tầng root/`index.html`, hiện ngay khi Hook kết 
 trong từng frame. Frame Hook (0 → ~6s) tự mang masthead (logo + tên kênh) + badge nguồn + ngày
 trong panel riêng của nó.
 
+## Cân bằng dọc — nội dung phải LẤP ĐẦY khung 1080×1920 (bắt buộc, lỗi đã tái phát)
+
+**KHÔNG được dồn toàn bộ nội dung lên 55–65% phía trên rồi để trống đen 1/3–1/2 khung dưới.**
+Đây là lỗi người dùng đã phản hồi 2 lần (video Astra + video routine đầu tiên `ai-agent-vuot-rao`).
+Khi dựng MỖI frame của 5 act giữa + act CTA:
+
+- **Vùng an toàn nội dung**: từ ~`top: 300px` (ngay dưới Brand Anchor) tới ~`top: 1720px`. Phần tử
+  cuối cùng của frame (card / bar / dòng / quote / pill) phải KẾT THÚC trong khoảng
+  `top: 1400px → 1680px` — KHÔNG dừng ở ~1000px.
+- **Frame ít nội dung** (Hook chỉ có tên chủ thể + 2 tag; CTA; Data moment 1 số): căn khối nội dung
+  **giữa dọc** trong vùng an toàn (`#root` là flex `align-items:center; justify-content:center` với
+  padding trên/dưới ~màn hình, HOẶC dịch khối xuống bằng `top` lớn hơn), HOẶC phóng to element
+  (font lớn hơn, card cao hơn, spacing rộng hơn) để chiếm hết chiều cao — đừng để nó co cụm ở trên.
+- **Hook**: ảnh chiếm ~nửa trên; panel (masthead + badge + tên chủ thể + 2 tag) đặt sao cho tag
+  cuối kết thúc quanh `top: 1500–1650px`, không phải ~1100px. Nếu panel ngắn, giãn khoảng cách
+  masthead → badge → tiêu đề → tag, hoặc tăng cỡ tiêu đề chủ thể.
+- **Tham chiếu cụ thể**: các frame trong `videos/astra-openai/compositions/frames/` — phần tử trải
+  từ `top: ~220px` tới `top: ~1290px`+ (xem `03-facts`, `04-data`, `05-context`). Dùng làm chuẩn
+  bố cục dọc, KHÔNG copy-paste nhưng bám cùng dải phân bố.
+- **QC bắt buộc**: khi soát Studio thumbnail / frame render (bước verify), với MỖI frame tự hỏi
+  "nửa dưới khung có trống đen không?" — nếu có, sửa lại bố cục dọc trước khi render/đăng.
+
 ## Cấu trúc 7 act
 
 Giới hạn tổng: **dưới 75 giây** (nhỉnh hơn tuyến kinh doanh vì có act CTA). Không mốc cứng khác —
@@ -166,7 +188,8 @@ pop / whoosh-short). Mật độ vừa phải — đây là bản tin, không ph
 
 ## Final QC Checklist
 
-Brand (đúng `#4C8DFF` / `#0B0E14`, logo + tên kênh góc trên-phải, nguồn góc trên-trái) · Text
+Brand (đúng `#4C8DFF` / `#0B0E14`, logo + tên kênh góc trên-phải, nguồn góc trên-trái) · **Cân
+bằng dọc (nội dung lấp đầy khung, KHÔNG trống đen nửa dưới — xem mục "Cân bằng dọc")** · Text
 (headline dễ đọc, số liệu nổi bật, keyword highlight đúng màu, không nhồi chữ) · Motion (sinh động
 không lấn text, không effect thừa, không phần tử lộ tĩnh) · Image (ảnh thật trong card, không che
 nội dung) · Audio (BGM nhẹ không lấn giọng, không vocal, VO không đọc tên kênh) · Act 7 CTA (câu
