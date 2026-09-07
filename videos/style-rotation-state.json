@@ -14,6 +14,7 @@
   ],
   "last_used_index": null,
   "log": [
-    { "index": null, "style": "(video mẫu, không qua claim_style)", "video": "astra-openai", "date": "2026-09-07", "note": "dựng tay để validate pipeline — không tính vào vòng xoay" }
+    { "index": null, "style": "(video mẫu, không qua claim_style)", "video": "astra-openai", "date": "2026-09-07", "note": "dựng tay để validate pipeline — không tính vào vòng xoay" },
+    { "index": 0, "style": "1-card-and-bar", "video": "ai-agent-vuot-rao", "date": "2026-09-07" }
   ]
 }
