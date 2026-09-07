@@ -10,6 +10,10 @@ Runbook thao tác cho MỌI video tin công nghệ / AI. Toàn bộ quy tắc br
 ## 0. Trước khi bắt đầu
 
 - Đọc `BRAND-SYSTEM.md` toàn bộ, đặc biệt mục "GSAP / kỹ thuật" (lỗi đã tái diễn nhiều lần).
+- Đọc `automation/policy/COMPLIANCE-GATE.md` — **cổng kiểm duyệt chính sách nền tảng bắt buộc**
+  (rút gọn từ `automation/policy/youtube-google-policy-engine.md` + `meta-policy-engine.md`).
+  GATE A khi chọn tin, GATE B trước render, GATE C + ghi `COMPLIANCE.md` trước khi đăng. RED/ORANGE/
+  BLACK → DỪNG, không đăng.
 - KHÔNG copy state file (`index.html`, `meta.json`, `compositions/`) từ project cũ — luôn
   `hyperframes init` qua workflow `/hyperframes` rồi build lại nội dung riêng cho tin mới.
 

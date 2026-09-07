@@ -186,6 +186,15 @@ pop / whoosh-short). Mật độ vừa phải — đây là bản tin, không ph
   `http://localhost:<port>/api/projects/<id>/thumbnail/index.html?t=<giây>&format=png&output=source&v=<cachebust>`
   trả PNG render thật. Luôn đổi `v=` mỗi lần gọi (cache server-side).
 
+## Cổng kiểm duyệt chính sách nền tảng (bắt buộc)
+
+Trước khi xuất bản MỌI video: chạy `automation/policy/COMPLIANCE-GATE.md` (GATE A lúc chọn tin,
+GATE B trước render, GATE C + ghi `videos/<slug>/COMPLIANCE.md` trước khi đăng). Nội dung phải tuân
+thủ chính sách YouTube/Google + Meta (Facebook/Instagram/Threads) — bản đầy đủ ở
+`automation/policy/`. RED / ORANGE / BLACK → DỪNG, không đăng. Điểm rủi ro cao nhất của kênh tự
+động: "inauthentic / mass-produced" (mỗi video phải có góc nhìn riêng, không chỉ đọc lại tiêu đề
+báo) và AI synthetic media (KHÔNG tái dựng cảnh thật/người thật như ảnh chụp).
+
 ## Final QC Checklist
 
 Brand (đúng `#4C8DFF` / `#0B0E14`, logo + tên kênh góc trên-phải, nguồn góc trên-trái) · **Cân
