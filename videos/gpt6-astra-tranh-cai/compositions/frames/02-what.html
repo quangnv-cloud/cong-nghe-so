@@ -1,0 +1,74 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .wh-bg { position: absolute; inset: -40px; background-image: url('assets/img/article-hero.jpg'); background-size: cover; background-position: 50% 40%; filter: blur(16px) brightness(0.5) saturate(0.9); transform: scale(1.06); }
+    .wh-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,14,20,0.55) 0%, rgba(11,14,20,0.72) 45%, rgba(11,14,20,0.95) 100%); }
+    .wh-tint { position: absolute; inset: 0; background: radial-gradient(90% 55% at 50% 22%, rgba(76,141,255,0.20), transparent 60%); mix-blend-mode: screen; }
+
+    .wh-wrap { position: absolute; left: 0; right: 0; top: 420px; bottom: 270px; display: flex; flex-direction: column; justify-content: space-between; }
+
+    .wh-top { padding: 0 64px; }
+    .wh-kicker { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 26px; letter-spacing: 0.24em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .wh-kicker .bar { width: 30px; height: 4px; border-radius: 2px; background: #4C8DFF; flex: none; }
+    .wh-head { margin-top: 32px; font-weight: 800; font-size: 66px; line-height: 1.24; color: #fff; }
+    .wh-head .ln { overflow: hidden; }
+    .wh-head .ln > span { display: block; }
+    .wh-head b { color: #4C8DFF; }
+
+    .wh-strip { position: relative; border-top: 2px solid rgba(76,141,255,0.85); border-bottom: 2px solid rgba(76,141,255,0.85); background: rgba(11,14,20,0.72); backdrop-filter: blur(3px); display: flex; align-items: center; padding: 0 64px; height: 118px; gap: 20px; opacity: 0; }
+    .wh-live { display: flex; align-items: center; gap: 10px; flex: none; }
+    .wh-live .dot { width: 14px; height: 14px; border-radius: 50%; background: #FF8A5B; flex: none; }
+    .wh-live span { font-weight: 800; font-size: 27px; letter-spacing: 0.14em; color: #fff; white-space: nowrap; }
+    .wh-sep { width: 1px; height: 40px; background: rgba(255,255,255,0.22); flex: none; }
+    .wh-strip-txt { font-weight: 600; font-size: 27px; letter-spacing: 0.03em; color: rgba(255,255,255,0.82); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  </style>
+
+  <div id="root" data-composition-id="02-what" data-width="1080" data-height="1920">
+    <div class="wh-bg" data-layout-allow-overflow=""></div>
+    <div class="wh-scrim"></div>
+    <div class="wh-tint"></div>
+
+    <div class="wh-wrap">
+      <div class="wh-top">
+        <div class="wh-kicker" id="wh-kicker"><span class="bar"></span>Tin công nghệ</div>
+        <div class="wh-head">
+          <div class="ln"><span id="wh-l1">OpenAI ra mắt</span></div>
+          <div class="ln"><span id="wh-l2">GPT-6 Astra,</span></div>
+          <div class="ln"><span id="wh-l3">tự nhận đã đạt siêu</span></div>
+          <div class="ln"><span id="wh-l4">trí tuệ <b>AGI</b></span></div>
+        </div>
+      </div>
+
+      <div class="wh-strip" id="wh-strip">
+        <div class="wh-live"><span class="dot" id="wh-dot"></span><span>VNEXPRESS</span></div>
+        <div class="wh-sep"></div>
+        <div class="wh-strip-txt">GPT-6 ASTRA &middot; RA MẮT 3/9/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('.wh-bg', { autoAlpha: 0.4, scale: 1.14 }, { autoAlpha: 1, scale: 1.06, duration: 1.0, ease: 'power2.out' }, 0);
+    tl.fromTo('.wh-kicker', { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.38, ease: 'power2.out' }, 0.3);
+    tl.fromTo('#wh-l1', { yPercent: 120 }, { yPercent: 0, duration: 0.46, ease: 'power4.out' }, 0.5);
+    tl.fromTo('#wh-l2', { yPercent: 120 }, { yPercent: 0, duration: 0.46, ease: 'power4.out' }, 0.64);
+    tl.fromTo('#wh-l3', { yPercent: 120 }, { yPercent: 0, duration: 0.46, ease: 'power4.out' }, 0.78);
+    tl.fromTo('#wh-l4', { yPercent: 120 }, { yPercent: 0, duration: 0.46, ease: 'power4.out' }, 0.92);
+    tl.fromTo('.wh-strip', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 1.55);
+    tl.to('#wh-dot', { opacity: 0.18, duration: 0.5, ease: 'sine.inOut', yoyo: true, repeat: 11 }, 1.95);
+    window.__timelines['02-what'] = tl;
+  </script>
+</template>
