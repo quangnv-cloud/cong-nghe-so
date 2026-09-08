@@ -54,27 +54,62 @@ production tuyến cũ.)
 `post_metrics` có dòng `brand = <slug>`, `traffic_daily` có dòng hôm nay (delta trống ở lần đầu,
 có giá trị từ ngày thứ 2).
 
+## Header hàng 1 = tiếng Việt
+
+`setupMaster()` / `relabelHeaders()` đổi hàng 1 mọi tab sang nhãn tiếng Việt (viết hoa chữ cái
+đầu câu). Code truy cột theo VỊ TRÍ nên đổi nhãn không ảnh hưởng — chỉ KHÔNG được đổi thứ tự cột.
+Nhãn: `post_metrics` = Kênh · Nền tảng · Dự án video · Loại bài đăng · Mã bài đăng · Liên kết ·
+Tiêu đề · Thời gian đăng · Ngày đăng · Lượt xem · Lượt thích · Cảm xúc · Bình luận · Lượt chia sẻ ·
+Lần kiểm tra cuối. `traffic_daily` = Kênh · Nền tảng · Ngày · Số bài đăng · Tổng lượt xem · Lượt xem
+tăng thêm · Tổng tương tác · Tương tác tăng thêm · Người theo dõi · Người theo dõi tăng thêm.
+`brands` = Mã kênh · Tên kênh · Biểu tượng · Thứ tự · Đang hoạt động.
+
 ## Bước 4 — Looker Studio
 
-1. **Tạo báo cáo mới** → nguồn dữ liệu **Google Sheets** → chọn file master → thêm 3 nguồn:
-   `traffic_daily`, `post_metrics`, `brands`.
-2. `traffic_daily`: đặt `date` kiểu Date, các cột `*_total`/`*_delta`/`followers*` kiểu Number.
-3. **Blend** `traffic_daily` + `brands` theo key `brand` để lấy `label` (kèm emoji) + `order`.
+### Lấy dữ liệu ở tab nào?
+
+**Dùng CẢ 2, mỗi tab cho một loại biểu đồ** — KHÔNG cần tổng hợp thủ công:
+
+| Biểu đồ / thành phần | Nguồn | Vì sao |
+|---|---|---|
+| Mọi biểu đồ **THEO NGÀY** (đường xu hướng lượt xem/tương tác, follower theo ngày) | `traffic_daily` | 1 dòng/(kênh, nền tảng, ngày); cột `... tăng thêm` = traffic organic THẬT trong ngày đó |
+| Scorecard "traffic trong khoảng ngày đã chọn" | `traffic_daily`, `SUM(Lượt xem tăng thêm)` … | cộng delta theo kỳ |
+| Scorecard "tổng số HIỆN TẠI" (tổng lượt xem tích luỹ) | `post_metrics`, `SUM(Lượt xem)` | số mới nhất từng bài |
+| Bảng **"Nội dung hiệu quả nhất"** | `post_metrics` | 1 dòng/bài, sort `Lượt xem` giảm dần |
+| Donut **follow theo nền tảng** | `traffic_daily`, `Người theo dõi` (dòng ngày mới nhất/nền tảng) | |
+| Tra tên kênh + emoji + thứ tự | `brands` (blend theo `Mã kênh` = `Kênh`) | |
+
+**KHÔNG dùng `engagement_metrics` nữa** — nó = `post_metrics` bản cũ 1 kênh, thiếu cột `Kênh`
+(brand). Giữ làm lịch sử KTS trước khi có phân tách tuyến.
+
+### Dựng
+
+1. **Tạo báo cáo mới** → nguồn **Google Sheets** → file master → thêm 3 nguồn: `traffic_daily`,
+   `post_metrics`, `brands`.
+2. `traffic_daily`: `Ngày` kiểu Date; các cột số kiểu Number.
+3. **Blend** `traffic_daily` + `brands` theo key `Kênh` = `Mã kênh` → lấy `Tên kênh` + `Thứ tự`.
 4. **Trang "All channels"**:
-   - Scorecard: `SUM(views_delta)`, `SUM(engagement_delta)`, `SUM(followers_delta)` — kỳ 7/28 ngày
-   - Biểu đồ đường: dimension thời gian `date`, metric `views_delta`, **breakdown dimension =
-     `label`** → mỗi tuyến 1 màu (đây là cả cây, xem 1 lần)
-   - Bảng: dimension `label`, metric `views_delta` / `engagement_delta` / `followers` — sort `order`
-5. **Filter control** trên `brand` (hoặc `label`) → người xem chọn 1 tuyến; để trống = tổng
-   `all_channels`.
-6. Muốn giống hệt sơ đồ cây (mỗi tuyến 1 trang riêng): nhân bản trang, đặt **page-level filter**
-   `brand = cong_nghe_so`…
-7. "Top bài": nguồn `post_metrics`, dimension `title` + `label`, metric `views`, sort giảm dần.
+   - Scorecard kỳ 7/28 ngày: `SUM(Lượt xem tăng thêm)`, `SUM(Tương tác tăng thêm)`, `SUM(Người theo dõi tăng thêm)`
+   - Đường xu hướng: dimension `Ngày`, metric `Lượt xem tăng thêm`, **breakdown = `Tên kênh`** → mỗi tuyến 1 màu (cả cây, 1 biểu đồ)
+   - Bảng: dimension `Tên kênh`, metric `Lượt xem tăng thêm` / `Tương tác tăng thêm` / `Người theo dõi` — sort `Thứ tự`
+5. **Filter control** trên `Kênh` → chọn 1 tuyến; để trống = tổng `all_channels`.
+6. Muốn mỗi tuyến 1 trang riêng: nhân bản trang, đặt **page-level filter** `Kênh = cong_nghe_so`…
+7. "Top bài": nguồn `post_metrics`, dimension `Tiêu đề` + `Tên kênh`, metric `Lượt xem` giảm dần.
+
+### Chuyển dashboard KTS hiện tại
+
+Dashboard "DASHBOARD TRAFFIC ORGANIC" đang chạy trên `engagement_metrics` (KTS-only). Để lên đa kênh:
+đổi từng biểu đồ sang `post_metrics` (per-post) hoặc `traffic_daily` (theo ngày) như bảng trên, thêm
+`Kênh` vào dimension / filter. **Lưu ý**: biểu đồ "lượt view theo ngày" hiện dùng `Ngày đăng` của
+`engagement_metrics` (= view của bài ĐĂNG ngày X) — chuyển sang `traffic_daily` (= view TĂNG ngày X,
+chính xác hơn) thì mất lịch sử view-theo-ngày trước ~08/09/2026 (chỉ follower history được di trú).
+Cách giữ cả hai: để 1 biểu đồ cũ trên `engagement_metrics` cho lịch sử, thêm 1 biểu đồ mới trên
+`traffic_daily` cho số liệu chuẩn từ nay về sau.
 
 ## Lưu ý
 
-- **`traffic_daily` chỉ có xu hướng TỪ NGÀY BẮT ĐẦU CHẠY** — không backfill được engagement theo
-  ngày (không có snapshot cũ). Follower history của KTS thì có (di trú từ `audience_growth`).
+- **`traffic_daily` chỉ có xu hướng view/tương tác TỪ NGÀY BẮT ĐẦU CHẠY (~08/09/2026)** — không
+  backfill được (không có snapshot cũ). Follower history của KTS thì có (di trú từ `audience_growth`).
 - `views_delta` có thể âm nếu nền tảng điều chỉnh số, hoặc bài bị xoá → ở Looker lọc `views_delta >= 0`
   nếu muốn "traffic dương" sạch.
 - Khi thêm kênh mới: thêm dòng vào `brands` (active TRUE) + set `MASTER_SHEET_ID`/`BRAND_SLUG` ở
