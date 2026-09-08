@@ -22,7 +22,10 @@ var BRANDS_SHEET = 'brands';
 var POST_METRICS_SHEET = 'post_metrics';
 var TRAFFIC_DAILY_SHEET = 'traffic_daily';
 
-var BRANDS_HEADERS = ['brand', 'label', 'emoji', 'order', 'active'];
+// Header hàng 1 = tiếng Việt, viết hoa chữ cái đầu câu (yêu cầu người dùng 08/09/2026).
+// Toàn bộ code (mirror + migrate) truy cột theo VỊ TRÍ, không theo tên header, nên đổi
+// nhãn hàng 1 không ảnh hưởng — chỉ KHÔNG được đổi thứ tự cột.
+var BRANDS_HEADERS = ['Mã kênh', 'Tên kênh', 'Biểu tượng', 'Thứ tự', 'Đang hoạt động'];
 var BRANDS_SEED = [
   ['kinh_te_so',   'Kinh Tế Số',   '📊', 1, true],
   ['cong_nghe_so', 'Công Nghệ Số', '💻', 2, true]
@@ -31,16 +34,18 @@ var BRANDS_SEED = [
 ];
 
 var POST_METRICS_HEADERS = [
-  'brand', 'platform', 'video_project', 'post_type', 'post_id', 'permalink', 'title',
-  'posted_at', 'posted_date', 'views', 'likes', 'reactions', 'comments', 'shares', 'last_checked'
+  'Kênh', 'Nền tảng', 'Dự án video', 'Loại bài đăng', 'Mã bài đăng', 'Liên kết', 'Tiêu đề',
+  'Thời gian đăng', 'Ngày đăng', 'Lượt xem', 'Lượt thích', 'Cảm xúc', 'Bình luận', 'Lượt chia sẻ',
+  'Lần kiểm tra cuối'
 ];
 var TRAFFIC_DAILY_HEADERS = [
-  'brand', 'platform', 'date', 'posts_published',
-  'views_total', 'views_delta', 'engagement_total', 'engagement_delta',
-  'followers', 'followers_delta'
+  'Kênh', 'Nền tảng', 'Ngày', 'Số bài đăng',
+  'Tổng lượt xem', 'Lượt xem tăng thêm', 'Tổng tương tác', 'Tương tác tăng thêm',
+  'Người theo dõi', 'Người theo dõi tăng thêm'
 ];
 
-// Legacy tab layouts (bản copy từ BBH News Queue).
+// Legacy tab (bản copy từ BBH News Queue) — chỉ đọc để di trú + đổi nhãn hàng 1.
+// Thứ tự cột legacy (positional, KHÔNG đọc tên header thật).
 var LEGACY_ENGAGEMENT_SHEET = 'engagement_metrics';
 var LEGACY_ENGAGEMENT_HEADERS = [
   'channel', 'video_project', 'post_type', 'platform_post_id', 'permalink',
@@ -49,6 +54,18 @@ var LEGACY_ENGAGEMENT_HEADERS = [
 ];
 var LEGACY_AUDIENCE_SHEET = 'audience_growth';
 var LEGACY_AUDIENCE_HEADERS = ['channel', 'checked_at', 'date', 'time', 'followers', 'notes'];
+
+// Nhãn hàng 1 tiếng Việt cho các tab legacy (đổi 1 lần qua relabelHeaders()).
+var LEGACY_LABELS = {
+  'engagement_metrics': ['Kênh', 'Dự án video', 'Loại bài đăng', 'Mã bài đăng', 'Liên kết bài đăng',
+    'Tiêu đề', 'Thời gian đăng (UTC)', 'Ngày đăng', 'Giờ đăng', 'Lượt xem', 'Lượt thích', 'Cảm xúc',
+    'Bình luận', 'Lượt chia sẻ', 'Lần kiểm tra cuối', 'Ghi chú'],
+  'audience_growth': ['Kênh', 'Thời gian kiểm tra', 'Ngày', 'Giờ', 'Người theo dõi', 'Ghi chú'],
+  'posts_log': ['Thời gian đăng', 'Nền tảng', 'Loại bài đăng', 'Dự án video', 'Tiêu đề', 'Nội dung',
+    'Mã bài đăng', 'Liên kết', 'Trạng thái', 'Người đăng', 'Ghi chú'],
+  'news_queue': ['Mã', 'Tiêu đề', 'Liên kết', 'Nguồn', 'Phân loại', 'Ngày xuất bản', 'Ngày lấy về',
+    'Đã dùng', 'Thời điểm dùng', 'Video dùng', 'Liên kết ảnh', 'Mã tệp ảnh']
+};
 
 var LEGACY_BRAND = 'kinh_te_so'; // toàn bộ dữ liệu cũ trong file thuộc kênh Kinh Tế Số
 var TZ = 'Asia/Ho_Chi_Minh';
@@ -68,15 +85,47 @@ function setupMaster() {
 
   var migPost = migrateLegacyEngagement_(ss);
   var migTraffic = migrateLegacyAudience_(ss);
+  var relabeled = relabelHeaders_(ss);
 
   var msg = 'setupMaster xong.\n'
     + 'Tab tạo mới: ' + (created.length ? created.join(', ') : '(đã có sẵn)') + '\n'
     + 'brands: ' + BRANDS_SEED.length + ' dòng\n'
     + 'Di trú post_metrics (kinh_te_so): ' + migPost + ' dòng\n'
-    + 'Di trú traffic_daily follower history (kinh_te_so): ' + migTraffic + ' dòng';
+    + 'Di trú traffic_daily follower history (kinh_te_so): ' + migTraffic + ' dòng\n'
+    + 'Đổi nhãn hàng 1 (tiếng Việt): ' + relabeled.join(', ');
   Logger.log(msg);
   try { SpreadsheetApp.getUi().alert(msg); } catch (e) { /* chạy không có UI */ }
   return msg;
+}
+
+/**
+ * Chạy độc lập (không cần setupMaster) để đổi hàng 1 mọi tab sang nhãn tiếng Việt.
+ * An toàn để chạy lại — chỉ ghi đè hàng 1, không đụng dữ liệu.
+ */
+function relabelHeaders() {
+  var ss = SpreadsheetApp.getActive();
+  var done = relabelHeaders_(ss);
+  var msg = 'Đã đổi nhãn hàng 1 sang tiếng Việt: ' + done.join(', ');
+  Logger.log(msg);
+  try { SpreadsheetApp.getUi().alert(msg); } catch (e) {}
+  return msg;
+}
+
+function relabelHeaders_(ss) {
+  var done = [];
+  var apply = function (name, labels) {
+    var sh = ss.getSheetByName(name);
+    if (!sh) return;
+    sh.getRange(1, 1, 1, labels.length).setValues([labels]);
+    sh.setFrozenRows(1);
+    sh.getRange(1, 1, 1, labels.length).setFontWeight('bold');
+    done.push(name);
+  };
+  apply(BRANDS_SHEET, BRANDS_HEADERS);
+  apply(POST_METRICS_SHEET, POST_METRICS_HEADERS);
+  apply(TRAFFIC_DAILY_SHEET, TRAFFIC_DAILY_HEADERS);
+  Object.keys(LEGACY_LABELS).forEach(function (name) { apply(name, LEGACY_LABELS[name]); });
+  return done;
 }
 
 function ensureSheetWithHeaders_(ss, name, headers, createdOut) {
