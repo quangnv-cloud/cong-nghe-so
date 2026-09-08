@@ -16,8 +16,14 @@ tách theo `brand` + tổng `all channels`.
 | `post_metrics` | 1 dòng / (brand, post_id) — GHI ĐÈ | `brand · platform · video_project · post_type · post_id · permalink · title · posted_at · posted_date · views · likes · reactions · comments · shares · last_checked` |
 | `traffic_daily` ⭐ | 1 dòng / (brand, platform, ngày) — THÊM/upsert | `brand · platform · date · posts_published · views_total · views_delta · engagement_total · engagement_delta · followers · followers_delta` |
 
-`brand` = tuyến nội dung (`kinh_te_so`, `cong_nghe_so`, …). `platform` = nền tảng (`facebook`,
-`instagram`, `youtube`, `threads`). `*_delta` = chênh so với ngày trước = **traffic organic trong ngày**.
+`Kênh` = tuyến nội dung — ghi **DẠNG NGƯỜI ĐỌC** (`Kinh Tế Số`, `Công Nghệ Số`, …). `Nền tảng` =
+nền tảng (`Facebook`, `Instagram`, `YouTube`, `Threads`). `... tăng thêm` = chênh so với ngày
+trước = **traffic organic trong ngày**.
+
+Script Property `BRAND_SLUG` ở mỗi Apps Script kênh vẫn là **khoá máy** (`cong_nghe_so`) — mirror
+tự map sang tên hiển thị khi ghi. Đổi tên hiển thị → sửa `BRAND_DISPLAY` / `PLATFORM_DISPLAY` (có
+ở cả `analytics-master/Code.gs` và `news-fetch-gas/Code.gs`), chạy `normalizeValues()` trên master,
+redeploy các kênh.
 
 Tab cũ (`engagement_metrics` / `audience_growth` / `posts_log` / `news_queue`) **giữ nguyên** làm
 bản chụp lịch sử — `setupMaster()` di trú dữ liệu KTS từ 2 tab đầu sang tab mới.
