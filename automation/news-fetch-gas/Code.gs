@@ -334,7 +334,7 @@ function serveNewsImage_(newsId) {
 
   var imageUrl = String(rec[urlIdx] || '').trim();
   if (!imageUrl) {
-    // Some feeds (e.g. TechCrunch) carry no image in the RSS. Fall back to the article's own
+    // Some feeds carry no <enclosure>/<media:content> image in the RSS. Fall back to the article's own
     // og:image — fetched here, server-side, from the article URL this script already stored in
     // news_queue from its own hardcoded FEEDS (never a caller-supplied URL). Cache it back into
     // the imageUrl cell so the next request skips the page fetch.
@@ -530,7 +530,7 @@ function serveArticleText_(newsId) {
 // ---- HTTP API -------------------------------------------------------------
 
 /**
- * GET ?category=vn|intl (omit for both)
+ * GET ?category=vn (all feeds are 'vn' now; omit for all)
  * Returns unused items published within MAX_AGE_HOURS_FOR_API, newest first.
  */
 function doGet(e) {
@@ -546,7 +546,7 @@ function doGet(e) {
     return serveNewsImage_(String(e.parameter.image));
   }
   // GET ?article=<news id> — the article's readable text, fetched + cleaned server-side so the
-  // routine can translate/rewrite an item (esp. an English 'intl' source) without the news
+  // routine can rewrite an item without the news
   // domain being in the cloud sandbox egress allowlist. Same id-not-URL contract as ?image=.
   if (e && e.parameter && e.parameter.article) {
     return serveArticleText_(String(e.parameter.article));
