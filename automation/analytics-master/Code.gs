@@ -25,12 +25,31 @@ var TRAFFIC_DAILY_SHEET = 'traffic_daily';
 // Header hàng 1 = tiếng Việt, viết hoa chữ cái đầu câu (yêu cầu người dùng 08/09/2026).
 // Toàn bộ code (mirror + migrate) truy cột theo VỊ TRÍ, không theo tên header, nên đổi
 // nhãn hàng 1 không ảnh hưởng — chỉ KHÔNG được đổi thứ tự cột.
+// Giá trị cột "Kênh" / "Nền tảng" ghi DẠNG NGƯỜI ĐỌC (viết hoa chữ đầu) — yêu cầu người dùng
+// 08/09/2026. Đây cũng là khoá join giữa các tab + với Looker. `BRAND_SLUG` (Script Property của
+// từng kênh) vẫn là khoá máy, được map sang tên hiển thị khi ghi.
+var BRAND_DISPLAY = {
+  kinh_te_so: 'Kinh Tế Số', cong_nghe_so: 'Công Nghệ Số',
+  ai_marketing: 'AI Marketing', marketing_online: 'Marketing Online'
+};
+var PLATFORM_DISPLAY = {
+  facebook: 'Facebook', instagram: 'Instagram', youtube: 'YouTube', threads: 'Threads'
+};
+function platformName_(v) {
+  var k = String(v || '').toLowerCase().trim();
+  return PLATFORM_DISPLAY[k] || (k ? k.charAt(0).toUpperCase() + k.slice(1) : '');
+}
+function brandName_(v) {
+  var s = String(v || '').trim();
+  return BRAND_DISPLAY[s] || s;
+}
+
 var BRANDS_HEADERS = ['Mã kênh', 'Tên kênh', 'Biểu tượng', 'Thứ tự', 'Đang hoạt động'];
 var BRANDS_SEED = [
-  ['kinh_te_so',   'Kinh Tế Số',   '📊', 1, true],
-  ['cong_nghe_so', 'Công Nghệ Số', '💻', 2, true]
-  // ['ai_marketing',     'AI Marketing',     '🤖', 3, false],   // bật khi dựng kênh
-  // ['marketing_online', 'Marketing Online', '📈', 4, false],
+  ['Kinh Tế Số',   'Kinh Tế Số',   '📊', 1, true],
+  ['Công Nghệ Số', 'Công Nghệ Số', '💻', 2, true]
+  // ['AI Marketing',     'AI Marketing',     '🤖', 3, false],   // bật khi dựng kênh
+  // ['Marketing Online', 'Marketing Online', '📈', 4, false],
 ];
 
 var POST_METRICS_HEADERS = [
@@ -67,7 +86,7 @@ var LEGACY_LABELS = {
     'Đã dùng', 'Thời điểm dùng', 'Video dùng', 'Liên kết ảnh', 'Mã tệp ảnh']
 };
 
-var LEGACY_BRAND = 'kinh_te_so'; // toàn bộ dữ liệu cũ trong file thuộc kênh Kinh Tế Số
+var LEGACY_BRAND = 'Kinh Tế Số'; // toàn bộ dữ liệu cũ trong file thuộc kênh Kinh Tế Số
 var TZ = 'Asia/Ho_Chi_Minh';
 
 function setupMaster() {
@@ -83,6 +102,7 @@ function setupMaster() {
   ensureSheetWithHeaders_(ss, POST_METRICS_SHEET, POST_METRICS_HEADERS, created);
   ensureSheetWithHeaders_(ss, TRAFFIC_DAILY_SHEET, TRAFFIC_DAILY_HEADERS, created);
 
+  var norm = normalizeValues_(ss); // slug -> tên hiển thị TRƯỚC khi migrate (tránh trùng dòng)
   var migPost = migrateLegacyEngagement_(ss);
   var migTraffic = migrateLegacyAudience_(ss);
   var relabeled = relabelHeaders_(ss);
@@ -90,8 +110,9 @@ function setupMaster() {
   var msg = 'setupMaster xong.\n'
     + 'Tab tạo mới: ' + (created.length ? created.join(', ') : '(đã có sẵn)') + '\n'
     + 'brands: ' + BRANDS_SEED.length + ' dòng\n'
-    + 'Di trú post_metrics (kinh_te_so): ' + migPost + ' dòng\n'
-    + 'Di trú traffic_daily follower history (kinh_te_so): ' + migTraffic + ' dòng\n'
+    + 'Chuẩn hoá tên Kênh/Nền tảng: ' + norm + ' ô\n'
+    + 'Di trú post_metrics (Kinh Tế Số): ' + migPost + ' dòng\n'
+    + 'Di trú traffic_daily follower history (Kinh Tế Số): ' + migTraffic + ' dòng\n'
     + 'Đổi nhãn hàng 1 (tiếng Việt): ' + relabeled.join(', ');
   Logger.log(msg);
   try { SpreadsheetApp.getUi().alert(msg); } catch (e) { /* chạy không có UI */ }
@@ -109,6 +130,54 @@ function relabelHeaders() {
   Logger.log(msg);
   try { SpreadsheetApp.getUi().alert(msg); } catch (e) {}
   return msg;
+}
+
+/**
+ * Chạy độc lập: viết hoa / chuẩn hoá giá trị cột "Kênh" + "Nền tảng" trong post_metrics,
+ * traffic_daily (và cột "Mã kênh" của brands) sang dạng người đọc — facebook -> Facebook,
+ * kinh_te_so -> Kinh Tế Số. An toàn để chạy lại (idempotent).
+ */
+function normalizeValues() {
+  var ss = SpreadsheetApp.getActive();
+  var n = normalizeValues_(ss);
+  var msg = 'Đã chuẩn hoá ' + n + ' ô tên Kênh / Nền tảng sang dạng viết hoa (Facebook, Kinh Tế Số...).';
+  Logger.log(msg);
+  try { SpreadsheetApp.getUi().alert(msg); } catch (e) {}
+  return msg;
+}
+
+function normalizeValues_(ss) {
+  var changed = 0;
+  // post_metrics: cột A = Kênh, cột B = Nền tảng
+  changed += normalizeCols_(ss.getSheetByName(POST_METRICS_SHEET), [
+    { col: 1, fn: brandName_ }, { col: 2, fn: platformName_ }
+  ]);
+  // traffic_daily: cột A = Kênh, cột B = Nền tảng
+  changed += normalizeCols_(ss.getSheetByName(TRAFFIC_DAILY_SHEET), [
+    { col: 1, fn: brandName_ }, { col: 2, fn: platformName_ }
+  ]);
+  // brands: cột A = Mã kênh (khoá join)
+  changed += normalizeCols_(ss.getSheetByName(BRANDS_SHEET), [{ col: 1, fn: brandName_ }]);
+  return changed;
+}
+
+function normalizeCols_(sh, specs) {
+  if (!sh || sh.getLastRow() < 2) return 0;
+  var n = sh.getLastRow() - 1;
+  var changed = 0;
+  specs.forEach(function (s) {
+    var rng = sh.getRange(2, s.col, n, 1);
+    var vals = rng.getValues();
+    var dirty = false;
+    for (var i = 0; i < vals.length; i++) {
+      var v = vals[i][0];
+      if (v === '' || v === null) continue;
+      var nv = s.fn(v);
+      if (nv !== v) { vals[i][0] = nv; dirty = true; changed++; }
+    }
+    if (dirty) rng.setValues(vals);
+  });
+  return changed;
 }
 
 function relabelHeaders_(ss) {
@@ -155,17 +224,18 @@ function migrateLegacyEngagement_(ss) {
   LEGACY_ENGAGEMENT_HEADERS.forEach(function (h, i) { col[h] = i; });
 
   // upsert theo key brand|post_id để chạy lại setupMaster không tạo trùng
+  // (brandName_ chuẩn hoá cả dòng cũ còn slug lẫn dòng mới đã là tên hiển thị)
   var existing = {};
   if (dst.getLastRow() > 1) {
     dst.getRange(2, 1, dst.getLastRow() - 1, POST_METRICS_HEADERS.length).getValues()
-      .forEach(function (r, i) { existing[r[0] + '|' + r[4]] = i + 2; });
+      .forEach(function (r, i) { existing[brandName_(r[0]) + '|' + r[4]] = i + 2; });
   }
 
   var out = [];
   rows.forEach(function (r) {
     var postId = String(r[col.platform_post_id] || '').trim();
     if (!postId) return;
-    var platform = String(r[col.channel] || '').toLowerCase().trim();
+    var platform = platformName_(r[col.channel]);
     var row = [
       LEGACY_BRAND, platform, r[col.video_project], r[col.post_type], postId,
       r[col.permalink], r[col.title], r[col.posted_at], r[col.posted_date],
@@ -192,7 +262,7 @@ function migrateLegacyAudience_(ss) {
   // (platform, date) -> followers, chọn dòng mới nhất nếu trùng ngày
   var byKey = {};
   rows.forEach(function (r) {
-    var platform = String(r[col.channel] || '').toLowerCase().trim();
+    var platform = platformName_(r[col.channel]);
     var d = asDate_(r[col.date]);
     if (!platform || !d) return;
     byKey[platform + '|' + d] = numOrZero_(r[col.followers]);
@@ -207,7 +277,7 @@ function migrateLegacyAudience_(ss) {
   var existing = {};
   if (dst.getLastRow() > 1) {
     dst.getRange(2, 1, dst.getLastRow() - 1, TRAFFIC_DAILY_HEADERS.length).getValues()
-      .forEach(function (r, i) { existing[r[0] + '|' + String(r[1]).toLowerCase() + '|' + asDate_(r[2])] = i + 2; });
+      .forEach(function (r, i) { existing[brandName_(r[0]) + '|' + platformName_(r[1]) + '|' + asDate_(r[2])] = i + 2; });
   }
 
   keys.forEach(function (k) {

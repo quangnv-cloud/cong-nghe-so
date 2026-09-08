@@ -2262,7 +2262,10 @@ function installHourlyTrigger() {
 //
 // NOTE ON NAMING: this channel's own sheet calls the platform column "channel"
 // (facebook/instagram/youtube/threads). The master keeps that as `platform` and adds
-// a separate `brand` column — so "channel" is never ambiguous in the report.
+// a separate `brand` column — so "channel" is never ambiguous in the report. Values in
+// BOTH master columns are written HUMAN-READABLE ("Công Nghệ Số", "Facebook", "YouTube")
+// so the raw sheet + Looker read nicely without a lookup (user request 08/09/2026).
+// BRAND_SLUG stays the machine key in Script Properties; it's mapped on write.
 //
 // Master tabs written (created by setupMaster() in automation/analytics-master/):
 //   post_metrics   — upsert 1 row per (brand, post_id): current per-post numbers
@@ -2277,15 +2280,27 @@ var MASTER_TRAFFIC_DAILY_HEADERS = [
   'views_total', 'views_delta', 'engagement_total', 'engagement_delta',
   'followers', 'followers_delta'
 ];
+var MASTER_BRAND_DISPLAY = {
+  kinh_te_so: 'Kinh Tế Số', cong_nghe_so: 'Công Nghệ Số',
+  ai_marketing: 'AI Marketing', marketing_online: 'Marketing Online'
+};
+var MASTER_PLATFORM_DISPLAY = {
+  facebook: 'Facebook', instagram: 'Instagram', youtube: 'YouTube', threads: 'Threads'
+};
+function masterPlatformName_(v) {
+  var k = String(v || '').toLowerCase().trim();
+  return MASTER_PLATFORM_DISPLAY[k] || (k ? k.charAt(0).toUpperCase() + k.slice(1) : '');
+}
 
 function mirrorAnalyticsToMaster_() {
   var props = PropertiesService.getScriptProperties();
   var masterId = props.getProperty('MASTER_SHEET_ID');
-  var brand = props.getProperty('BRAND_SLUG');
-  if (!masterId || !brand) {
+  var brandSlug = props.getProperty('BRAND_SLUG');
+  if (!masterId || !brandSlug) {
     Logger.log('mirrorAnalyticsToMaster_: MASTER_SHEET_ID / BRAND_SLUG not set — skipping');
     return;
   }
+  var brand = MASTER_BRAND_DISPLAY[brandSlug] || brandSlug; // human-readable, used as the key
   var master = SpreadsheetApp.openById(masterId);
   var tz = 'Asia/Ho_Chi_Minh';
   var today = Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd');
@@ -2301,7 +2316,7 @@ function mirrorAnalyticsToMaster_() {
       .forEach(function (r) {
         var rec = {}; ENGAGEMENT_HEADERS.forEach(function (h, i) { rec[h] = r[i]; });
         if (!rec.platform_post_id) return;
-        rec._platform = String(rec.channel || '').toLowerCase().trim(); // "Facebook" -> "facebook"
+        rec._platform = masterPlatformName_(rec.channel); // "Facebook" (from "facebook"/"Facebook")
         engRows.push(rec);
       });
   }
@@ -2334,7 +2349,7 @@ function mirrorAnalyticsToMaster_() {
     var fIdx = AUDIENCE_HEADERS.indexOf('followers');
     var dIdx = AUDIENCE_HEADERS.indexOf('date');
     aud.getRange(2, 1, aud.getLastRow() - 1, AUDIENCE_HEADERS.length).getValues().forEach(function (r) {
-      var p = String(r[chIdx] || '').toLowerCase().trim();
+      var p = masterPlatformName_(r[chIdx]);
       if (!p) return;
       var d = asDate_(r[dIdx]);
       if (!followersByPlatform[p] || d >= followersByPlatform[p].date) {
@@ -2367,7 +2382,7 @@ function mirrorAnalyticsToMaster_() {
       var f = followersByPlatform[p] ? followersByPlatform[p].followers : '';
       var prev = null, todayRow = null;
       tdVals.forEach(function (r, i) {
-        if (r[0] !== brand || String(r[1]).toLowerCase() !== p) return;
+        if (String(r[0]) !== brand || masterPlatformName_(r[1]) !== p) return;
         var rd = asDate_(r[2]);
         if (rd === today) todayRow = i + 2;
         else if (rd < today && (!prev || rd > prev.d)) {
