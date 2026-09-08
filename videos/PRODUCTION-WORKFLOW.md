@@ -19,8 +19,8 @@ Runbook thao tác cho MỌI video tin công nghệ / AI. Toàn bộ quy tắc br
 
 ## 1. Chọn tin & lên kịch bản
 
-1. Lấy tin ứng viên: `GET <EXEC>?category=vn` và `GET <EXEC>?category=intl`. Mỗi item có `id`,
-   `title`, `link`, `source`, `category`, `pubDate`, `hasImage`.
+1. Lấy tin ứng viên: `GET <EXEC>?category=vn` (kênh CHỈ dùng nguồn báo Việt Nam — bỏ nguồn quốc tế
+   08/09/2026). Mỗi item có `id`, `title`, `link`, `source`, `category`, `pubDate`, `hasImage`.
 2. Chọn **1 tin công nghệ / AI đáng chú ý nhất** trong cửa sổ gần nhất — ưu tiên: ra mắt sản phẩm /
    mô hình lớn, số liệu cụ thể (vốn đầu tư, benchmark, thị phần, giá), tác động tới người dùng /
    doanh nghiệp VN, và **có góc tranh luận** (được/mất, bước tiến/mối lo) để nuôi act CTA. Chỉ chọn
@@ -30,11 +30,9 @@ Runbook thao tác cho MỌI video tin công nghệ / AI. Toàn bộ quy tắc br
    KHÔNG `WebFetch` / `curl` thẳng trang báo (domain tin không nằm trong egress allowlist của
    sandbox — Apps Script tải hộ từ IP Google). Nếu `ok:false` (trang JS-render, không parse được),
    dùng `title` + phần mô tả có sẵn; nếu quá mỏng để dựng đủ 7 act, chọn tin khác.
-5. **Nếu `category` là `intl` (tiếng Anh)**: VIẾT LẠI bằng tiếng Việt cho khán giả VN — KHÔNG dịch
-   máy word-by-word. Giữ tên riêng (OpenAI, Nvidia, Gemini...) và thuật ngữ phổ biến. Đóng khung
-   "điều này nghĩa là gì với người dùng / doanh nghiệp VN" nếu có góc đó. TUYỆT ĐỐI không bịa số
-   liệu ngoài bài gốc.
-   **Nếu `category` là `vn`**: viết lại gọn theo văn phong bản tin, giữ nguyên số liệu.
+5. VIẾT LẠI gọn theo văn phong bản tin, giữ nguyên số liệu bài gốc, thêm góc phân tích / cách
+   trình bày dữ liệu riêng (KHÔNG chỉ đọc lại tiêu đề báo). Đóng khung "điều này nghĩa là gì với
+   người dùng / doanh nghiệp VN" nếu có góc đó. TUYỆT ĐỐI không bịa số liệu ngoài bài gốc.
 6. Nhận cách dựng: `POST <EXEC> {"action":"claim_style","video":"<slug>"}` → `{"ok":true,"index":N,"style":"N-tên"}`.
    Dùng ĐÚNG style đó (`CONSTRUCTION-STYLES.md`). KHÔNG đọc `style-rotation-state.json` để lấy chỉ
    số. Gọi `claim_style` NGAY SAU bước 3, trước khi dựng.
@@ -43,8 +41,8 @@ Runbook thao tác cho MỌI video tin công nghệ / AI. Toàn bộ quy tắc br
      ở mục "Voiceover" của `BRAND-SYSTEM.md`), act 6 là sự thật đã xảy ra, act 7 là câu hỏi CTA
      kêu gọi bình luận (KHÔNG nhắc tên kênh trong lời đọc).
    - `CAPTION.md`: theo mẫu ở `videos/astra-openai/CAPTION.md` — dòng đầu 1 emoji + tiêu đề IN HOA;
-     2–3 đoạn ngắn (mỗi đoạn mở 1 emoji 📊 ⚠️ 💬); 1 câu hỏi tranh luận; `📌 Nguồn: <tên>, <ngày>`
-     (thêm "· dịch" nếu intl); hashtag `#CongNgheSo #TinCongNghe` + 4–6 hashtag chủ đề. Kèm bản
+     2–3 đoạn ngắn (mỗi đoạn mở 1 emoji 📊 ⚠️ 💬); 1 câu hỏi tranh luận; `📌 Nguồn: <tên>, <ngày>`;
+     hashtag `#CongNgheSo #TinCongNghe` + 4–6 hashtag chủ đề. Kèm bản
      Threads ≤500 ký tự (để dành, tuyến này chưa đăng Threads).
 8. Ảnh minh hoạ: `GET <EXEC>?image=<id>` → `{"ok":true,"data":"<base64>"}`. Giải mã:
    `curl -s "<EXEC>?image=<id>" | jq -r .data | base64 -d > assets/img/article-hero.jpg`.
@@ -158,7 +156,7 @@ là routine thất bại.
 
 ## 10. Tóm tắt cuối
 
-Tin + nguồn (+ "đã dịch từ <nguồn>" nếu intl), style + index, thời lượng, kết quả verify 4 bước,
+Tin + nguồn, style + index, thời lượng, kết quả verify 4 bước,
 đường dẫn repo, kết quả đăng FB (Reel — post id), YouTube (video id/link + trạng thái thumbnail).
 Nếu BẤT KỲ bước 1–8 thất bại → DỪNG ở đó, KHÔNG làm 9–9.5, báo lỗi rõ ràng thay vì giao video lỗi
 hoặc đăng nhầm nội dung.

@@ -14,6 +14,9 @@ Bản tin công nghệ hiện đại, gọn, dữ-liệu-hoá, tỉnh táo. Đư
 luận — KHÔNG hype sản phẩm, KHÔNG sci-fi HUD, KHÔNG giật gân sai sự thật. Tin là trung tâm; góc
 "được / mất", "bước tiến / mối lo" của mỗi tin là chất liệu để kéo bình luận.
 
+**Nguồn tin: CHỈ báo công nghệ Việt Nam** (VnExpress Số hóa, GenK, Dân Trí, Thanh Niên, Znews,
+VietnamNet — bỏ nguồn quốc tế 08/09/2026). Routine không dịch tin nước ngoài nữa.
+
 ## Bảng màu (cố định — không tự thêm màu)
 
 | Vai trò | Hex |
@@ -63,8 +66,7 @@ gõ trong HTML — kiểm tra và gỡ.
 
 - **Logo Công Nghệ Số** (`public/logo.png` — line-art cam, đã tách nền) + chữ **"Công Nghệ Số"** —
   góc **trên-phải**. Fixed vị trí / cỡ / margin. Không animation liên tục, không che nội dung.
-- **Nguồn** ("Nguồn: <tên nguồn>" hoặc "Nguồn: <tên nguồn quốc tế> · dịch") — góc **trên-trái**.
-  Fixed typography. Không tự tạo / đổi tên nguồn.
+- **Nguồn** ("Nguồn: <tên báo VN>") — góc **trên-trái**. Fixed typography. Không tự tạo / đổi tên nguồn.
 
 Hai anchor này dựng ở tầng root/`index.html`, hiện ngay khi Hook kết thúc — KHÔNG lặp lại độc lập
 trong từng frame. Frame Hook (0 → ~6s) tự mang masthead (logo + tên kênh) + badge nguồn + ngày

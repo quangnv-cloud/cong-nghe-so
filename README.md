@@ -1,9 +1,9 @@
 # Công Nghệ Số
 
-Kênh tin tức công nghệ / AI tự động — tiếng Việt, khán giả VN. Dịch + biên tập từ nguồn
-quốc tế (TechCrunch, Ars Technica, Engadget, MIT Tech Review) và báo VN (VnExpress Số hóa,
-GenK, Dân Trí, Thanh Niên, Znews). Tự dựng video (HyperFrames) + tự đăng theo lịch lên
-Facebook Fanpage và YouTube (Instagram / Threads bổ sung sau).
+Kênh tin tức công nghệ / AI tự động — tiếng Việt, khán giả VN. Nguồn: **chỉ báo công nghệ
+Việt Nam** (VnExpress Số hóa, GenK, Dân Trí, Thanh Niên, Znews, VietnamNet — bỏ nguồn quốc tế
+08/09/2026). Tự dựng video (HyperFrames) + tự đăng theo lịch lên Facebook Fanpage và YouTube
+(Instagram / Threads bổ sung sau).
 
 Tuyến nội dung độc lập hoàn toàn với "Kinh Tế Số / BOT BÁN HÀNG · KINH DOANH" — Gmail riêng,
 Apps Script riêng, token riêng, repo riêng.

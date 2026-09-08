@@ -1,9 +1,10 @@
-# Prompt routine cloud — tuyến tin công nghệ / AI (bản mẫu)
+# Prompt routine cloud — tuyến tin công nghệ / AI (BẢN MẪU CŨ — ĐÃ THAY BẰNG videos/ROUTINE.md)
+
+> SUPERSEDED: routine thật đọc `videos/ROUTINE.md` (có GATE A/B/C + chỉ nguồn VN). File này giữ lại tham khảo lịch sử.
 
 Thay các `<...>` bằng giá trị thật sau khi setup xong, rồi dán vào `RemoteTrigger create`
 (1 trigger / khung giờ). Giống cấu trúc tuyến "BOT BÁN HÀNG · KINH DOANH" nhưng đã đổi:
-lấy ảnh qua `?image=`, lấy style qua `claim_style`, thêm bước dịch/việt hoá cho nguồn quốc tế,
-thêm bước chốt lại thumbnail YouTube.
+lấy ảnh qua `?image=`, lấy style qua `claim_style`, thêm bước chốt lại thumbnail YouTube.
 
 - `<EXEC_URL>` = exec URL của Apps Script project MỚI
 - `<REPO>` = `quangnv-cloud/<tên-repo-mới>` (vd. `quangnv-cloud/bot-tin-cong-nghe`)
@@ -18,8 +19,8 @@ Bạn đang tự động sản xuất 1 video tin tức công nghệ / AI cho k�
 
 Thực hiện đúng trình tự:
 
-1. Lấy tin ứng viên: GET `<EXEC_URL>?category=vn` và GET `<EXEC_URL>?category=intl`. Chọn 1 tin công nghệ/AI đáng chú ý nhất trong cửa sổ thời gian gần nhất — ưu tiên: ra mắt sản phẩm/mô hình lớn, số liệu cụ thể (vốn đầu tư, hiệu năng, thị phần...), tác động tới người dùng/doanh nghiệp VN. Mỗi item có `hasImage` — chỉ chọn tin `hasImage: true`. Sau khi chọn, POST `<EXEC_URL>` với `{"id":"<id>","video":"<slug>"}` để đánh dấu đã dùng.
-   - Nếu tin từ nguồn `intl` (tiếng Anh): VIẾT LẠI bằng tiếng Việt cho khán giả VN — KHÔNG dịch máy word-by-word. Giữ tên riêng (OpenAI, Nvidia, Gemini...) và thuật ngữ phổ biến. Đóng khung "điều này nghĩa là gì với người dùng/doanh nghiệp VN" nếu có góc đó. TUYỆT ĐỐI không bịa số liệu ngoài bài gốc.
+1. Lấy tin ứng viên: GET `<EXEC_URL>?category=vn` (chỉ nguồn báo VN). Chọn 1 tin công nghệ/AI đáng chú ý nhất trong cửa sổ thời gian gần nhất — ưu tiên: ra mắt sản phẩm/mô hình lớn, số liệu cụ thể (vốn đầu tư, hiệu năng, thị phần...), tác động tới người dùng/doanh nghiệp VN. Mỗi item có `hasImage` — chỉ chọn tin `hasImage: true`. Sau khi chọn, POST `<EXEC_URL>` với `{"id":"<id>","video":"<slug>"}` để đánh dấu đã dùng.
+   - VIẾT LẠI gọn theo văn phong bản tin, giữ nguyên số liệu, thêm góc phân tích riêng. TUYỆT ĐỐI không bịa số liệu ngoài bài gốc.
 
 2. Nhận style: POST `<EXEC_URL>` `{"action":"claim_style","video":"<slug>"}` → trả `{"index":N,"style":"N-tên"}`. KHÔNG đọc file rotation nào. Dựng theo đúng định hướng style đó (chi tiết ở CONSTRUCTION-STYLES.md).
 
@@ -47,4 +48,4 @@ Thực hiện đúng trình tự:
 
 17. Chốt thumbnail YouTube: xem `result.thumbnail.code` trong phản hồi `publish_youtube`. Nếu != 200 (hoặc để chắc chắn), SAU khi đăng xong hết, đợi ~90s rồi gọi lại `POST <EXEC_URL> {"action":"yt_set_thumbnail","video_id":"<id YouTube>","thumbnail_url":"https://raw.githubusercontent.com/<REPO>/master/videos/<slug>/output/thumbnail.jpg"}` để chốt ảnh bìa thương hiệu.
 
-18. Tóm tắt ngắn: tin + nguồn (+ "đã dịch từ <nguồn>" nếu là intl), style, thời lượng, kết quả verify, đường dẫn repo, kết quả đăng từng kênh (+ post id/permalink), trạng thái thumbnail YouTube. Nếu bất kỳ bước 1-11 thất bại → DỪNG ở đó, KHÔNG thực hiện 12-17, báo lỗi rõ ràng.
+18. Tóm tắt ngắn: tin + nguồn, style, thời lượng, kết quả verify, đường dẫn repo, kết quả đăng từng kênh (+ post id/permalink), trạng thái thumbnail YouTube. Nếu bất kỳ bước 1-11 thất bại → DỪNG ở đó, KHÔNG thực hiện 12-17, báo lỗi rõ ràng.

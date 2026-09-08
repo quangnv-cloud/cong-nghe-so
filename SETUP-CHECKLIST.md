@@ -1,6 +1,6 @@
 # Checklist setup — tuyến tin công nghệ / AI
 
-Cấu hình đã chốt: tiếng Việt (khán giả VN), nguồn VN + quốc tế (dịch/việt hoá),
+Cấu hình đã chốt: tiếng Việt (khán giả VN), chỉ nguồn báo công nghệ VN,
 đăng FB + IG + YT + Threads, tự dựng + tự đăng theo lịch. Cùng máy hiện tại (bỏ qua phần cài phần mềm).
 
 Ký hiệu: **[A]** = anh làm · **[C]** = Claude làm · **[A+C]** = làm cùng
@@ -25,7 +25,7 @@ Ký hiệu: **[A]** = anh làm · **[C]** = Claude làm · **[A+C]** = làm cùn
 - [ ] **[A+C]** Chạy `fetchAndStore` 1 lần → cấp quyền (Sheets + Drive + UrlFetch) → xác nhận log "added N new item(s)".
 - [ ] **[A+C]** Chạy `installHourlyTrigger` 1 lần.
 - [ ] **[A+C]** Deploy → New deployment → Web app, Execute as: **Me**, Who has access: **Anyone** → copy **exec URL mới**.
-- [ ] **[C]** Verify: `?category=vn` và `?category=intl` trả JSON có `items` + `hasImage`; `?image=<id>` trả base64.
+- [ ] **[C]** Verify: `?category=vn` trả JSON có `items` + `hasImage`; `?image=<id>` trả base64.
 
 ## 3. Token 4 nền tảng (**[A]**, theo `automation/news-fetch-gas/SETUP.md`)
 

@@ -42,7 +42,7 @@ kiện tụng bản quyền AI) → **YELLOW**: được dựng nhưng phần GA
   `?article=` (bài gốc) hoặc BRIEF. KHÔNG có con số nào routine tự nghĩ ra.
 - [ ] Phân biệt rõ **cáo buộc / tin đồn / dự đoán** vs **sự thật đã xác nhận**. Dùng "được cho là",
   "theo …", "chưa được xác nhận" khi cần.
-- [ ] Tin `intl` dịch lại: giữ đúng nghĩa bài gốc, KHÔNG thêm diễn giải/kết luận không có trong nguồn.
+- [ ] Viết lại giữ đúng nghĩa bài gốc, KHÔNG thêm diễn giải/kết luận không có trong nguồn.
 - [ ] Nếu tin có claim đang tranh cãi / chính sách nền tảng / pháp lý → thêm 1 câu "cần theo dõi
   thông báo/nguồn chính thức", KHÔNG chốt như sự thật tuyệt đối.
 

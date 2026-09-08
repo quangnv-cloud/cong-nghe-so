@@ -1,11 +1,10 @@
 /**
  * CÔNG NGHỆ SỐ — News Fetch Proxy (Google Apps Script)
  *
- * Tuyến nội dung tin tức công nghệ / AI, tiếng Việt, khán giả VN. Nguồn: báo
- * công nghệ VN + báo công nghệ quốc tế (routine dịch + việt hoá khi nguồn là
- * tiếng Anh). Tách hoàn toàn khỏi tuyến "BOT BÁN HÀNG · KINH DOANH": Gmail
- * riêng, Apps Script project riêng, Google Sheet riêng, repo riêng, bộ token
- * mạng xã hội riêng.
+ * Tuyến nội dung tin tức công nghệ / AI, tiếng Việt, khán giả VN. Nguồn: CHỈ
+ * báo công nghệ Việt Nam (bỏ nguồn quốc tế 08/09/2026 theo yêu cầu người dùng).
+ * Tách hoàn toàn khỏi tuyến "BOT BÁN HÀNG · KINH DOANH": Gmail riêng, Apps Script
+ * project riêng, Google Sheet riêng, repo riêng, bộ token mạng xã hội riêng.
  *
  * Fetches RSS feeds from the channel's approved sources on a schedule, dedupes
  * against a Sheet, and exposes a small HTTP API so the Claude cloud routine
@@ -17,8 +16,8 @@
  *                              server-side, so the sandbox never hits a news
  *                              CDN — see the News-image cache section)
  *  - GET ?article=<newsId>     the article's readable text, fetched + cleaned
- *                              server-side (routine translates/rewrites it
- *                              without the news domain in the egress allowlist)
+ *                              server-side (routine rewrites it without the news
+ *                              domain in the egress allowlist)
  *  - POST {"action":"claim_style"}  the next construction-style slot, handed
  *                              out under a lock so parallel runs don't collide
  *
@@ -27,27 +26,20 @@
 
 // ---- Config -----------------------------------------------------------
 
-// Nguồn tin công nghệ / AI. All URLs verified reachable + valid RSS 2.0 on
-// 2026-09-07. If a feed 404s later (sites restructure their RSS paths), fix the
-// URL here — the fetch loop skips a broken feed instead of failing the run.
-//   category 'vn'   — báo VN, tin đã bằng tiếng Việt (routine viết lại gọn, giữ số liệu).
-//   category 'intl' — báo quốc tế, tiếng Anh (routine DỊCH + việt hoá cho khán giả VN,
-//                     không dịch máy word-by-word; giữ tên riêng/thuật ngữ phổ biến).
+// Nguồn tin công nghệ / AI — CHỈ báo Việt Nam (bỏ nguồn quốc tế 08/09/2026).
+// 5 nguồn đầu đã verify chạy ở Apps Script production (2026-09-07). VietnamNet
+// thêm 08/09 (RSS redirect /rss/cong-nghe.rss → /cong-nghe.rss). Nếu 1 feed 404
+// sau này (site đổi path RSS), sửa URL ở đây — fetch loop bỏ qua feed hỏng,
+// không làm hỏng cả run.
+//   category 'vn' — báo VN, tin đã bằng tiếng Việt (routine viết lại gọn, giữ số liệu).
+// (không còn category 'intl' — routine không dịch nguồn nước ngoài nữa.)
 var FEEDS = [
-  { source: 'VnExpress',      category: 'vn',   url: 'https://vnexpress.net/rss/so-hoa.rss' },
-  { source: 'GenK',           category: 'vn',   url: 'https://genk.vn/rss/home.rss' },
-  { source: 'Dan Tri',        category: 'vn',   url: 'https://dantri.com.vn/rss/cong-nghe.rss' },
-  { source: 'Thanh Nien',     category: 'vn',   url: 'https://thanhnien.vn/rss/cong-nghe.rss' },
-  { source: 'Znews',          category: 'vn',   url: 'https://znews.vn/rss/cong-nghe.rss' },
-  { source: 'TechCrunch',     category: 'intl', url: 'https://techcrunch.com/feed/' },
-  { source: 'TechCrunch AI',  category: 'intl', url: 'https://techcrunch.com/category/artificial-intelligence/feed/' },
-  { source: 'Ars Technica',   category: 'intl', url: 'https://arstechnica.com/feed/' },
-  { source: 'Engadget',       category: 'intl', url: 'https://www.engadget.com/rss.xml' },
-  { source: 'MIT Tech Review', category: 'intl', url: 'https://www.technologyreview.com/feed/' }
-  // The Verge dùng Atom (<feed>/<entry>), fetchAndStore hiện chỉ parse RSS 2.0
-  // (<channel>/<item>) — bỏ qua cho tới khi thêm hỗ trợ Atom.
-  // TechCrunch RSS không kèm ảnh trong feed → serveNewsImage_ tự lấy og:image
-  // từ trang bài viết (server-side, IP Google) khi cột imageUrl trống.
+  { source: 'VnExpress',   category: 'vn', url: 'https://vnexpress.net/rss/so-hoa.rss' },
+  { source: 'GenK',        category: 'vn', url: 'https://genk.vn/rss/home.rss' },
+  { source: 'Dan Tri',     category: 'vn', url: 'https://dantri.com.vn/rss/cong-nghe.rss' },
+  { source: 'Thanh Nien',  category: 'vn', url: 'https://thanhnien.vn/rss/cong-nghe.rss' },
+  { source: 'Znews',       category: 'vn', url: 'https://znews.vn/rss/cong-nghe.rss' },
+  { source: 'VietnamNet',  category: 'vn', url: 'https://vietnamnet.vn/cong-nghe.rss' }
 ];
 
 var SHEET_NAME = 'news_queue';
