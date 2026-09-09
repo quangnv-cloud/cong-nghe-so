@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .d-kicker { position: absolute; left: 0; right: 0; top: 260px; text-align: center; font-weight: 700; font-size: 26px; letter-spacing: 0.24em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .d-quote { position: absolute; left: 0; right: 0; top: 330px; text-align: center; font-weight: 900; font-size: 420px; line-height: 1; color: rgba(76,141,255,0.09); font-family: Georgia, "Times New Roman", serif; }
+
+    .d-num-wrap { position: absolute; left: 0; right: 0; top: 620px; text-align: center; overflow: hidden; }
+    .d-num { display: inline-block; font-weight: 900; font-size: 240px; line-height: 1; letter-spacing: -0.02em; color: #4C8DFF; }
+    .d-unit { position: absolute; left: 0; right: 0; top: 900px; text-align: center; font-weight: 800; font-size: 44px; letter-spacing: 0.02em; color: #fff; opacity: 0; }
+
+    .d-underline-pos { position: absolute; left: 50%; top: 990px; width: 520px; height: 30px; margin-left: -260px; }
+    .d-underline { transform-origin: left center; opacity: 0; }
+    .d-underline path { fill: none; stroke: #FF8A5B; stroke-width: 10; stroke-linecap: round; }
+
+    .d-cap { position: absolute; left: 110px; right: 110px; top: 1140px; text-align: center; font-weight: 600; font-size: 40px; line-height: 1.4; color: rgba(255,255,255,0.9); opacity: 0; }
+    .d-cap b { color: #fff; font-weight: 800; }
+
+    .d-badge { position: absolute; left: 0; right: 0; top: 1430px; display: flex; justify-content: center; opacity: 0; }
+    .d-badge-inner { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 100px; border: 1.5px solid rgba(255,138,91,0.7); background: #281d1d; }
+    .d-badge-inner .d { width: 8px; height: 8px; border-radius: 50%; background: #FF8A5B; }
+    .d-badge-inner span { font-weight: 700; font-size: 26px; color: #fff; }
+  </style>
+
+  <div data-hf-id="d-root" id="root" data-composition-id="04-data" data-width="1080" data-height="1920">
+    <div data-hf-id="d-kicker" class="d-kicker" id="d-kicker">Con số nổi bật</div>
+    <div data-hf-id="d-quote" class="d-quote">&rdquo;</div>
+
+    <div data-hf-id="d-num-wrap" class="d-num-wrap"><span data-hf-id="d-num" class="d-num" id="d-num">7.000</span></div>
+    <div data-hf-id="d-unit" class="d-unit" id="d-unit">ĐÔ LA MỸ &middot; MỖI NGÀY</div>
+
+    <div data-hf-id="d-underline-pos" class="d-underline-pos">
+      <svg data-hf-id="d-underline" class="d-underline" id="d-underline" viewBox="0 0 520 30" preserveAspectRatio="none">
+        <path data-hf-id="d-underline-path" d="M6 18 C 120 4, 240 28, 360 12 S 500 6, 514 16" />
+      </svg>
+    </div>
+
+    <div data-hf-id="d-cap" class="d-cap" id="d-cap">Chi phí token của <b>10% nhà nghiên cứu</b> dùng tác nhân lập trình nhiều nhất tại OpenAI</div>
+
+    <div data-hf-id="d-badge" class="d-badge" id="d-badge">
+      <div data-hf-id="d-badge-inner" class="d-badge-inner"><span data-hf-id="d-badge-dot" class="d"></span><span data-hf-id="d-badge-txt">Tính theo giá niêm yết API</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#d-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#d-num', { yPercent: 130 }, { yPercent: 0, duration: 0.7, ease: 'power4.out' }, 0.3);
+    tl.fromTo('#d-unit', { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.95);
+    tl.fromTo('#d-underline', { autoAlpha: 0, scaleX: 0 }, { autoAlpha: 1, scaleX: 1, duration: 0.55, ease: 'power2.inOut' }, 1.1);
+    tl.fromTo('#d-cap', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 1.6);
+    tl.fromTo('#d-badge', { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(1.6)' }, 2.15);
+    window.__timelines['04-data'] = tl;
+  </script>
+</template>

@@ -19,6 +19,7 @@
     { "index": 2, "style": "3-ticker-tape", "video": "gpt6-astra-tranh-cai", "date": "2026-09-07", "note": "routine tối — GPT-6 Astra gây tranh cãi (VnExpress)" },
     { "index": 4, "style": "5-map-and-geo", "video": "dlss5-chay-tren-amd", "date": "2026-09-08", "note": "routine sáng — DLSS 5 của Nvidia chạy được trên card AMD (GenK)" },
     { "index": 5, "style": "6-ring-progress", "video": "ai-mo-nao-ucl", "date": "2026-09-08", "note": "routine chiều — AI lần đầu hỗ trợ mổ não trực tiếp trên người, thử nghiệm tại UCLH Anh (GenK)" },
-    { "index": 7, "style": "8-icon-grid", "video": "phim-ai-hau-tay-du-ky", "date": "2026-09-09", "note": "routine sáng — Trung Quốc phát sóng phim truyền hình đầu tiên làm 100% bằng AI, 'Hậu Tây Du Ký' (Znews/BJNews)" }
+    { "index": 7, "style": "8-icon-grid", "video": "phim-ai-hau-tay-du-ky", "date": "2026-09-09", "note": "routine sáng — Trung Quốc phát sóng phim truyền hình đầu tiên làm 100% bằng AI, 'Hậu Tây Du Ký' (Znews/BJNews)" },
+    { "index": 8, "style": "9-editorial-clipping", "video": "openai-token-7000-usd-ngay", "date": "2026-09-09", "note": "routine chiều — Nhà nghiên cứu tại OpenAI tiêu tốn 7.000 USD token mỗi ngày (VnExpress)" }
   ]
 }
