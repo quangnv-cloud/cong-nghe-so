@@ -1,0 +1,61 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 50% at 82% 10%, rgba(76,141,255,0.12), transparent 60%); }
+
+    .fc-kicker { position: absolute; left: 64px; right: 64px; top: 300px; font-weight: 700; font-size: 26px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .fc-head { position: absolute; left: 64px; right: 64px; top: 356px; font-weight: 800; font-size: 68px; line-height: 1.15; color: #fff; opacity: 0; }
+
+    .fc-rows { position: absolute; left: 64px; right: 64px; top: 800px; }
+    .fc-row { display: flex; align-items: center; padding: 54px 0; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0; }
+    .fc-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .fc-label { flex: 0 0 300px; font-weight: 600; font-size: 32px; color: rgba(255,255,255,0.55); }
+    .fc-divider { flex: none; width: 1px; align-self: stretch; background: rgba(255,255,255,0.14); margin: 0 30px; }
+    .fc-value { flex: 1; font-weight: 800; font-size: 40px; line-height: 1.2; color: #fff; }
+    .fc-value b { color: #4C8DFF; font-weight: 900; }
+  </style>
+
+  <div data-hf-id="fc-root" id="root" data-composition-id="03-facts" data-width="1080" data-height="1920">
+    <div data-hf-id="fc-kicker" class="fc-kicker" id="fc-kicker">Cấu hình mới</div>
+    <div data-hf-id="fc-head" class="fc-head" id="fc-head">A20 Pro có gì bên trong?</div>
+
+    <div data-hf-id="fc-rows" class="fc-rows">
+      <div data-hf-id="fc-r1" class="fc-row" id="fc-r1">
+        <div data-hf-id="fc-r1-label" class="fc-label">Tiến trình</div>
+        <div data-hf-id="fc-r1-div" class="fc-divider"></div>
+        <div data-hf-id="fc-r1-value" class="fc-value"><b data-hf-id="fc-r1b">2nm N2</b> của TSMC — lần đầu trên chip điện thoại Apple</div>
+      </div>
+      <div data-hf-id="fc-r2" class="fc-row" id="fc-r2">
+        <div data-hf-id="fc-r2-label" class="fc-label">Thiết kế nhân</div>
+        <div data-hf-id="fc-r2-div" class="fc-divider"></div>
+        <div data-hf-id="fc-r2-value" class="fc-value"><b data-hf-id="fc-r2b">2</b> nhân hiệu năng cao + <b data-hf-id="fc-r2b2">4</b> nhân tiết kiệm điện</div>
+      </div>
+      <div data-hf-id="fc-r3" class="fc-row" id="fc-r3">
+        <div data-hf-id="fc-r3-label" class="fc-label">Xung nhịp tối đa</div>
+        <div data-hf-id="fc-r3-div" class="fc-divider"></div>
+        <div data-hf-id="fc-r3-value" class="fc-value"><b data-hf-id="fc-r3b">4,93 GHz</b> — băng thông bộ nhớ +50% so với A19 Pro</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#fc-kicker', { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.38, ease: 'power2.out' }, 0);
+    tl.fromTo('#fc-head', { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 0.2);
+    tl.fromTo('#fc-r1', { autoAlpha: 0, x: 24 }, { autoAlpha: 1, x: 0, duration: 0.42, ease: 'power2.out' }, 1.0);
+    tl.fromTo('#fc-r2', { autoAlpha: 0, x: 24 }, { autoAlpha: 1, x: 0, duration: 0.42, ease: 'power2.out' }, 1.32);
+    tl.fromTo('#fc-r3', { autoAlpha: 0, x: 24 }, { autoAlpha: 1, x: 0, duration: 0.42, ease: 'power2.out' }, 1.64);
+    window.__timelines['03-facts'] = tl;
+  </script>
+</template>
