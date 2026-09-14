@@ -11,7 +11,8 @@
 
     #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
 
-    .t-wrap { position: absolute; left: 64px; right: 64px; top: 400px; text-align: center; }
+    .t-group { position: absolute; left: 0; right: 0; top: 300px; bottom: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .t-wrap { width: 100%; padding: 0 64px; box-sizing: border-box; text-align: center; }
     .t-kicker { font-weight: 700; font-size: 26px; letter-spacing: 0.26em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
     .t-head { margin-top: 30px; font-weight: 900; font-size: 82px; line-height: 1.16; color: #fff; }
     .t-head .ln { overflow: hidden; }
@@ -35,31 +36,33 @@
     .t-cta .ico::before { content: ""; position: absolute; left: 9px; top: 12px; right: 9px; height: 4px; border-radius: 2px; background: #4C8DFF; box-shadow: 0 9px 0 #4C8DFF; }
     .t-cta span { font-weight: 800; font-size: 34px; letter-spacing: 0.01em; color: #06101f; }
 
-    .t-sign { position: absolute; left: 0; right: 0; bottom: 200px; display: flex; align-items: center; justify-content: center; gap: 12px; opacity: 0; }
+    .t-sign { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 110px; opacity: 0; }
     .t-sign .m { width: 40px; height: 40px; }
     .t-sign .w { font-weight: 800; font-size: 28px; color: rgba(255,255,255,0.85); }
   </style>
 
   <div id="root" data-composition-id="07-cta" data-width="1080" data-height="1920">
-    <div class="t-wrap">
-      <div class="t-kicker" id="t-kicker">Góc nhìn của bạn</div>
-      <div class="t-head">
-        <div class="ln" data-layout-allow-overflow=""><span id="t-h1">Bước tiến kết nối</span></div>
-        <div class="ln blue" data-layout-allow-overflow=""><span id="t-h2">hay cược quá lớn?</span></div>
+    <div class="t-group">
+      <div class="t-wrap">
+        <div class="t-kicker" id="t-kicker">Góc nhìn của bạn</div>
+        <div class="t-head">
+          <div class="ln" data-layout-allow-overflow=""><span id="t-h1">Bước tiến kết nối</span></div>
+          <div class="ln blue" data-layout-allow-overflow=""><span id="t-h2">hay cược quá lớn?</span></div>
+        </div>
+
+        <div class="t-opts">
+          <div class="t-opt up" id="t-o1"><div class="ico"></div><div class="lab">Bước tiến thông minh</div></div>
+          <div class="t-vs" id="t-vs">VS</div>
+          <div class="t-opt down" id="t-o2"><div class="ico"></div><div class="lab">Đặt cược quá lớn</div></div>
+        </div>
+
+        <div class="t-cta" id="t-cta"><span class="ico"></span><span>Bình luận quan điểm của bạn</span></div>
       </div>
 
-      <div class="t-opts">
-        <div class="t-opt up" id="t-o1"><div class="ico"></div><div class="lab">Bước tiến thông minh</div></div>
-        <div class="t-vs" id="t-vs">VS</div>
-        <div class="t-opt down" id="t-o2"><div class="ico"></div><div class="lab">Đặt cược quá lớn</div></div>
+      <div class="t-sign" id="t-sign">
+        <img class="m" src="public/logo.png" alt="">
+        <span class="w">Công Nghệ Số</span>
       </div>
-
-      <div class="t-cta" id="t-cta"><span class="ico"></span><span>Bình luận quan điểm của bạn</span></div>
-    </div>
-
-    <div class="t-sign" id="t-sign">
-      <img class="m" src="public/logo.png" alt="">
-      <span class="w">Công Nghệ Số</span>
     </div>
   </div>
 
