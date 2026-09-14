@@ -1,0 +1,62 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    .fc-map { position: absolute; left: -120px; top: 180px; width: 1200px; opacity: 0; }
+    .fc-map path { fill: none; stroke: rgba(76,141,255,0.22); stroke-width: 3; }
+
+    .fc-kicker { position: absolute; left: 64px; top: 270px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+
+    .fc-stat-wrap { position: absolute; left: 64px; right: 64px; top: 340px; text-align: center; }
+    .fc-stat { font-weight: 900; font-size: 250px; line-height: 1; color: #4C8DFF; letter-spacing: -0.02em; }
+    .fc-stat-label { margin-top: 46px; font-weight: 700; font-size: 42px; line-height: 1.3; color: #fff; }
+
+    .fc-x2 { position: absolute; left: 50%; top: 900px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 100px; border: 2px solid rgba(255,138,91,0.7); background: rgba(255,138,91,0.12); opacity: 0; }
+    .fc-x2 span { font-weight: 800; font-size: 28px; color: #FF8A5B; letter-spacing: 0.02em; }
+
+    .fc-card { position: absolute; left: 64px; right: 64px; top: 1040px; padding: 44px 40px; border-radius: 20px; background: #121724; border: 1px solid rgba(255,255,255,0.08); opacity: 0; }
+    .fc-quote { font-weight: 600; font-size: 44px; line-height: 1.42; color: rgba(255,255,255,0.94); }
+    .fc-quote .hl { color: #4C8DFF; font-weight: 800; }
+    .fc-attr { margin-top: 28px; display: flex; align-items: center; gap: 14px; }
+    .fc-pin { width: 30px; height: 30px; border-radius: 50% 50% 50% 0; background: #FF8A5B; transform: rotate(-45deg); flex: none; }
+    .fc-attr span { font-weight: 700; font-size: 26px; color: rgba(255,255,255,0.7); }
+  </style>
+
+  <div id="root" data-composition-id="03-facts" data-width="1080" data-height="1920">
+    <svg class="fc-map" id="fc-map" data-layout-allow-overflow="" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+      <path id="fc-map-path" d="M300,60 C420,40 560,90 620,180 C700,220 760,300 720,380 C780,440 740,540 650,560 C620,640 520,660 460,600 C380,620 300,580 290,500 C220,480 190,400 240,340 C200,280 220,190 300,60 Z" />
+    </svg>
+
+    <div class="fc-kicker" id="fc-kicker">Số liệu đáng chú ý</div>
+
+    <div class="fc-stat-wrap">
+      <div class="fc-stat" id="fc-stat">80%</div>
+      <div class="fc-stat-label" id="fc-label">hợp đồng Tata Consultancy Services<br>nay gắn với hiệu quả thực tế</div>
+    </div>
+
+    <div class="fc-x2" id="fc-x2"><span>× 2 kể từ khi AI bùng nổ</span></div>
+
+    <div class="fc-card" id="fc-card">
+      <div class="fc-quote">Tỷ lệ hợp đồng gắn <span class="hl">chỉ số hiệu quả thực tế</span> đã tăng gấp đôi trong các mảng tài chính, nhân sự, dịch vụ doanh nghiệp.</div>
+      <div class="fc-attr"><span class="fc-pin"></span><span>Ông Krithivasan, Giám đốc điều hành TCS</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#fc-map', { autoAlpha: 0, rotate: -3 }, { autoAlpha: 1, rotate: 0, duration: 1.1, ease: 'power2.out' }, 0);
+    tl.fromTo('#fc-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.36, ease: 'power2.out' }, 0.3);
+    tl.fromTo('#fc-stat', { autoAlpha: 0, scale: 0.7 }, { autoAlpha: 1, scale: 1, duration: 0.55, ease: 'back.out(1.5)' }, 0.55);
+    tl.fromTo('#fc-label', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.95);
+    tl.fromTo('#fc-x2', { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(1.7)' }, 1.3);
+    tl.fromTo('#fc-card', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 1.65);
+    window.__timelines['03-facts'] = tl;
+  </script>
+</template>

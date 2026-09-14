@@ -21,6 +21,7 @@
     { "index": 5, "style": "6-ring-progress", "video": "ai-mo-nao-ucl", "date": "2026-09-08", "note": "routine chiều — AI lần đầu hỗ trợ mổ não trực tiếp trên người, thử nghiệm tại UCLH Anh (GenK)" },
     { "index": 7, "style": "8-icon-grid", "video": "phim-ai-hau-tay-du-ky", "date": "2026-09-09", "note": "routine sáng — Trung Quốc phát sóng phim truyền hình đầu tiên làm 100% bằng AI, 'Hậu Tây Du Ký' (Znews/BJNews)" },
     { "index": 8, "style": "9-editorial-clipping", "video": "openai-token-7000-usd-ngay", "date": "2026-09-09", "note": "routine chiều — Nhà nghiên cứu tại OpenAI tiêu tốn 7.000 USD token mỗi ngày (VnExpress)" },
-    { "index": 3, "style": "4-split-comparison", "video": "a20-pro-vuot-cpu-desktop", "date": "2026-09-13", "note": "routine tối — Chip A20 Pro (iPhone 18 Pro Series) lập kỷ lục Geekbench 7, vượt cả CPU desktop Intel và AMD (GenK)" }
+    { "index": 3, "style": "4-split-comparison", "video": "a20-pro-vuot-cpu-desktop", "date": "2026-09-13", "note": "routine tối — Chip A20 Pro (iPhone 18 Pro Series) lập kỷ lục Geekbench 7, vượt cả CPU desktop Intel và AMD (GenK)" },
+    { "index": 4, "style": "5-map-and-geo", "video": "an-do-cntt-315-ty-usd-ai", "date": "2026-09-14", "note": "routine sáng — Ngành CNTT Ấn Độ trị giá 315 tỷ USD chao đảo vì AI, thời của hàng triệu kỹ sư giá rẻ có thể sắp kết thúc (GenK)" }
   ]
 }
