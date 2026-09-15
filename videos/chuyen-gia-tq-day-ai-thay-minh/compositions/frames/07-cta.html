@@ -74,7 +74,7 @@
     tl.fromTo('#t-vs', { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, 1.35);
     tl.fromTo('#t-o2', { autoAlpha: 0, y: 28, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.42, ease: 'back.out(1.5)' }, 1.45);
     tl.fromTo('#t-cta', { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.44, ease: 'power3.out' }, 2.4);
-    tl.fromTo('#t-cta', { scale: 1 }, { scale: 1.04, duration: 0.5, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 3.1);
+    tl.fromTo('#t-cta', { scale: 1 }, { scale: 1.04, duration: 0.5, yoyo: true, repeat: 3, ease: 'sine.inOut', immediateRender: false }, 3.1);
     tl.fromTo('#t-sign', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 2.7);
     window.__timelines['07-cta'] = tl;
   </script>
