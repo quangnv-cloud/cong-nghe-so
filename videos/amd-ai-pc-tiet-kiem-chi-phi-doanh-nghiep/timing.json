@@ -1,0 +1,47 @@
+{
+  "frames": [
+    {
+      "idx": 1,
+      "start": 0.0,
+      "voice_dur": 6.766,
+      "frame_dur": 7.27
+    },
+    {
+      "idx": 2,
+      "start": 7.27,
+      "voice_dur": 8.829,
+      "frame_dur": 9.23
+    },
+    {
+      "idx": 3,
+      "start": 16.5,
+      "voice_dur": 9.091,
+      "frame_dur": 9.49
+    },
+    {
+      "idx": 4,
+      "start": 25.99,
+      "voice_dur": 10.684,
+      "frame_dur": 11.08
+    },
+    {
+      "idx": 5,
+      "start": 37.07,
+      "voice_dur": 9.404,
+      "frame_dur": 9.8
+    },
+    {
+      "idx": 6,
+      "start": 46.87,
+      "voice_dur": 9.091,
+      "frame_dur": 9.49
+    },
+    {
+      "idx": 7,
+      "start": 56.36,
+      "voice_dur": 8.986,
+      "frame_dur": 9.59
+    }
+  ],
+  "total": 65.95
+}
