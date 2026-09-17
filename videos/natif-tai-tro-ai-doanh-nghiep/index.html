@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: 'Montserrat'; font-weight: 400; src: url('assets/fonts/Montserrat-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      @font-face { font-family: 'Montserrat'; font-weight: 400; src: url('assets/fonts/Montserrat-400-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+      @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+      @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+      @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+      @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+      @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0B0E14; font-family: "Montserrat", sans-serif; color: #FFFFFF; }
+      .scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; }
+
+      #bg-depth { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+      #bg-depth .blob { position: absolute; border-radius: 50%; filter: blur(60px); }
+      #bg-depth .blob-1 { width: 640px; height: 640px; background: radial-gradient(circle, rgba(76,141,255,0.20), transparent 70%); top: -120px; left: -160px; }
+      #bg-depth .blob-2 { width: 560px; height: 560px; background: radial-gradient(circle, rgba(255,138,91,0.14), transparent 70%); top: 900px; right: -200px; }
+      #bg-depth .blob-3 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(76,141,255,0.14), transparent 70%); bottom: -180px; left: 200px; }
+      #bg-stars { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+      #brand-anchor { position: absolute; inset: 0; z-index: 90; pointer-events: none; opacity: 0; }
+      #ba-source { position: absolute; left: 44px; top: 46px; display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border-radius: 8px; background: rgba(11,14,20,0.6); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(3px); }
+      #ba-source .dot { width: 7px; height: 7px; border-radius: 50%; background: #4C8DFF; }
+      #ba-source span { font-weight: 500; font-size: 21px; letter-spacing: 0.02em; color: rgba(255,255,255,0.9); white-space: nowrap; }
+      #ba-brand { position: absolute; right: 40px; top: 40px; display: inline-flex; align-items: center; gap: 11px; }
+      #ba-brand .mark { width: 44px; height: 44px; flex: none; }
+      #ba-brand .mark img { display: block; width: 100%; height: 100%; }
+      #ba-brand .word { font-weight: 800; font-size: 24px; letter-spacing: 0.01em; color: #fff; }
+
+      #captions-layer { position: absolute; left: 72px; right: 72px; top: 1500px; height: 112px; z-index: 80; pointer-events: none; display: flex; align-items: center; justify-content: center; }
+      .cap-chunk { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; line-height: 1.28; }
+      .cap-chunk .w { font-weight: 800; font-size: 40px; color: rgba(255,255,255,0.55); text-shadow: 0 3px 14px rgba(0,0,0,0.65); }
+
+      #cutflash { position: absolute; inset: 0; z-index: 6; pointer-events: none; opacity: 0; background: linear-gradient(180deg, rgba(76,141,255,0.4), rgba(255,138,91,0.18)); }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-6n5i" id="root" data-composition-id="main" data-start="0" data-duration="60.19" data-width="1080" data-height="1920">
+
+      <div data-hf-id="hf-6rww" id="bg-depth">
+        <div data-hf-id="hf-sq8o" class="blob blob-1"></div>
+        <div data-hf-id="hf-1e4j" class="blob blob-2"></div>
+        <div data-hf-id="hf-xg0i" class="blob blob-3"></div>
+        <svg data-hf-id="hf-9czn" id="bg-stars" viewBox="0 0 1080 1920" />
+      </div>
+
+      <div data-hf-id="hf-o1kc" id="el-01-hook" class="scene" data-composition-id="01-hook" data-composition-src="compositions/frames/01-hook.html" data-start="0.0" data-duration="7.479" data-track-index="1"></div>
+      <div data-hf-id="hf-6fno" id="el-02-what" class="scene" data-composition-id="02-what" data-composition-src="compositions/frames/02-what.html" data-start="7.479" data-duration="7.793" data-track-index="1"></div>
+      <div data-hf-id="hf-wsg3" id="el-03-facts" class="scene" data-composition-id="03-facts" data-composition-src="compositions/frames/03-facts.html" data-start="15.272" data-duration="10.039" data-track-index="1"></div>
+      <div data-hf-id="hf-cfbt" id="el-04-data" class="scene" data-composition-id="04-data" data-composition-src="compositions/frames/04-data.html" data-start="25.311" data-duration="6.042" data-track-index="1"></div>
+      <div data-hf-id="hf-yhwx" id="el-05-context" class="scene" data-composition-id="05-context" data-composition-src="compositions/frames/05-context.html" data-start="31.353" data-duration="9.804" data-track-index="1"></div>
+      <div data-hf-id="hf-f1kr" id="el-06-impact" class="scene" data-composition-id="06-impact" data-composition-src="compositions/frames/06-impact.html" data-start="41.157" data-duration="9.386" data-track-index="1"></div>
+      <div data-hf-id="hf-x0hv" id="el-07-cta" class="scene" data-composition-id="07-cta" data-composition-src="compositions/frames/07-cta.html" data-start="50.543" data-duration="9.647" data-track-index="1"></div>
+
+      <div data-hf-id="hf-cxqb" id="cutflash"></div>
+
+      <div data-hf-id="hf-4xka" id="brand-anchor">
+        <div data-hf-id="hf-mr34" id="ba-source"><span data-hf-id="hf-9gry" class="dot"></span><span data-hf-id="hf-u83e">Nguồn: VnExpress</span></div>
+        <div data-hf-id="hf-218y" id="ba-brand"><span data-hf-id="hf-zeo6" class="mark"><img data-hf-id="hf-rrs2" src="public/logo.png" alt=""></span><span data-hf-id="hf-gpa3" class="word">Công Nghệ Số</span></div>
+      </div>
+
+      <div data-hf-id="hf-c8r0" id="captions-layer">
+        <div data-hf-id="hf-qpcj" class="cap-chunk" id="cc-0"><span data-hf-id="hf-0j75" class="w" id="cw-0-0">Bộ</span> <span data-hf-id="hf-w22e" class="w" id="cw-0-1">Khoa</span> <span data-hf-id="hf-a0my" class="w" id="cw-0-2">học</span> <span data-hf-id="hf-j0o1" class="w" id="cw-0-3">và</span></div>
+        <div data-hf-id="hf-mr8i" class="cap-chunk" id="cc-1"><span data-hf-id="hf-2ypx" class="w" id="cw-1-0">Công</span> <span data-hf-id="hf-6vla" class="w" id="cw-1-1">nghệ</span> <span data-hf-id="hf-f173" class="w" id="cw-1-2">vừa</span> <span data-hf-id="hf-78tq" class="w" id="cw-1-3">mở</span></div>
+        <div data-hf-id="hf-it4h" class="cap-chunk" id="cc-2"><span data-hf-id="hf-hj9z" class="w" id="cw-2-0">gói</span> <span data-hf-id="hf-vqma" class="w" id="cw-2-1">tài</span> <span data-hf-id="hf-jzoj" class="w" id="cw-2-2">trợ</span> <span data-hf-id="hf-pa3d" class="w" id="cw-2-3">tối</span></div>
+        <div data-hf-id="hf-i1go" class="cap-chunk" id="cc-3"><span data-hf-id="hf-63rd" class="w" id="cw-3-0">đa</span> <span data-hf-id="hf-175j" class="w" id="cw-3-1">ba</span> <span data-hf-id="hf-xxn0" class="w" id="cw-3-2">tỷ</span> <span data-hf-id="hf-exmr" class="w" id="cw-3-3">đồng</span></div>
+        <div data-hf-id="hf-bvqv" class="cap-chunk" id="cc-4"><span data-hf-id="hf-xex7" class="w" id="cw-4-0">mỗi</span> <span data-hf-id="hf-btem" class="w" id="cw-4-1">nhiệm</span> <span data-hf-id="hf-b3sd" class="w" id="cw-4-2">vụ,</span> <span data-hf-id="hf-e9tx" class="w" id="cw-4-3">giúp</span></div>
+        <div data-hf-id="hf-7xmu" class="cap-chunk" id="cc-5"><span data-hf-id="hf-st3l" class="w" id="cw-5-0">doanh</span> <span data-hf-id="hf-l6uf" class="w" id="cw-5-1">nghiệp</span> <span data-hf-id="hf-7pd9" class="w" id="cw-5-2">Việt</span> <span data-hf-id="hf-ayaz" class="w" id="cw-5-3">đổi</span></div>
+        <div data-hf-id="hf-3zit" class="cap-chunk" id="cc-6"><span data-hf-id="hf-7qy5" class="w" id="cw-6-0">mới</span> <span data-hf-id="hf-8f0n" class="w" id="cw-6-1">công</span> <span data-hf-id="hf-to0a" class="w" id="cw-6-2">nghệ</span> <span data-hf-id="hf-uwl7" class="w" id="cw-6-3">bằng</span></div>
+        <div data-hf-id="hf-37v0" class="cap-chunk" id="cc-7"><span data-hf-id="hf-7w7c" class="w" id="cw-7-0">trí</span> <span data-hf-id="hf-rp12" class="w" id="cw-7-1">tuệ</span> <span data-hf-id="hf-ws8b" class="w" id="cw-7-2">nhân</span> <span data-hf-id="hf-4e68" class="w" id="cw-7-3">tạo</span></div>
+        <div data-hf-id="hf-z9qz" class="cap-chunk" id="cc-8"><span data-hf-id="hf-o5e5" class="w" id="cw-8-0">Quỹ</span> <span data-hf-id="hf-ig6d" class="w" id="cw-8-1">Đổi</span> <span data-hf-id="hf-9a91" class="w" id="cw-8-2">mới</span> <span data-hf-id="hf-dggf" class="w" id="cw-8-3">Công</span></div>
+        <div data-hf-id="hf-vbmy" class="cap-chunk" id="cc-9"><span data-hf-id="hf-c7pb" class="w" id="cw-9-0">nghệ</span> <span data-hf-id="hf-mlgm" class="w" id="cw-9-1">Quốc</span> <span data-hf-id="hf-2lt6" class="w" id="cw-9-2">gia</span> <span data-hf-id="hf-9edx" class="w" id="cw-9-3">thông</span></div>
+        <div data-hf-id="hf-8lw6" class="cap-chunk" id="cc-10"><span data-hf-id="hf-aknt" class="w" id="cw-10-0">báo</span> <span data-hf-id="hf-bhbg" class="w" id="cw-10-1">tiếp</span> <span data-hf-id="hf-ejiu" class="w" id="cw-10-2">nhận</span> <span data-hf-id="hf-7dzf" class="w" id="cw-10-3">hồ</span></div>
+        <div data-hf-id="hf-erlz" class="cap-chunk" id="cc-11"><span data-hf-id="hf-ly88" class="w" id="cw-11-0">sơ</span> <span data-hf-id="hf-wncr" class="w" id="cw-11-1">đề</span> <span data-hf-id="hf-cm28" class="w" id="cw-11-2">nghị</span> <span data-hf-id="hf-wqdm" class="w" id="cw-11-3">tài</span></div>
+        <div data-hf-id="hf-3w4c" class="cap-chunk" id="cc-12"><span data-hf-id="hf-y7p6" class="w" id="cw-12-0">trợ,</span> <span data-hf-id="hf-c6vd" class="w" id="cw-12-1">dự</span> <span data-hf-id="hf-79ww" class="w" id="cw-12-2">kiến</span> <span data-hf-id="hf-6xdg" class="w" id="cw-12-3">chọn</span></div>
+        <div data-hf-id="hf-4ns5" class="cap-chunk" id="cc-13"><span data-hf-id="hf-s5vz" class="w" id="cw-13-0">ra</span> <span data-hf-id="hf-c38c" class="w" id="cw-13-1">mười</span> <span data-hf-id="hf-t0d0" class="w" id="cw-13-2">lăm</span> <span data-hf-id="hf-6c42" class="w" id="cw-13-3">nhiệm</span></div>
+        <div data-hf-id="hf-nfhu" class="cap-chunk" id="cc-14"><span data-hf-id="hf-t1tk" class="w" id="cw-14-0">vụ</span> <span data-hf-id="hf-9v8o" class="w" id="cw-14-1">ứng</span> <span data-hf-id="hf-3yen" class="w" id="cw-14-2">dụng</span> <span data-hf-id="hf-iczj" class="w" id="cw-14-3">trí</span></div>
+        <div data-hf-id="hf-rdlv" class="cap-chunk" id="cc-15"><span data-hf-id="hf-5ke0" class="w" id="cw-15-0">tuệ</span> <span data-hf-id="hf-p6lz" class="w" id="cw-15-1">nhân</span> <span data-hf-id="hf-0hkm" class="w" id="cw-15-2">tạo</span> <span data-hf-id="hf-r395" class="w" id="cw-15-3">trong</span></div>
+        <div data-hf-id="hf-ipq0" class="cap-chunk" id="cc-16"><span data-hf-id="hf-og27" class="w" id="cw-16-0">năm</span> <span data-hf-id="hf-0wmu" class="w" id="cw-16-1">nay</span></div>
+        <div data-hf-id="hf-jhdt" class="cap-chunk" id="cc-17"><span data-hf-id="hf-04os" class="w" id="cw-17-0">Nhà</span> <span data-hf-id="hf-qo57" class="w" id="cw-17-1">nước</span> <span data-hf-id="hf-8pjj" class="w" id="cw-17-2">đồng</span> <span data-hf-id="hf-t3gc" class="w" id="cw-17-3">tài</span></div>
+        <div data-hf-id="hf-h6am" class="cap-chunk" id="cc-18"><span data-hf-id="hf-aync" class="w" id="cw-18-0">trợ</span> <span data-hf-id="hf-rqc6" class="w" id="cw-18-1">một</span> <span data-hf-id="hf-6xsy" class="w" id="cw-18-2">phần</span> <span data-hf-id="hf-0684" class="w" id="cw-18-3">kinh</span></div>
+        <div data-hf-id="hf-l4en" class="cap-chunk" id="cc-19"><span data-hf-id="hf-imwx" class="w" id="cw-19-0">phí,</span> <span data-hf-id="hf-6dfh" class="w" id="cw-19-1">doanh</span> <span data-hf-id="hf-qhrl" class="w" id="cw-19-2">nghiệp</span> <span data-hf-id="hf-8hdg" class="w" id="cw-19-3">đối</span></div>
+        <div data-hf-id="hf-ost7" class="cap-chunk" id="cc-20"><span data-hf-id="hf-8fa4" class="w" id="cw-20-0">ứng</span> <span data-hf-id="hf-5r88" class="w" id="cw-20-1">phần</span> <span data-hf-id="hf-ialn" class="w" id="cw-20-2">còn</span> <span data-hf-id="hf-vihn" class="w" id="cw-20-3">lại</span></div>
+        <div data-hf-id="hf-kup6" class="cap-chunk" id="cc-21"><span data-hf-id="hf-fho9" class="w" id="cw-21-0">để</span> <span data-hf-id="hf-2fmj" class="w" id="cw-21-1">thuê</span> <span data-hf-id="hf-spne" class="w" id="cw-21-2">chuyên</span> <span data-hf-id="hf-nt89" class="w" id="cw-21-3">gia</span></div>
+        <div data-hf-id="hf-gwl5" class="cap-chunk" id="cc-22"><span data-hf-id="hf-27ch" class="w" id="cw-22-0">thử</span> <span data-hf-id="hf-3crv" class="w" id="cw-22-1">nghiệm</span> <span data-hf-id="hf-fdae" class="w" id="cw-22-2">và</span> <span data-hf-id="hf-z3g6" class="w" id="cw-22-3">hoàn</span></div>
+        <div data-hf-id="hf-g4xc" class="cap-chunk" id="cc-23"><span data-hf-id="hf-nco7" class="w" id="cw-23-0">thiện</span> <span data-hf-id="hf-y6ya" class="w" id="cw-23-1">giải</span> <span data-hf-id="hf-r3ik" class="w" id="cw-23-2">pháp</span> <span data-hf-id="hf-o7m9" class="w" id="cw-23-3">trí</span></div>
+        <div data-hf-id="hf-c6tb" class="cap-chunk" id="cc-24"><span data-hf-id="hf-tedo" class="w" id="cw-24-0">tuệ</span> <span data-hf-id="hf-6f0b" class="w" id="cw-24-1">nhân</span> <span data-hf-id="hf-5302" class="w" id="cw-24-2">tạo</span> <span data-hf-id="hf-jfx1" class="w" id="cw-24-3">trong</span></div>
+        <div data-hf-id="hf-88pa" class="cap-chunk" id="cc-25"><span data-hf-id="hf-h6dx" class="w" id="cw-25-0">tối</span> <span data-hf-id="hf-dffu" class="w" id="cw-25-1">đa</span> <span data-hf-id="hf-zuvs" class="w" id="cw-25-2">12</span> <span data-hf-id="hf-0aom" class="w" id="cw-25-3">tháng</span></div>
+        <div data-hf-id="hf-22zh" class="cap-chunk" id="cc-26"><span data-hf-id="hf-v89t" class="w" id="cw-26-0">Mức</span> <span data-hf-id="hf-5bza" class="w" id="cw-26-1">tài</span> <span data-hf-id="hf-qbgn" class="w" id="cw-26-2">trợ</span> <span data-hf-id="hf-dax9" class="w" id="cw-26-3">tối</span></div>
+        <div data-hf-id="hf-1bbo" class="cap-chunk" id="cc-27"><span data-hf-id="hf-wp7h" class="w" id="cw-27-0">đa</span> <span data-hf-id="hf-d3j6" class="w" id="cw-27-1">lên</span> <span data-hf-id="hf-k2p3" class="w" id="cw-27-2">tới</span> <span data-hf-id="hf-upl1" class="w" id="cw-27-3">ba</span></div>
+        <div data-hf-id="hf-g8er" class="cap-chunk" id="cc-28"><span data-hf-id="hf-2nxh" class="w" id="cw-28-0">tỷ</span> <span data-hf-id="hf-668y" class="w" id="cw-28-1">đồng</span> <span data-hf-id="hf-bfue" class="w" id="cw-28-2">cho</span> <span data-hf-id="hf-f0kb" class="w" id="cw-28-3">một</span></div>
+        <div data-hf-id="hf-caaq" class="cap-chunk" id="cc-29"><span data-hf-id="hf-gu3y" class="w" id="cw-29-0">nhiệm</span> <span data-hf-id="hf-kecb" class="w" id="cw-29-1">vụ,</span> <span data-hf-id="hf-d93w" class="w" id="cw-29-2">nhưng</span> <span data-hf-id="hf-zkns" class="w" id="cw-29-3">cả</span></div>
+        <div data-hf-id="hf-0xr4" class="cap-chunk" id="cc-30"><span data-hf-id="hf-7bf3" class="w" id="cw-30-0">nước</span> <span data-hf-id="hf-nmz0" class="w" id="cw-30-1">chỉ</span> <span data-hf-id="hf-bcff" class="w" id="cw-30-2">có</span> <span data-hf-id="hf-c7mf" class="w" id="cw-30-3">mười</span></div>
+        <div data-hf-id="hf-1pex" class="cap-chunk" id="cc-31"><span data-hf-id="hf-sh7u" class="w" id="cw-31-0">lăm</span> <span data-hf-id="hf-tk86" class="w" id="cw-31-1">suất</span> <span data-hf-id="hf-wrtj" class="w" id="cw-31-2">được</span> <span data-hf-id="hf-xno9" class="w" id="cw-31-3">chọn</span></div>
+        <div data-hf-id="hf-7v4q" class="cap-chunk" id="cc-32"><span data-hf-id="hf-nm0a" class="w" id="cw-32-0">Chương</span> <span data-hf-id="hf-7ang" class="w" id="cw-32-1">trình</span> <span data-hf-id="hf-jn5g" class="w" id="cw-32-2">ưu</span> <span data-hf-id="hf-ff8t" class="w" id="cw-32-3">tiên</span></div>
+        <div data-hf-id="hf-bt8r" class="cap-chunk" id="cc-33"><span data-hf-id="hf-4b05" class="w" id="cw-33-0">các</span> <span data-hf-id="hf-w8bk" class="w" id="cw-33-1">lĩnh</span> <span data-hf-id="hf-b7f4" class="w" id="cw-33-2">vực</span> <span data-hf-id="hf-xrix" class="w" id="cw-33-3">chế</span></div>
+        <div data-hf-id="hf-obr8" class="cap-chunk" id="cc-34"><span data-hf-id="hf-bb3d" class="w" id="cw-34-0">biến,</span> <span data-hf-id="hf-o2r6" class="w" id="cw-34-1">chế</span> <span data-hf-id="hf-vfup" class="w" id="cw-34-2">tạo,</span> <span data-hf-id="hf-v74h" class="w" id="cw-34-3">nông</span></div>
+        <div data-hf-id="hf-p3f1" class="cap-chunk" id="cc-35"><span data-hf-id="hf-wy8z" class="w" id="cw-35-0">nghiệp,</span> <span data-hf-id="hf-1qoa" class="w" id="cw-35-1">y</span> <span data-hf-id="hf-4kdx" class="w" id="cw-35-2">tế</span> <span data-hf-id="hf-s9rv" class="w" id="cw-35-3">và</span></div>
+        <div data-hf-id="hf-t1j2" class="cap-chunk" id="cc-36"><span data-hf-id="hf-nfy1" class="w" id="cw-36-0">chuỗi</span> <span data-hf-id="hf-zyvr" class="w" id="cw-36-1">cung</span> <span data-hf-id="hf-wg1h" class="w" id="cw-36-2">ứng.</span> <span data-hf-id="hf-h56b" class="w" id="cw-36-3">Hồ</span></div>
+        <div data-hf-id="hf-wzn3" class="cap-chunk" id="cc-37"><span data-hf-id="hf-vzpc" class="w" id="cw-37-0">sơ</span> <span data-hf-id="hf-4n0d" class="w" id="cw-37-1">phải</span> <span data-hf-id="hf-cat1" class="w" id="cw-37-2">nộp</span> <span data-hf-id="hf-c95p" class="w" id="cw-37-3">trực</span></div>
+        <div data-hf-id="hf-sdco" class="cap-chunk" id="cc-38"><span data-hf-id="hf-yev6" class="w" id="cw-38-0">tuyến</span> <span data-hf-id="hf-w94g" class="w" id="cw-38-1">kèm</span> <span data-hf-id="hf-npzn" class="w" id="cw-38-2">chữ</span> <span data-hf-id="hf-d8xk" class="w" id="cw-38-3">ký</span></div>
+        <div data-hf-id="hf-vcm9" class="cap-chunk" id="cc-39"><span data-hf-id="hf-v1gm" class="w" id="cw-39-0">số</span> <span data-hf-id="hf-h1d9" class="w" id="cw-39-1">trước</span> <span data-hf-id="hf-sbo4" class="w" id="cw-39-2">17</span> <span data-hf-id="hf-4lpw" class="w" id="cw-39-3">giờ</span></div>
+        <div data-hf-id="hf-0dtp" class="cap-chunk" id="cc-40"><span data-hf-id="hf-rr6i" class="w" id="cw-40-0">ngày</span> <span data-hf-id="hf-1lva" class="w" id="cw-40-1">10</span> <span data-hf-id="hf-fhhs" class="w" id="cw-40-2">tháng</span> <span data-hf-id="hf-kstg" class="w" id="cw-40-3">10</span></div>
+        <div data-hf-id="hf-zm5w" class="cap-chunk" id="cc-41"><span data-hf-id="hf-ci2o" class="w" id="cw-41-0">Đây</span> <span data-hf-id="hf-m0va" class="w" id="cw-41-1">là</span> <span data-hf-id="hf-hcsh" class="w" id="cw-41-2">một</span> <span data-hf-id="hf-xq6k" class="w" id="cw-41-3">trong</span></div>
+        <div data-hf-id="hf-8a1r" class="cap-chunk" id="cc-42"><span data-hf-id="hf-bwhc" class="w" id="cw-42-0">những</span> <span data-hf-id="hf-ttjt" class="w" id="cw-42-1">hoạt</span> <span data-hf-id="hf-fz9z" class="w" id="cw-42-2">động</span> <span data-hf-id="hf-ictu" class="w" id="cw-42-3">tài</span></div>
+        <div data-hf-id="hf-4bxq" class="cap-chunk" id="cc-43"><span data-hf-id="hf-ee48" class="w" id="cw-43-0">trợ</span> <span data-hf-id="hf-w3pz" class="w" id="cw-43-1">đầu</span> <span data-hf-id="hf-bnns" class="w" id="cw-43-2">tiên</span> <span data-hf-id="hf-rj4j" class="w" id="cw-43-3">của</span></div>
+        <div data-hf-id="hf-f7fd" class="cap-chunk" id="cc-44"><span data-hf-id="hf-rmsv" class="w" id="cw-44-0">quỹ</span> <span data-hf-id="hf-fz89" class="w" id="cw-44-1">kể</span> <span data-hf-id="hf-fqyd" class="w" id="cw-44-2">từ</span> <span data-hf-id="hf-21ax" class="w" id="cw-44-3">khi</span></div>
+        <div data-hf-id="hf-efrk" class="cap-chunk" id="cc-45"><span data-hf-id="hf-bfkl" class="w" id="cw-45-0">Nghị</span> <span data-hf-id="hf-69tw" class="w" id="cw-45-1">định</span> <span data-hf-id="hf-yso6" class="w" id="cw-45-2">77/2026</span> <span data-hf-id="hf-s0id" class="w" id="cw-45-3">về</span></div>
+        <div data-hf-id="hf-n3nf" class="cap-chunk" id="cc-46"><span data-hf-id="hf-cb07" class="w" id="cw-46-0">tổ</span> <span data-hf-id="hf-i5gy" class="w" id="cw-46-1">chức</span> <span data-hf-id="hf-qops" class="w" id="cw-46-2">và</span> <span data-hf-id="hf-v0k3" class="w" id="cw-46-3">hoạt</span></div>
+        <div data-hf-id="hf-j5je" class="cap-chunk" id="cc-47"><span data-hf-id="hf-2m0o" class="w" id="cw-47-0">động</span> <span data-hf-id="hf-l315" class="w" id="cw-47-1">của</span> <span data-hf-id="hf-ptw0" class="w" id="cw-47-2">quỹ</span> <span data-hf-id="hf-o21u" class="w" id="cw-47-3">chính</span></div>
+        <div data-hf-id="hf-rtf9" class="cap-chunk" id="cc-48"><span data-hf-id="hf-81yu" class="w" id="cw-48-0">thức</span> <span data-hf-id="hf-stmd" class="w" id="cw-48-1">có</span> <span data-hf-id="hf-f44f" class="w" id="cw-48-2">hiệu</span> <span data-hf-id="hf-uqvz" class="w" id="cw-48-3">lực</span></div>
+        <div data-hf-id="hf-r1rg" class="cap-chunk" id="cc-49"><span data-hf-id="hf-2514" class="w" id="cw-49-0">Còn</span> <span data-hf-id="hf-u19t" class="w" id="cw-49-1">bạn,</span> <span data-hf-id="hf-1l58" class="w" id="cw-49-2">mức</span> <span data-hf-id="hf-cez3" class="w" id="cw-49-3">tài</span></div>
+        <div data-hf-id="hf-ggrm" class="cap-chunk" id="cc-50"><span data-hf-id="hf-tab8" class="w" id="cw-50-0">trợ</span> <span data-hf-id="hf-xlv9" class="w" id="cw-50-1">này</span> <span data-hf-id="hf-4qwf" class="w" id="cw-50-2">là</span> <span data-hf-id="hf-67pf" class="w" id="cw-50-3">cú</span></div>
+        <div data-hf-id="hf-kevn" class="cap-chunk" id="cc-51"><span data-hf-id="hf-9p68" class="w" id="cw-51-0">hích</span> <span data-hf-id="hf-673c" class="w" id="cw-51-1">thật</span> <span data-hf-id="hf-8kmq" class="w" id="cw-51-2">sự</span> <span data-hf-id="hf-j235" class="w" id="cw-51-3">cho</span></div>
+        <div data-hf-id="hf-bqzs" class="cap-chunk" id="cc-52"><span data-hf-id="hf-o253" class="w" id="cw-52-0">doanh</span> <span data-hf-id="hf-0b19" class="w" id="cw-52-1">nghiệp</span> <span data-hf-id="hf-77cc" class="w" id="cw-52-2">nhỏ</span> <span data-hf-id="hf-sr7u" class="w" id="cw-52-3">hay</span></div>
+        <div data-hf-id="hf-cinl" class="cap-chunk" id="cc-53"><span data-hf-id="hf-vmuw" class="w" id="cw-53-0">chỉ</span> <span data-hf-id="hf-vz9p" class="w" id="cw-53-1">rút</span> <span data-hf-id="hf-ltjj" class="w" id="cw-53-2">được</span> <span data-hf-id="hf-wuj9" class="w" id="cw-53-3">số</span></div>
+        <div data-hf-id="hf-1n5y" class="cap-chunk" id="cc-54"><span data-hf-id="hf-h7o4" class="w" id="cw-54-0">ít</span> <span data-hf-id="hf-hvkk" class="w" id="cw-54-1">đơn</span> <span data-hf-id="hf-1seg" class="w" id="cw-54-2">vị</span> <span data-hf-id="hf-1dee" class="w" id="cw-54-3">đủ</span></div>
+        <div data-hf-id="hf-5l9z" class="cap-chunk" id="cc-55"><span data-hf-id="hf-5jzc" class="w" id="cw-55-0">điều</span> <span data-hf-id="hf-yogw" class="w" id="cw-55-1">kiện</span> <span data-hf-id="hf-7gdn" class="w" id="cw-55-2">đối</span> <span data-hf-id="hf-zk2e" class="w" id="cw-55-3">ứng?</span></div>
+        <div data-hf-id="hf-wxe4" class="cap-chunk" id="cc-56"><span data-hf-id="hf-niul" class="w" id="cw-56-0">Hãy</span> <span data-hf-id="hf-1yf2" class="w" id="cw-56-1">để</span> <span data-hf-id="hf-g8sh" class="w" id="cw-56-2">lại</span> <span data-hf-id="hf-kh34" class="w" id="cw-56-3">bình</span></div>
+        <div data-hf-id="hf-xp1x" class="cap-chunk" id="cc-57"><span data-hf-id="hf-w5zq" class="w" id="cw-57-0">luận</span> <span data-hf-id="hf-isy6" class="w" id="cw-57-1">quan</span> <span data-hf-id="hf-xn7u" class="w" id="cw-57-2">điểm</span> <span data-hf-id="hf-20oy" class="w" id="cw-57-3">của</span></div>
+        <div data-hf-id="hf-p162" class="cap-chunk" id="cc-58"><span data-hf-id="hf-o84i" class="w" id="cw-58-0">bạn</span> <span data-hf-id="hf-u55x" class="w" id="cw-58-1">nhé</span></div>
+      </div>
+
+      <audio data-hf-id="hf-2u6s" id="el-voice-1" src="assets/audio/line1.mp3" data-start="0.0" data-duration="7.079184" data-track-index="10" data-audio-group="voiceover"></audio>
+      <audio data-hf-id="hf-m8fq" id="el-voice-2" src="assets/audio/line2.mp3" data-start="7.479" data-duration="7.392653" data-track-index="10" data-audio-group="voiceover"></audio>
+      <audio data-hf-id="hf-qvvh" id="el-voice-3" src="assets/audio/line3.mp3" data-start="15.272" data-duration="9.639184" data-track-index="10" data-audio-group="voiceover"></audio>
+      <audio data-hf-id="hf-5pby" id="el-voice-4" src="assets/audio/line4.mp3" data-start="25.311" data-duration="5.642449" data-track-index="10" data-audio-group="voiceover"></audio>
+      <audio data-hf-id="hf-gq06" id="el-voice-5" src="assets/audio/line5.mp3" data-start="31.353" data-duration="9.404082" data-track-index="10" data-audio-group="voiceover"></audio>
+      <audio data-hf-id="hf-1sri" id="el-voice-6" src="assets/audio/line6.mp3" data-start="41.157" data-duration="8.986122" data-track-index="10" data-audio-group="voiceover"></audio>
+      <audio data-hf-id="hf-80uv" id="el-voice-7" src="assets/audio/line7.mp3" data-start="50.543" data-duration="9.247347" data-track-index="10" data-audio-group="voiceover"></audio>
+
+      <audio data-hf-id="hf-iqdq" id="el-bgm" src="assets/bgm/track.mp3" data-start="0" data-duration="60.19" data-track-index="20" data-volume="0.30" data-fx-carve="{&quot;enabled&quot;:true,&quot;sources&quot;:[&quot;voiceover&quot;],&quot;strength&quot;:0.4}" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n1&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:1000,&quot;gain&quot;:-5.53,&quot;q&quot;:1.58}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n2&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:1600,&quot;gain&quot;:-8.4,&quot;q&quot;:1.58}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n3&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:2500,&quot;gain&quot;:-4.2,&quot;q&quot;:1.58}},{&quot;type&quot;:&quot;gain&quot;,&quot;id&quot;:&quot;n4&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;gain&quot;:0}}]}" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;fx.n1.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.043,&quot;v&quot;:0},{&quot;t&quot;:0.192,&quot;v&quot;:-3.2},{&quot;t&quot;:0.341,&quot;v&quot;:-5},{&quot;t&quot;:0.491,&quot;v&quot;:-5.4},{&quot;t&quot;:0.64,&quot;v&quot;:-4.3},{&quot;t&quot;:0.79,&quot;v&quot;:-3.7},{&quot;t&quot;:0.939,&quot;v&quot;:-2.1},{&quot;t&quot;:1.088,&quot;v&quot;:-1.1},{&quot;t&quot;:1.238,&quot;v&quot;:-0.6},{&quot;t&quot;:1.387,&quot;v&quot;:-0.3},{&quot;t&quot;:1.536,&quot;v&quot;:-1.7},{&quot;t&quot;:1.686,&quot;v&quot;:-0.9},{&quot;t&quot;:1.835,&quot;v&quot;:-3},{&quot;t&quot;:1.985,&quot;v&quot;:-1.6},{&quot;t&quot;:2.134,&quot;v&quot;:-0.9},{&quot;t&quot;:2.433,&quot;v&quot;:-0.5},{&quot;t&quot;:2.582,&quot;v&quot;:-0.3},{&quot;t&quot;:2.731,&quot;v&quot;:-5.1},{&quot;t&quot;:2.881,&quot;v&quot;:-2.8},{&quot;t&quot;:3.03,&quot;v&quot;:-5.2},{&quot;t&quot;:3.18,&quot;v&quot;:-2.8},{&quot;t&quot;:3.329,&quot;v&quot;:-1.7},{&quot;t&quot;:3.478,&quot;v&quot;:-0.9},{&quot;t&quot;:3.628,&quot;v&quot;:-2.3},{&quot;t&quot;:3.777,&quot;v&quot;:-1.3},{&quot;t&quot;:3.926,&quot;v&quot;:-0.7},{&quot;t&quot;:4.673,&quot;v&quot;:-0.3},{&quot;t&quot;:4.823,&quot;v&quot;:0},{&quot;t&quot;:5.57,&quot;v&quot;:-0.2},{&quot;t&quot;:5.719,&quot;v&quot;:-1.4},{&quot;t&quot;:5.868,&quot;v&quot;:-0.8},{&quot;t&quot;:6.018,&quot;v&quot;:-4.2},{&quot;t&quot;:6.167,&quot;v&quot;:-2.3},{&quot;t&quot;:6.316,&quot;v&quot;:-1.3},{&quot;t&quot;:6.466,&quot;v&quot;:-1.5},{&quot;t&quot;:6.615,&quot;v&quot;:-0.8},{&quot;t&quot;:6.765,&quot;v&quot;:-0.5},{&quot;t&quot;:6.914,&quot;v&quot;:-4.1},{&quot;t&quot;:7.063,&quot;v&quot;:-2.3},{&quot;t&quot;:7.213,&quot;v&quot;:-1.3},{&quot;t&quot;:7.362,&quot;v&quot;:-0.7},{&quot;t&quot;:7.661,&quot;v&quot;:-0.6},{&quot;t&quot;:7.81,&quot;v&quot;:-1.2},{&quot;t&quot;:7.96,&quot;v&quot;:-0.7},{&quot;t&quot;:8.557,&quot;v&quot;:-0.8},{&quot;t&quot;:8.706,&quot;v&quot;:-3.7},{&quot;t&quot;:8.856,&quot;v&quot;:-2.1},{&quot;t&quot;:9.005,&quot;v&quot;:-1.1},{&quot;t&quot;:9.155,&quot;v&quot;:-5.1},{&quot;t&quot;:9.304,&quot;v&quot;:-2.8},{&quot;t&quot;:9.453,&quot;v&quot;:-1.5},{&quot;t&quot;:9.603,&quot;v&quot;:-0.8},{&quot;t&quot;:9.752,&quot;v&quot;:-0.5},{&quot;t&quot;:9.901,&quot;v&quot;:-0.3},{&quot;t&quot;:10.051,&quot;v&quot;:-0.9},{&quot;t&quot;:10.2,&quot;v&quot;:-0.5},{&quot;t&quot;:10.35,&quot;v&quot;:-0.3},{&quot;t&quot;:11.694,&quot;v&quot;:0},{&quot;t&quot;:11.843,&quot;v&quot;:-2.9},{&quot;t&quot;:11.993,&quot;v&quot;:-1.9},{&quot;t&quot;:12.142,&quot;v&quot;:-2.7},{&quot;t&quot;:12.291,&quot;v&quot;:-1.5},{&quot;t&quot;:12.441,&quot;v&quot;:-3.5},{&quot;t&quot;:12.59,&quot;v&quot;:-1.9},{&quot;t&quot;:12.74,&quot;v&quot;:-1},{&quot;t&quot;:12.889,&quot;v&quot;:-0.6},{&quot;t&quot;:13.038,&quot;v&quot;:-0.3},{&quot;t&quot;:13.935,&quot;v&quot;:0},{&quot;t&quot;:14.084,&quot;v&quot;:-4.8},{&quot;t&quot;:14.233,&quot;v&quot;:-2.7},{&quot;t&quot;:14.383,&quot;v&quot;:-1.7},{&quot;t&quot;:14.532,&quot;v&quot;:-0.9},{&quot;t&quot;:14.681,&quot;v&quot;:-2.5},{&quot;t&quot;:14.831,&quot;v&quot;:-1.4},{&quot;t&quot;:14.98,&quot;v&quot;:-0.7},{&quot;t&quot;:15.279,&quot;v&quot;:-0.2},{&quot;t&quot;:15.428,&quot;v&quot;:-2.9},{&quot;t&quot;:15.578,&quot;v&quot;:-2.2},{&quot;t&quot;:15.727,&quot;v&quot;:-1.2},{&quot;t&quot;:15.876,&quot;v&quot;:-2.3},{&quot;t&quot;:16.026,&quot;v&quot;:-2.8},{&quot;t&quot;:16.175,&quot;v&quot;:-1.5},{&quot;t&quot;:16.325,&quot;v&quot;:-1.3},{&quot;t&quot;:16.474,&quot;v&quot;:-0.7},{&quot;t&quot;:16.773,&quot;v&quot;:-0.2},{&quot;t&quot;:16.922,&quot;v&quot;:0},{&quot;t&quot;:17.52,&quot;v&quot;:0},{&quot;t&quot;:17.669,&quot;v&quot;:-2.5},{&quot;t&quot;:17.818,&quot;v&quot;:-1.4},{&quot;t&quot;:17.968,&quot;v&quot;:-0.8},{&quot;t&quot;:18.117,&quot;v&quot;:-0.4},{&quot;t&quot;:18.266,&quot;v&quot;:-0.2},{&quot;t&quot;:18.416,&quot;v&quot;:0},{&quot;t&quot;:18.565,&quot;v&quot;:-1.8},{&quot;t&quot;:18.715,&quot;v&quot;:-1.4},{&quot;t&quot;:18.864,&quot;v&quot;:-0.8},{&quot;t&quot;:19.013,&quot;v&quot;:-4},{&quot;t&quot;:19.163,&quot;v&quot;:-2.2},{&quot;t&quot;:19.312,&quot;v&quot;:-1.2},{&quot;t&quot;:19.461,&quot;v&quot;:-0.7},{&quot;t&quot;:19.611,&quot;v&quot;:-0.4},{&quot;t&quot;:19.76,&quot;v&quot;:0},{&quot;t&quot;:20.059,&quot;v&quot;:0},{&quot;t&quot;:20.208,&quot;v&quot;:-2},{&quot;t&quot;:20.358,&quot;v&quot;:-4.2},{&quot;t&quot;:20.507,&quot;v&quot;:-2.3},{&quot;t&quot;:20.656,&quot;v&quot;:-1.3},{&quot;t&quot;:20.806,&quot;v&quot;:-0.7},{&quot;t&quot;:21.105,&quot;v&quot;:-0.2},{&quot;t&quot;:21.254,&quot;v&quot;:0},{&quot;t&quot;:21.403,&quot;v&quot;:-3.4},{&quot;t&quot;:21.553,&quot;v&quot;:-3.4},{&quot;t&quot;:21.702,&quot;v&quot;:-1.9},{&quot;t&quot;:21.851,&quot;v&quot;:-1},{&quot;t&quot;:22.001,&quot;v&quot;:-1},{&quot;t&quot;:22.15,&quot;v&quot;:-2.1},{&quot;t&quot;:22.3,&quot;v&quot;:-1.7},{&quot;t&quot;:22.449,&quot;v&quot;:-0.9},{&quot;t&quot;:22.598,&quot;v&quot;:-0.5},{&quot;t&quot;:22.748,&quot;v&quot;:-0.3},{&quot;t&quot;:22.897,&quot;v&quot;:0},{&quot;t&quot;:23.046,&quot;v&quot;:-4.1},{&quot;t&quot;:23.196,&quot;v&quot;:-3.4},{&quot;t&quot;:23.345,&quot;v&quot;:-1.9},{&quot;t&quot;:23.495,&quot;v&quot;:-3.2},{&quot;t&quot;:23.644,&quot;v&quot;:-1.8},{&quot;t&quot;:23.793,&quot;v&quot;:-1},{&quot;t&quot;:23.943,&quot;v&quot;:-5.3},{&quot;t&quot;:24.092,&quot;v&quot;:-2.9},{&quot;t&quot;:24.241,&quot;v&quot;:-1.6},{&quot;t&quot;:24.391,&quot;v&quot;:-1.6},{&quot;t&quot;:24.54,&quot;v&quot;:-0.9},{&quot;t&quot;:24.69,&quot;v&quot;:-3.6},{&quot;t&quot;:24.839,&quot;v&quot;:-2.2},{&quot;t&quot;:24.988,&quot;v&quot;:-1.2},{&quot;t&quot;:25.138,&quot;v&quot;:-0.7},{&quot;t&quot;:25.287,&quot;v&quot;:-0.4},{&quot;t&quot;:25.436,&quot;v&quot;:-2.3},{&quot;t&quot;:25.586,&quot;v&quot;:-1.7},{&quot;t&quot;:25.735,&quot;v&quot;:-0.9},{&quot;t&quot;:25.885,&quot;v&quot;:-1.5},{&quot;t&quot;:26.034,&quot;v&quot;:-1.3},{&quot;t&quot;:26.183,&quot;v&quot;:-0.7},{&quot;t&quot;:26.333,&quot;v&quot;:-4.9},{&quot;t&quot;:26.482,&quot;v&quot;:-2.7},{&quot;t&quot;:26.631,&quot;v&quot;:-1.5},{&quot;t&quot;:26.93,&quot;v&quot;:-1.8},{&quot;t&quot;:27.08,&quot;v&quot;:-1},{&quot;t&quot;:27.229,&quot;v&quot;:-0.6},{&quot;t&quot;:27.378,&quot;v&quot;:-3.1},{&quot;t&quot;:27.528,&quot;v&quot;:-1.7},{&quot;t&quot;:27.677,&quot;v&quot;:-2},{&quot;t&quot;:27.826,&quot;v&quot;:-1.1},{&quot;t&quot;:27.976,&quot;v&quot;:-0.6},{&quot;t&quot;:28.125,&quot;v&quot;:-0.3},{&quot;t&quot;:28.275,&quot;v&quot;:0},{&quot;t&quot;:28.872,&quot;v&quot;:0},{&quot;t&quot;:29.021,&quot;v&quot;:-3.8},{&quot;t&quot;:29.171,&quot;v&quot;:-2.1},{&quot;t&quot;:29.32,&quot;v&quot;:-1.2},{&quot;t&quot;:29.47,&quot;v&quot;:-0.6},{&quot;t&quot;:29.619,&quot;v&quot;:-3.7},{&quot;t&quot;:29.768,&quot;v&quot;:-2.4},{&quot;t&quot;:29.918,&quot;v&quot;:-1.4},{&quot;t&quot;:30.067,&quot;v&quot;:-3},{&quot;t&quot;:30.216,&quot;v&quot;:-1.7},{&quot;t&quot;:30.366,&quot;v&quot;:-0.9},{&quot;t&quot;:30.515,&quot;v&quot;:-0.5},{&quot;t&quot;:30.665,&quot;v&quot;:-0.3},{&quot;t&quot;:30.814,&quot;v&quot;:-3.7},{&quot;t&quot;:30.963,&quot;v&quot;:-2.1},{&quot;t&quot;:31.113,&quot;v&quot;:-1.1},{&quot;t&quot;:31.262,&quot;v&quot;:-0.6},{&quot;t&quot;:31.71,&quot;v&quot;:-0.3},{&quot;t&quot;:31.86,&quot;v&quot;:0},{&quot;t&quot;:32.009,&quot;v&quot;:0},{&quot;t&quot;:32.158,&quot;v&quot;:-1},{&quot;t&quot;:32.308,&quot;v&quot;:-0.6},{&quot;t&quot;:32.457,&quot;v&quot;:-0.3},{&quot;t&quot;:33.652,&quot;v&quot;:0},{&quot;t&quot;:33.801,&quot;v&quot;:-4.9},{&quot;t&quot;:33.951,&quot;v&quot;:-2.7},{&quot;t&quot;:34.1,&quot;v&quot;:-1.5},{&quot;t&quot;:34.25,&quot;v&quot;:-0.8},{&quot;t&quot;:34.548,&quot;v&quot;:-0.5},{&quot;t&quot;:34.698,&quot;v&quot;:-0.3},{&quot;t&quot;:35.146,&quot;v&quot;:0},{&quot;t&quot;:35.295,&quot;v&quot;:-4.7},{&quot;t&quot;:35.445,&quot;v&quot;:-2.6},{&quot;t&quot;:35.594,&quot;v&quot;:-1.4},{&quot;t&quot;:35.743,&quot;v&quot;:-0.8},{&quot;t&quot;:35.893,&quot;v&quot;:-0.4},{&quot;t&quot;:36.042,&quot;v&quot;:-0.2},{&quot;t&quot;:36.341,&quot;v&quot;:0},{&quot;t&quot;:36.49,&quot;v&quot;:-4.6},{&quot;t&quot;:36.64,&quot;v&quot;:-4.1},{&quot;t&quot;:36.789,&quot;v&quot;:-3.7},{&quot;t&quot;:36.938,&quot;v&quot;:-2.1},{&quot;t&quot;:37.088,&quot;v&quot;:-1.2},{&quot;t&quot;:37.237,&quot;v&quot;:-0.6},{&quot;t&quot;:37.386,&quot;v&quot;:-0.4},{&quot;t&quot;:37.536,&quot;v&quot;:0},{&quot;t&quot;:38.283,&quot;v&quot;:0},{&quot;t&quot;:38.432,&quot;v&quot;:-1},{&quot;t&quot;:38.581,&quot;v&quot;:-2.6},{&quot;t&quot;:38.731,&quot;v&quot;:-1.4},{&quot;t&quot;:38.88,&quot;v&quot;:-0.8},{&quot;t&quot;:39.03,&quot;v&quot;:-2.1},{&quot;t&quot;:39.179,&quot;v&quot;:-1.2},{&quot;t&quot;:39.328,&quot;v&quot;:-0.6},{&quot;t&quot;:39.478,&quot;v&quot;:-0.8},{&quot;t&quot;:39.627,&quot;v&quot;:-1.3},{&quot;t&quot;:39.776,&quot;v&quot;:-0.7},{&quot;t&quot;:39.926,&quot;v&quot;:-0.4},{&quot;t&quot;:40.075,&quot;v&quot;:-1.6},{&quot;t&quot;:40.225,&quot;v&quot;:-0.9},{&quot;t&quot;:40.374,&quot;v&quot;:-0.7},{&quot;t&quot;:40.523,&quot;v&quot;:-1.8},{&quot;t&quot;:40.673,&quot;v&quot;:-1},{&quot;t&quot;:40.822,&quot;v&quot;:-0.5},{&quot;t&quot;:40.971,&quot;v&quot;:-0.3},{&quot;t&quot;:41.121,&quot;v&quot;:0},{&quot;t&quot;:41.27,&quot;v&quot;:-1.1},{&quot;t&quot;:41.42,&quot;v&quot;:-2.4},{&quot;t&quot;:41.569,&quot;v&quot;:-1.3},{&quot;t&quot;:41.718,&quot;v&quot;:-0.7},{&quot;t&quot;:42.017,&quot;v&quot;:-0.5},{&quot;t&quot;:42.166,&quot;v&quot;:-3.9},{&quot;t&quot;:42.316,&quot;v&quot;:-2.9},{&quot;t&quot;:42.465,&quot;v&quot;:-1.6},{&quot;t&quot;:42.615,&quot;v&quot;:-3.3},{&quot;t&quot;:42.764,&quot;v&quot;:-1.8},{&quot;t&quot;:42.913,&quot;v&quot;:-1},{&quot;t&quot;:43.063,&quot;v&quot;:-1.5},{&quot;t&quot;:43.212,&quot;v&quot;:-0.8},{&quot;t&quot;:43.511,&quot;v&quot;:-0.5},{&quot;t&quot;:43.66,&quot;v&quot;:-0.3},{&quot;t&quot;:45.751,&quot;v&quot;:0},{&quot;t&quot;:45.901,&quot;v&quot;:-2.7},{&quot;t&quot;:46.05,&quot;v&quot;:-1.5},{&quot;t&quot;:46.2,&quot;v&quot;:-0.8},{&quot;t&quot;:46.349,&quot;v&quot;:-0.5},{&quot;t&quot;:46.498,&quot;v&quot;:-4.3},{&quot;t&quot;:46.648,&quot;v&quot;:-3.6},{&quot;t&quot;:46.797,&quot;v&quot;:-2},{&quot;t&quot;:46.946,&quot;v&quot;:-1.1},{&quot;t&quot;:47.096,&quot;v&quot;:-2.8},{&quot;t&quot;:47.245,&quot;v&quot;:-1.6},{&quot;t&quot;:47.395,&quot;v&quot;:-0.9},{&quot;t&quot;:47.843,&quot;v&quot;:-0.8},{&quot;t&quot;:47.992,&quot;v&quot;:-0.4},{&quot;t&quot;:48.141,&quot;v&quot;:-3.3},{&quot;t&quot;:48.291,&quot;v&quot;:-4.4},{&quot;t&quot;:48.44,&quot;v&quot;:-2.4},{&quot;t&quot;:48.59,&quot;v&quot;:-1.3},{&quot;t&quot;:48.739,&quot;v&quot;:-0.7},{&quot;t&quot;:49.038,&quot;v&quot;:-0.2},{&quot;t&quot;:49.187,&quot;v&quot;:0},{&quot;t&quot;:49.486,&quot;v&quot;:0},{&quot;t&quot;:49.635,&quot;v&quot;:-2.2},{&quot;t&quot;:49.785,&quot;v&quot;:-1.2},{&quot;t&quot;:49.934,&quot;v&quot;:-0.7},{&quot;t&quot;:50.083,&quot;v&quot;:-0.4},{&quot;t&quot;:50.233,&quot;v&quot;:0},{&quot;t&quot;:50.531,&quot;v&quot;:0},{&quot;t&quot;:50.681,&quot;v&quot;:-3.9},{&quot;t&quot;:50.83,&quot;v&quot;:-2.6},{&quot;t&quot;:50.98,&quot;v&quot;:-3.7},{&quot;t&quot;:51.129,&quot;v&quot;:-2},{&quot;t&quot;:51.278,&quot;v&quot;:-1.1},{&quot;t&quot;:51.428,&quot;v&quot;:-0.6},{&quot;t&quot;:51.577,&quot;v&quot;:-4.5},{&quot;t&quot;:51.726,&quot;v&quot;:-2.5},{&quot;t&quot;:51.876,&quot;v&quot;:-1.4},{&quot;t&quot;:52.025,&quot;v&quot;:-1.3},{&quot;t&quot;:52.175,&quot;v&quot;:-0.7},{&quot;t&quot;:52.473,&quot;v&quot;:-0.4},{&quot;t&quot;:52.623,&quot;v&quot;:0},{&quot;t&quot;:53.071,&quot;v&quot;:0},{&quot;t&quot;:53.22,&quot;v&quot;:-1.3},{&quot;t&quot;:53.519,&quot;v&quot;:-0.9},{&quot;t&quot;:53.668,&quot;v&quot;:-0.5},{&quot;t&quot;:53.818,&quot;v&quot;:-4.7},{&quot;t&quot;:53.967,&quot;v&quot;:-2.6},{&quot;t&quot;:54.116,&quot;v&quot;:-1.4},{&quot;t&quot;:54.266,&quot;v&quot;:-0.8},{&quot;t&quot;:54.415,&quot;v&quot;:-1.4},{&quot;t&quot;:54.565,&quot;v&quot;:-0.8},{&quot;t&quot;:54.714,&quot;v&quot;:-0.4},{&quot;t&quot;:54.863,&quot;v&quot;:-0.2},{&quot;t&quot;:55.162,&quot;v&quot;:0},{&quot;t&quot;:55.311,&quot;v&quot;:-2.4},{&quot;t&quot;:55.461,&quot;v&quot;:-1.3},{&quot;t&quot;:55.61,&quot;v&quot;:-1.4},{&quot;t&quot;:55.76,&quot;v&quot;:-0.8},{&quot;t&quot;:55.909,&quot;v&quot;:-0.4},{&quot;t&quot;:56.058,&quot;v&quot;:-0.2},{&quot;t&quot;:57.851,&quot;v&quot;:0},{&quot;t&quot;:58,&quot;v&quot;:-0.8},{&quot;t&quot;:58.15,&quot;v&quot;:-4.6},{&quot;t&quot;:58.299,&quot;v&quot;:-2.5},{&quot;t&quot;:58.448,&quot;v&quot;:-1.4},{&quot;t&quot;:58.598,&quot;v&quot;:-2.5},{&quot;t&quot;:58.747,&quot;v&quot;:-1.4},{&quot;t&quot;:58.896,&quot;v&quot;:-3.6},{&quot;t&quot;:59.046,&quot;v&quot;:-2},{&quot;t&quot;:59.195,&quot;v&quot;:-1.1},{&quot;t&quot;:59.345,&quot;v&quot;:-0.6},{&quot;t&quot;:59.494,&quot;v&quot;:-0.3},{&quot;t&quot;:59.643,&quot;v&quot;:-1.1},{&quot;t&quot;:59.743,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n2.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.341,&quot;v&quot;:0},{&quot;t&quot;:0.491,&quot;v&quot;:-0.9},{&quot;t&quot;:0.64,&quot;v&quot;:-0.5},{&quot;t&quot;:0.79,&quot;v&quot;:-0.3},{&quot;t&quot;:1.686,&quot;v&quot;:0},{&quot;t&quot;:1.835,&quot;v&quot;:-3.8},{&quot;t&quot;:1.985,&quot;v&quot;:-2.1},{&quot;t&quot;:2.134,&quot;v&quot;:-1.2},{&quot;t&quot;:2.283,&quot;v&quot;:-4},{&quot;t&quot;:2.433,&quot;v&quot;:-2.2},{&quot;t&quot;:2.582,&quot;v&quot;:-1.4},{&quot;t&quot;:2.731,&quot;v&quot;:-2.9},{&quot;t&quot;:2.881,&quot;v&quot;:-1.6},{&quot;t&quot;:3.03,&quot;v&quot;:-5.7},{&quot;t&quot;:3.18,&quot;v&quot;:-3.1},{&quot;t&quot;:3.329,&quot;v&quot;:-3.5},{&quot;t&quot;:3.478,&quot;v&quot;:-1.9},{&quot;t&quot;:3.628,&quot;v&quot;:-1.1},{&quot;t&quot;:3.777,&quot;v&quot;:-0.6},{&quot;t&quot;:3.926,&quot;v&quot;:-0.3},{&quot;t&quot;:4.076,&quot;v&quot;:0},{&quot;t&quot;:4.375,&quot;v&quot;:0},{&quot;t&quot;:4.524,&quot;v&quot;:-2.1},{&quot;t&quot;:4.673,&quot;v&quot;:-1.2},{&quot;t&quot;:4.823,&quot;v&quot;:-0.6},{&quot;t&quot;:5.271,&quot;v&quot;:-0.3},{&quot;t&quot;:5.42,&quot;v&quot;:0},{&quot;t&quot;:5.57,&quot;v&quot;:0},{&quot;t&quot;:5.719,&quot;v&quot;:-0.5},{&quot;t&quot;:5.868,&quot;v&quot;:-0.3},{&quot;t&quot;:6.018,&quot;v&quot;:-4.8},{&quot;t&quot;:6.167,&quot;v&quot;:-2.6},{&quot;t&quot;:6.316,&quot;v&quot;:-1.4},{&quot;t&quot;:6.615,&quot;v&quot;:-1},{&quot;t&quot;:6.765,&quot;v&quot;:-0.6},{&quot;t&quot;:6.914,&quot;v&quot;:-5.9},{&quot;t&quot;:7.063,&quot;v&quot;:-3.2},{&quot;t&quot;:7.213,&quot;v&quot;:-1.8},{&quot;t&quot;:7.362,&quot;v&quot;:-1},{&quot;t&quot;:7.511,&quot;v&quot;:-0.5},{&quot;t&quot;:7.661,&quot;v&quot;:-0.3},{&quot;t&quot;:7.81,&quot;v&quot;:-1.1},{&quot;t&quot;:7.96,&quot;v&quot;:-2},{&quot;t&quot;:8.109,&quot;v&quot;:-1.1},{&quot;t&quot;:8.258,&quot;v&quot;:-0.6},{&quot;t&quot;:8.408,&quot;v&quot;:-0.3},{&quot;t&quot;:8.557,&quot;v&quot;:0},{&quot;t&quot;:8.706,&quot;v&quot;:-5.2},{&quot;t&quot;:8.856,&quot;v&quot;:-2.8},{&quot;t&quot;:9.005,&quot;v&quot;:-1.6},{&quot;t&quot;:9.155,&quot;v&quot;:-6.9},{&quot;t&quot;:9.304,&quot;v&quot;:-3.8},{&quot;t&quot;:9.453,&quot;v&quot;:-2.1},{&quot;t&quot;:9.603,&quot;v&quot;:-1.1},{&quot;t&quot;:9.752,&quot;v&quot;:-0.6},{&quot;t&quot;:9.901,&quot;v&quot;:-0.3},{&quot;t&quot;:10.051,&quot;v&quot;:-2.8},{&quot;t&quot;:10.2,&quot;v&quot;:-1.5},{&quot;t&quot;:10.35,&quot;v&quot;:-0.8},{&quot;t&quot;:10.499,&quot;v&quot;:-0.5},{&quot;t&quot;:10.648,&quot;v&quot;:-0.3},{&quot;t&quot;:10.798,&quot;v&quot;:-4},{&quot;t&quot;:10.947,&quot;v&quot;:-2.2},{&quot;t&quot;:11.096,&quot;v&quot;:-1.2},{&quot;t&quot;:11.246,&quot;v&quot;:-2.1},{&quot;t&quot;:11.395,&quot;v&quot;:-1.2},{&quot;t&quot;:11.545,&quot;v&quot;:-0.7},{&quot;t&quot;:11.694,&quot;v&quot;:-0.4},{&quot;t&quot;:11.843,&quot;v&quot;:-2},{&quot;t&quot;:11.993,&quot;v&quot;:-1.7},{&quot;t&quot;:12.142,&quot;v&quot;:-2.8},{&quot;t&quot;:12.291,&quot;v&quot;:-2.5},{&quot;t&quot;:12.441,&quot;v&quot;:-4.4},{&quot;t&quot;:12.59,&quot;v&quot;:-2.4},{&quot;t&quot;:12.74,&quot;v&quot;:-1.3},{&quot;t&quot;:12.889,&quot;v&quot;:-0.7},{&quot;t&quot;:13.188,&quot;v&quot;:-0.2},{&quot;t&quot;:13.337,&quot;v&quot;:0},{&quot;t&quot;:13.935,&quot;v&quot;:0},{&quot;t&quot;:14.084,&quot;v&quot;:-6.7},{&quot;t&quot;:14.233,&quot;v&quot;:-3.7},{&quot;t&quot;:14.383,&quot;v&quot;:-2},{&quot;t&quot;:14.532,&quot;v&quot;:-1.1},{&quot;t&quot;:14.681,&quot;v&quot;:-1.7},{&quot;t&quot;:14.831,&quot;v&quot;:-0.9},{&quot;t&quot;:14.98,&quot;v&quot;:-0.5},{&quot;t&quot;:15.13,&quot;v&quot;:-0.3},{&quot;t&quot;:15.279,&quot;v&quot;:0},{&quot;t&quot;:15.428,&quot;v&quot;:-2.9},{&quot;t&quot;:15.578,&quot;v&quot;:-3.7},{&quot;t&quot;:15.727,&quot;v&quot;:-2.1},{&quot;t&quot;:15.876,&quot;v&quot;:-1.1},{&quot;t&quot;:16.026,&quot;v&quot;:-3.6},{&quot;t&quot;:16.175,&quot;v&quot;:-2},{&quot;t&quot;:16.325,&quot;v&quot;:-3.7},{&quot;t&quot;:16.474,&quot;v&quot;:-2.1},{&quot;t&quot;:16.623,&quot;v&quot;:-1.1},{&quot;t&quot;:16.773,&quot;v&quot;:-0.6},{&quot;t&quot;:17.071,&quot;v&quot;:-0.2},{&quot;t&quot;:17.221,&quot;v&quot;:0},{&quot;t&quot;:17.52,&quot;v&quot;:0},{&quot;t&quot;:17.669,&quot;v&quot;:-4.5},{&quot;t&quot;:17.818,&quot;v&quot;:-2.5},{&quot;t&quot;:17.968,&quot;v&quot;:-1.4},{&quot;t&quot;:18.117,&quot;v&quot;:-2},{&quot;t&quot;:18.266,&quot;v&quot;:-1.1},{&quot;t&quot;:18.416,&quot;v&quot;:-0.6},{&quot;t&quot;:18.565,&quot;v&quot;:-4},{&quot;t&quot;:18.715,&quot;v&quot;:-2.2},{&quot;t&quot;:18.864,&quot;v&quot;:-1.9},{&quot;t&quot;:19.013,&quot;v&quot;:-5.3},{&quot;t&quot;:19.163,&quot;v&quot;:-2.9},{&quot;t&quot;:19.312,&quot;v&quot;:-1.6},{&quot;t&quot;:19.461,&quot;v&quot;:-0.9},{&quot;t&quot;:19.611,&quot;v&quot;:-0.5},{&quot;t&quot;:19.76,&quot;v&quot;:-0.3},{&quot;t&quot;:20.059,&quot;v&quot;:0},{&quot;t&quot;:20.208,&quot;v&quot;:-2.3},{&quot;t&quot;:20.358,&quot;v&quot;:-5.3},{&quot;t&quot;:20.507,&quot;v&quot;:-2.9},{&quot;t&quot;:20.656,&quot;v&quot;:-1.6},{&quot;t&quot;:20.806,&quot;v&quot;:-0.9},{&quot;t&quot;:20.955,&quot;v&quot;:-0.5},{&quot;t&quot;:21.105,&quot;v&quot;:-0.3},{&quot;t&quot;:21.254,&quot;v&quot;:0},{&quot;t&quot;:21.403,&quot;v&quot;:-0.9},{&quot;t&quot;:21.553,&quot;v&quot;:-4.4},{&quot;t&quot;:21.702,&quot;v&quot;:-2.4},{&quot;t&quot;:21.851,&quot;v&quot;:-1.3},{&quot;t&quot;:22.001,&quot;v&quot;:-1},{&quot;t&quot;:22.15,&quot;v&quot;:-1.8},{&quot;t&quot;:22.3,&quot;v&quot;:-1.3},{&quot;t&quot;:22.449,&quot;v&quot;:-0.7},{&quot;t&quot;:22.748,&quot;v&quot;:-0.2},{&quot;t&quot;:22.897,&quot;v&quot;:0},{&quot;t&quot;:23.046,&quot;v&quot;:-6.2},{&quot;t&quot;:23.196,&quot;v&quot;:-3.4},{&quot;t&quot;:23.345,&quot;v&quot;:-1.9},{&quot;t&quot;:23.495,&quot;v&quot;:-1},{&quot;t&quot;:23.644,&quot;v&quot;:-0.6},{&quot;t&quot;:23.793,&quot;v&quot;:-0.3},{&quot;t&quot;:23.943,&quot;v&quot;:-5.5},{&quot;t&quot;:24.092,&quot;v&quot;:-3.1},{&quot;t&quot;:24.241,&quot;v&quot;:-2},{&quot;t&quot;:24.391,&quot;v&quot;:-1.1},{&quot;t&quot;:24.54,&quot;v&quot;:-0.6},{&quot;t&quot;:24.69,&quot;v&quot;:-5.5},{&quot;t&quot;:24.839,&quot;v&quot;:-3},{&quot;t&quot;:24.988,&quot;v&quot;:-1.7},{&quot;t&quot;:25.138,&quot;v&quot;:-0.9},{&quot;t&quot;:25.287,&quot;v&quot;:-0.5},{&quot;t&quot;:25.436,&quot;v&quot;:-2},{&quot;t&quot;:25.586,&quot;v&quot;:-1.2},{&quot;t&quot;:25.735,&quot;v&quot;:-0.7},{&quot;t&quot;:25.885,&quot;v&quot;:-2.9},{&quot;t&quot;:26.034,&quot;v&quot;:-1.6},{&quot;t&quot;:26.183,&quot;v&quot;:-0.9},{&quot;t&quot;:26.333,&quot;v&quot;:-4.1},{&quot;t&quot;:26.482,&quot;v&quot;:-2.3},{&quot;t&quot;:26.631,&quot;v&quot;:-1.2},{&quot;t&quot;:26.781,&quot;v&quot;:-2.5},{&quot;t&quot;:26.93,&quot;v&quot;:-3},{&quot;t&quot;:27.08,&quot;v&quot;:-1.7},{&quot;t&quot;:27.229,&quot;v&quot;:-0.9},{&quot;t&quot;:27.378,&quot;v&quot;:-2.6},{&quot;t&quot;:27.528,&quot;v&quot;:-1.4},{&quot;t&quot;:27.677,&quot;v&quot;:-0.8},{&quot;t&quot;:27.826,&quot;v&quot;:-0.4},{&quot;t&quot;:27.976,&quot;v&quot;:-0.2},{&quot;t&quot;:28.872,&quot;v&quot;:0},{&quot;t&quot;:29.021,&quot;v&quot;:-3.7},{&quot;t&quot;:29.171,&quot;v&quot;:-2.6},{&quot;t&quot;:29.32,&quot;v&quot;:-1.4},{&quot;t&quot;:29.47,&quot;v&quot;:-0.8},{&quot;t&quot;:29.619,&quot;v&quot;:-0.4},{&quot;t&quot;:29.768,&quot;v&quot;:-0.2},{&quot;t&quot;:29.918,&quot;v&quot;:-1.3},{&quot;t&quot;:30.067,&quot;v&quot;:-4.2},{&quot;t&quot;:30.216,&quot;v&quot;:-2.3},{&quot;t&quot;:30.366,&quot;v&quot;:-1.3},{&quot;t&quot;:30.515,&quot;v&quot;:-1.1},{&quot;t&quot;:30.665,&quot;v&quot;:-0.6},{&quot;t&quot;:30.963,&quot;v&quot;:-0.3},{&quot;t&quot;:31.113,&quot;v&quot;:0},{&quot;t&quot;:32.009,&quot;v&quot;:0},{&quot;t&quot;:32.158,&quot;v&quot;:-1.7},{&quot;t&quot;:32.308,&quot;v&quot;:-0.9},{&quot;t&quot;:32.457,&quot;v&quot;:-2.5},{&quot;t&quot;:32.606,&quot;v&quot;:-1.4},{&quot;t&quot;:32.756,&quot;v&quot;:-0.7},{&quot;t&quot;:33.055,&quot;v&quot;:-0.2},{&quot;t&quot;:33.204,&quot;v&quot;:0},{&quot;t&quot;:33.652,&quot;v&quot;:0},{&quot;t&quot;:33.801,&quot;v&quot;:-8},{&quot;t&quot;:33.951,&quot;v&quot;:-4.4},{&quot;t&quot;:34.1,&quot;v&quot;:-4.2},{&quot;t&quot;:34.25,&quot;v&quot;:-2.3},{&quot;t&quot;:34.399,&quot;v&quot;:-2},{&quot;t&quot;:34.548,&quot;v&quot;:-1.1},{&quot;t&quot;:34.698,&quot;v&quot;:-0.6},{&quot;t&quot;:34.847,&quot;v&quot;:-0.3},{&quot;t&quot;:34.996,&quot;v&quot;:0},{&quot;t&quot;:35.146,&quot;v&quot;:0},{&quot;t&quot;:35.295,&quot;v&quot;:-5.8},{&quot;t&quot;:35.445,&quot;v&quot;:-3.2},{&quot;t&quot;:35.594,&quot;v&quot;:-1.8},{&quot;t&quot;:35.743,&quot;v&quot;:-1},{&quot;t&quot;:35.893,&quot;v&quot;:-0.5},{&quot;t&quot;:36.042,&quot;v&quot;:-0.3},{&quot;t&quot;:36.191,&quot;v&quot;:0},{&quot;t&quot;:36.341,&quot;v&quot;:0},{&quot;t&quot;:36.49,&quot;v&quot;:-0.9},{&quot;t&quot;:36.64,&quot;v&quot;:-4.7},{&quot;t&quot;:36.789,&quot;v&quot;:-2.6},{&quot;t&quot;:36.938,&quot;v&quot;:-1.4},{&quot;t&quot;:37.088,&quot;v&quot;:-0.8},{&quot;t&quot;:37.237,&quot;v&quot;:-0.4},{&quot;t&quot;:37.386,&quot;v&quot;:-0.2},{&quot;t&quot;:38.731,&quot;v&quot;:0},{&quot;t&quot;:38.88,&quot;v&quot;:-2.5},{&quot;t&quot;:39.03,&quot;v&quot;:-1.4},{&quot;t&quot;:39.179,&quot;v&quot;:-0.7},{&quot;t&quot;:39.328,&quot;v&quot;:-0.4},{&quot;t&quot;:39.478,&quot;v&quot;:-3.5},{&quot;t&quot;:39.627,&quot;v&quot;:-1.9},{&quot;t&quot;:39.776,&quot;v&quot;:-1},{&quot;t&quot;:39.926,&quot;v&quot;:-0.6},{&quot;t&quot;:40.075,&quot;v&quot;:-0.3},{&quot;t&quot;:41.121,&quot;v&quot;:0},{&quot;t&quot;:41.27,&quot;v&quot;:-1.9},{&quot;t&quot;:41.42,&quot;v&quot;:-1.7},{&quot;t&quot;:41.569,&quot;v&quot;:-0.9},{&quot;t&quot;:41.718,&quot;v&quot;:-0.5},{&quot;t&quot;:41.868,&quot;v&quot;:-0.3},{&quot;t&quot;:42.017,&quot;v&quot;:0},{&quot;t&quot;:42.166,&quot;v&quot;:-3.8},{&quot;t&quot;:42.316,&quot;v&quot;:-4.5},{&quot;t&quot;:42.465,&quot;v&quot;:-2.5},{&quot;t&quot;:42.615,&quot;v&quot;:-2.8},{&quot;t&quot;:42.764,&quot;v&quot;:-1.5},{&quot;t&quot;:42.913,&quot;v&quot;:-0.8},{&quot;t&quot;:43.063,&quot;v&quot;:-0.5},{&quot;t&quot;:43.212,&quot;v&quot;:-0.3},{&quot;t&quot;:45.751,&quot;v&quot;:0},{&quot;t&quot;:45.901,&quot;v&quot;:-1.3},{&quot;t&quot;:46.05,&quot;v&quot;:-0.7},{&quot;t&quot;:46.349,&quot;v&quot;:-0.4},{&quot;t&quot;:46.498,&quot;v&quot;:-5},{&quot;t&quot;:46.648,&quot;v&quot;:-4.9},{&quot;t&quot;:46.797,&quot;v&quot;:-2.7},{&quot;t&quot;:46.946,&quot;v&quot;:-1.5},{&quot;t&quot;:47.096,&quot;v&quot;:-0.8},{&quot;t&quot;:47.245,&quot;v&quot;:-0.4},{&quot;t&quot;:47.395,&quot;v&quot;:-0.2},{&quot;t&quot;:47.992,&quot;v&quot;:-0.2},{&quot;t&quot;:48.141,&quot;v&quot;:-4.5},{&quot;t&quot;:48.291,&quot;v&quot;:-4.5},{&quot;t&quot;:48.44,&quot;v&quot;:-3.2},{&quot;t&quot;:48.59,&quot;v&quot;:-1.7},{&quot;t&quot;:48.739,&quot;v&quot;:-1},{&quot;t&quot;:48.888,&quot;v&quot;:-0.5},{&quot;t&quot;:49.038,&quot;v&quot;:-0.3},{&quot;t&quot;:49.187,&quot;v&quot;:0},{&quot;t&quot;:49.336,&quot;v&quot;:0},{&quot;t&quot;:49.486,&quot;v&quot;:-2.1},{&quot;t&quot;:49.635,&quot;v&quot;:-1.2},{&quot;t&quot;:49.785,&quot;v&quot;:-0.6},{&quot;t&quot;:49.934,&quot;v&quot;:-2.5},{&quot;t&quot;:50.083,&quot;v&quot;:-1.4},{&quot;t&quot;:50.233,&quot;v&quot;:-0.8},{&quot;t&quot;:50.382,&quot;v&quot;:-0.4},{&quot;t&quot;:50.531,&quot;v&quot;:-0.2},{&quot;t&quot;:50.681,&quot;v&quot;:-1.9},{&quot;t&quot;:50.83,&quot;v&quot;:-1.5},{&quot;t&quot;:50.98,&quot;v&quot;:-4.9},{&quot;t&quot;:51.129,&quot;v&quot;:-2.7},{&quot;t&quot;:51.278,&quot;v&quot;:-1.5},{&quot;t&quot;:51.428,&quot;v&quot;:-0.8},{&quot;t&quot;:51.577,&quot;v&quot;:-3.2},{&quot;t&quot;:51.726,&quot;v&quot;:-1.8},{&quot;t&quot;:51.876,&quot;v&quot;:-1},{&quot;t&quot;:52.025,&quot;v&quot;:-0.5},{&quot;t&quot;:52.175,&quot;v&quot;:-0.3},{&quot;t&quot;:52.324,&quot;v&quot;:0},{&quot;t&quot;:52.623,&quot;v&quot;:0},{&quot;t&quot;:52.772,&quot;v&quot;:-0.6},{&quot;t&quot;:52.921,&quot;v&quot;:-0.3},{&quot;t&quot;:53.071,&quot;v&quot;:0},{&quot;t&quot;:53.22,&quot;v&quot;:-1.9},{&quot;t&quot;:53.37,&quot;v&quot;:-3},{&quot;t&quot;:53.519,&quot;v&quot;:-1.6},{&quot;t&quot;:53.668,&quot;v&quot;:-0.9},{&quot;t&quot;:53.818,&quot;v&quot;:-2.9},{&quot;t&quot;:53.967,&quot;v&quot;:-1.6},{&quot;t&quot;:54.116,&quot;v&quot;:-0.9},{&quot;t&quot;:54.266,&quot;v&quot;:-0.5},{&quot;t&quot;:54.415,&quot;v&quot;:-0.3},{&quot;t&quot;:54.863,&quot;v&quot;:0},{&quot;t&quot;:55.013,&quot;v&quot;:-2.3},{&quot;t&quot;:55.162,&quot;v&quot;:-1.3},{&quot;t&quot;:55.311,&quot;v&quot;:-0.7},{&quot;t&quot;:55.461,&quot;v&quot;:-0.4},{&quot;t&quot;:55.61,&quot;v&quot;:-2.2},{&quot;t&quot;:55.76,&quot;v&quot;:-1.2},{&quot;t&quot;:55.909,&quot;v&quot;:-0.7},{&quot;t&quot;:56.058,&quot;v&quot;:-0.4},{&quot;t&quot;:56.208,&quot;v&quot;:0},{&quot;t&quot;:56.357,&quot;v&quot;:-0.5},{&quot;t&quot;:56.506,&quot;v&quot;:-0.3},{&quot;t&quot;:56.656,&quot;v&quot;:0},{&quot;t&quot;:58,&quot;v&quot;:0},{&quot;t&quot;:58.15,&quot;v&quot;:-4.2},{&quot;t&quot;:58.299,&quot;v&quot;:-2.3},{&quot;t&quot;:58.448,&quot;v&quot;:-1.3},{&quot;t&quot;:58.598,&quot;v&quot;:-4.6},{&quot;t&quot;:58.747,&quot;v&quot;:-2.5},{&quot;t&quot;:58.896,&quot;v&quot;:-5.6},{&quot;t&quot;:59.046,&quot;v&quot;:-3.1},{&quot;t&quot;:59.195,&quot;v&quot;:-1.7},{&quot;t&quot;:59.345,&quot;v&quot;:-0.9},{&quot;t&quot;:59.494,&quot;v&quot;:-0.5},{&quot;t&quot;:59.643,&quot;v&quot;:-0.3},{&quot;t&quot;:59.743,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n3.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.939,&quot;v&quot;:0},{&quot;t&quot;:1.088,&quot;v&quot;:-2.4},{&quot;t&quot;:1.238,&quot;v&quot;:-1.3},{&quot;t&quot;:1.387,&quot;v&quot;:-0.7},{&quot;t&quot;:1.686,&quot;v&quot;:-0.2},{&quot;t&quot;:1.835,&quot;v&quot;:-1.7},{&quot;t&quot;:1.985,&quot;v&quot;:-1},{&quot;t&quot;:2.283,&quot;v&quot;:-0.7},{&quot;t&quot;:2.433,&quot;v&quot;:-0.4},{&quot;t&quot;:2.582,&quot;v&quot;:-1.2},{&quot;t&quot;:2.731,&quot;v&quot;:-2.6},{&quot;t&quot;:2.881,&quot;v&quot;:-1.4},{&quot;t&quot;:3.03,&quot;v&quot;:-2.4},{&quot;t&quot;:3.18,&quot;v&quot;:-1.3},{&quot;t&quot;:3.478,&quot;v&quot;:-0.9},{&quot;t&quot;:3.628,&quot;v&quot;:-0.5},{&quot;t&quot;:3.777,&quot;v&quot;:-2.6},{&quot;t&quot;:3.926,&quot;v&quot;:-1.4},{&quot;t&quot;:4.076,&quot;v&quot;:-0.8},{&quot;t&quot;:4.225,&quot;v&quot;:-0.4},{&quot;t&quot;:4.375,&quot;v&quot;:-0.2},{&quot;t&quot;:4.524,&quot;v&quot;:0},{&quot;t&quot;:4.673,&quot;v&quot;:-1.7},{&quot;t&quot;:4.823,&quot;v&quot;:-0.9},{&quot;t&quot;:4.972,&quot;v&quot;:-0.5},{&quot;t&quot;:5.121,&quot;v&quot;:-0.3},{&quot;t&quot;:5.57,&quot;v&quot;:0},{&quot;t&quot;:5.719,&quot;v&quot;:-2.9},{&quot;t&quot;:5.868,&quot;v&quot;:-1.6},{&quot;t&quot;:6.018,&quot;v&quot;:-1.6},{&quot;t&quot;:6.167,&quot;v&quot;:-0.9},{&quot;t&quot;:6.316,&quot;v&quot;:-0.7},{&quot;t&quot;:6.466,&quot;v&quot;:-1.8},{&quot;t&quot;:6.615,&quot;v&quot;:-1},{&quot;t&quot;:6.765,&quot;v&quot;:-0.5},{&quot;t&quot;:6.914,&quot;v&quot;:-2.5},{&quot;t&quot;:7.063,&quot;v&quot;:-1.4},{&quot;t&quot;:7.213,&quot;v&quot;:-0.8},{&quot;t&quot;:7.362,&quot;v&quot;:-0.4},{&quot;t&quot;:7.511,&quot;v&quot;:-0.2},{&quot;t&quot;:7.661,&quot;v&quot;:-2.1},{&quot;t&quot;:7.81,&quot;v&quot;:-1.1},{&quot;t&quot;:7.96,&quot;v&quot;:-0.6},{&quot;t&quot;:8.258,&quot;v&quot;:-0.2},{&quot;t&quot;:8.408,&quot;v&quot;:0},{&quot;t&quot;:8.557,&quot;v&quot;:0},{&quot;t&quot;:8.706,&quot;v&quot;:-1.5},{&quot;t&quot;:8.856,&quot;v&quot;:-0.8},{&quot;t&quot;:9.005,&quot;v&quot;:-0.5},{&quot;t&quot;:9.155,&quot;v&quot;:-3},{&quot;t&quot;:9.304,&quot;v&quot;:-1.7},{&quot;t&quot;:9.453,&quot;v&quot;:-0.9},{&quot;t&quot;:9.603,&quot;v&quot;:-0.5},{&quot;t&quot;:9.752,&quot;v&quot;:-0.3},{&quot;t&quot;:10.051,&quot;v&quot;:0},{&quot;t&quot;:10.2,&quot;v&quot;:-2.1},{&quot;t&quot;:10.35,&quot;v&quot;:-1.2},{&quot;t&quot;:10.499,&quot;v&quot;:-0.6},{&quot;t&quot;:11.096,&quot;v&quot;:-0.2},{&quot;t&quot;:11.246,&quot;v&quot;:0},{&quot;t&quot;:11.395,&quot;v&quot;:-0.6},{&quot;t&quot;:11.545,&quot;v&quot;:-2.1},{&quot;t&quot;:11.694,&quot;v&quot;:-1.2},{&quot;t&quot;:11.843,&quot;v&quot;:-0.7},{&quot;t&quot;:12.291,&quot;v&quot;:-0.5},{&quot;t&quot;:12.441,&quot;v&quot;:-1.8},{&quot;t&quot;:12.59,&quot;v&quot;:-1},{&quot;t&quot;:12.74,&quot;v&quot;:-0.5},{&quot;t&quot;:12.889,&quot;v&quot;:-0.3},{&quot;t&quot;:13.038,&quot;v&quot;:0},{&quot;t&quot;:13.337,&quot;v&quot;:0},{&quot;t&quot;:13.486,&quot;v&quot;:-1},{&quot;t&quot;:13.636,&quot;v&quot;:-0.5},{&quot;t&quot;:13.785,&quot;v&quot;:-0.3},{&quot;t&quot;:13.935,&quot;v&quot;:0},{&quot;t&quot;:14.084,&quot;v&quot;:-2.7},{&quot;t&quot;:14.233,&quot;v&quot;:-1.5},{&quot;t&quot;:14.383,&quot;v&quot;:-0.8},{&quot;t&quot;:14.532,&quot;v&quot;:-0.5},{&quot;t&quot;:14.681,&quot;v&quot;:-3.3},{&quot;t&quot;:14.831,&quot;v&quot;:-1.8},{&quot;t&quot;:14.98,&quot;v&quot;:-1},{&quot;t&quot;:15.13,&quot;v&quot;:-0.5},{&quot;t&quot;:15.279,&quot;v&quot;:-0.3},{&quot;t&quot;:15.428,&quot;v&quot;:-2.4},{&quot;t&quot;:15.578,&quot;v&quot;:-1.3},{&quot;t&quot;:15.727,&quot;v&quot;:-0.7},{&quot;t&quot;:16.026,&quot;v&quot;:-0.3},{&quot;t&quot;:16.175,&quot;v&quot;:0},{&quot;t&quot;:16.773,&quot;v&quot;:0},{&quot;t&quot;:16.922,&quot;v&quot;:-2.5},{&quot;t&quot;:17.071,&quot;v&quot;:-1.4},{&quot;t&quot;:17.37,&quot;v&quot;:-1},{&quot;t&quot;:17.52,&quot;v&quot;:-0.5},{&quot;t&quot;:17.669,&quot;v&quot;:-2},{&quot;t&quot;:17.818,&quot;v&quot;:-1.1},{&quot;t&quot;:17.968,&quot;v&quot;:-0.6},{&quot;t&quot;:18.117,&quot;v&quot;:-0.3},{&quot;t&quot;:18.266,&quot;v&quot;:0},{&quot;t&quot;:18.864,&quot;v&quot;:0},{&quot;t&quot;:19.013,&quot;v&quot;:-2.7},{&quot;t&quot;:19.163,&quot;v&quot;:-1.5},{&quot;t&quot;:19.312,&quot;v&quot;:-0.8},{&quot;t&quot;:19.461,&quot;v&quot;:-1.3},{&quot;t&quot;:19.611,&quot;v&quot;:-2.4},{&quot;t&quot;:19.76,&quot;v&quot;:-1.5},{&quot;t&quot;:19.91,&quot;v&quot;:-0.8},{&quot;t&quot;:20.208,&quot;v&quot;:-0.6},{&quot;t&quot;:20.358,&quot;v&quot;:-1.9},{&quot;t&quot;:20.507,&quot;v&quot;:-1.1},{&quot;t&quot;:20.656,&quot;v&quot;:-0.6},{&quot;t&quot;:20.806,&quot;v&quot;:-0.3},{&quot;t&quot;:20.955,&quot;v&quot;:-3.2},{&quot;t&quot;:21.105,&quot;v&quot;:-1.7},{&quot;t&quot;:21.254,&quot;v&quot;:-1},{&quot;t&quot;:21.403,&quot;v&quot;:-0.7},{&quot;t&quot;:21.553,&quot;v&quot;:-1.7},{&quot;t&quot;:21.702,&quot;v&quot;:-1.1},{&quot;t&quot;:21.851,&quot;v&quot;:-0.6},{&quot;t&quot;:22.001,&quot;v&quot;:-2.2},{&quot;t&quot;:22.15,&quot;v&quot;:-1.2},{&quot;t&quot;:22.3,&quot;v&quot;:-0.7},{&quot;t&quot;:22.449,&quot;v&quot;:-1.7},{&quot;t&quot;:22.598,&quot;v&quot;:-0.9},{&quot;t&quot;:22.897,&quot;v&quot;:-0.8},{&quot;t&quot;:23.046,&quot;v&quot;:-1.9},{&quot;t&quot;:23.196,&quot;v&quot;:-1},{&quot;t&quot;:23.345,&quot;v&quot;:-0.6},{&quot;t&quot;:23.495,&quot;v&quot;:-0.5},{&quot;t&quot;:23.644,&quot;v&quot;:-0.3},{&quot;t&quot;:23.793,&quot;v&quot;:-1.6},{&quot;t&quot;:23.943,&quot;v&quot;:-3.3},{&quot;t&quot;:24.092,&quot;v&quot;:-1.8},{&quot;t&quot;:24.241,&quot;v&quot;:-1.8},{&quot;t&quot;:24.391,&quot;v&quot;:-1.3},{&quot;t&quot;:24.54,&quot;v&quot;:-0.7},{&quot;t&quot;:24.69,&quot;v&quot;:-2.4},{&quot;t&quot;:24.839,&quot;v&quot;:-1.3},{&quot;t&quot;:24.988,&quot;v&quot;:-0.7},{&quot;t&quot;:25.287,&quot;v&quot;:-0.2},{&quot;t&quot;:25.436,&quot;v&quot;:0},{&quot;t&quot;:26.034,&quot;v&quot;:0},{&quot;t&quot;:26.183,&quot;v&quot;:-1},{&quot;t&quot;:26.333,&quot;v&quot;:-1.1},{&quot;t&quot;:26.482,&quot;v&quot;:-1.6},{&quot;t&quot;:26.631,&quot;v&quot;:-0.9},{&quot;t&quot;:26.781,&quot;v&quot;:-0.7},{&quot;t&quot;:26.93,&quot;v&quot;:-0.4},{&quot;t&quot;:27.08,&quot;v&quot;:-0.2},{&quot;t&quot;:27.229,&quot;v&quot;:-1.8},{&quot;t&quot;:27.378,&quot;v&quot;:-1},{&quot;t&quot;:27.528,&quot;v&quot;:-0.5},{&quot;t&quot;:27.677,&quot;v&quot;:-0.3},{&quot;t&quot;:27.826,&quot;v&quot;:0},{&quot;t&quot;:27.976,&quot;v&quot;:-2},{&quot;t&quot;:28.125,&quot;v&quot;:-1.1},{&quot;t&quot;:28.275,&quot;v&quot;:-0.6},{&quot;t&quot;:28.424,&quot;v&quot;:-0.3},{&quot;t&quot;:28.573,&quot;v&quot;:0},{&quot;t&quot;:28.723,&quot;v&quot;:-2.5},{&quot;t&quot;:28.872,&quot;v&quot;:-1.4},{&quot;t&quot;:29.021,&quot;v&quot;:-2.4},{&quot;t&quot;:29.171,&quot;v&quot;:-1.3},{&quot;t&quot;:29.32,&quot;v&quot;:-0.7},{&quot;t&quot;:29.47,&quot;v&quot;:-2.4},{&quot;t&quot;:29.619,&quot;v&quot;:-1.4},{&quot;t&quot;:29.768,&quot;v&quot;:-0.7},{&quot;t&quot;:29.918,&quot;v&quot;:-1.4},{&quot;t&quot;:30.067,&quot;v&quot;:-1.5},{&quot;t&quot;:30.216,&quot;v&quot;:-0.8},{&quot;t&quot;:30.963,&quot;v&quot;:-0.4},{&quot;t&quot;:31.113,&quot;v&quot;:-0.2},{&quot;t&quot;:31.561,&quot;v&quot;:-0.3},{&quot;t&quot;:31.71,&quot;v&quot;:-3.8},{&quot;t&quot;:31.86,&quot;v&quot;:-2.1},{&quot;t&quot;:32.009,&quot;v&quot;:-1.2},{&quot;t&quot;:32.158,&quot;v&quot;:-3.9},{&quot;t&quot;:32.308,&quot;v&quot;:-2.2},{&quot;t&quot;:32.457,&quot;v&quot;:-1.2},{&quot;t&quot;:32.606,&quot;v&quot;:-0.7},{&quot;t&quot;:32.756,&quot;v&quot;:-0.4},{&quot;t&quot;:32.905,&quot;v&quot;:0},{&quot;t&quot;:33.055,&quot;v&quot;:-1.5},{&quot;t&quot;:33.204,&quot;v&quot;:-2.1},{&quot;t&quot;:33.353,&quot;v&quot;:-1.2},{&quot;t&quot;:33.503,&quot;v&quot;:-2.4},{&quot;t&quot;:33.652,&quot;v&quot;:-1.3},{&quot;t&quot;:33.801,&quot;v&quot;:-3},{&quot;t&quot;:33.951,&quot;v&quot;:-1.6},{&quot;t&quot;:34.1,&quot;v&quot;:-0.9},{&quot;t&quot;:34.25,&quot;v&quot;:-0.5},{&quot;t&quot;:34.399,&quot;v&quot;:-2.1},{&quot;t&quot;:34.548,&quot;v&quot;:-1.2},{&quot;t&quot;:34.698,&quot;v&quot;:-2.4},{&quot;t&quot;:34.847,&quot;v&quot;:-3.3},{&quot;t&quot;:34.996,&quot;v&quot;:-3.2},{&quot;t&quot;:35.146,&quot;v&quot;:-1.8},{&quot;t&quot;:35.445,&quot;v&quot;:-1.9},{&quot;t&quot;:35.594,&quot;v&quot;:-1.1},{&quot;t&quot;:35.743,&quot;v&quot;:-0.6},{&quot;t&quot;:35.893,&quot;v&quot;:-0.3},{&quot;t&quot;:36.042,&quot;v&quot;:0},{&quot;t&quot;:36.789,&quot;v&quot;:0},{&quot;t&quot;:36.938,&quot;v&quot;:-2.4},{&quot;t&quot;:37.088,&quot;v&quot;:-1.3},{&quot;t&quot;:37.237,&quot;v&quot;:-0.7},{&quot;t&quot;:37.536,&quot;v&quot;:-0.5},{&quot;t&quot;:37.685,&quot;v&quot;:-1.3},{&quot;t&quot;:37.835,&quot;v&quot;:-2.4},{&quot;t&quot;:37.984,&quot;v&quot;:-1.7},{&quot;t&quot;:38.133,&quot;v&quot;:-1.1},{&quot;t&quot;:38.283,&quot;v&quot;:-0.6},{&quot;t&quot;:38.432,&quot;v&quot;:-0.3},{&quot;t&quot;:38.581,&quot;v&quot;:0},{&quot;t&quot;:39.179,&quot;v&quot;:0},{&quot;t&quot;:39.328,&quot;v&quot;:-1},{&quot;t&quot;:39.478,&quot;v&quot;:-0.6},{&quot;t&quot;:39.627,&quot;v&quot;:-0.3},{&quot;t&quot;:39.776,&quot;v&quot;:0},{&quot;t&quot;:39.926,&quot;v&quot;:-2.3},{&quot;t&quot;:40.075,&quot;v&quot;:-1.2},{&quot;t&quot;:40.225,&quot;v&quot;:-0.9},{&quot;t&quot;:40.374,&quot;v&quot;:-0.6},{&quot;t&quot;:40.523,&quot;v&quot;:-0.3},{&quot;t&quot;:40.673,&quot;v&quot;:-2.4},{&quot;t&quot;:40.822,&quot;v&quot;:-1.3},{&quot;t&quot;:40.971,&quot;v&quot;:-0.7},{&quot;t&quot;:41.121,&quot;v&quot;:-0.4},{&quot;t&quot;:41.27,&quot;v&quot;:-3.7},{&quot;t&quot;:41.42,&quot;v&quot;:-2.5},{&quot;t&quot;:41.569,&quot;v&quot;:-1.4},{&quot;t&quot;:41.718,&quot;v&quot;:-0.8},{&quot;t&quot;:41.868,&quot;v&quot;:-0.4},{&quot;t&quot;:42.017,&quot;v&quot;:-0.2},{&quot;t&quot;:42.465,&quot;v&quot;:-0.4},{&quot;t&quot;:42.615,&quot;v&quot;:-2.6},{&quot;t&quot;:42.764,&quot;v&quot;:-2},{&quot;t&quot;:42.913,&quot;v&quot;:-1.1},{&quot;t&quot;:43.063,&quot;v&quot;:-0.6},{&quot;t&quot;:43.212,&quot;v&quot;:-2.4},{&quot;t&quot;:43.361,&quot;v&quot;:-1.3},{&quot;t&quot;:43.511,&quot;v&quot;:-0.7},{&quot;t&quot;:43.66,&quot;v&quot;:-0.4},{&quot;t&quot;:43.81,&quot;v&quot;:-2.5},{&quot;t&quot;:43.959,&quot;v&quot;:-1.4},{&quot;t&quot;:44.108,&quot;v&quot;:-2.3},{&quot;t&quot;:44.258,&quot;v&quot;:-1.3},{&quot;t&quot;:44.407,&quot;v&quot;:-0.7},{&quot;t&quot;:44.556,&quot;v&quot;:-3.9},{&quot;t&quot;:44.706,&quot;v&quot;:-3},{&quot;t&quot;:44.855,&quot;v&quot;:-3.1},{&quot;t&quot;:45.005,&quot;v&quot;:-1.7},{&quot;t&quot;:45.154,&quot;v&quot;:-1.2},{&quot;t&quot;:45.303,&quot;v&quot;:-0.7},{&quot;t&quot;:45.453,&quot;v&quot;:-3.2},{&quot;t&quot;:45.602,&quot;v&quot;:-1.8},{&quot;t&quot;:45.751,&quot;v&quot;:-1.1},{&quot;t&quot;:45.901,&quot;v&quot;:-2.1},{&quot;t&quot;:46.05,&quot;v&quot;:-1.9},{&quot;t&quot;:46.2,&quot;v&quot;:-1},{&quot;t&quot;:46.349,&quot;v&quot;:-0.6},{&quot;t&quot;:46.498,&quot;v&quot;:-1.8},{&quot;t&quot;:46.797,&quot;v&quot;:-1.8},{&quot;t&quot;:46.946,&quot;v&quot;:-1},{&quot;t&quot;:47.096,&quot;v&quot;:-0.5},{&quot;t&quot;:47.245,&quot;v&quot;:-0.3},{&quot;t&quot;:47.395,&quot;v&quot;:0},{&quot;t&quot;:47.544,&quot;v&quot;:-4},{&quot;t&quot;:47.693,&quot;v&quot;:-2.2},{&quot;t&quot;:47.843,&quot;v&quot;:-1.2},{&quot;t&quot;:47.992,&quot;v&quot;:-0.7},{&quot;t&quot;:48.141,&quot;v&quot;:-2.4},{&quot;t&quot;:48.291,&quot;v&quot;:-2.1},{&quot;t&quot;:48.44,&quot;v&quot;:-1.2},{&quot;t&quot;:48.59,&quot;v&quot;:-0.6},{&quot;t&quot;:48.739,&quot;v&quot;:-0.4},{&quot;t&quot;:48.888,&quot;v&quot;:0},{&quot;t&quot;:49.038,&quot;v&quot;:-2.1},{&quot;t&quot;:49.187,&quot;v&quot;:-1.2},{&quot;t&quot;:49.336,&quot;v&quot;:-0.6},{&quot;t&quot;:49.486,&quot;v&quot;:-0.4},{&quot;t&quot;:49.635,&quot;v&quot;:0},{&quot;t&quot;:49.785,&quot;v&quot;:-1.7},{&quot;t&quot;:49.934,&quot;v&quot;:-0.9},{&quot;t&quot;:50.083,&quot;v&quot;:-0.5},{&quot;t&quot;:50.233,&quot;v&quot;:-0.3},{&quot;t&quot;:50.531,&quot;v&quot;:0},{&quot;t&quot;:50.681,&quot;v&quot;:-2.5},{&quot;t&quot;:50.83,&quot;v&quot;:-1.6},{&quot;t&quot;:50.98,&quot;v&quot;:-2},{&quot;t&quot;:51.129,&quot;v&quot;:-1.1},{&quot;t&quot;:51.278,&quot;v&quot;:-0.6},{&quot;t&quot;:51.428,&quot;v&quot;:-0.3},{&quot;t&quot;:51.577,&quot;v&quot;:-2.3},{&quot;t&quot;:51.726,&quot;v&quot;:-1.9},{&quot;t&quot;:51.876,&quot;v&quot;:-1.1},{&quot;t&quot;:52.025,&quot;v&quot;:-3.2},{&quot;t&quot;:52.175,&quot;v&quot;:-1.9},{&quot;t&quot;:52.324,&quot;v&quot;:-1.1},{&quot;t&quot;:52.473,&quot;v&quot;:-0.6},{&quot;t&quot;:52.623,&quot;v&quot;:-0.3},{&quot;t&quot;:52.772,&quot;v&quot;:0},{&quot;t&quot;:53.22,&quot;v&quot;:0},{&quot;t&quot;:53.37,&quot;v&quot;:-0.5},{&quot;t&quot;:53.519,&quot;v&quot;:-1.3},{&quot;t&quot;:53.668,&quot;v&quot;:-0.7},{&quot;t&quot;:53.818,&quot;v&quot;:-2},{&quot;t&quot;:53.967,&quot;v&quot;:-1.1},{&quot;t&quot;:54.116,&quot;v&quot;:-0.6},{&quot;t&quot;:54.266,&quot;v&quot;:-0.4},{&quot;t&quot;:54.415,&quot;v&quot;:-3.3},{&quot;t&quot;:54.565,&quot;v&quot;:-2.1},{&quot;t&quot;:54.714,&quot;v&quot;:-1.1},{&quot;t&quot;:54.863,&quot;v&quot;:-0.6},{&quot;t&quot;:55.013,&quot;v&quot;:-0.3},{&quot;t&quot;:55.162,&quot;v&quot;:0},{&quot;t&quot;:55.311,&quot;v&quot;:0},{&quot;t&quot;:55.461,&quot;v&quot;:-1.9},{&quot;t&quot;:55.61,&quot;v&quot;:-1.4},{&quot;t&quot;:55.76,&quot;v&quot;:-0.8},{&quot;t&quot;:55.909,&quot;v&quot;:-1.7},{&quot;t&quot;:56.058,&quot;v&quot;:-0.9},{&quot;t&quot;:56.656,&quot;v&quot;:-0.6},{&quot;t&quot;:56.805,&quot;v&quot;:-0.3},{&quot;t&quot;:57.701,&quot;v&quot;:0},{&quot;t&quot;:57.851,&quot;v&quot;:-2.7},{&quot;t&quot;:58.15,&quot;v&quot;:-2.9},{&quot;t&quot;:58.299,&quot;v&quot;:-1.6},{&quot;t&quot;:58.448,&quot;v&quot;:-0.9},{&quot;t&quot;:58.598,&quot;v&quot;:-1.9},{&quot;t&quot;:58.747,&quot;v&quot;:-1.1},{&quot;t&quot;:58.896,&quot;v&quot;:-1.8},{&quot;t&quot;:59.046,&quot;v&quot;:-2.1},{&quot;t&quot;:59.195,&quot;v&quot;:-1.2},{&quot;t&quot;:59.345,&quot;v&quot;:-0.6},{&quot;t&quot;:59.494,&quot;v&quot;:-0.4},{&quot;t&quot;:59.643,&quot;v&quot;:-3.4},{&quot;t&quot;:59.743,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n4.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.043,&quot;v&quot;:0},{&quot;t&quot;:0.192,&quot;v&quot;:-7.7},{&quot;t&quot;:0.341,&quot;v&quot;:-9.5},{&quot;t&quot;:5.719,&quot;v&quot;:-9.6},{&quot;t&quot;:5.868,&quot;v&quot;:-9},{&quot;t&quot;:6.018,&quot;v&quot;:-9.6},{&quot;t&quot;:6.914,&quot;v&quot;:-9.6},{&quot;t&quot;:7.063,&quot;v&quot;:-9},{&quot;t&quot;:7.213,&quot;v&quot;:-8.5},{&quot;t&quot;:7.362,&quot;v&quot;:-8},{&quot;t&quot;:7.511,&quot;v&quot;:-7.5},{&quot;t&quot;:7.661,&quot;v&quot;:-9.5},{&quot;t&quot;:10.947,&quot;v&quot;:-9.6},{&quot;t&quot;:11.096,&quot;v&quot;:-9},{&quot;t&quot;:11.246,&quot;v&quot;:-9.6},{&quot;t&quot;:14.831,&quot;v&quot;:-9.6},{&quot;t&quot;:14.98,&quot;v&quot;:-9},{&quot;t&quot;:15.13,&quot;v&quot;:-8.5},{&quot;t&quot;:15.279,&quot;v&quot;:-8},{&quot;t&quot;:15.428,&quot;v&quot;:-9.5},{&quot;t&quot;:17.37,&quot;v&quot;:-9.6},{&quot;t&quot;:17.52,&quot;v&quot;:-9},{&quot;t&quot;:17.669,&quot;v&quot;:-9.6},{&quot;t&quot;:19.013,&quot;v&quot;:-9.6},{&quot;t&quot;:19.163,&quot;v&quot;:-9},{&quot;t&quot;:19.312,&quot;v&quot;:-8.5},{&quot;t&quot;:19.461,&quot;v&quot;:-9.5},{&quot;t&quot;:20.358,&quot;v&quot;:-9.6},{&quot;t&quot;:20.507,&quot;v&quot;:-9},{&quot;t&quot;:20.656,&quot;v&quot;:-8.5},{&quot;t&quot;:20.806,&quot;v&quot;:-9.5},{&quot;t&quot;:20.955,&quot;v&quot;:-9.6},{&quot;t&quot;:21.105,&quot;v&quot;:-9},{&quot;t&quot;:21.254,&quot;v&quot;:-9.6},{&quot;t&quot;:24.839,&quot;v&quot;:-9.6},{&quot;t&quot;:24.988,&quot;v&quot;:-9},{&quot;t&quot;:25.138,&quot;v&quot;:-8.5},{&quot;t&quot;:25.287,&quot;v&quot;:-8},{&quot;t&quot;:25.436,&quot;v&quot;:-9.5},{&quot;t&quot;:28.275,&quot;v&quot;:-9.6},{&quot;t&quot;:28.424,&quot;v&quot;:-9},{&quot;t&quot;:28.573,&quot;v&quot;:-8.5},{&quot;t&quot;:28.723,&quot;v&quot;:-9.5},{&quot;t&quot;:29.171,&quot;v&quot;:-9.6},{&quot;t&quot;:29.32,&quot;v&quot;:-9},{&quot;t&quot;:29.47,&quot;v&quot;:-9.6},{&quot;t&quot;:30.814,&quot;v&quot;:-9.6},{&quot;t&quot;:30.963,&quot;v&quot;:-9},{&quot;t&quot;:31.113,&quot;v&quot;:-8.5},{&quot;t&quot;:31.262,&quot;v&quot;:-8},{&quot;t&quot;:31.411,&quot;v&quot;:-7.5},{&quot;t&quot;:31.561,&quot;v&quot;:-9.5},{&quot;t&quot;:33.801,&quot;v&quot;:-9.6},{&quot;t&quot;:33.951,&quot;v&quot;:-9},{&quot;t&quot;:34.1,&quot;v&quot;:-9.6},{&quot;t&quot;:34.399,&quot;v&quot;:-9.6},{&quot;t&quot;:34.548,&quot;v&quot;:-9},{&quot;t&quot;:34.698,&quot;v&quot;:-9.6},{&quot;t&quot;:34.996,&quot;v&quot;:-9.6},{&quot;t&quot;:35.146,&quot;v&quot;:-9},{&quot;t&quot;:35.295,&quot;v&quot;:-9.6},{&quot;t&quot;:36.042,&quot;v&quot;:-9.6},{&quot;t&quot;:36.191,&quot;v&quot;:-9},{&quot;t&quot;:36.341,&quot;v&quot;:-8.5},{&quot;t&quot;:36.49,&quot;v&quot;:-9.5},{&quot;t&quot;:40.673,&quot;v&quot;:-9.6},{&quot;t&quot;:40.822,&quot;v&quot;:-9},{&quot;t&quot;:40.971,&quot;v&quot;:-8.5},{&quot;t&quot;:41.121,&quot;v&quot;:-8},{&quot;t&quot;:41.27,&quot;v&quot;:-9.5},{&quot;t&quot;:43.81,&quot;v&quot;:-9.6},{&quot;t&quot;:43.959,&quot;v&quot;:-9},{&quot;t&quot;:44.108,&quot;v&quot;:-9.6},{&quot;t&quot;:50.083,&quot;v&quot;:-9.6},{&quot;t&quot;:50.233,&quot;v&quot;:-9},{&quot;t&quot;:50.382,&quot;v&quot;:-8.5},{&quot;t&quot;:50.531,&quot;v&quot;:-8},{&quot;t&quot;:50.681,&quot;v&quot;:-9.5},{&quot;t&quot;:50.98,&quot;v&quot;:-9.6},{&quot;t&quot;:51.129,&quot;v&quot;:-9},{&quot;t&quot;:51.278,&quot;v&quot;:-8.5},{&quot;t&quot;:51.428,&quot;v&quot;:-9.5},{&quot;t&quot;:52.175,&quot;v&quot;:-9.6},{&quot;t&quot;:52.324,&quot;v&quot;:-9},{&quot;t&quot;:52.473,&quot;v&quot;:-9.6},{&quot;t&quot;:52.623,&quot;v&quot;:-9},{&quot;t&quot;:52.772,&quot;v&quot;:-9.6},{&quot;t&quot;:53.967,&quot;v&quot;:-9.6},{&quot;t&quot;:54.116,&quot;v&quot;:-9},{&quot;t&quot;:54.266,&quot;v&quot;:-9.6},{&quot;t&quot;:57.104,&quot;v&quot;:-9.6},{&quot;t&quot;:57.253,&quot;v&quot;:-9},{&quot;t&quot;:57.403,&quot;v&quot;:-8.5},{&quot;t&quot;:57.552,&quot;v&quot;:-8},{&quot;t&quot;:57.701,&quot;v&quot;:-7.5},{&quot;t&quot;:57.851,&quot;v&quot;:-9.5},{&quot;t&quot;:58.598,&quot;v&quot;:-9.6},{&quot;t&quot;:58.747,&quot;v&quot;:-9},{&quot;t&quot;:58.896,&quot;v&quot;:-9},{&quot;t&quot;:59.046,&quot;v&quot;:-9.6},{&quot;t&quot;:59.494,&quot;v&quot;:-9.6},{&quot;t&quot;:59.643,&quot;v&quot;:-9.1},{&quot;t&quot;:59.793,&quot;v&quot;:-8.6},{&quot;t&quot;:59.942,&quot;v&quot;:-8.1},{&quot;t&quot;:60.091,&quot;v&quot;:-7.6},{&quot;t&quot;:60.241,&quot;v&quot;:-7.1},{&quot;t&quot;:60.39,&quot;v&quot;:-6.7},{&quot;t&quot;:60.54,&quot;v&quot;:-6.3},{&quot;t&quot;:60.689,&quot;v&quot;:-5.9},{&quot;t&quot;:60.838,&quot;v&quot;:-5.6},{&quot;t&quot;:60.988,&quot;v&quot;:-5.2},{&quot;t&quot;:61.137,&quot;v&quot;:-4.9},{&quot;t&quot;:61.286,&quot;v&quot;:-4.6},{&quot;t&quot;:61.436,&quot;v&quot;:-4.3},{&quot;t&quot;:61.585,&quot;v&quot;:-4.1},{&quot;t&quot;:61.735,&quot;v&quot;:-3.8},{&quot;t&quot;:62.033,&quot;v&quot;:-3.4},{&quot;t&quot;:62.183,&quot;v&quot;:-3.2},{&quot;t&quot;:62.481,&quot;v&quot;:-2.8},{&quot;t&quot;:62.631,&quot;v&quot;:-2.6},{&quot;t&quot;:63.079,&quot;v&quot;:-2.2},{&quot;t&quot;:63.228,&quot;v&quot;:-2.1},{&quot;t&quot;:63.676,&quot;v&quot;:-1.7},{&quot;t&quot;:63.826,&quot;v&quot;:-1.6},{&quot;t&quot;:64.573,&quot;v&quot;:-1.2},{&quot;t&quot;:64.722,&quot;v&quot;:-1.1},{&quot;t&quot;:65.917,&quot;v&quot;:-0.7},{&quot;t&quot;:66.066,&quot;v&quot;:-0.6},{&quot;t&quot;:68.755,&quot;v&quot;:-0.2},{&quot;t&quot;:68.905,&quot;v&quot;:0}]}]}"></audio>
+
+      <audio data-hf-id="hf-p0in" id="el-sfx-whoosh" src="assets/sfx/whoosh-short.mp3" data-start="7.479" data-duration="0.6" data-track-index="30" data-volume="0.30"></audio>
+      <audio data-hf-id="hf-wwjl" id="el-sfx-click1" src="assets/sfx/click-soft.mp3" data-start="15.272" data-duration="0.4" data-track-index="30" data-volume="0.28"></audio>
+      <audio data-hf-id="hf-eiw0" id="el-sfx-pop" src="assets/sfx/pop.mp3" data-start="25.711" data-duration="0.5" data-track-index="30" data-volume="0.34"></audio>
+      <audio data-hf-id="hf-u0ci" id="el-sfx-click2" src="assets/sfx/click-soft.mp3" data-start="31.353" data-duration="0.4" data-track-index="30" data-volume="0.28"></audio>
+      <audio data-hf-id="hf-se10" id="el-sfx-impact" src="assets/sfx/impact-bass-1.mp3" data-start="41.457" data-duration="0.6" data-track-index="30" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-zx4p" id="el-sfx-cta" src="assets/sfx/chime.mp3" data-start="50.743" data-duration="1.2" data-track-index="30" data-volume="0.32"></audio>
+    </div>
+
+    <script>
+      (function() {
+        function mulberry32(seed) {
+          return function () {
+            seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+            var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+          };
+        }
+        var rand = mulberry32(20260917);
+        var svg = document.getElementById('bg-stars');
+        var n = 40;
+        for (var i = 0; i < n; i++) {
+          var cx = Math.round(rand() * 1080);
+          var cy = Math.round(rand() * 1920);
+          var r = (1.5 + rand() * 1.5).toFixed(2);
+          var op = (0.15 + rand() * 0.25).toFixed(2);
+          var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', r);
+          c.setAttribute('fill', '#fff'); c.setAttribute('opacity', op);
+          c.setAttribute('class', 'star');
+          svg.appendChild(c);
+        }
+      })();
+
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.set('#brand-anchor', { opacity: 1 }, 7.479);
+      tl.to('.blob-1', { x: '+=40', y: '-=30', duration: 18, ease: 'sine.inOut', repeat: -1, yoyo: true }, 0);
+      tl.to('.blob-2', { x: '-=35', y: '+=25', duration: 21, ease: 'sine.inOut', repeat: -1, yoyo: true }, 2);
+      tl.to('.blob-3', { x: '+=30', y: '-=35', duration: 24, ease: 'sine.inOut', repeat: -1, yoyo: true }, 4);
+      tl.to('#bg-stars .star', { opacity: '+=0.22', duration: 4, ease: 'sine.inOut', repeat: -1, yoyo: true, stagger: { each: 0.15, from: 'random' } }, 0);
+
+      // smash-cut at Data moment (act 4) reveal
+      tl.fromTo('#cutflash', { opacity: 0 }, { opacity: 0.55, duration: 0.05, ease: 'none' }, 25.311);
+      tl.to('#cutflash', { opacity: 0, duration: 0.16, ease: 'power1.in' }, 25.361);
+
+tl.fromTo("#cc-0", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 0.12);
+tl.set("#cc-0", {autoAlpha:0}, 0.78);
+tl.to("#cw-0-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 0.12);
+tl.to("#cw-0-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 0.3);
+tl.to("#cw-0-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 0.46);
+tl.to("#cw-0-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 0.64);
+tl.fromTo("#cc-1", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 0.78);
+tl.set("#cc-1", {autoAlpha:0}, 1.72);
+tl.to("#cw-1-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 0.78);
+tl.to("#cw-1-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 0.92);
+tl.to("#cw-1-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 1.26);
+tl.to("#cw-1-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 1.5);
+tl.fromTo("#cc-2", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 1.72);
+tl.set("#cc-2", {autoAlpha:0}, 2.68);
+tl.to("#cw-2-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 1.72);
+tl.to("#cw-2-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 2.0);
+tl.to("#cw-2-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 2.2);
+tl.to("#cw-2-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 2.5);
+tl.fromTo("#cc-3", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 2.68);
+tl.set("#cc-3", {autoAlpha:0}, 3.56);
+tl.to("#cw-3-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 2.68);
+tl.to("#cw-3-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 2.98);
+tl.to("#cw-3-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 3.18);
+tl.to("#cw-3-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 3.32);
+tl.fromTo("#cc-4", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 3.56);
+tl.set("#cc-4", {autoAlpha:0}, 4.48);
+tl.to("#cw-4-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 3.56);
+tl.to("#cw-4-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 3.72);
+tl.to("#cw-4-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 3.94);
+tl.to("#cw-4-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 4.28);
+tl.fromTo("#cc-5", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 4.48);
+tl.set("#cc-5", {autoAlpha:0}, 5.32);
+tl.to("#cw-5-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 4.48);
+tl.to("#cw-5-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 4.64);
+tl.to("#cw-5-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 4.84);
+tl.to("#cw-5-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 5.14);
+tl.fromTo("#cc-6", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 5.32);
+tl.set("#cc-6", {autoAlpha:0}, 6.2);
+tl.to("#cw-6-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 5.32);
+tl.to("#cw-6-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 5.5);
+tl.to("#cw-6-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 5.64);
+tl.to("#cw-6-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 5.98);
+tl.fromTo("#cc-7", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 6.2);
+tl.set("#cc-7", {autoAlpha:0}, 7.579);
+tl.to("#cw-7-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 6.2);
+tl.to("#cw-7-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 6.4);
+tl.to("#cw-7-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 6.62);
+tl.to("#cw-7-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 6.8);
+tl.fromTo("#cc-8", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 7.579);
+tl.set("#cc-8", {autoAlpha:0}, 8.259);
+tl.to("#cw-8-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 7.579);
+tl.to("#cw-8-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 7.719);
+tl.to("#cw-8-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 7.899);
+tl.to("#cw-8-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 8.099);
+tl.fromTo("#cc-9", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 8.259);
+tl.set("#cc-9", {autoAlpha:0}, 9.099);
+tl.to("#cw-9-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 8.259);
+tl.to("#cw-9-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 8.479);
+tl.to("#cw-9-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 8.639);
+tl.to("#cw-9-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 8.899);
+tl.fromTo("#cc-10", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 9.099);
+tl.set("#cc-10", {autoAlpha:0}, 9.959);
+tl.to("#cw-10-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 9.099);
+tl.to("#cw-10-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 9.319);
+tl.to("#cw-10-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 9.499);
+tl.to("#cw-10-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 9.699);
+tl.fromTo("#cc-11", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 9.959);
+tl.set("#cc-11", {autoAlpha:0}, 10.699);
+tl.to("#cw-11-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 9.959);
+tl.to("#cw-11-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 10.199);
+tl.to("#cw-11-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 10.319);
+tl.to("#cw-11-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 10.519);
+tl.fromTo("#cc-12", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 10.699);
+tl.set("#cc-12", {autoAlpha:0}, 11.999);
+tl.to("#cw-12-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 10.699);
+tl.to("#cw-12-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 11.239);
+tl.to("#cw-12-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 11.419);
+tl.to("#cw-12-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 11.739);
+tl.fromTo("#cc-13", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 11.999);
+tl.set("#cc-13", {autoAlpha:0}, 12.819);
+tl.to("#cw-13-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 11.999);
+tl.to("#cw-13-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 12.239);
+tl.to("#cw-13-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 12.439);
+tl.to("#cw-13-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 12.599);
+tl.fromTo("#cc-14", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 12.819);
+tl.set("#cc-14", {autoAlpha:0}, 13.639);
+tl.to("#cw-14-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 12.819);
+tl.to("#cw-14-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 13.099);
+tl.to("#cw-14-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 13.259);
+tl.to("#cw-14-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 13.459);
+tl.fromTo("#cc-15", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 13.639);
+tl.set("#cc-15", {autoAlpha:0}, 14.439);
+tl.to("#cw-15-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 13.639);
+tl.to("#cw-15-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 13.779);
+tl.to("#cw-15-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 13.999);
+tl.to("#cw-15-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 14.259);
+tl.fromTo("#cc-16", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 14.439);
+tl.set("#cc-16", {autoAlpha:0}, 15.352);
+tl.to("#cw-16-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 14.439);
+tl.to("#cw-16-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 14.599);
+tl.fromTo("#cc-17", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 15.352);
+tl.set("#cc-17", {autoAlpha:0}, 16.232);
+tl.to("#cw-17-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 15.352);
+tl.to("#cw-17-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 15.532);
+tl.to("#cw-17-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 15.792);
+tl.to("#cw-17-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 16.012);
+tl.fromTo("#cc-18", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 16.232);
+tl.set("#cc-18", {autoAlpha:0}, 17.072);
+tl.to("#cw-18-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 16.232);
+tl.to("#cw-18-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 16.472);
+tl.to("#cw-18-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 16.632);
+tl.to("#cw-18-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 16.872);
+tl.fromTo("#cc-19", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 17.072);
+tl.set("#cc-19", {autoAlpha:0}, 18.312);
+tl.to("#cw-19-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 17.072);
+tl.to("#cw-19-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 17.612);
+tl.to("#cw-19-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 17.812);
+tl.to("#cw-19-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 18.112);
+tl.fromTo("#cc-20", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 18.312);
+tl.set("#cc-20", {autoAlpha:0}, 19.492);
+tl.to("#cw-20-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 18.312);
+tl.to("#cw-20-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 18.512);
+tl.to("#cw-20-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 18.712);
+tl.to("#cw-20-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 18.912);
+tl.fromTo("#cc-21", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 19.492);
+tl.set("#cc-21", {autoAlpha:0}, 20.672);
+tl.to("#cw-21-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 19.492);
+tl.to("#cw-21-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 19.712);
+tl.to("#cw-21-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 19.952);
+tl.to("#cw-21-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 20.172);
+tl.fromTo("#cc-22", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 20.672);
+tl.set("#cc-22", {autoAlpha:0}, 21.672);
+tl.to("#cw-22-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 20.672);
+tl.to("#cw-22-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 20.872);
+tl.to("#cw-22-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 21.292);
+tl.to("#cw-22-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 21.432);
+tl.fromTo("#cc-23", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 21.672);
+tl.set("#cc-23", {autoAlpha:0}, 22.612);
+tl.to("#cw-23-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 21.672);
+tl.to("#cw-23-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 21.892);
+tl.to("#cw-23-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 22.132);
+tl.to("#cw-23-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 22.412);
+tl.fromTo("#cc-24", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 22.612);
+tl.set("#cc-24", {autoAlpha:0}, 23.672);
+tl.to("#cw-24-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 22.612);
+tl.to("#cw-24-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 22.792);
+tl.to("#cw-24-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 23.032);
+tl.to("#cw-24-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 23.372);
+tl.fromTo("#cc-25", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 23.672);
+tl.set("#cc-25", {autoAlpha:0}, 25.411);
+tl.to("#cw-25-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 23.672);
+tl.to("#cw-25-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 23.892);
+tl.to("#cw-25-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 24.172);
+tl.to("#cw-25-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 24.572);
+tl.fromTo("#cc-26", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 25.411);
+tl.set("#cc-26", {autoAlpha:0}, 26.231);
+tl.to("#cw-26-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 25.411);
+tl.to("#cw-26-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 25.591);
+tl.to("#cw-26-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 25.791);
+tl.to("#cw-26-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 26.031);
+tl.fromTo("#cc-27", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 26.231);
+tl.set("#cc-27", {autoAlpha:0}, 27.131);
+tl.to("#cw-27-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 26.231);
+tl.to("#cw-27-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 26.471);
+tl.to("#cw-27-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 26.691);
+tl.to("#cw-27-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 26.951);
+tl.fromTo("#cc-28", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 27.131);
+tl.set("#cc-28", {autoAlpha:0}, 27.911);
+tl.to("#cw-28-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 27.131);
+tl.to("#cw-28-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 27.331);
+tl.to("#cw-28-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 27.571);
+tl.to("#cw-28-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 27.751);
+tl.fromTo("#cc-29", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 27.911);
+tl.set("#cc-29", {autoAlpha:0}, 29.131);
+tl.to("#cw-29-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 27.911);
+tl.to("#cw-29-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 28.111);
+tl.to("#cw-29-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 28.651);
+tl.to("#cw-29-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 28.951);
+tl.fromTo("#cc-30", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 29.131);
+tl.set("#cc-30", {autoAlpha:0}, 30.031);
+tl.to("#cw-30-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 29.131);
+tl.to("#cw-30-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 29.391);
+tl.to("#cw-30-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 29.591);
+tl.to("#cw-30-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 29.831);
+tl.fromTo("#cc-31", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 30.031);
+tl.set("#cc-31", {autoAlpha:0}, 31.453);
+tl.to("#cw-31-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 30.031);
+tl.to("#cw-31-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 30.251);
+tl.to("#cw-31-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 30.491);
+tl.to("#cw-31-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 30.651);
+tl.fromTo("#cc-32", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 31.453);
+tl.set("#cc-32", {autoAlpha:0}, 32.333);
+tl.to("#cw-32-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 31.453);
+tl.to("#cw-32-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 31.633);
+tl.to("#cw-32-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 31.913);
+tl.to("#cw-32-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 32.073);
+tl.fromTo("#cc-33", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 32.333);
+tl.set("#cc-33", {autoAlpha:0}, 33.133);
+tl.to("#cw-33-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 32.333);
+tl.to("#cw-33-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 32.473);
+tl.to("#cw-33-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 32.673);
+tl.to("#cw-33-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 32.913);
+tl.fromTo("#cc-34", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 33.133);
+tl.set("#cc-34", {autoAlpha:0}, 34.273);
+tl.to("#cw-34-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 33.133);
+tl.to("#cw-34-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 33.453);
+tl.to("#cw-34-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 33.673);
+tl.to("#cw-34-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 34.093);
+tl.fromTo("#cc-35", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 34.273);
+tl.set("#cc-35", {autoAlpha:0}, 35.453);
+tl.to("#cw-35-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 34.273);
+tl.to("#cw-35-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 34.653);
+tl.to("#cw-35-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 34.813);
+tl.to("#cw-35-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 35.213);
+tl.fromTo("#cc-36", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 35.453);
+tl.set("#cc-36", {autoAlpha:0}, 36.613);
+tl.to("#cw-36-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 35.453);
+tl.to("#cw-36-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 35.633);
+tl.to("#cw-36-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 35.853);
+tl.to("#cw-36-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 36.393);
+tl.fromTo("#cc-37", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 36.613);
+tl.set("#cc-37", {autoAlpha:0}, 37.353);
+tl.to("#cw-37-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 36.613);
+tl.to("#cw-37-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 36.833);
+tl.to("#cw-37-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 37.013);
+tl.to("#cw-37-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 37.153);
+tl.fromTo("#cc-38", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 37.353);
+tl.set("#cc-38", {autoAlpha:0}, 38.333);
+tl.to("#cw-38-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 37.353);
+tl.to("#cw-38-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 37.693);
+tl.to("#cw-38-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 37.953);
+tl.to("#cw-38-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 38.133);
+tl.fromTo("#cc-39", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 38.333);
+tl.set("#cc-39", {autoAlpha:0}, 39.793);
+tl.to("#cw-39-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 38.333);
+tl.to("#cw-39-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 38.753);
+tl.to("#cw-39-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 39.013);
+tl.to("#cw-39-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 39.413);
+tl.fromTo("#cc-40", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 39.793);
+tl.set("#cc-40", {autoAlpha:0}, 41.217);
+tl.to("#cw-40-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 39.793);
+tl.to("#cw-40-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 40.033);
+tl.to("#cw-40-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 40.293);
+tl.to("#cw-40-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 40.473);
+tl.fromTo("#cc-41", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 41.217);
+tl.set("#cc-41", {autoAlpha:0}, 41.937);
+tl.to("#cw-41-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 41.217);
+tl.to("#cw-41-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 41.417);
+tl.to("#cw-41-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 41.577);
+tl.to("#cw-41-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 41.737);
+tl.fromTo("#cc-42", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 41.937);
+tl.set("#cc-42", {autoAlpha:0}, 42.717);
+tl.to("#cw-42-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 41.937);
+tl.to("#cw-42-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 42.117);
+tl.to("#cw-42-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 42.317);
+tl.to("#cw-42-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 42.537);
+tl.fromTo("#cc-43", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 42.717);
+tl.set("#cc-43", {autoAlpha:0}, 43.637);
+tl.to("#cw-43-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 42.717);
+tl.to("#cw-43-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 42.957);
+tl.to("#cw-43-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 43.177);
+tl.to("#cw-43-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 43.457);
+tl.fromTo("#cc-44", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 43.637);
+tl.set("#cc-44", {autoAlpha:0}, 44.657);
+tl.to("#cw-44-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 43.637);
+tl.to("#cw-44-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 44.117);
+tl.to("#cw-44-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 44.297);
+tl.to("#cw-44-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 44.437);
+tl.fromTo("#cc-45", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 44.657);
+tl.set("#cc-45", {autoAlpha:0}, 47.677);
+tl.to("#cw-45-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 44.657);
+tl.to("#cw-45-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 44.837);
+tl.to("#cw-45-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 45.176);
+tl.to("#cw-45-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 47.457);
+tl.fromTo("#cc-46", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 47.677);
+tl.set("#cc-46", {autoAlpha:0}, 48.457);
+tl.to("#cw-46-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 47.677);
+tl.to("#cw-46-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 47.857);
+tl.to("#cw-46-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 48.117);
+tl.to("#cw-46-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 48.237);
+tl.fromTo("#cc-47", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 48.457);
+tl.set("#cc-47", {autoAlpha:0}, 49.397);
+tl.to("#cw-47-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 48.457);
+tl.to("#cw-47-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 48.677);
+tl.to("#cw-47-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 48.877);
+tl.to("#cw-47-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 49.196);
+tl.fromTo("#cc-48", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 49.397);
+tl.set("#cc-48", {autoAlpha:0}, 50.643);
+tl.to("#cw-48-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 49.397);
+tl.to("#cw-48-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 49.637);
+tl.to("#cw-48-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 49.757);
+tl.to("#cw-48-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 49.957);
+tl.fromTo("#cc-49", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 50.643);
+tl.set("#cc-49", {autoAlpha:0}, 51.683);
+tl.to("#cw-49-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 50.643);
+tl.to("#cw-49-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 50.863);
+tl.to("#cw-49-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 51.343);
+tl.to("#cw-49-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 51.523);
+tl.fromTo("#cc-50", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 51.683);
+tl.set("#cc-50", {autoAlpha:0}, 52.503);
+tl.to("#cw-50-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 51.683);
+tl.to("#cw-50-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 51.923);
+tl.to("#cw-50-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 52.183);
+tl.to("#cw-50-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 52.363);
+tl.fromTo("#cc-51", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 52.503);
+tl.set("#cc-51", {autoAlpha:0}, 53.323);
+tl.to("#cw-51-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 52.503);
+tl.to("#cw-51-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 52.683);
+tl.to("#cw-51-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 52.923);
+tl.to("#cw-51-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 53.163);
+tl.fromTo("#cc-52", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 53.323);
+tl.set("#cc-52", {autoAlpha:0}, 54.562);
+tl.to("#cw-52-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 53.323);
+tl.to("#cw-52-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 53.503);
+tl.to("#cw-52-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 53.703);
+tl.to("#cw-52-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 54.303);
+tl.fromTo("#cc-53", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 54.562);
+tl.set("#cc-53", {autoAlpha:0}, 55.423);
+tl.to("#cw-53-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 54.562);
+tl.to("#cw-53-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 54.763);
+tl.to("#cw-53-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 54.963);
+tl.to("#cw-53-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 55.203);
+tl.fromTo("#cc-54", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 55.423);
+tl.set("#cc-54", {autoAlpha:0}, 56.303);
+tl.to("#cw-54-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 55.423);
+tl.to("#cw-54-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 55.603);
+tl.to("#cw-54-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 55.803);
+tl.to("#cw-54-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 56.103);
+tl.fromTo("#cc-55", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 56.303);
+tl.set("#cc-55", {autoAlpha:0}, 57.763);
+tl.to("#cw-55-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 56.303);
+tl.to("#cw-55-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 56.503);
+tl.to("#cw-55-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 56.783);
+tl.to("#cw-55-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 57.023);
+tl.fromTo("#cc-56", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 57.763);
+tl.set("#cc-56", {autoAlpha:0}, 58.503);
+tl.to("#cw-56-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 57.763);
+tl.to("#cw-56-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 57.963);
+tl.to("#cw-56-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 58.123);
+tl.to("#cw-56-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 58.323);
+tl.fromTo("#cc-57", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 58.503);
+tl.set("#cc-57", {autoAlpha:0}, 59.383);
+tl.to("#cw-57-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 58.503);
+tl.to("#cw-57-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 58.823);
+tl.to("#cw-57-2", {color:"#4C8DFF", duration:0.1, ease:"none"}, 59.023);
+tl.to("#cw-57-3", {color:"#4C8DFF", duration:0.1, ease:"none"}, 59.263);
+tl.fromTo("#cc-58", {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.12, ease:"power2.out"}, 59.383);
+tl.set("#cc-58", {autoAlpha:0}, 60.103);
+tl.to("#cw-58-0", {color:"#4C8DFF", duration:0.1, ease:"none"}, 59.383);
+tl.to("#cw-58-1", {color:"#4C8DFF", duration:0.1, ease:"none"}, 59.563);
+
+      window.__timelines['main'] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

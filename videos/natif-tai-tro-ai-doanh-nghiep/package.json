@@ -1,0 +1,17 @@
+{
+  "name": "natif-tai-tro-ai-doanh-nghiep",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.44 preview",
+    "check": "npx --yes hyperframes@0.8.44 check",
+    "render": "npx --yes hyperframes@0.8.44 render",
+    "publish": "npx --yes hyperframes@0.8.44 publish"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "@hyperframes/core": "^0.8.44"
+  }
+}
