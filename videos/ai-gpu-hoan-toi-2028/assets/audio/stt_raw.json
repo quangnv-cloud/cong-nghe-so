@@ -1,0 +1,2816 @@
+{
+  "1": {
+    "language_code": "vie",
+    "language_probability": 1.0,
+    "text": "Theo tin rò rỉ mới, card đồ họa chơi game thế hệ kế tiếp của NVIDIA và AMD có thể phải dời đến năm 2028",
+    "words": [
+      {
+        "text": "Theo",
+        "start": 0.12,
+        "end": 0.32,
+        "type": "word",
+        "logprob": -0.0020828000269830227
+      },
+      {
+        "text": " ",
+        "start": 0.32,
+        "end": 0.42,
+        "type": "spacing",
+        "logprob": -1.823885577323381e-05
+      },
+      {
+        "text": "tin",
+        "start": 0.42,
+        "end": 0.62,
+        "type": "word",
+        "logprob": -1.823885577323381e-05
+      },
+      {
+        "text": " ",
+        "start": 0.62,
+        "end": 0.72,
+        "type": "spacing",
+        "logprob": -0.07230740040540695
+      },
+      {
+        "text": "rò",
+        "start": 0.72,
+        "end": 0.84,
+        "type": "word",
+        "logprob": -0.03623165700264508
+      },
+      {
+        "text": " ",
+        "start": 0.84,
+        "end": 0.92,
+        "type": "spacing",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": "rỉ",
+        "start": 0.92,
+        "end": 1.08,
+        "type": "word",
+        "logprob": -0.0008207423297790228
+      },
+      {
+        "text": " ",
+        "start": 1.08,
+        "end": 1.14,
+        "type": "spacing",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": "mới,",
+        "start": 1.14,
+        "end": 1.36,
+        "type": "word",
+        "logprob": -8.046506039249834e-06
+      },
+      {
+        "text": " ",
+        "start": 1.36,
+        "end": 1.7,
+        "type": "spacing",
+        "logprob": -0.019413582980632782
+      },
+      {
+        "text": "card",
+        "start": 1.7,
+        "end": 1.88,
+        "type": "word",
+        "logprob": -0.019413582980632782
+      },
+      {
+        "text": " ",
+        "start": 1.88,
+        "end": 1.92,
+        "type": "spacing",
+        "logprob": -3.373566141817719e-05
+      },
+      {
+        "text": "đồ",
+        "start": 1.92,
+        "end": 2.02,
+        "type": "word",
+        "logprob": -3.373566141817719e-05
+      },
+      {
+        "text": " ",
+        "start": 2.02,
+        "end": 2.06,
+        "type": "spacing",
+        "logprob": -0.0011741180205717683
+      },
+      {
+        "text": "họa",
+        "start": 2.06,
+        "end": 2.3,
+        "type": "word",
+        "logprob": -0.0011741180205717683
+      },
+      {
+        "text": " ",
+        "start": 2.3,
+        "end": 2.32,
+        "type": "spacing",
+        "logprob": -3.194758028257638e-05
+      },
+      {
+        "text": "chơi",
+        "start": 2.32,
+        "end": 2.46,
+        "type": "word",
+        "logprob": -3.194758028257638e-05
+      },
+      {
+        "text": " ",
+        "start": 2.46,
+        "end": 2.5,
+        "type": "spacing",
+        "logprob": -3.099436753473128e-06
+      },
+      {
+        "text": "game",
+        "start": 2.5,
+        "end": 2.68,
+        "type": "word",
+        "logprob": -3.099436753473128e-06
+      },
+      {
+        "text": " ",
+        "start": 2.68,
+        "end": 2.74,
+        "type": "spacing",
+        "logprob": -3.218599158572033e-05
+      },
+      {
+        "text": "thế",
+        "start": 2.74,
+        "end": 2.84,
+        "type": "word",
+        "logprob": -3.218599158572033e-05
+      },
+      {
+        "text": " ",
+        "start": 2.84,
+        "end": 2.88,
+        "type": "spacing",
+        "logprob": -3.814689989667386e-06
+      },
+      {
+        "text": "hệ",
+        "start": 2.88,
+        "end": 3.0,
+        "type": "word",
+        "logprob": -3.814689989667386e-06
+      },
+      {
+        "text": " ",
+        "start": 3.0,
+        "end": 3.08,
+        "type": "spacing",
+        "logprob": -4.2437604861333966e-05
+      },
+      {
+        "text": "kế",
+        "start": 3.08,
+        "end": 3.18,
+        "type": "word",
+        "logprob": -4.2437604861333966e-05
+      },
+      {
+        "text": " ",
+        "start": 3.18,
+        "end": 3.26,
+        "type": "spacing",
+        "logprob": -8.344646857949556e-07
+      },
+      {
+        "text": "tiếp",
+        "start": 3.26,
+        "end": 3.5,
+        "type": "word",
+        "logprob": -8.344646857949556e-07
+      },
+      {
+        "text": " ",
+        "start": 3.5,
+        "end": 3.54,
+        "type": "spacing",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": "của",
+        "start": 3.54,
+        "end": 3.74,
+        "type": "word",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": " ",
+        "start": 3.74,
+        "end": 3.82,
+        "type": "spacing",
+        "logprob": -0.12724341452121735
+      },
+      {
+        "text": "NVIDIA",
+        "start": 3.82,
+        "end": 4.3,
+        "type": "word",
+        "logprob": -0.12724341452121735
+      },
+      {
+        "text": " ",
+        "start": 4.3,
+        "end": 4.42,
+        "type": "spacing",
+        "logprob": -1.549708758830093e-05
+      },
+      {
+        "text": "và",
+        "start": 4.42,
+        "end": 4.52,
+        "type": "word",
+        "logprob": -1.549708758830093e-05
+      },
+      {
+        "text": " ",
+        "start": 4.52,
+        "end": 4.62,
+        "type": "spacing",
+        "logprob": -1.1920922133867862e-06
+      },
+      {
+        "text": "AMD",
+        "start": 4.62,
+        "end": 5.18,
+        "type": "word",
+        "logprob": -1.1920922133867862e-06
+      },
+      {
+        "text": " ",
+        "start": 5.18,
+        "end": 5.22,
+        "type": "spacing",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": "có",
+        "start": 5.22,
+        "end": 5.34,
+        "type": "word",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": " ",
+        "start": 5.34,
+        "end": 5.36,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "thể",
+        "start": 5.36,
+        "end": 5.62,
+        "type": "word",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": " ",
+        "start": 5.62,
+        "end": 5.64,
+        "type": "spacing",
+        "logprob": -2.9802276912960224e-06
+      },
+      {
+        "text": "phải",
+        "start": 5.64,
+        "end": 5.78,
+        "type": "word",
+        "logprob": -2.9802276912960224e-06
+      },
+      {
+        "text": " ",
+        "start": 5.78,
+        "end": 5.86,
+        "type": "spacing",
+        "logprob": -0.07956802845001221
+      },
+      {
+        "text": "dời",
+        "start": 5.86,
+        "end": 6.06,
+        "type": "word",
+        "logprob": -0.02657123229679807
+      },
+      {
+        "text": " ",
+        "start": 6.06,
+        "end": 6.1,
+        "type": "spacing",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": "đến",
+        "start": 6.1,
+        "end": 6.2,
+        "type": "word",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": " ",
+        "start": 6.2,
+        "end": 6.26,
+        "type": "spacing",
+        "logprob": -2.264974000354414e-06
+      },
+      {
+        "text": "năm",
+        "start": 6.26,
+        "end": 6.4,
+        "type": "word",
+        "logprob": -2.264974000354414e-06
+      },
+      {
+        "text": " ",
+        "start": 6.4,
+        "end": 6.54,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "2028",
+        "start": 6.54,
+        "end": 7.62,
+        "type": "word",
+        "logprob": -1.1920926112907182e-07
+      }
+    ],
+    "transcription_id": "Eq40vIae4NOkhz5W82ee",
+    "audio_duration_secs": 7.68
+  },
+  "2": {
+    "language_code": "vie",
+    "language_probability": 1.0,
+    "text": "Nguồn tin Kepler-02, người từng dự đoán khá đúng phần cứng AMD cho biết GeForce kế tiếp và phần lớn Radeon RDNA 5 đều bị đẩy sang năm 2028",
+    "words": [
+      {
+        "text": "Nguồn",
+        "start": 0.14,
+        "end": 0.3,
+        "type": "word",
+        "logprob": -0.0009413490421138704
+      },
+      {
+        "text": " ",
+        "start": 0.3,
+        "end": 0.4,
+        "type": "spacing",
+        "logprob": -0.0020329540129750967
+      },
+      {
+        "text": "tin",
+        "start": 0.4,
+        "end": 0.6,
+        "type": "word",
+        "logprob": -0.0020329540129750967
+      },
+      {
+        "text": " ",
+        "start": 0.6,
+        "end": 0.74,
+        "type": "spacing",
+        "logprob": -0.009088338352739811
+      },
+      {
+        "text": "Kepler-02,",
+        "start": 0.74,
+        "end": 1.72,
+        "type": "word",
+        "logprob": -0.01277715268212205
+      },
+      {
+        "text": " ",
+        "start": 1.72,
+        "end": 2.12,
+        "type": "spacing",
+        "logprob": -5.483612312673358e-06
+      },
+      {
+        "text": "người",
+        "start": 2.12,
+        "end": 2.32,
+        "type": "word",
+        "logprob": -5.483612312673358e-06
+      },
+      {
+        "text": " ",
+        "start": 2.32,
+        "end": 2.4,
+        "type": "spacing",
+        "logprob": -0.004642422776669264
+      },
+      {
+        "text": "từng",
+        "start": 2.4,
+        "end": 2.52,
+        "type": "word",
+        "logprob": -0.004642422776669264
+      },
+      {
+        "text": " ",
+        "start": 2.52,
+        "end": 2.6,
+        "type": "spacing",
+        "logprob": -1.0132738680113107e-05
+      },
+      {
+        "text": "dự",
+        "start": 2.6,
+        "end": 2.7,
+        "type": "word",
+        "logprob": -1.0132738680113107e-05
+      },
+      {
+        "text": " ",
+        "start": 2.7,
+        "end": 2.78,
+        "type": "spacing",
+        "logprob": -8.141662692651153e-05
+      },
+      {
+        "text": "đoán",
+        "start": 2.78,
+        "end": 2.96,
+        "type": "word",
+        "logprob": -8.141662692651153e-05
+      },
+      {
+        "text": " ",
+        "start": 2.96,
+        "end": 3.04,
+        "type": "spacing",
+        "logprob": -6.318072337307967e-06
+      },
+      {
+        "text": "khá",
+        "start": 3.04,
+        "end": 3.22,
+        "type": "word",
+        "logprob": -6.318072337307967e-06
+      },
+      {
+        "text": " ",
+        "start": 3.22,
+        "end": 3.3,
+        "type": "spacing",
+        "logprob": -5.8412379075889476e-06
+      },
+      {
+        "text": "đúng",
+        "start": 3.3,
+        "end": 3.46,
+        "type": "word",
+        "logprob": -5.8412379075889476e-06
+      },
+      {
+        "text": " ",
+        "start": 3.46,
+        "end": 3.56,
+        "type": "spacing",
+        "logprob": -2.5033637939486653e-05
+      },
+      {
+        "text": "phần",
+        "start": 3.56,
+        "end": 3.72,
+        "type": "word",
+        "logprob": -2.5033637939486653e-05
+      },
+      {
+        "text": " ",
+        "start": 3.72,
+        "end": 3.8,
+        "type": "spacing",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": "cứng",
+        "start": 3.8,
+        "end": 4.019,
+        "type": "word",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": " ",
+        "start": 4.019,
+        "end": 4.08,
+        "type": "spacing",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": "AMD",
+        "start": 4.08,
+        "end": 4.58,
+        "type": "word",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": " ",
+        "start": 4.58,
+        "end": 4.62,
+        "type": "spacing",
+        "logprob": -0.054884787648916245
+      },
+      {
+        "text": "cho",
+        "start": 4.62,
+        "end": 4.76,
+        "type": "word",
+        "logprob": -0.054884787648916245
+      },
+      {
+        "text": " ",
+        "start": 4.76,
+        "end": 4.82,
+        "type": "spacing",
+        "logprob": -1.728519782773219e-05
+      },
+      {
+        "text": "biết",
+        "start": 4.82,
+        "end": 5.06,
+        "type": "word",
+        "logprob": -1.728519782773219e-05
+      },
+      {
+        "text": " ",
+        "start": 5.06,
+        "end": 5.38,
+        "type": "spacing",
+        "logprob": -0.15179550647735596
+      },
+      {
+        "text": "GeForce",
+        "start": 5.38,
+        "end": 5.78,
+        "type": "word",
+        "logprob": -0.15179550647735596
+      },
+      {
+        "text": " ",
+        "start": 5.78,
+        "end": 5.84,
+        "type": "spacing",
+        "logprob": -2.7656173188006505e-05
+      },
+      {
+        "text": "kế",
+        "start": 5.84,
+        "end": 5.96,
+        "type": "word",
+        "logprob": -2.7656173188006505e-05
+      },
+      {
+        "text": " ",
+        "start": 5.96,
+        "end": 6.06,
+        "type": "spacing",
+        "logprob": -7.390948667307384e-06
+      },
+      {
+        "text": "tiếp",
+        "start": 6.06,
+        "end": 6.32,
+        "type": "word",
+        "logprob": -7.390948667307384e-06
+      },
+      {
+        "text": " ",
+        "start": 6.32,
+        "end": 6.36,
+        "type": "spacing",
+        "logprob": -2.90866428258596e-05
+      },
+      {
+        "text": "và",
+        "start": 6.36,
+        "end": 6.44,
+        "type": "word",
+        "logprob": -2.90866428258596e-05
+      },
+      {
+        "text": " ",
+        "start": 6.44,
+        "end": 6.54,
+        "type": "spacing",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": "phần",
+        "start": 6.54,
+        "end": 6.72,
+        "type": "word",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": " ",
+        "start": 6.72,
+        "end": 6.78,
+        "type": "spacing",
+        "logprob": -2.7418097943154862e-06
+      },
+      {
+        "text": "lớn",
+        "start": 6.78,
+        "end": 7.0,
+        "type": "word",
+        "logprob": -2.7418097943154862e-06
+      },
+      {
+        "text": " ",
+        "start": 7.0,
+        "end": 7.1,
+        "type": "spacing",
+        "logprob": -5.543078441405669e-05
+      },
+      {
+        "text": "Radeon",
+        "start": 7.1,
+        "end": 7.6,
+        "type": "word",
+        "logprob": -5.543078441405669e-05
+      },
+      {
+        "text": " ",
+        "start": 7.6,
+        "end": 7.72,
+        "type": "spacing",
+        "logprob": -4.0531076592742465e-06
+      },
+      {
+        "text": "RDNA",
+        "start": 7.72,
+        "end": 8.2,
+        "type": "word",
+        "logprob": -0.0003943008175610885
+      },
+      {
+        "text": " ",
+        "start": 8.2,
+        "end": 8.54,
+        "type": "spacing",
+        "logprob": -0.00017975145601667464
+      },
+      {
+        "text": "5",
+        "start": 8.54,
+        "end": 8.56,
+        "type": "word",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": " ",
+        "start": 8.56,
+        "end": 8.98,
+        "type": "spacing",
+        "logprob": -3.194758028257638e-05
+      },
+      {
+        "text": "đều",
+        "start": 8.98,
+        "end": 9.1,
+        "type": "word",
+        "logprob": -3.194758028257638e-05
+      },
+      {
+        "text": " ",
+        "start": 9.1,
+        "end": 9.18,
+        "type": "spacing",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": "bị",
+        "start": 9.18,
+        "end": 9.26,
+        "type": "word",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": " ",
+        "start": 9.26,
+        "end": 9.34,
+        "type": "spacing",
+        "logprob": -9.179073458653875e-06
+      },
+      {
+        "text": "đẩy",
+        "start": 9.34,
+        "end": 9.52,
+        "type": "word",
+        "logprob": -9.179073458653875e-06
+      },
+      {
+        "text": " ",
+        "start": 9.52,
+        "end": 9.66,
+        "type": "spacing",
+        "logprob": -4.529942543740617e-06
+      },
+      {
+        "text": "sang",
+        "start": 9.66,
+        "end": 9.78,
+        "type": "word",
+        "logprob": -4.529942543740617e-06
+      },
+      {
+        "text": " ",
+        "start": 9.78,
+        "end": 9.8,
+        "type": "spacing",
+        "logprob": -2.7894584491150454e-05
+      },
+      {
+        "text": "năm",
+        "start": 9.8,
+        "end": 9.96,
+        "type": "word",
+        "logprob": -2.7894584491150454e-05
+      },
+      {
+        "text": " ",
+        "start": 9.96,
+        "end": 10.1,
+        "type": "spacing",
+        "logprob": 0.0
+      },
+      {
+        "text": "2028",
+        "start": 10.1,
+        "end": 11.38,
+        "type": "word",
+        "logprob": -7.450572354628093e-07
+      }
+    ],
+    "transcription_id": "Wmdzl9AiRnrCAswC3K6t",
+    "audio_duration_secs": 11.44
+  },
+  "3": {
+    "language_code": "vie",
+    "language_probability": 1.0,
+    "text": "Lý do: Năng lực sản xuất chip và bộ nhớ có giới hạn. Trí tuệ nhân tạo mang lợi nhuận cao hơn card chơi game. Riêng AT2 của AMD vẫn có thể ra mắt năm 2027",
+    "words": [
+      {
+        "text": "Lý",
+        "start": 0.08,
+        "end": 0.18,
+        "type": "word",
+        "logprob": -0.0002028569160756888
+      },
+      {
+        "text": " ",
+        "start": 0.18,
+        "end": 0.26,
+        "type": "spacing",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": "do:",
+        "start": 0.26,
+        "end": 0.46,
+        "type": "word",
+        "logprob": -0.014055820791933607
+      },
+      {
+        "text": " ",
+        "start": 0.46,
+        "end": 0.84,
+        "type": "spacing",
+        "logprob": -0.3868784010410309
+      },
+      {
+        "text": "Năng",
+        "start": 0.84,
+        "end": 0.96,
+        "type": "word",
+        "logprob": -0.0967476735213495
+      },
+      {
+        "text": " ",
+        "start": 0.96,
+        "end": 1.02,
+        "type": "spacing",
+        "logprob": -5.006777428206988e-06
+      },
+      {
+        "text": "lực",
+        "start": 1.02,
+        "end": 1.14,
+        "type": "word",
+        "logprob": -5.006777428206988e-06
+      },
+      {
+        "text": " ",
+        "start": 1.14,
+        "end": 1.22,
+        "type": "spacing",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": "sản",
+        "start": 1.22,
+        "end": 1.34,
+        "type": "word",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": " ",
+        "start": 1.34,
+        "end": 1.4,
+        "type": "spacing",
+        "logprob": -6.437280717364047e-06
+      },
+      {
+        "text": "xuất",
+        "start": 1.4,
+        "end": 1.54,
+        "type": "word",
+        "logprob": -6.437280717364047e-06
+      },
+      {
+        "text": " ",
+        "start": 1.54,
+        "end": 1.6,
+        "type": "spacing",
+        "logprob": -0.0002972637885250151
+      },
+      {
+        "text": "chip",
+        "start": 1.6,
+        "end": 1.82,
+        "type": "word",
+        "logprob": -0.0002972637885250151
+      },
+      {
+        "text": " ",
+        "start": 1.82,
+        "end": 1.92,
+        "type": "spacing",
+        "logprob": -2.0265558760002023e-06
+      },
+      {
+        "text": "và",
+        "start": 1.92,
+        "end": 2.02,
+        "type": "word",
+        "logprob": -2.0265558760002023e-06
+      },
+      {
+        "text": " ",
+        "start": 2.02,
+        "end": 2.12,
+        "type": "spacing",
+        "logprob": -7.462222856702283e-05
+      },
+      {
+        "text": "bộ",
+        "start": 2.12,
+        "end": 2.26,
+        "type": "word",
+        "logprob": -7.462222856702283e-05
+      },
+      {
+        "text": " ",
+        "start": 2.26,
+        "end": 2.3,
+        "type": "spacing",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": "nhớ",
+        "start": 2.3,
+        "end": 2.54,
+        "type": "word",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": " ",
+        "start": 2.54,
+        "end": 2.58,
+        "type": "spacing",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": "có",
+        "start": 2.58,
+        "end": 2.68,
+        "type": "word",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": " ",
+        "start": 2.68,
+        "end": 2.72,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "giới",
+        "start": 2.72,
+        "end": 2.88,
+        "type": "word",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": " ",
+        "start": 2.88,
+        "end": 2.92,
+        "type": "spacing",
+        "logprob": -4.6132929128361866e-05
+      },
+      {
+        "text": "hạn.",
+        "start": 2.92,
+        "end": 3.12,
+        "type": "word",
+        "logprob": -0.15818771639987972
+      },
+      {
+        "text": " ",
+        "start": 3.12,
+        "end": 3.4,
+        "type": "spacing",
+        "logprob": -0.0003880701260641217
+      },
+      {
+        "text": "Trí",
+        "start": 3.4,
+        "end": 3.54,
+        "type": "word",
+        "logprob": -0.0002607002329568786
+      },
+      {
+        "text": " ",
+        "start": 3.54,
+        "end": 3.62,
+        "type": "spacing",
+        "logprob": -0.0003692421887535602
+      },
+      {
+        "text": "tuệ",
+        "start": 3.62,
+        "end": 3.76,
+        "type": "word",
+        "logprob": -0.00026861178533484537
+      },
+      {
+        "text": " ",
+        "start": 3.76,
+        "end": 3.8,
+        "type": "spacing",
+        "logprob": -1.1444026313256472e-05
+      },
+      {
+        "text": "nhân",
+        "start": 3.8,
+        "end": 3.92,
+        "type": "word",
+        "logprob": -1.1444026313256472e-05
+      },
+      {
+        "text": " ",
+        "start": 3.92,
+        "end": 4.0,
+        "type": "spacing",
+        "logprob": -9.775113539944869e-06
+      },
+      {
+        "text": "tạo",
+        "start": 4.0,
+        "end": 4.3,
+        "type": "word",
+        "logprob": -9.775113539944869e-06
+      },
+      {
+        "text": " ",
+        "start": 4.3,
+        "end": 4.36,
+        "type": "spacing",
+        "logprob": -2.861018856492592e-06
+      },
+      {
+        "text": "mang",
+        "start": 4.36,
+        "end": 4.52,
+        "type": "word",
+        "logprob": -2.861018856492592e-06
+      },
+      {
+        "text": " ",
+        "start": 4.52,
+        "end": 4.56,
+        "type": "spacing",
+        "logprob": -8.856858039507642e-05
+      },
+      {
+        "text": "lợi",
+        "start": 4.56,
+        "end": 4.66,
+        "type": "word",
+        "logprob": -8.856858039507642e-05
+      },
+      {
+        "text": " ",
+        "start": 4.66,
+        "end": 4.7,
+        "type": "spacing",
+        "logprob": -0.0006033745594322681
+      },
+      {
+        "text": "nhuận",
+        "start": 4.7,
+        "end": 4.92,
+        "type": "word",
+        "logprob": -0.00039983613532967865
+      },
+      {
+        "text": " ",
+        "start": 4.92,
+        "end": 4.96,
+        "type": "spacing",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": "cao",
+        "start": 4.96,
+        "end": 5.1,
+        "type": "word",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": " ",
+        "start": 5.1,
+        "end": 5.2,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "hơn",
+        "start": 5.2,
+        "end": 5.4,
+        "type": "word",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": " ",
+        "start": 5.4,
+        "end": 5.52,
+        "type": "spacing",
+        "logprob": -0.06376971304416656
+      },
+      {
+        "text": "card",
+        "start": 5.52,
+        "end": 5.7,
+        "type": "word",
+        "logprob": -0.06376971304416656
+      },
+      {
+        "text": " ",
+        "start": 5.7,
+        "end": 5.74,
+        "type": "spacing",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": "chơi",
+        "start": 5.74,
+        "end": 5.86,
+        "type": "word",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": " ",
+        "start": 5.86,
+        "end": 5.94,
+        "type": "spacing",
+        "logprob": -2.9802276912960224e-06
+      },
+      {
+        "text": "game.",
+        "start": 5.94,
+        "end": 6.14,
+        "type": "word",
+        "logprob": -1.0633294732542708e-05
+      },
+      {
+        "text": " ",
+        "start": 6.14,
+        "end": 6.14,
+        "type": "spacing",
+        "logprob": -0.0013636585790663958
+      },
+      {
+        "text": "Riêng",
+        "start": 6.8,
+        "end": 7.02,
+        "type": "word",
+        "logprob": -0.0005486105486852466
+      },
+      {
+        "text": " ",
+        "start": 7.02,
+        "end": 7.16,
+        "type": "spacing",
+        "logprob": -0.13702185451984406
+      },
+      {
+        "text": "AT2",
+        "start": 7.16,
+        "end": 7.8,
+        "type": "word",
+        "logprob": -0.11319259305795033
+      },
+      {
+        "text": " ",
+        "start": 7.8,
+        "end": 7.84,
+        "type": "spacing",
+        "logprob": -2.1576648578047752e-05
+      },
+      {
+        "text": "của",
+        "start": 7.84,
+        "end": 7.98,
+        "type": "word",
+        "logprob": -2.1576648578047752e-05
+      },
+      {
+        "text": " ",
+        "start": 7.98,
+        "end": 8.08,
+        "type": "spacing",
+        "logprob": -5.125986263010418e-06
+      },
+      {
+        "text": "AMD",
+        "start": 8.08,
+        "end": 8.52,
+        "type": "word",
+        "logprob": -5.125986263010418e-06
+      },
+      {
+        "text": " ",
+        "start": 8.52,
+        "end": 8.68,
+        "type": "spacing",
+        "logprob": -2.264974000354414e-06
+      },
+      {
+        "text": "vẫn",
+        "start": 8.68,
+        "end": 8.82,
+        "type": "word",
+        "logprob": -2.264974000354414e-06
+      },
+      {
+        "text": " ",
+        "start": 8.82,
+        "end": 8.84,
+        "type": "spacing",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": "có",
+        "start": 8.84,
+        "end": 8.96,
+        "type": "word",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": " ",
+        "start": 8.96,
+        "end": 8.98,
+        "type": "spacing",
+        "logprob": 0.0
+      },
+      {
+        "text": "thể",
+        "start": 9.0,
+        "end": 9.18,
+        "type": "word",
+        "logprob": 0.0
+      },
+      {
+        "text": " ",
+        "start": 9.18,
+        "end": 9.24,
+        "type": "spacing",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": "ra",
+        "start": 9.24,
+        "end": 9.34,
+        "type": "word",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": " ",
+        "start": 9.34,
+        "end": 9.38,
+        "type": "spacing",
+        "logprob": -2.861018856492592e-06
+      },
+      {
+        "text": "mắt",
+        "start": 9.38,
+        "end": 9.58,
+        "type": "word",
+        "logprob": -2.861018856492592e-06
+      },
+      {
+        "text": " ",
+        "start": 9.58,
+        "end": 9.62,
+        "type": "spacing",
+        "logprob": -0.0001419681793777272
+      },
+      {
+        "text": "năm",
+        "start": 9.62,
+        "end": 9.78,
+        "type": "word",
+        "logprob": -0.0001419681793777272
+      },
+      {
+        "text": " ",
+        "start": 9.78,
+        "end": 9.94,
+        "type": "spacing",
+        "logprob": -4.565611743601039e-05
+      },
+      {
+        "text": "2027",
+        "start": 9.94,
+        "end": 10.94,
+        "type": "word",
+        "logprob": -6.556505809385271e-07
+      }
+    ],
+    "transcription_id": "eixXWG09FmqvyHOfkhib",
+    "audio_duration_secs": 10.96
+  },
+  "4": {
+    "language_code": "vie",
+    "language_probability": 1.0,
+    "text": "Mốc 2028 muộn hơn dự đoán trước của kênh Moore's Law is Dead về GeForce RTX 60 ra mắt nửa đầu 2027. Điều Kepler_L2 bác bỏ",
+    "words": [
+      {
+        "text": "Mốc",
+        "start": 0.08,
+        "end": 0.22,
+        "type": "word",
+        "logprob": -0.0023058188380673528
+      },
+      {
+        "text": " ",
+        "start": 0.22,
+        "end": 0.42,
+        "type": "spacing",
+        "logprob": -2.169585604860913e-05
+      },
+      {
+        "text": "2028",
+        "start": 0.42,
+        "end": 1.46,
+        "type": "word",
+        "logprob": -1.6987291360237577e-06
+      },
+      {
+        "text": " ",
+        "start": 1.46,
+        "end": 1.56,
+        "type": "spacing",
+        "logprob": -5.519237674889155e-05
+      },
+      {
+        "text": "muộn",
+        "start": 1.56,
+        "end": 1.76,
+        "type": "word",
+        "logprob": -5.054345092503354e-05
+      },
+      {
+        "text": " ",
+        "start": 1.76,
+        "end": 1.8,
+        "type": "spacing",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": "hơn",
+        "start": 1.8,
+        "end": 1.94,
+        "type": "word",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": " ",
+        "start": 1.94,
+        "end": 2.02,
+        "type": "spacing",
+        "logprob": -1.6927575416048057e-05
+      },
+      {
+        "text": "dự",
+        "start": 2.02,
+        "end": 2.12,
+        "type": "word",
+        "logprob": -1.6927575416048057e-05
+      },
+      {
+        "text": " ",
+        "start": 2.12,
+        "end": 2.18,
+        "type": "spacing",
+        "logprob": -0.0002449450839776546
+      },
+      {
+        "text": "đoán",
+        "start": 2.18,
+        "end": 2.32,
+        "type": "word",
+        "logprob": -0.0002449450839776546
+      },
+      {
+        "text": " ",
+        "start": 2.32,
+        "end": 2.38,
+        "type": "spacing",
+        "logprob": -2.3841830625315197e-06
+      },
+      {
+        "text": "trước",
+        "start": 2.38,
+        "end": 2.6,
+        "type": "word",
+        "logprob": -2.3841830625315197e-06
+      },
+      {
+        "text": " ",
+        "start": 2.6,
+        "end": 2.64,
+        "type": "spacing",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": "của",
+        "start": 2.64,
+        "end": 2.76,
+        "type": "word",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": " ",
+        "start": 2.76,
+        "end": 2.8,
+        "type": "spacing",
+        "logprob": -4.1960789531003684e-05
+      },
+      {
+        "text": "kênh",
+        "start": 2.8,
+        "end": 2.98,
+        "type": "word",
+        "logprob": -4.1960789531003684e-05
+      },
+      {
+        "text": " ",
+        "start": 2.98,
+        "end": 3.06,
+        "type": "spacing",
+        "logprob": -0.00593696441501379
+      },
+      {
+        "text": "Moore's",
+        "start": 3.06,
+        "end": 3.3,
+        "type": "word",
+        "logprob": -0.004266452796766121
+      },
+      {
+        "text": " ",
+        "start": 3.3,
+        "end": 3.36,
+        "type": "spacing",
+        "logprob": -0.0005243833875283599
+      },
+      {
+        "text": "Law",
+        "start": 3.36,
+        "end": 3.5,
+        "type": "word",
+        "logprob": -0.0005243833875283599
+      },
+      {
+        "text": " ",
+        "start": 3.5,
+        "end": 3.58,
+        "type": "spacing",
+        "logprob": -0.22549940645694733
+      },
+      {
+        "text": "is",
+        "start": 3.58,
+        "end": 3.68,
+        "type": "word",
+        "logprob": -0.22549940645694733
+      },
+      {
+        "text": " ",
+        "start": 3.68,
+        "end": 3.78,
+        "type": "spacing",
+        "logprob": -0.0005116345710121095
+      },
+      {
+        "text": "Dead",
+        "start": 3.78,
+        "end": 3.98,
+        "type": "word",
+        "logprob": -0.0005116345710121095
+      },
+      {
+        "text": " ",
+        "start": 3.98,
+        "end": 3.98,
+        "type": "spacing",
+        "logprob": -2.13382354559144e-05
+      },
+      {
+        "text": "về",
+        "start": 4.32,
+        "end": 4.48,
+        "type": "word",
+        "logprob": -2.13382354559144e-05
+      },
+      {
+        "text": " ",
+        "start": 4.48,
+        "end": 4.56,
+        "type": "spacing",
+        "logprob": -0.008076390251517296
+      },
+      {
+        "text": "GeForce",
+        "start": 4.56,
+        "end": 4.96,
+        "type": "word",
+        "logprob": -0.008076390251517296
+      },
+      {
+        "text": " ",
+        "start": 4.96,
+        "end": 5.04,
+        "type": "spacing",
+        "logprob": -9.023735765367746e-05
+      },
+      {
+        "text": "RTX",
+        "start": 5.04,
+        "end": 5.46,
+        "type": "word",
+        "logprob": -9.023735765367746e-05
+      },
+      {
+        "text": " ",
+        "start": 5.46,
+        "end": 5.68,
+        "type": "spacing",
+        "logprob": -0.0016295737586915493
+      },
+      {
+        "text": "60",
+        "start": 5.68,
+        "end": 6.04,
+        "type": "word",
+        "logprob": -2.324576968248948e-06
+      },
+      {
+        "text": " ",
+        "start": 6.04,
+        "end": 6.1,
+        "type": "spacing",
+        "logprob": -1.2874520507466514e-05
+      },
+      {
+        "text": "ra",
+        "start": 6.1,
+        "end": 6.2,
+        "type": "word",
+        "logprob": -1.2874520507466514e-05
+      },
+      {
+        "text": " ",
+        "start": 6.2,
+        "end": 6.26,
+        "type": "spacing",
+        "logprob": -8.583032467868179e-06
+      },
+      {
+        "text": "mắt",
+        "start": 6.26,
+        "end": 6.42,
+        "type": "word",
+        "logprob": -8.583032467868179e-06
+      },
+      {
+        "text": " ",
+        "start": 6.42,
+        "end": 6.5,
+        "type": "spacing",
+        "logprob": -1.728519782773219e-05
+      },
+      {
+        "text": "nửa",
+        "start": 6.5,
+        "end": 6.7,
+        "type": "word",
+        "logprob": -1.728519782773219e-05
+      },
+      {
+        "text": " ",
+        "start": 6.7,
+        "end": 6.74,
+        "type": "spacing",
+        "logprob": -2.861018856492592e-06
+      },
+      {
+        "text": "đầu",
+        "start": 6.74,
+        "end": 6.92,
+        "type": "word",
+        "logprob": -2.861018856492592e-06
+      },
+      {
+        "text": " ",
+        "start": 6.92,
+        "end": 7.06,
+        "type": "spacing",
+        "logprob": -7.033323527139146e-06
+      },
+      {
+        "text": "2027.",
+        "start": 7.06,
+        "end": 8.0,
+        "type": "word",
+        "logprob": -0.13873703476310767
+      },
+      {
+        "text": " ",
+        "start": 8.0,
+        "end": 8.0,
+        "type": "spacing",
+        "logprob": -0.007452898658812046
+      },
+      {
+        "text": "Điều",
+        "start": 8.38,
+        "end": 8.58,
+        "type": "word",
+        "logprob": -0.007452898658812046
+      },
+      {
+        "text": " ",
+        "start": 8.58,
+        "end": 8.7,
+        "type": "spacing",
+        "logprob": -0.026563528925180435
+      },
+      {
+        "text": "Kepler_L2",
+        "start": 8.7,
+        "end": 9.68,
+        "type": "word",
+        "logprob": -0.029176195601394284
+      },
+      {
+        "text": " ",
+        "start": 9.68,
+        "end": 9.72,
+        "type": "spacing",
+        "logprob": -0.00044204952428117394
+      },
+      {
+        "text": "bác",
+        "start": 9.72,
+        "end": 9.84,
+        "type": "word",
+        "logprob": -0.00044204952428117394
+      },
+      {
+        "text": " ",
+        "start": 9.84,
+        "end": 9.92,
+        "type": "spacing",
+        "logprob": -4.172316494077677e-06
+      },
+      {
+        "text": "bỏ",
+        "start": 9.92,
+        "end": 10.12,
+        "type": "word",
+        "logprob": -4.172316494077677e-06
+      }
+    ],
+    "transcription_id": "0U3VYxFF9nZQr8kJAoHQ",
+    "audio_duration_secs": 10.16
+  },
+  "5": {
+    "language_code": "vie",
+    "language_probability": 1.0,
+    "text": "AT 2 của AMD dự kiến ra mắt cuối năm 2027, hiệu năng ngang RTX 5080. Còn dòng đầu bảng thật sự phải chờ đến năm 2028",
+    "words": [
+      {
+        "text": "AT",
+        "start": 0.1,
+        "end": 0.34,
+        "type": "word",
+        "logprob": -0.0027386562433093786
+      },
+      {
+        "text": " ",
+        "start": 0.34,
+        "end": 0.58,
+        "type": "spacing",
+        "logprob": -0.4327875077724457
+      },
+      {
+        "text": "2",
+        "start": 0.58,
+        "end": 0.68,
+        "type": "word",
+        "logprob": -4.6491513785440475e-06
+      },
+      {
+        "text": " ",
+        "start": 0.68,
+        "end": 0.72,
+        "type": "spacing",
+        "logprob": -1.8000440832111053e-05
+      },
+      {
+        "text": "của",
+        "start": 0.72,
+        "end": 0.86,
+        "type": "word",
+        "logprob": -1.8000440832111053e-05
+      },
+      {
+        "text": " ",
+        "start": 0.86,
+        "end": 0.98,
+        "type": "spacing",
+        "logprob": -4.768360213347478e-06
+      },
+      {
+        "text": "AMD",
+        "start": 0.98,
+        "end": 1.42,
+        "type": "word",
+        "logprob": -4.768360213347478e-06
+      },
+      {
+        "text": " ",
+        "start": 1.42,
+        "end": 1.62,
+        "type": "spacing",
+        "logprob": -0.00024875884992070496
+      },
+      {
+        "text": "dự",
+        "start": 1.64,
+        "end": 1.72,
+        "type": "word",
+        "logprob": -0.00024875884992070496
+      },
+      {
+        "text": " ",
+        "start": 1.72,
+        "end": 1.8,
+        "type": "spacing",
+        "logprob": -3.9457496313843876e-05
+      },
+      {
+        "text": "kiến",
+        "start": 1.8,
+        "end": 1.96,
+        "type": "word",
+        "logprob": -3.9457496313843876e-05
+      },
+      {
+        "text": " ",
+        "start": 1.96,
+        "end": 2.02,
+        "type": "spacing",
+        "logprob": -0.00019095504831057042
+      },
+      {
+        "text": "ra",
+        "start": 2.02,
+        "end": 2.1,
+        "type": "word",
+        "logprob": -0.00019095504831057042
+      },
+      {
+        "text": " ",
+        "start": 2.1,
+        "end": 2.18,
+        "type": "spacing",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": "mắt",
+        "start": 2.18,
+        "end": 2.3,
+        "type": "word",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": " ",
+        "start": 2.3,
+        "end": 2.4,
+        "type": "spacing",
+        "logprob": -5.364403477869928e-06
+      },
+      {
+        "text": "cuối",
+        "start": 2.4,
+        "end": 2.54,
+        "type": "word",
+        "logprob": -5.364403477869928e-06
+      },
+      {
+        "text": " ",
+        "start": 2.54,
+        "end": 2.62,
+        "type": "spacing",
+        "logprob": -0.0010688550537452102
+      },
+      {
+        "text": "năm",
+        "start": 2.62,
+        "end": 2.76,
+        "type": "word",
+        "logprob": -0.0010688550537452102
+      },
+      {
+        "text": " ",
+        "start": 2.76,
+        "end": 2.88,
+        "type": "spacing",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": "2027,",
+        "start": 2.88,
+        "end": 3.84,
+        "type": "word",
+        "logprob": -0.004011646657839663
+      },
+      {
+        "text": " ",
+        "start": 3.84,
+        "end": 4.12,
+        "type": "spacing",
+        "logprob": -1.2278481335670222e-05
+      },
+      {
+        "text": "hiệu",
+        "start": 4.12,
+        "end": 4.3,
+        "type": "word",
+        "logprob": -1.2278481335670222e-05
+      },
+      {
+        "text": " ",
+        "start": 4.3,
+        "end": 4.34,
+        "type": "spacing",
+        "logprob": -0.0002806984703056514
+      },
+      {
+        "text": "năng",
+        "start": 4.34,
+        "end": 4.5,
+        "type": "word",
+        "logprob": -0.0002806984703056514
+      },
+      {
+        "text": " ",
+        "start": 4.5,
+        "end": 4.6,
+        "type": "spacing",
+        "logprob": -2.9444261599564925e-05
+      },
+      {
+        "text": "ngang",
+        "start": 4.6,
+        "end": 4.8,
+        "type": "word",
+        "logprob": -2.9444261599564925e-05
+      },
+      {
+        "text": " ",
+        "start": 4.8,
+        "end": 4.88,
+        "type": "spacing",
+        "logprob": -0.0001280225842492655
+      },
+      {
+        "text": "RTX",
+        "start": 4.88,
+        "end": 5.5,
+        "type": "word",
+        "logprob": -0.0001280225842492655
+      },
+      {
+        "text": " ",
+        "start": 5.5,
+        "end": 5.66,
+        "type": "spacing",
+        "logprob": -0.0895364060997963
+      },
+      {
+        "text": "5080.",
+        "start": 5.66,
+        "end": 6.42,
+        "type": "word",
+        "logprob": -1.277904768244298e-05
+      },
+      {
+        "text": " ",
+        "start": 6.42,
+        "end": 6.42,
+        "type": "spacing",
+        "logprob": -0.0003411188081372529
+      },
+      {
+        "text": "Còn",
+        "start": 6.98,
+        "end": 7.12,
+        "type": "word",
+        "logprob": -0.0003411188081372529
+      },
+      {
+        "text": " ",
+        "start": 7.12,
+        "end": 7.2,
+        "type": "spacing",
+        "logprob": -0.004682290833443403
+      },
+      {
+        "text": "dòng",
+        "start": 7.2,
+        "end": 7.36,
+        "type": "word",
+        "logprob": -0.004682290833443403
+      },
+      {
+        "text": " ",
+        "start": 7.36,
+        "end": 7.4,
+        "type": "spacing",
+        "logprob": -0.00013052565918769687
+      },
+      {
+        "text": "đầu",
+        "start": 7.4,
+        "end": 7.54,
+        "type": "word",
+        "logprob": -0.00013052565918769687
+      },
+      {
+        "text": " ",
+        "start": 7.54,
+        "end": 7.58,
+        "type": "spacing",
+        "logprob": -6.675497570540756e-05
+      },
+      {
+        "text": "bảng",
+        "start": 7.58,
+        "end": 7.76,
+        "type": "word",
+        "logprob": -6.675497570540756e-05
+      },
+      {
+        "text": " ",
+        "start": 7.76,
+        "end": 7.84,
+        "type": "spacing",
+        "logprob": -0.0003343261778354645
+      },
+      {
+        "text": "thật",
+        "start": 7.84,
+        "end": 8.02,
+        "type": "word",
+        "logprob": -0.0003343261778354645
+      },
+      {
+        "text": " ",
+        "start": 8.02,
+        "end": 8.08,
+        "type": "spacing",
+        "logprob": -3.4570634852570947e-06
+      },
+      {
+        "text": "sự",
+        "start": 8.08,
+        "end": 8.26,
+        "type": "word",
+        "logprob": -3.4570634852570947e-06
+      },
+      {
+        "text": " ",
+        "start": 8.26,
+        "end": 8.36,
+        "type": "spacing",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": "phải",
+        "start": 8.36,
+        "end": 8.5,
+        "type": "word",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": " ",
+        "start": 8.5,
+        "end": 8.54,
+        "type": "spacing",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": "chờ",
+        "start": 8.54,
+        "end": 8.72,
+        "type": "word",
+        "logprob": -5.722029527532868e-06
+      },
+      {
+        "text": " ",
+        "start": 8.72,
+        "end": 8.78,
+        "type": "spacing",
+        "logprob": -3.6954811548639555e-06
+      },
+      {
+        "text": "đến",
+        "start": 8.78,
+        "end": 8.88,
+        "type": "word",
+        "logprob": -3.6954811548639555e-06
+      },
+      {
+        "text": " ",
+        "start": 8.88,
+        "end": 8.92,
+        "type": "spacing",
+        "logprob": -3.576272320060525e-06
+      },
+      {
+        "text": "năm",
+        "start": 8.92,
+        "end": 9.08,
+        "type": "word",
+        "logprob": -3.576272320060525e-06
+      },
+      {
+        "text": " ",
+        "start": 9.08,
+        "end": 9.22,
+        "type": "spacing",
+        "logprob": 0.0
+      },
+      {
+        "text": "2028",
+        "start": 9.22,
+        "end": 10.38,
+        "type": "word",
+        "logprob": -6.258481377585667e-07
+      }
+    ],
+    "transcription_id": "nOH8dps8rk2P7Zb0u60t",
+    "audio_duration_secs": 10.48
+  },
+  "6": {
+    "language_code": "vie",
+    "language_probability": 1.0,
+    "text": "Đến nay, NVIDIA mới công bố nền tảng Vera Rubin cho trung tâm dữ liệu. Còn đối tác AMD xác nhận chưa nhận lịch trình rõ ràng cho RDNA 5",
+    "words": [
+      {
+        "text": "Đến",
+        "start": 0.06,
+        "end": 0.2,
+        "type": "word",
+        "logprob": -0.0008896077051758766
+      },
+      {
+        "text": " ",
+        "start": 0.2,
+        "end": 0.24,
+        "type": "spacing",
+        "logprob": -3.6954811548639555e-06
+      },
+      {
+        "text": "nay,",
+        "start": 0.24,
+        "end": 0.42,
+        "type": "word",
+        "logprob": -0.05332263931120451
+      },
+      {
+        "text": " ",
+        "start": 0.42,
+        "end": 0.68,
+        "type": "spacing",
+        "logprob": -0.16027650237083435
+      },
+      {
+        "text": "NVIDIA",
+        "start": 0.68,
+        "end": 1.14,
+        "type": "word",
+        "logprob": -0.16027650237083435
+      },
+      {
+        "text": " ",
+        "start": 1.14,
+        "end": 1.24,
+        "type": "spacing",
+        "logprob": -8.344646857949556e-07
+      },
+      {
+        "text": "mới",
+        "start": 1.24,
+        "end": 1.4,
+        "type": "word",
+        "logprob": -8.344646857949556e-07
+      },
+      {
+        "text": " ",
+        "start": 1.4,
+        "end": 1.42,
+        "type": "spacing",
+        "logprob": -2.0265373677830212e-05
+      },
+      {
+        "text": "công",
+        "start": 1.42,
+        "end": 1.56,
+        "type": "word",
+        "logprob": -2.0265373677830212e-05
+      },
+      {
+        "text": " ",
+        "start": 1.56,
+        "end": 1.62,
+        "type": "spacing",
+        "logprob": -3.4570634852570947e-06
+      },
+      {
+        "text": "bố",
+        "start": 1.62,
+        "end": 1.74,
+        "type": "word",
+        "logprob": -3.4570634852570947e-06
+      },
+      {
+        "text": " ",
+        "start": 1.74,
+        "end": 1.82,
+        "type": "spacing",
+        "logprob": -2.610649426060263e-05
+      },
+      {
+        "text": "nền",
+        "start": 1.82,
+        "end": 1.98,
+        "type": "word",
+        "logprob": -2.610649426060263e-05
+      },
+      {
+        "text": " ",
+        "start": 1.98,
+        "end": 2.06,
+        "type": "spacing",
+        "logprob": -8.344646857949556e-07
+      },
+      {
+        "text": "tảng",
+        "start": 2.06,
+        "end": 2.24,
+        "type": "word",
+        "logprob": -0.00034738490640506825
+      },
+      {
+        "text": " ",
+        "start": 2.24,
+        "end": 2.34,
+        "type": "spacing",
+        "logprob": -0.010664495639503002
+      },
+      {
+        "text": "Vera",
+        "start": 2.34,
+        "end": 2.64,
+        "type": "word",
+        "logprob": -0.010664495639503002
+      },
+      {
+        "text": " ",
+        "start": 2.64,
+        "end": 2.72,
+        "type": "spacing",
+        "logprob": -0.013119447976350784
+      },
+      {
+        "text": "Rubin",
+        "start": 2.72,
+        "end": 3.06,
+        "type": "word",
+        "logprob": -0.013119447976350784
+      },
+      {
+        "text": " ",
+        "start": 3.06,
+        "end": 3.28,
+        "type": "spacing",
+        "logprob": -3.4570634852570947e-06
+      },
+      {
+        "text": "cho",
+        "start": 3.28,
+        "end": 3.4,
+        "type": "word",
+        "logprob": -3.4570634852570947e-06
+      },
+      {
+        "text": " ",
+        "start": 3.4,
+        "end": 3.46,
+        "type": "spacing",
+        "logprob": -0.0047233435325324535
+      },
+      {
+        "text": "trung",
+        "start": 3.46,
+        "end": 3.64,
+        "type": "word",
+        "logprob": -0.0047233435325324535
+      },
+      {
+        "text": " ",
+        "start": 3.64,
+        "end": 3.66,
+        "type": "spacing",
+        "logprob": -3.6954811548639555e-06
+      },
+      {
+        "text": "tâm",
+        "start": 3.66,
+        "end": 3.78,
+        "type": "word",
+        "logprob": -3.6954811548639555e-06
+      },
+      {
+        "text": " ",
+        "start": 3.78,
+        "end": 3.86,
+        "type": "spacing",
+        "logprob": -1.3708974620385561e-05
+      },
+      {
+        "text": "dữ",
+        "start": 3.86,
+        "end": 3.98,
+        "type": "word",
+        "logprob": -1.3708974620385561e-05
+      },
+      {
+        "text": " ",
+        "start": 3.98,
+        "end": 4.019,
+        "type": "spacing",
+        "logprob": -1.311301275563892e-06
+      },
+      {
+        "text": "liệu.",
+        "start": 4.019,
+        "end": 4.24,
+        "type": "word",
+        "logprob": -0.013992696999775945
+      },
+      {
+        "text": " ",
+        "start": 4.24,
+        "end": 4.54,
+        "type": "spacing",
+        "logprob": -0.00012408917245920748
+      },
+      {
+        "text": "Còn",
+        "start": 4.54,
+        "end": 4.72,
+        "type": "word",
+        "logprob": -0.00012408917245920748
+      },
+      {
+        "text": " ",
+        "start": 4.72,
+        "end": 4.76,
+        "type": "spacing",
+        "logprob": -1.2278481335670222e-05
+      },
+      {
+        "text": "đối",
+        "start": 4.76,
+        "end": 4.92,
+        "type": "word",
+        "logprob": -1.2278481335670222e-05
+      },
+      {
+        "text": " ",
+        "start": 4.92,
+        "end": 4.96,
+        "type": "spacing",
+        "logprob": -0.00035565727739594877
+      },
+      {
+        "text": "tác",
+        "start": 4.96,
+        "end": 5.12,
+        "type": "word",
+        "logprob": -0.00035565727739594877
+      },
+      {
+        "text": " ",
+        "start": 5.12,
+        "end": 5.2,
+        "type": "spacing",
+        "logprob": -1.9073468138230965e-06
+      },
+      {
+        "text": "AMD",
+        "start": 5.2,
+        "end": 5.62,
+        "type": "word",
+        "logprob": -1.9073468138230965e-06
+      },
+      {
+        "text": " ",
+        "start": 5.62,
+        "end": 5.68,
+        "type": "spacing",
+        "logprob": -1.156323378381785e-05
+      },
+      {
+        "text": "xác",
+        "start": 5.68,
+        "end": 5.8,
+        "type": "word",
+        "logprob": -1.156323378381785e-05
+      },
+      {
+        "text": " ",
+        "start": 5.8,
+        "end": 5.86,
+        "type": "spacing",
+        "logprob": -1.3232143828645349e-05
+      },
+      {
+        "text": "nhận",
+        "start": 5.86,
+        "end": 6.22,
+        "type": "word",
+        "logprob": -1.3232143828645349e-05
+      },
+      {
+        "text": " ",
+        "start": 6.22,
+        "end": 6.28,
+        "type": "spacing",
+        "logprob": -0.0002057340752799064
+      },
+      {
+        "text": "chưa",
+        "start": 6.28,
+        "end": 6.46,
+        "type": "word",
+        "logprob": -0.0002057340752799064
+      },
+      {
+        "text": " ",
+        "start": 6.46,
+        "end": 6.5,
+        "type": "spacing",
+        "logprob": -0.0003069168305955827
+      },
+      {
+        "text": "nhận",
+        "start": 6.5,
+        "end": 6.68,
+        "type": "word",
+        "logprob": -0.0003069168305955827
+      },
+      {
+        "text": " ",
+        "start": 6.68,
+        "end": 6.74,
+        "type": "spacing",
+        "logprob": -1.3351351299206726e-05
+      },
+      {
+        "text": "lịch",
+        "start": 6.74,
+        "end": 6.88,
+        "type": "word",
+        "logprob": -1.3351351299206726e-05
+      },
+      {
+        "text": " ",
+        "start": 6.88,
+        "end": 6.9,
+        "type": "spacing",
+        "logprob": -5.721882189391181e-05
+      },
+      {
+        "text": "trình",
+        "start": 6.9,
+        "end": 7.1,
+        "type": "word",
+        "logprob": -5.721882189391181e-05
+      },
+      {
+        "text": " ",
+        "start": 7.1,
+        "end": 7.16,
+        "type": "spacing",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": "rõ",
+        "start": 7.16,
+        "end": 7.28,
+        "type": "word",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": " ",
+        "start": 7.28,
+        "end": 7.4,
+        "type": "spacing",
+        "logprob": -3.2066785934148356e-05
+      },
+      {
+        "text": "ràng",
+        "start": 7.4,
+        "end": 7.62,
+        "type": "word",
+        "logprob": -3.2066785934148356e-05
+      },
+      {
+        "text": " ",
+        "start": 7.62,
+        "end": 7.72,
+        "type": "spacing",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": "cho",
+        "start": 7.72,
+        "end": 7.86,
+        "type": "word",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": " ",
+        "start": 7.86,
+        "end": 8.039,
+        "type": "spacing",
+        "logprob": -0.02823687717318535
+      },
+      {
+        "text": "RDNA",
+        "start": 8.039,
+        "end": 8.58,
+        "type": "word",
+        "logprob": -0.007523097956436686
+      },
+      {
+        "text": " ",
+        "start": 8.58,
+        "end": 8.78,
+        "type": "spacing",
+        "logprob": -0.029447082430124283
+      },
+      {
+        "text": "5",
+        "start": 8.78,
+        "end": 8.8,
+        "type": "word",
+        "logprob": -5.960462772236497e-07
+      }
+    ],
+    "transcription_id": "U2YpWDYPs1dDjfAd3XWY",
+    "audio_duration_secs": 8.88
+  },
+  "7": {
+    "language_code": "vie",
+    "language_probability": 1.0,
+    "text": "Ưu tiên trí tuệ nhân tạo hơn các đồ họa chơi game hợp lý hay đang bỏ rơi game thủ? Bình luận quan điểm của bạn nhé.",
+    "words": [
+      {
+        "text": "Ưu",
+        "start": 0.08,
+        "end": 0.18,
+        "type": "word",
+        "logprob": -0.005525714103896462
+      },
+      {
+        "text": " ",
+        "start": 0.18,
+        "end": 0.22,
+        "type": "spacing",
+        "logprob": -0.0006319671520031989
+      },
+      {
+        "text": "tiên",
+        "start": 0.22,
+        "end": 0.44,
+        "type": "word",
+        "logprob": -0.0006319671520031989
+      },
+      {
+        "text": " ",
+        "start": 0.44,
+        "end": 0.46,
+        "type": "spacing",
+        "logprob": -6.09140915912576e-05
+      },
+      {
+        "text": "trí",
+        "start": 0.46,
+        "end": 0.62,
+        "type": "word",
+        "logprob": -6.09140915912576e-05
+      },
+      {
+        "text": " ",
+        "start": 0.62,
+        "end": 0.66,
+        "type": "spacing",
+        "logprob": -0.0005601267330348492
+      },
+      {
+        "text": "tuệ",
+        "start": 0.66,
+        "end": 0.78,
+        "type": "word",
+        "logprob": -0.0003996825665429545
+      },
+      {
+        "text": " ",
+        "start": 0.78,
+        "end": 0.82,
+        "type": "spacing",
+        "logprob": -1.07287787614041e-05
+      },
+      {
+        "text": "nhân",
+        "start": 0.82,
+        "end": 1.0,
+        "type": "word",
+        "logprob": -1.07287787614041e-05
+      },
+      {
+        "text": " ",
+        "start": 1.0,
+        "end": 1.04,
+        "type": "spacing",
+        "logprob": -8.702239938429557e-06
+      },
+      {
+        "text": "tạo",
+        "start": 1.04,
+        "end": 1.26,
+        "type": "word",
+        "logprob": -8.702239938429557e-06
+      },
+      {
+        "text": " ",
+        "start": 1.26,
+        "end": 1.32,
+        "type": "spacing",
+        "logprob": -6.6756979322235566e-06
+      },
+      {
+        "text": "hơn",
+        "start": 1.32,
+        "end": 1.6,
+        "type": "word",
+        "logprob": -6.6756979322235566e-06
+      },
+      {
+        "text": " ",
+        "start": 1.6,
+        "end": 1.64,
+        "type": "spacing",
+        "logprob": -0.5899146199226379
+      },
+      {
+        "text": "các",
+        "start": 1.64,
+        "end": 1.84,
+        "type": "word",
+        "logprob": -0.5899146199226379
+      },
+      {
+        "text": " ",
+        "start": 1.84,
+        "end": 1.9,
+        "type": "spacing",
+        "logprob": -0.0003418338019400835
+      },
+      {
+        "text": "đồ",
+        "start": 1.9,
+        "end": 2.02,
+        "type": "word",
+        "logprob": -0.0003418338019400835
+      },
+      {
+        "text": " ",
+        "start": 2.02,
+        "end": 2.06,
+        "type": "spacing",
+        "logprob": -0.0017037175130099058
+      },
+      {
+        "text": "họa",
+        "start": 2.06,
+        "end": 2.28,
+        "type": "word",
+        "logprob": -0.0017037175130099058
+      },
+      {
+        "text": " ",
+        "start": 2.28,
+        "end": 2.32,
+        "type": "spacing",
+        "logprob": -9.524368942948058e-05
+      },
+      {
+        "text": "chơi",
+        "start": 2.32,
+        "end": 2.48,
+        "type": "word",
+        "logprob": -9.524368942948058e-05
+      },
+      {
+        "text": " ",
+        "start": 2.48,
+        "end": 2.54,
+        "type": "spacing",
+        "logprob": -7.986990567587782e-06
+      },
+      {
+        "text": "game",
+        "start": 2.54,
+        "end": 2.74,
+        "type": "word",
+        "logprob": -7.986990567587782e-06
+      },
+      {
+        "text": " ",
+        "start": 2.74,
+        "end": 3.14,
+        "type": "spacing",
+        "logprob": -0.019192233681678772
+      },
+      {
+        "text": "hợp",
+        "start": 3.14,
+        "end": 3.3,
+        "type": "word",
+        "logprob": -0.019192233681678772
+      },
+      {
+        "text": " ",
+        "start": 3.3,
+        "end": 3.36,
+        "type": "spacing",
+        "logprob": -0.03374374285340309
+      },
+      {
+        "text": "lý",
+        "start": 3.36,
+        "end": 3.52,
+        "type": "word",
+        "logprob": -0.03374374285340309
+      },
+      {
+        "text": " ",
+        "start": 3.52,
+        "end": 3.84,
+        "type": "spacing",
+        "logprob": -2.7418097943154862e-06
+      },
+      {
+        "text": "hay",
+        "start": 3.84,
+        "end": 4.1,
+        "type": "word",
+        "logprob": -2.7418097943154862e-06
+      },
+      {
+        "text": " ",
+        "start": 4.1,
+        "end": 4.14,
+        "type": "spacing",
+        "logprob": -3.886147169396281e-05
+      },
+      {
+        "text": "đang",
+        "start": 4.14,
+        "end": 4.28,
+        "type": "word",
+        "logprob": -3.886147169396281e-05
+      },
+      {
+        "text": " ",
+        "start": 4.28,
+        "end": 4.32,
+        "type": "spacing",
+        "logprob": -6.556489552167477e-06
+      },
+      {
+        "text": "bỏ",
+        "start": 4.32,
+        "end": 4.46,
+        "type": "word",
+        "logprob": -6.556489552167477e-06
+      },
+      {
+        "text": " ",
+        "start": 4.46,
+        "end": 4.52,
+        "type": "spacing",
+        "logprob": -4.637133679352701e-05
+      },
+      {
+        "text": "rơi",
+        "start": 4.52,
+        "end": 4.64,
+        "type": "word",
+        "logprob": -4.637133679352701e-05
+      },
+      {
+        "text": " ",
+        "start": 4.64,
+        "end": 4.68,
+        "type": "spacing",
+        "logprob": -9.870042413240299e-05
+      },
+      {
+        "text": "game",
+        "start": 4.68,
+        "end": 4.82,
+        "type": "word",
+        "logprob": -9.870042413240299e-05
+      },
+      {
+        "text": " ",
+        "start": 4.82,
+        "end": 4.86,
+        "type": "spacing",
+        "logprob": -1.6331539882230572e-05
+      },
+      {
+        "text": "thủ?",
+        "start": 4.86,
+        "end": 5.08,
+        "type": "word",
+        "logprob": -0.00013482535950970487
+      },
+      {
+        "text": " ",
+        "start": 5.08,
+        "end": 5.68,
+        "type": "spacing",
+        "logprob": -0.0014518683310598135
+      },
+      {
+        "text": "Bình",
+        "start": 5.68,
+        "end": 5.8,
+        "type": "word",
+        "logprob": -0.0014518683310598135
+      },
+      {
+        "text": " ",
+        "start": 5.8,
+        "end": 5.84,
+        "type": "spacing",
+        "logprob": -3.135155202471651e-05
+      },
+      {
+        "text": "luận",
+        "start": 5.84,
+        "end": 6.1,
+        "type": "word",
+        "logprob": -3.135155202471651e-05
+      },
+      {
+        "text": " ",
+        "start": 6.1,
+        "end": 6.12,
+        "type": "spacing",
+        "logprob": -4.410734163684538e-06
+      },
+      {
+        "text": "quan",
+        "start": 6.12,
+        "end": 6.26,
+        "type": "word",
+        "logprob": -4.410734163684538e-06
+      },
+      {
+        "text": " ",
+        "start": 6.26,
+        "end": 6.3,
+        "type": "spacing",
+        "logprob": -4.6491513785440475e-06
+      },
+      {
+        "text": "điểm",
+        "start": 6.3,
+        "end": 6.48,
+        "type": "word",
+        "logprob": -4.6491513785440475e-06
+      },
+      {
+        "text": " ",
+        "start": 6.48,
+        "end": 6.5,
+        "type": "spacing",
+        "logprob": 0.0
+      },
+      {
+        "text": "của",
+        "start": 6.5,
+        "end": 6.56,
+        "type": "word",
+        "logprob": 0.0
+      },
+      {
+        "text": " ",
+        "start": 6.56,
+        "end": 6.6,
+        "type": "spacing",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": "bạn",
+        "start": 6.6,
+        "end": 6.72,
+        "type": "word",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": " ",
+        "start": 6.72,
+        "end": 6.74,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "nhé.",
+        "start": 6.74,
+        "end": 6.92,
+        "type": "word",
+        "logprob": -0.08200059831141893
+      }
+    ],
+    "transcription_id": "oTlihrZ2vzwYEC1WLEIp",
+    "audio_duration_secs": 6.96
+  }
+}

@@ -1,0 +1,100 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .ct-kicker { position: absolute; left: 64px; top: 300px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .ct-head { position: absolute; left: 64px; right: 64px; top: 360px; font-weight: 700; font-size: 42px; line-height: 1.4; color: rgba(255,255,255,0.92); opacity: 0; }
+
+    .ct-axis { position: absolute; left: 64px; width: 952px; top: 758px; height: 4px; background: rgba(255,255,255,0.14); border-radius: 2px; overflow: hidden; }
+    .ct-axis-fill { position: absolute; left: 0; top: 0; height: 100%; width: 100%; background: #4C8DFF; transform-origin: left center; transform: scaleX(0); }
+
+    .ct-node { position: absolute; top: 0; left: 0; border-radius: 50%; transform: translateX(-50%); opacity: 0; }
+    .ct-node.n1 { width: 44px; height: 44px; top: 738px; background: rgba(76,141,255,0.55); }
+    .ct-node.n2 { width: 60px; height: 60px; top: 730px; background: #4C8DFF; }
+    .ct-node.n3 { width: 76px; height: 76px; top: 722px; background: linear-gradient(150deg, #6aa2ff, #2f66d6); box-shadow: 0 18px 40px rgba(76,141,255,0.35); }
+    .ct-node.n4 { width: 76px; height: 76px; top: 722px; background: #FF8A5B; }
+
+    .ct-val { position: absolute; left: 0; transform: translateX(-50%); text-align: center; white-space: nowrap; color: #fff; opacity: 0; }
+    .ct-val.v1 { top: 656px; font-weight: 700; font-size: 24px; color: rgba(255,255,255,0.75); }
+    .ct-val.v2 { top: 626px; font-weight: 800; font-size: 28px; color: #4C8DFF; }
+    .ct-val.v3 { top: 596px; font-weight: 900; font-size: 34px; color: #4C8DFF; }
+    .ct-val.v4 { top: 596px; font-weight: 900; font-size: 34px; color: #FF8A5B; }
+
+    .ct-lab { position: absolute; left: 0; width: 190px; margin-left: 0; transform: translateX(-50%); text-align: center; font-weight: 600; font-size: 21px; line-height: 1.35; color: rgba(255,255,255,0.55); opacity: 0; }
+    .ct-lab.l1 { text-align: left; transform: translateX(0); }
+    .ct-lab.l4 { text-align: right; transform: translateX(-100%); }
+    .ct-lab.l1 { top: 802px; }
+    .ct-lab.l2 { top: 810px; }
+    .ct-lab.l3 { top: 818px; }
+    .ct-lab.l4 { top: 818px; }
+
+    .ct-card { position: absolute; left: 64px; right: 64px; top: 1000px; padding: 56px 46px; border-radius: 22px; background: #121724; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 0 40px rgba(76,141,255,0.10); opacity: 0; }
+    .ct-card-text { font-weight: 600; font-size: 46px; line-height: 1.5; color: rgba(255,255,255,0.92); }
+    .ct-card-text .hl { color: #4C8DFF; font-weight: 800; }
+    .ct-card-note { margin-top: 32px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-weight: 600; font-size: 30px; line-height: 1.55; color: rgba(255,255,255,0.5); }
+  </style>
+
+  <div id="root" data-composition-id="05-context" data-width="1080" data-height="1920">
+    <div class="ct-kicker" id="ct-kicker">Lộ trình dự kiến</div>
+    <div class="ct-head" id="ct-head">Từ card đang bán tới GPU thế hệ mới</div>
+
+    <div class="ct-axis"><div class="ct-axis-fill" id="ct-axis-fill"></div></div>
+
+    <div class="ct-node n1" id="ct-n1" style="left: 90px;"></div>
+    <div class="ct-node n2" id="ct-n2" style="left: 370px;"></div>
+    <div class="ct-node n3" id="ct-n3" style="left: 690px;"></div>
+    <div class="ct-node n4" id="ct-n4" style="left: 985px;"></div>
+
+    <div class="ct-val v1" id="ct-v1" style="left: 90px;">Đang bán</div>
+    <div class="ct-val v2" id="ct-v2" style="left: 370px;">≈ RTX 5080</div>
+    <div class="ct-val v3" id="ct-v3" style="left: 690px;">RTX 6090</div>
+    <div class="ct-val v4" id="ct-v4" style="left: 985px;">Navi 5X</div>
+
+    <div class="ct-lab l1" id="ct-l1" style="left: 90px;">RTX 50 · RDNA 4</div>
+    <div class="ct-lab l2" id="ct-l2" style="left: 370px;">AT2 (AMD) · cuối 2027</div>
+    <div class="ct-lab l3" id="ct-l3" style="left: 690px;">RTX 60 (Nvidia) · 2028</div>
+    <div class="ct-lab l4" id="ct-l4" style="left: 985px;">RDNA 5 đầu bảng · 2028</div>
+
+    <div class="ct-card" id="ct-card">
+      <div class="ct-card-text">Navi 5X được đồn có <span class="hl">12.288 nhân</span>, xung nhịp tối đa khoảng 3,4 gigahertz và 32GB bộ nhớ GDDR7.</div>
+      <div class="ct-card-note">Toàn bộ mốc trên đến từ nguồn rò rỉ — Nvidia và AMD chưa xác nhận chính thức.</div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#ct-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' }, 0);
+    tl.fromTo('#ct-head', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.2);
+    tl.fromTo('#ct-axis-fill', { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: 'power1.inOut' }, 0.7);
+
+    tl.fromTo('#ct-n1', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, 0.75);
+    tl.fromTo('#ct-v1', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.28 }, 0.8);
+    tl.fromTo('#ct-l1', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 0.85);
+
+    tl.fromTo('#ct-n2', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.32, ease: 'back.out(2)' }, 1.15);
+    tl.fromTo('#ct-v2', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.28 }, 1.22);
+    tl.fromTo('#ct-l2', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 1.27);
+
+    tl.fromTo('#ct-n3', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.34, ease: 'back.out(2)' }, 1.55);
+    tl.fromTo('#ct-v3', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.28 }, 1.63);
+    tl.fromTo('#ct-l3', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 1.68);
+
+    tl.fromTo('#ct-n4', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.34, ease: 'back.out(2)' }, 1.95);
+    tl.fromTo('#ct-v4', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.28 }, 2.03);
+    tl.fromTo('#ct-l4', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 2.08);
+
+    tl.fromTo('#ct-card', { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 2.5);
+    window.__timelines['05-context'] = tl;
+  </script>
+</template>
