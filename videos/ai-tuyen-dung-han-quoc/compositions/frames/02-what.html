@@ -1,0 +1,68 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; right: -120px; top: 280px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(76,141,255,0.14), transparent 68%); }
+
+    .wh-kicker { position: absolute; left: 65px; top: 296px; font-weight: 700; font-size: 27px; letter-spacing: 0.26em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+
+    .wh-card { position: absolute; left: 65px; right: 65px; top: 356px; height: 600px; border-radius: 26px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 30px 60px rgba(0,0,0,0.4); opacity: 0; }
+    .wh-card img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+    .wh-card .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,14,20,0) 60%, rgba(11,14,20,0.55) 100%); }
+
+    .wh-chips { position: absolute; left: 65px; right: 65px; top: 1010px; display: flex; flex-wrap: wrap; gap: 16px; }
+    .wh-chip { display: inline-flex; align-items: center; padding: 14px 24px; border-radius: 100px; border: 1.5px solid rgba(76,141,255,0.75); background: rgba(76,141,255,0.10); opacity: 0; }
+    .wh-chip span { font-weight: 700; font-size: 27px; color: #fff; white-space: nowrap; }
+    .wh-chip b { color: #4C8DFF; }
+
+    .wh-text { position: absolute; left: 65px; right: 65px; top: 1140px; font-weight: 700; font-size: 47px; line-height: 1.36; color: #fff; }
+    .wh-text .ln { overflow: hidden; }
+    .wh-text .ln > span { display: block; }
+    .wh-text b { color: #4C8DFF; }
+
+    .wh-cap { position: absolute; left: 65px; right: 65px; top: 1560px; font-weight: 500; font-size: 26px; color: rgba(255,255,255,0.5); opacity: 0; }
+  </style>
+
+  <div data-hf-id="hf-w-root" id="root" data-composition-id="02-what" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-w-kicker" class="wh-kicker" id="wh-kicker">Chuyện gì đang xảy ra</div>
+
+    <div data-hf-id="hf-w-card" class="wh-card" id="wh-card">
+      <img data-hf-id="hf-w-img" src="assets/img/article-hero.jpg" alt="">
+      <div data-hf-id="hf-w-fade" class="fade"></div>
+    </div>
+
+    <div data-hf-id="hf-w-chips" class="wh-chips">
+      <div data-hf-id="hf-w-c1" class="wh-chip" id="wh-c1"><span data-hf-id="hf-w-c1s"><b data-hf-id="hf-w-c1b">396</b> doanh nghiệp lớn</span></div>
+      <div data-hf-id="hf-w-c2" class="wh-chip" id="wh-c2"><span data-hf-id="hf-w-c2s"><b data-hf-id="hf-w-c2b">21,7%</b> đã dùng AI tuyển dụng</span></div>
+    </div>
+
+    <div data-hf-id="hf-w-text" class="wh-text">
+      <div data-hf-id="hf-w-l1" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-w-l1s" id="wh-l1">Doanh nghiệp Hàn Quốc</span></div>
+      <div data-hf-id="hf-w-l2" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-w-l2s" id="wh-l2">dùng <b data-hf-id="hf-w-b1">AI</b> để tuyển người —</span></div>
+      <div data-hf-id="hf-w-l3" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-w-l3s" id="wh-l3">ứng viên cũng dùng AI để đối phó.</span></div>
+    </div>
+
+    <div data-hf-id="hf-w-cap" class="wh-cap" id="wh-cap">Một buổi phỏng vấn tuyển dụng tại Hàn Quốc</div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#wh-kicker', { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#wh-card', { autoAlpha: 0, scale: 1.06 }, { autoAlpha: 1, scale: 1, duration: 0.6, ease: 'power2.out' }, 0.16);
+    tl.fromTo('#wh-c1', { autoAlpha: 0, y: 16, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.36, ease: 'back.out(1.6)' }, 0.85);
+    tl.fromTo('#wh-c2', { autoAlpha: 0, y: 16, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.36, ease: 'back.out(1.6)' }, 1.02);
+    tl.fromTo('#wh-l1', { yPercent: 120 }, { yPercent: 0, duration: 0.5, ease: 'power4.out' }, 1.35);
+    tl.fromTo('#wh-l2', { yPercent: 120 }, { yPercent: 0, duration: 0.5, ease: 'power4.out' }, 1.52);
+    tl.fromTo('#wh-l3', { yPercent: 120 }, { yPercent: 0, duration: 0.5, ease: 'power4.out' }, 1.69);
+    tl.fromTo('#wh-cap', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 2.4);
+    window.__timelines['02-what'] = tl;
+  </script>
+</template>
