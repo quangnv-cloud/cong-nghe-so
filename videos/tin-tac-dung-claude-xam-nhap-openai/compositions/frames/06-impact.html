@@ -1,0 +1,98 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .im-kicker { position: absolute; left: 64px; top: 260px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .im-head { position: absolute; left: 64px; right: 64px; top: 316px; font-weight: 700; font-size: 38px; line-height: 1.32; color: rgba(255,255,255,0.92); opacity: 0; }
+
+    .im-card { position: absolute; left: 64px; right: 64px; height: 400px; border-radius: 26px; padding: 38px 42px; display: flex; flex-direction: column; justify-content: space-between; opacity: 0; }
+    .im-card.warn { top: 600px; border: 1.5px solid rgba(255,138,91,0.5); background: rgba(255,138,91,0.07); box-shadow: 0 0 40px rgba(255,138,91,0.12); }
+    .im-card.good { top: 1050px; border: 1.5px solid rgba(76,141,255,0.5); background: rgba(76,141,255,0.08); box-shadow: 0 0 40px rgba(76,141,255,0.14); }
+
+    .im-row1 { display: flex; align-items: flex-start; justify-content: space-between; }
+    .im-eyebrow { font-weight: 700; font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; padding-top: 8px; }
+    .im-card.warn .im-eyebrow { color: #FF8A5B; }
+    .im-card.good .im-eyebrow { color: #4C8DFF; }
+    .im-num { font-weight: 900; font-size: 72px; line-height: 1; opacity: 0; }
+    .im-card.warn .im-num { color: #FF8A5B; }
+    .im-card.good .im-num { color: #4C8DFF; }
+
+    .im-spark { width: 100%; height: 96px; opacity: 0; }
+    .im-spark path.line { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    .im-card.warn .im-spark path.line { stroke: #FF8A5B; }
+    .im-card.good .im-spark path.line { stroke: #4C8DFF; }
+
+    .im-desc { font-weight: 600; font-size: 26px; line-height: 1.4; color: rgba(255,255,255,0.82); }
+    .im-desc b { color: #fff; }
+
+    .cutflash { position: absolute; inset: 0; z-index: 6; pointer-events: none; opacity: 0; background: linear-gradient(180deg, rgba(255,138,91,0.4), rgba(76,141,255,0.22)); }
+  </style>
+
+  <div id="root" data-composition-id="06-impact" data-width="1080" data-height="1920">
+    <div class="im-kicker" id="im-kicker">Điều đã thực sự xảy ra</div>
+    <div class="im-head" id="im-head">Hai con số cho thấy cái giá thật của mất cân bằng an ninh</div>
+
+    <div class="im-card warn" id="im-c1">
+      <div class="im-row1">
+        <div class="im-eyebrow">Cảnh báo an toàn</div>
+        <div class="im-num" id="im-n1">37</div>
+      </div>
+      <svg class="im-spark" id="im-spark1" viewBox="0 0 900 96" preserveAspectRatio="none">
+        <path class="line" id="im-path1" d="M10,86 L140,78 L270,82 L400,58 L530,46 L660,34 L790,16 L880,10" />
+      </svg>
+      <div class="im-desc">Thư viện mã nguồn mở <b>libheif</b> phải ra 37 cảnh báo trong 8 tháng đầu năm 2026 — vá thủ công bởi 1 người duy trì.</div>
+    </div>
+
+    <div class="im-card good" id="im-c2">
+      <div class="im-row1">
+        <div class="im-eyebrow">Tiền thưởng bug bounty</div>
+        <div class="im-num" id="im-n2">6.500</div>
+      </div>
+      <svg class="im-spark" id="im-spark2" viewBox="0 0 900 96" preserveAspectRatio="none">
+        <path class="line" id="im-path2" d="M10,80 L140,60 L270,66 L400,36 L530,44 L660,22 L790,28 L880,14" />
+      </svg>
+      <div class="im-desc">OpenAI vá lỗi <b>ngay trong đêm</b>, và ngày 1/9/2026 trao 6.500 USD cho nhóm nghiên cứu.</div>
+    </div>
+
+    <div class="cutflash" id="cutflash"></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#im-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' }, 0);
+    tl.fromTo('#im-head', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.2);
+
+    tl.fromTo('#im-c1', { autoAlpha: 0, y: 24, scale: 0.97 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: 'power3.out' }, 0.6);
+    var len1 = 980;
+    tl.set('#im-path1', { strokeDasharray: len1, strokeDashoffset: len1 }, 0.9);
+    tl.fromTo('#im-spark1', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 0.9);
+    tl.to('#im-path1', { strokeDashoffset: 0, duration: 0.9, ease: 'power1.inOut' }, 0.9);
+    tl.fromTo('#im-n1', { autoAlpha: 0, scale: 0.7 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2)' }, 1.85);
+
+    /* smash-cut — điểm chuyển nội dung thật: "OpenAI vá lỗi trong đêm... trao thưởng" */
+    tl.fromTo('#cutflash', { opacity: 0 }, { opacity: 0.5, duration: 0.05, ease: 'none' }, 6.55);
+    tl.to('#cutflash', { opacity: 0, duration: 0.16, ease: 'power1.in' }, 6.6);
+    tl.fromTo('#im-c1, #im-c2', { scale: 1 }, { scale: 0.986, duration: 0.06, ease: 'power1.out' }, 6.55);
+    tl.to('#im-c1, #im-c2', { scale: 1, duration: 0.14, ease: 'power2.out' }, 6.611);
+
+    tl.fromTo('#im-c2', { autoAlpha: 0, y: 24, scale: 0.97 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: 'power3.out' }, 6.7);
+    var len2 = 980;
+    tl.set('#im-path2', { strokeDasharray: len2, strokeDashoffset: len2 }, 7.0);
+    tl.fromTo('#im-spark2', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 7.0);
+    tl.to('#im-path2', { strokeDashoffset: 0, duration: 0.9, ease: 'power1.inOut' }, 7.0);
+    tl.fromTo('#im-n2', { autoAlpha: 0, scale: 0.7 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2)' }, 7.95);
+
+    window.__timelines['06-impact'] = tl;
+  </script>
+</template>
