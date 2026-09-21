@@ -1,0 +1,84 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: transparent; }
+
+    .f-kicker { position: absolute; left: 64px; top: 288px; font-weight: 700; font-size: 26px; letter-spacing: 0.24em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .f-head { position: absolute; left: 64px; right: 64px; top: 340px; font-weight: 900; font-size: 52px; line-height: 1.2; color: #fff; opacity: 0; }
+
+    .f-term { position: absolute; left: 64px; right: 64px; top: 480px; border-radius: 18px; border: 1.5px solid rgba(76,141,255,0.32); background: rgba(13,17,26,0.78); box-shadow: 0 0 40px rgba(76,141,255,0.12); padding: 44px 44px 46px; opacity: 0; }
+    .f-term-head { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; }
+    .f-term-head .dt { width: 13px; height: 13px; border-radius: 50%; }
+    .f-term-head .dt.a { background: #FF8A5B; }
+    .f-term-head .dt.b { background: rgba(255,255,255,0.28); }
+    .f-term-head .dt.c { background: #4C8DFF; }
+    .f-term-head .lb { margin-left: 12px; font-family: monospace; font-size: 20px; color: rgba(255,255,255,0.5); }
+
+    .f-row { margin-top: 62px; }
+    .f-row:first-of-type { margin-top: 0; }
+    .f-row-line { font-family: monospace; font-size: 33px; line-height: 1.5; color: rgba(255,255,255,0.92); white-space: nowrap; overflow: hidden; width: 0; }
+    .f-row-line .pfx { color: #4C8DFF; font-weight: 700; margin-right: 14px; }
+    .f-row-line.warn .pfx { color: #FF8A5B; }
+    .f-row-sub { margin-top: 14px; font-weight: 500; font-size: 27px; line-height: 1.4; color: rgba(255,255,255,0.62); opacity: 0; padding-left: 44px; }
+
+    .f-cursor { display: inline-block; width: 16px; height: 32px; background: #4C8DFF; vertical-align: middle; margin-top: 34px; margin-left: 4px; opacity: 0; }
+
+    .f-foot { position: absolute; left: 64px; right: 64px; top: 1560px; text-align: center; font-weight: 600; font-size: 24px; line-height: 1.4; color: rgba(255,255,255,0.5); opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="03-facts" data-width="1080" data-height="1920">
+    <div class="f-kicker" id="f-kicker">Ba mốc chính</div>
+    <div class="f-head" id="f-head">Ai kiện ai, từ khi nào</div>
+
+    <div class="f-term" id="f-term">
+      <div class="f-term-head"><span class="dt a"></span><span class="dt b"></span><span class="dt c"></span><span class="lb">case_antitrust_ai.log</span></div>
+
+      <div class="f-row">
+        <div class="f-row-line" id="f-l1"><span class="pfx">&gt;</span>Nguyên đơn: 4 người dùng trả phí</div>
+        <div class="f-row-sub" id="f-s1">ChatGPT, Claude, Grok, Gemini</div>
+      </div>
+      <div class="f-row">
+        <div class="f-row-line" id="f-l2"><span class="pfx">&gt;</span>Bị đơn: 4 công ty trí tuệ nhân tạo</div>
+        <div class="f-row-sub" id="f-s2">OpenAI &middot; Google &middot; Anthropic &middot; SpaceXAI</div>
+      </div>
+      <div class="f-row">
+        <div class="f-row-line warn" id="f-l3"><span class="pfx">+</span>Mốc bị cáo buộc: tháng 7&#47;2026</div>
+        <div class="f-row-sub" id="f-s3">Sau tuyên bố chung về an toàn AI</div>
+      </div>
+      <span class="f-cursor" id="f-cursor"></span>
+    </div>
+
+    <div class="f-foot" id="f-foot">Các mốc trên trích từ đơn kiện &mdash; theo Thanh Niên, dẫn Tom's Hardware</div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#f-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#f-head', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 0.16);
+    tl.fromTo('#f-term', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 0.55);
+
+    tl.fromTo('#f-l1', { width: 0 }, { width: 800, duration: 0.6, ease: 'none' }, 0.95);
+    tl.fromTo('#f-s1', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 1.55);
+
+    tl.fromTo('#f-l2', { width: 0 }, { width: 820, duration: 0.6, ease: 'none' }, 2.2);
+    tl.fromTo('#f-s2', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 2.8);
+
+    tl.fromTo('#f-l3', { width: 0 }, { width: 760, duration: 0.6, ease: 'none' }, 3.45);
+    tl.fromTo('#f-s3', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 4.05);
+
+    tl.fromTo('#f-cursor', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 4.4);
+    tl.to('#f-cursor', { opacity: 0.15, duration: 0.4, repeat: 8, yoyo: true, ease: 'none' }, 4.6);
+    tl.fromTo('#f-foot', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 4.9);
+    window.__timelines['03-facts'] = tl;
+  </script>
+</template>

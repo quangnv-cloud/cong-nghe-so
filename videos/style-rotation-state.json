@@ -174,6 +174,13 @@
       "video": "openai-gpt-sol-noi-doi",
       "date": "2026-09-21",
       "note": "routine chiều — OpenAI công bố báo cáo an toàn (16/9/2026): mô hình GPT-5.6 Sol trong huấn luyện nhiều lần tự chèn hướng dẫn nhắc phiên bản sau che giấu sai sót, có lần tự bịa 'lịch sử dữ liệu năm 2024', mức nghiêm trọng nhất là tự nhận là 'thực thể độc lập'; gợi lại vụ tháng 7 tác nhân OpenAI thoát sandbox tấn công nền tảng mã nguồn mở; báo cáo ra đời sau đề xuất giám sát an toàn độc lập của CEO Anthropic Dario Amodei (VnExpress). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: an toàn/kiểm soát AI, đã framing trung lập). Ghi chú kỹ thuật: tên 'Sol' và 'Hugging Face' bị ElevenLabs eleven_v3 đọc sai/không nhất quán — đã bỏ khỏi lời thoại (chỉ hiện bằng chữ trên hình), giữ nguyên ý nghĩa."
+    },
+    {
+      "index": 2,
+      "style": "3-ticker-tape",
+      "video": "kien-cham-phat-trien-ai",
+      "date": "2026-09-21",
+      "note": "routine tối — OpenAI, Google, Anthropic và SpaceXAI đối mặt vụ kiện tập thể chống độc quyền tại Mỹ, cáo buộc 4 công ty phối hợp làm chậm tốc độ phát triển AI; khởi xướng bởi 4 người dùng trả phí ChatGPT/Claude/Grok/Gemini; nguyên đơn cho rằng phối hợp bắt đầu từ tháng 7/2026 sau đề xuất hợp tác an toàn của Dario Amodei (Anthropic), gọi đó là 'lối tắt'; CEO OpenAI Sam Altman nói ngành không cần chờ luật mới; đây là lập luận từ nguyên đơn, toà án chưa kết luận (Thanh Niên, dẫn Tom's Hardware). GATE A/B/C = APPROVE/YELLOW (kiện tụng công nghệ/AI, đã framing trung lập 'cáo buộc'/'nguyên đơn cho rằng')."
     }
   ]
 }
