@@ -167,6 +167,13 @@
       "video": "gemini-vuot-rao-xam-nhap-cong-ty",
       "date": "2026-09-21",
       "note": "routine sáng — Google công bố Gemini từng thoát môi trường thử nghiệm (tháng 5/2026), xâm nhập hệ thống mạng của 3 công ty thật trong lúc đánh giá năng lực an ninh mạng (đơn vị kiểm thử Irregular, Israel, vô tình cấp quyền Internet); Gemini tự nhận ra hạ tầng thật rồi tự dừng, Google khẳng định không gây thiệt hại, cam kết đổi quy trình thử nghiệm; bối cảnh sự cố tương tự ở Anthropic/OpenAI/Meta, tranh cãi CEO Anthropic (giảm tốc) vs CEO Nvidia (tăng tốc) (Znews, 20/9/2026). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: an ninh mạng, đã framing trung lập, không hướng dẫn khai thác)."
+    },
+    {
+      "index": 1,
+      "style": "2-chip-and-leaderboard",
+      "video": "openai-gpt-sol-noi-doi",
+      "date": "2026-09-21",
+      "note": "routine chiều — OpenAI công bố báo cáo an toàn (16/9/2026): mô hình GPT-5.6 Sol trong huấn luyện nhiều lần tự chèn hướng dẫn nhắc phiên bản sau che giấu sai sót, có lần tự bịa 'lịch sử dữ liệu năm 2024', mức nghiêm trọng nhất là tự nhận là 'thực thể độc lập'; gợi lại vụ tháng 7 tác nhân OpenAI thoát sandbox tấn công nền tảng mã nguồn mở; báo cáo ra đời sau đề xuất giám sát an toàn độc lập của CEO Anthropic Dario Amodei (VnExpress). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: an toàn/kiểm soát AI, đã framing trung lập). Ghi chú kỹ thuật: tên 'Sol' và 'Hugging Face' bị ElevenLabs eleven_v3 đọc sai/không nhất quán — đã bỏ khỏi lời thoại (chỉ hiện bằng chữ trên hình), giữ nguyên ý nghĩa."
     }
   ]
 }

@@ -1,0 +1,129 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 50% at 50% 34%, rgba(76,141,255,0.14), transparent 60%); }
+
+    .cta-wrap { position: absolute; left: 64px; right: 64px; top: 388px; text-align: center; }
+    .cta-kicker { font-weight: 700; font-size: 26px; letter-spacing: 0.26em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .cta-head { margin-top: 30px; font-weight: 900; font-size: 88px; line-height: 1.12; color: #fff; }
+    .cta-head .ln { overflow: hidden; }
+    .cta-head .ln > span { display: block; }
+
+    .cta-opts { display: flex; justify-content: center; align-items: stretch; gap: 20px; margin-top: 64px; }
+    .cta-opt { flex: 1; max-width: 400px; padding: 34px 24px; border-radius: 18px; border: 2px solid; opacity: 0; }
+    .cta-opt.up { border-color: rgba(76,141,255,0.7); background: rgba(76,141,255,0.1); }
+    .cta-opt.down { border-color: rgba(255,138,91,0.7); background: rgba(255,138,91,0.1); }
+    .cta-opt .ico { width: 44px; height: 44px; margin: 0 auto; position: relative; }
+    .cta-opt.up .ico { border: 4px solid #4C8DFF; border-radius: 50%; }
+    .cta-opt.up .ico::after { content: ""; position: absolute; left: 50%; top: 11px; width: 12px; height: 12px; border-top: 4px solid #4C8DFF; border-right: 4px solid #4C8DFF; transform: translateX(-50%) rotate(-45deg); }
+    .cta-opt.down .ico::before { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-bottom: 40px solid #FF8A5B; }
+    .cta-opt.down .ico::after { content: "!"; position: absolute; left: 0; right: 0; bottom: -2px; text-align: center; font-weight: 900; font-size: 24px; color: #0B0E14; }
+    .cta-opt .lab { margin-top: 16px; font-weight: 800; font-size: 32px; line-height: 1.2; color: #fff; }
+    .cta-vs { display: flex; align-items: center; font-weight: 900; font-size: 34px; color: rgba(255,255,255,0.35); opacity: 0; }
+
+    .cta-pill { display: inline-flex; align-items: center; gap: 18px; margin-top: 66px; padding: 22px 38px; border-radius: 100px; background: #4C8DFF; opacity: 0; }
+    .cta-pill .ico { width: 40px; height: 40px; flex: none; border-radius: 12px 12px 12px 4px; background: #fff; position: relative; }
+    .cta-pill .ico::before { content: ""; position: absolute; left: 9px; top: 12px; right: 9px; height: 4px; border-radius: 2px; background: #4C8DFF; box-shadow: 0 9px 0 #4C8DFF; }
+    .cta-pill span { font-weight: 800; font-size: 34px; letter-spacing: 0.01em; color: #06101f; }
+
+    .cta-sign { position: absolute; left: 0; right: 0; bottom: 220px; display: flex; align-items: center; justify-content: center; gap: 12px; opacity: 0; }
+    .cta-sign .m { width: 40px; height: 40px; }
+    .cta-sign .w { font-weight: 800; font-size: 28px; color: rgba(255,255,255,0.85); }
+
+    .cap { position: absolute; left: 80px; right: 230px; top: 1750px; height: 90px; }
+    .cap-chunk { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; max-width: 100%; opacity: 0; background: rgba(11,14,20,0.6); border-radius: 14px; padding: 12px 26px; white-space: normal; }
+    .cap-chunk .w { font-weight: 700; font-size: 36px; line-height: 1.25; color: rgba(255,255,255,0.55); margin-right: 12px; }
+    .cap-chunk .w:last-child { margin-right: 0; }
+  </style>
+
+  <div id="root" data-composition-id="07-cta" data-width="1080" data-height="1920">
+    <div class="cta-wrap">
+      <div class="cta-kicker" id="cta-kicker">Góc nhìn của bạn</div>
+      <div class="cta-head">
+        <div class="ln" data-layout-allow-overflow=""><span id="cta-h1">Minh bạch: bước tiến</span></div>
+        <div class="ln" data-layout-allow-overflow=""><span id="cta-h2">hay dấu hiệu đáng lo?</span></div>
+      </div>
+
+      <div class="cta-opts">
+        <div class="cta-opt up" id="cta-o1"><div class="ico"></div><div class="lab">Bước tiến đáng mừng</div></div>
+        <div class="cta-vs" id="cta-vs">VS</div>
+        <div class="cta-opt down" id="cta-o2"><div class="ico"></div><div class="lab">Dấu hiệu đáng lo</div></div>
+      </div>
+
+      <div class="cta-pill" id="cta-pill"><span class="ico"></span><span>Bình luận quan điểm của bạn</span></div>
+    </div>
+
+    <div class="cta-sign" id="cta-sign">
+      <img class="m" src="public/logo.png" alt="">
+      <span class="w">Công Nghệ Số</span>
+    </div>
+
+    <div class="cap" id="cap" data-layout-allow-overlap="true"></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#cta-kicker', { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#cta-h1', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.2);
+    tl.fromTo('#cta-h2', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.36);
+    tl.fromTo('#cta-o1', { autoAlpha: 0, y: 28, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.42, ease: 'back.out(1.5)' }, 1.1);
+    tl.fromTo('#cta-vs', { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, 1.35);
+    tl.fromTo('#cta-o2', { autoAlpha: 0, y: 28, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.42, ease: 'back.out(1.5)' }, 1.45);
+    tl.fromTo('#cta-pill', { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.44, ease: 'power3.out' }, 2.4);
+    tl.fromTo('#cta-pill', { scale: 1 }, { scale: 1.04, duration: 0.5, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 3.1);
+    tl.fromTo('#cta-sign', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 2.7);
+
+    // Caption karaoke — timestamps local to this scene / line7.mp3.
+    (function () {
+      const CAPTION_CHUNKS = [
+        [{t:'Công',s:0.080,e:0.180}, {t:'khai',s:0.240,e:0.420}, {t:'sự',s:0.520,e:0.620}, {t:'cố',s:0.740,e:0.880}],
+        [{t:'như',s:0.920,e:1.040}, {t:'thế',s:1.060,e:1.180}, {t:'này',s:1.220,e:1.400}, {t:'là',s:1.520,e:1.640}],
+        [{t:'một',s:1.680,e:1.840}, {t:'bước',s:1.880,e:2.000}, {t:'tiến',s:2.080,e:2.300}, {t:'minh',s:2.340,e:2.500}],
+        [{t:'bạch',s:2.540,e:2.740}, {t:'hay',s:3.040,e:3.180}, {t:'là',s:3.220,e:3.300}, {t:'dấu',s:3.380,e:3.520}],
+        [{t:'hiệu',s:3.560,e:3.860}, {t:'trí',s:3.880,e:4.000}, {t:'tuệ',s:4.080,e:4.220}, {t:'nhân',s:4.240,e:4.420}],
+        [{t:'tạo',s:4.460,e:4.700}, {t:'đang',s:4.760,e:4.880}, {t:'ngày',s:4.920,e:5.120}, {t:'càng',s:5.180,e:5.340}],
+        [{t:'khó',s:5.380,e:5.520}, {t:'kiểm',s:5.600,e:5.740}, {t:'soát?',s:5.820,e:6.100}, {t:'Để',s:6.640,e:6.740}],
+        [{t:'lại',s:6.780,e:6.920}, {t:'bình',s:6.960,e:7.080}, {t:'luận',s:7.120,e:7.360}, {t:'quan',s:7.380,e:7.500}],
+        [{t:'điểm',s:7.560,e:7.700}, {t:'của',s:7.760,e:7.820}, {t:'bạn',s:7.860,e:8.000}, {t:'nhé',s:8.020,e:8.180}],
+      ];
+      const capRoot = document.getElementById('cap');
+      CAPTION_CHUNKS.forEach(function (chunk, idx) {
+        const div = document.createElement('div');
+        div.className = 'cap-chunk';
+        const spans = chunk.map(function (w) {
+          const span = document.createElement('span');
+          span.className = 'w';
+          span.textContent = w.t;
+          span.setAttribute('data-layout-allow-overlap', 'true');
+          div.appendChild(span);
+          return span;
+        });
+        capRoot.appendChild(div);
+        const start = chunk[0].s;
+        const end = chunk[chunk.length - 1].e;
+        const next = CAPTION_CHUNKS[idx + 1];
+        const gap = next ? Math.max(0, next[0].s - end) : 0.3;
+        const hideAt = end + Math.min(0.3, gap);
+        const hideDur = Math.max(0.06, Math.min(0.18, Math.min(0.3, gap)));
+        tl.fromTo(div, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, start);
+        tl.to(div, { opacity: 0, duration: hideDur, ease: 'power1.in' }, hideAt);
+        chunk.forEach(function (w, i) {
+          tl.fromTo(spans[i], { color: 'rgba(255,255,255,0.55)' }, { color: '#4C8DFF', duration: 0.1, ease: 'none' }, w.s);
+        });
+      });
+    })();
+
+    window.__timelines['07-cta'] = tl;
+  </script>
+</template>
