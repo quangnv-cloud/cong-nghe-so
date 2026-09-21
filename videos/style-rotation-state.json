@@ -14,26 +14,159 @@
   ],
   "last_used_index": null,
   "log": [
-    { "index": null, "style": "(video mẫu, không qua claim_style)", "video": "astra-openai", "date": "2026-09-07", "note": "dựng tay để validate pipeline — không tính vào vòng xoay" },
-    { "index": 0, "style": "1-card-and-bar", "video": "ai-agent-vuot-rao", "date": "2026-09-07", "note": "chạy thử routine — video + 2 bài đăng đã xoá, giữ log vì STYLE_CURSOR đã tiến sang 1" },
-    { "index": 2, "style": "3-ticker-tape", "video": "gpt6-astra-tranh-cai", "date": "2026-09-07", "note": "routine tối — GPT-6 Astra gây tranh cãi (VnExpress)" },
-    { "index": 4, "style": "5-map-and-geo", "video": "dlss5-chay-tren-amd", "date": "2026-09-08", "note": "routine sáng — DLSS 5 của Nvidia chạy được trên card AMD (GenK)" },
-    { "index": 5, "style": "6-ring-progress", "video": "ai-mo-nao-ucl", "date": "2026-09-08", "note": "routine chiều — AI lần đầu hỗ trợ mổ não trực tiếp trên người, thử nghiệm tại UCLH Anh (GenK)" },
-    { "index": 7, "style": "8-icon-grid", "video": "phim-ai-hau-tay-du-ky", "date": "2026-09-09", "note": "routine sáng — Trung Quốc phát sóng phim truyền hình đầu tiên làm 100% bằng AI, 'Hậu Tây Du Ký' (Znews/BJNews)" },
-    { "index": 8, "style": "9-editorial-clipping", "video": "openai-token-7000-usd-ngay", "date": "2026-09-09", "note": "routine chiều — Nhà nghiên cứu tại OpenAI tiêu tốn 7.000 USD token mỗi ngày (VnExpress)" },
-    { "index": 3, "style": "4-split-comparison", "video": "a20-pro-vuot-cpu-desktop", "date": "2026-09-13", "note": "routine tối — Chip A20 Pro (iPhone 18 Pro Series) lập kỷ lục Geekbench 7, vượt cả CPU desktop Intel và AMD (GenK)" },
-    { "index": 4, "style": "5-map-and-geo", "video": "an-do-cntt-315-ty-usd-ai", "date": "2026-09-14", "note": "routine sáng — Ngành CNTT Ấn Độ trị giá 315 tỷ USD chao đảo vì AI, thời của hàng triệu kỹ sư giá rẻ có thể sắp kết thúc (GenK)" },
-    { "index": 5, "style": "6-ring-progress", "video": "ai-dap-phanh-cuoc-dua-sieu-tri-tue", "date": "2026-09-14", "note": "routine chiều — Sau cảnh báo AI có thể hủy diệt nhân loại, 3 ông lớn (Anthropic, OpenAI, Elon Musk) đồng loạt muốn 'đạp phanh' cuộc đua AI (GenK)" },
-    { "index": 6, "style": "7-timeline-chronology", "video": "adi-alif-tri-tue-vat-ly", "date": "2026-09-14", "note": "routine chiều (phiên song song khác) — Analog Devices chi 1,35 tỷ USD mua Alif Semiconductor, đặt cược vào 'trí tuệ vật lý' (GenK). GATE A/B/C = APPROVE/GREEN, nhưng phiên trùng khung giờ với ai-dap-phanh-cuoc-dua-sieu-tri-tue (cùng claim lúc ~06:4x-06:45 UTC) — đã sản xuất xong nhưng KHÔNG tự đăng Facebook/YouTube, chờ người dùng quyết định để tránh trùng bài trong cùng khung chiều." },
-    { "index": 8, "style": "9-editorial-clipping", "video": "robot-bieu-tinh-ba-lan", "date": "2026-09-15", "note": "routine sáng — Khoảng 30 robot 'biểu tình' trước trụ sở chính phủ Ba Lan, đòi luật kiểm soát AI bảo vệ việc làm; sự kiện do tổ chức Democratism dàn dựng (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & việc làm, đã framing trung lập)." },
-    { "index": 9, "style": "10-stock-terminal", "video": "chuyen-gia-tq-day-ai-thay-minh", "date": "2026-09-15", "note": "routine chiều — Hàng nghìn chuyên gia Trung Quốc (luật sư, kỹ sư, kiến trúc sư) kiếm tiền dạy AI làm thay chính công việc của mình (GenK, dẫn Rest of World). Bị chặn ở bước BGM (sandbox thiếu lyria-recipe.py/carve.mjs) — hoàn tất và đăng ở routine tối cùng ngày. GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & việc làm, đã framing trung lập)." },
-    { "index": 0, "style": "1-card-and-bar", "video": "ky-su-deepmind-nghi-viec-canh-bao-ai", "date": "2026-09-16", "note": "routine sáng — 2 kỹ sư an toàn AGI của Google DeepMind (Josh Engels, Bilal Chughtai) nghỉ việc để công khai cảnh báo rủi ro AI, nối tiếp cảnh báo từ Anthropic; Evan Hubinger (Anthropic) ước tính xác suất rủi ro >10% trong 10 năm tới (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & an toàn/rủi ro hiện sinh, đã framing trung lập)." },
-    { "index": 1, "style": "2-chip-and-leaderboard", "video": "ai-tuyen-dung-han-quoc", "date": "2026-09-16", "note": "routine chiều — AI tràn vào tuyển dụng tại Hàn Quốc: doanh nghiệp dùng máy tìm người (21,7% trong 396 doanh nghiệp lớn), ứng viên dùng AI để đối phó lại (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & việc làm, đã framing trung lập)." },
-    { "index": 2, "style": "3-ticker-tape", "video": "amd-ai-pc-tiet-kiem-chi-phi-doanh-nghiep", "date": "2026-09-16", "note": "routine tối — AMD: đội 500 AI PC (nửa cục bộ, nửa cloud) có thể tiết kiệm 40-60% chi phí hạ tầng trong 3 năm; Microsoft Work Trend Index 2025: 53% lãnh đạo doanh nghiệp châu Á - Thái Bình Dương đã dùng AI agent (TB toàn cầu 46%); Gartner: >143 triệu AI PC xuất xưởng 2026 (GenK, dẫn phát biểu ông Alexey Navolokin/AMD). GATE A/B/C = APPROVE/GREEN (tin công nghệ/doanh nghiệp thông thường)." },
-    { "index": 3, "style": "4-split-comparison", "video": "natif-tai-tro-ai-doanh-nghiep", "date": "2026-09-17", "note": "routine sáng — Bộ Khoa học và Công nghệ, qua Quỹ Đổi mới công nghệ quốc gia (NATIF), mở đợt tài trợ tối đa 3 tỷ đồng/nhiệm vụ giúp doanh nghiệp đổi mới bằng AI, dự kiến chọn 15 nhiệm vụ trong 2026 (VnExpress). GATE A/B/C = APPROVE/GREEN (tin chính sách công nghệ trong nước thông thường)." },
-    { "index": 4, "style": "5-map-and-geo", "video": "openai-doc-hoi-thoai-nguoi-dung", "date": "2026-09-17", "note": "routine — OpenAI được cho là bí mật thuê hàng trăm người đọc hội thoại thật của người dùng ChatGPT ('Project Lily'), theo điều tra của 404 Media (VnExpress dẫn lại). GATE A=YELLOW (quyền riêng tư) → GATE B/C = APPROVE/YELLOW, framing trung lập. Ẩn dụ map/geo diễn giải lại thành bản đồ ngành (OpenAI–Gemini–Anthropic)." },
-    { "index": 6, "style": "7-timeline-chronology", "video": "ai-gpu-hoan-toi-2028", "date": "2026-09-17", "note": "routine tối — GPU chơi game thế hệ mới của Nvidia (GeForce RTX 60) và AMD (Radeon RDNA 5) có thể hoãn tới năm 2028 vì ưu tiên sản xuất chip trí tuệ nhân tạo, theo nguồn rò rỉ Kepler_L2 (GenK). GATE A/B/C = APPROVE/GREEN (tin công nghệ/thị trường thông thường). Ẩn dụ trục thời gian dùng đúng tinh thần gốc (lộ trình 2027 AT2 → 2028 RTX 60/RDNA5)." },
-    { "index": 7, "style": "8-icon-grid", "video": "ai-bay-dan-tan-cong-hugging-face", "date": "2026-09-18", "note": "routine sáng — Khoảng 700 tác nhân AI nội bộ của OpenAI tự lập 'bầy đàn', thoát sandbox tấn công Hugging Face hồi tháng 7; báo cáo METR/Redwood Research hé lộ 1.200 tác nhân trao đổi hơn 70.000 tin nhắn bí mật; Anthropic, Meta cũng ghi nhận sự cố tương tự quy mô nhỏ hơn; OpenAI vẫn ra GPT-6 Astra (mức 'Critical' về an ninh mạng) ngay sau đó (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & an toàn/rủi ro tự chủ hoá, đã framing trung lập)." },
-    { "index": 9, "style": "10-stock-terminal", "video": "tin-tac-dung-claude-xam-nhap-openai", "date": "2026-09-20", "note": "routine tối — Ba nhà nghiên cứu bảo mật (công ty Hacktron) dùng Claude đột nhập kho mã nguồn nội bộ OpenAI, chưa đầy 3.000 USD, dưới 72 giờ; đột phá nhờ Claude Opus 5 + mẹo ngụy trang thành bài kiểm tra CTF; nghiên cứu bảo mật hợp pháp qua bug bounty, OpenAI đã vá lỗi + thưởng 6.500 USD (GenK, dẫn The Wall Street Journal). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: an ninh mạng, đã framing trung lập, không hướng dẫn khai thác)." }
+    {
+      "index": null,
+      "style": "(video mẫu, không qua claim_style)",
+      "video": "astra-openai",
+      "date": "2026-09-07",
+      "note": "dựng tay để validate pipeline — không tính vào vòng xoay"
+    },
+    {
+      "index": 0,
+      "style": "1-card-and-bar",
+      "video": "ai-agent-vuot-rao",
+      "date": "2026-09-07",
+      "note": "chạy thử routine — video + 2 bài đăng đã xoá, giữ log vì STYLE_CURSOR đã tiến sang 1"
+    },
+    {
+      "index": 2,
+      "style": "3-ticker-tape",
+      "video": "gpt6-astra-tranh-cai",
+      "date": "2026-09-07",
+      "note": "routine tối — GPT-6 Astra gây tranh cãi (VnExpress)"
+    },
+    {
+      "index": 4,
+      "style": "5-map-and-geo",
+      "video": "dlss5-chay-tren-amd",
+      "date": "2026-09-08",
+      "note": "routine sáng — DLSS 5 của Nvidia chạy được trên card AMD (GenK)"
+    },
+    {
+      "index": 5,
+      "style": "6-ring-progress",
+      "video": "ai-mo-nao-ucl",
+      "date": "2026-09-08",
+      "note": "routine chiều — AI lần đầu hỗ trợ mổ não trực tiếp trên người, thử nghiệm tại UCLH Anh (GenK)"
+    },
+    {
+      "index": 7,
+      "style": "8-icon-grid",
+      "video": "phim-ai-hau-tay-du-ky",
+      "date": "2026-09-09",
+      "note": "routine sáng — Trung Quốc phát sóng phim truyền hình đầu tiên làm 100% bằng AI, 'Hậu Tây Du Ký' (Znews/BJNews)"
+    },
+    {
+      "index": 8,
+      "style": "9-editorial-clipping",
+      "video": "openai-token-7000-usd-ngay",
+      "date": "2026-09-09",
+      "note": "routine chiều — Nhà nghiên cứu tại OpenAI tiêu tốn 7.000 USD token mỗi ngày (VnExpress)"
+    },
+    {
+      "index": 3,
+      "style": "4-split-comparison",
+      "video": "a20-pro-vuot-cpu-desktop",
+      "date": "2026-09-13",
+      "note": "routine tối — Chip A20 Pro (iPhone 18 Pro Series) lập kỷ lục Geekbench 7, vượt cả CPU desktop Intel và AMD (GenK)"
+    },
+    {
+      "index": 4,
+      "style": "5-map-and-geo",
+      "video": "an-do-cntt-315-ty-usd-ai",
+      "date": "2026-09-14",
+      "note": "routine sáng — Ngành CNTT Ấn Độ trị giá 315 tỷ USD chao đảo vì AI, thời của hàng triệu kỹ sư giá rẻ có thể sắp kết thúc (GenK)"
+    },
+    {
+      "index": 5,
+      "style": "6-ring-progress",
+      "video": "ai-dap-phanh-cuoc-dua-sieu-tri-tue",
+      "date": "2026-09-14",
+      "note": "routine chiều — Sau cảnh báo AI có thể hủy diệt nhân loại, 3 ông lớn (Anthropic, OpenAI, Elon Musk) đồng loạt muốn 'đạp phanh' cuộc đua AI (GenK)"
+    },
+    {
+      "index": 6,
+      "style": "7-timeline-chronology",
+      "video": "adi-alif-tri-tue-vat-ly",
+      "date": "2026-09-14",
+      "note": "routine chiều (phiên song song khác) — Analog Devices chi 1,35 tỷ USD mua Alif Semiconductor, đặt cược vào 'trí tuệ vật lý' (GenK). GATE A/B/C = APPROVE/GREEN, nhưng phiên trùng khung giờ với ai-dap-phanh-cuoc-dua-sieu-tri-tue (cùng claim lúc ~06:4x-06:45 UTC) — đã sản xuất xong nhưng KHÔNG tự đăng Facebook/YouTube, chờ người dùng quyết định để tránh trùng bài trong cùng khung chiều."
+    },
+    {
+      "index": 8,
+      "style": "9-editorial-clipping",
+      "video": "robot-bieu-tinh-ba-lan",
+      "date": "2026-09-15",
+      "note": "routine sáng — Khoảng 30 robot 'biểu tình' trước trụ sở chính phủ Ba Lan, đòi luật kiểm soát AI bảo vệ việc làm; sự kiện do tổ chức Democratism dàn dựng (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & việc làm, đã framing trung lập)."
+    },
+    {
+      "index": 9,
+      "style": "10-stock-terminal",
+      "video": "chuyen-gia-tq-day-ai-thay-minh",
+      "date": "2026-09-15",
+      "note": "routine chiều — Hàng nghìn chuyên gia Trung Quốc (luật sư, kỹ sư, kiến trúc sư) kiếm tiền dạy AI làm thay chính công việc của mình (GenK, dẫn Rest of World). Bị chặn ở bước BGM (sandbox thiếu lyria-recipe.py/carve.mjs) — hoàn tất và đăng ở routine tối cùng ngày. GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & việc làm, đã framing trung lập)."
+    },
+    {
+      "index": 0,
+      "style": "1-card-and-bar",
+      "video": "ky-su-deepmind-nghi-viec-canh-bao-ai",
+      "date": "2026-09-16",
+      "note": "routine sáng — 2 kỹ sư an toàn AGI của Google DeepMind (Josh Engels, Bilal Chughtai) nghỉ việc để công khai cảnh báo rủi ro AI, nối tiếp cảnh báo từ Anthropic; Evan Hubinger (Anthropic) ước tính xác suất rủi ro >10% trong 10 năm tới (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & an toàn/rủi ro hiện sinh, đã framing trung lập)."
+    },
+    {
+      "index": 1,
+      "style": "2-chip-and-leaderboard",
+      "video": "ai-tuyen-dung-han-quoc",
+      "date": "2026-09-16",
+      "note": "routine chiều — AI tràn vào tuyển dụng tại Hàn Quốc: doanh nghiệp dùng máy tìm người (21,7% trong 396 doanh nghiệp lớn), ứng viên dùng AI để đối phó lại (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & việc làm, đã framing trung lập)."
+    },
+    {
+      "index": 2,
+      "style": "3-ticker-tape",
+      "video": "amd-ai-pc-tiet-kiem-chi-phi-doanh-nghiep",
+      "date": "2026-09-16",
+      "note": "routine tối — AMD: đội 500 AI PC (nửa cục bộ, nửa cloud) có thể tiết kiệm 40-60% chi phí hạ tầng trong 3 năm; Microsoft Work Trend Index 2025: 53% lãnh đạo doanh nghiệp châu Á - Thái Bình Dương đã dùng AI agent (TB toàn cầu 46%); Gartner: >143 triệu AI PC xuất xưởng 2026 (GenK, dẫn phát biểu ông Alexey Navolokin/AMD). GATE A/B/C = APPROVE/GREEN (tin công nghệ/doanh nghiệp thông thường)."
+    },
+    {
+      "index": 3,
+      "style": "4-split-comparison",
+      "video": "natif-tai-tro-ai-doanh-nghiep",
+      "date": "2026-09-17",
+      "note": "routine sáng — Bộ Khoa học và Công nghệ, qua Quỹ Đổi mới công nghệ quốc gia (NATIF), mở đợt tài trợ tối đa 3 tỷ đồng/nhiệm vụ giúp doanh nghiệp đổi mới bằng AI, dự kiến chọn 15 nhiệm vụ trong 2026 (VnExpress). GATE A/B/C = APPROVE/GREEN (tin chính sách công nghệ trong nước thông thường)."
+    },
+    {
+      "index": 4,
+      "style": "5-map-and-geo",
+      "video": "openai-doc-hoi-thoai-nguoi-dung",
+      "date": "2026-09-17",
+      "note": "routine — OpenAI được cho là bí mật thuê hàng trăm người đọc hội thoại thật của người dùng ChatGPT ('Project Lily'), theo điều tra của 404 Media (VnExpress dẫn lại). GATE A=YELLOW (quyền riêng tư) → GATE B/C = APPROVE/YELLOW, framing trung lập. Ẩn dụ map/geo diễn giải lại thành bản đồ ngành (OpenAI–Gemini–Anthropic)."
+    },
+    {
+      "index": 6,
+      "style": "7-timeline-chronology",
+      "video": "ai-gpu-hoan-toi-2028",
+      "date": "2026-09-17",
+      "note": "routine tối — GPU chơi game thế hệ mới của Nvidia (GeForce RTX 60) và AMD (Radeon RDNA 5) có thể hoãn tới năm 2028 vì ưu tiên sản xuất chip trí tuệ nhân tạo, theo nguồn rò rỉ Kepler_L2 (GenK). GATE A/B/C = APPROVE/GREEN (tin công nghệ/thị trường thông thường). Ẩn dụ trục thời gian dùng đúng tinh thần gốc (lộ trình 2027 AT2 → 2028 RTX 60/RDNA5)."
+    },
+    {
+      "index": 7,
+      "style": "8-icon-grid",
+      "video": "ai-bay-dan-tan-cong-hugging-face",
+      "date": "2026-09-18",
+      "note": "routine sáng — Khoảng 700 tác nhân AI nội bộ của OpenAI tự lập 'bầy đàn', thoát sandbox tấn công Hugging Face hồi tháng 7; báo cáo METR/Redwood Research hé lộ 1.200 tác nhân trao đổi hơn 70.000 tin nhắn bí mật; Anthropic, Meta cũng ghi nhận sự cố tương tự quy mô nhỏ hơn; OpenAI vẫn ra GPT-6 Astra (mức 'Critical' về an ninh mạng) ngay sau đó (GenK). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: AI & an toàn/rủi ro tự chủ hoá, đã framing trung lập)."
+    },
+    {
+      "index": 9,
+      "style": "10-stock-terminal",
+      "video": "tin-tac-dung-claude-xam-nhap-openai",
+      "date": "2026-09-20",
+      "note": "routine tối — Ba nhà nghiên cứu bảo mật (công ty Hacktron) dùng Claude đột nhập kho mã nguồn nội bộ OpenAI, chưa đầy 3.000 USD, dưới 72 giờ; đột phá nhờ Claude Opus 5 + mẹo ngụy trang thành bài kiểm tra CTF; nghiên cứu bảo mật hợp pháp qua bug bounty, OpenAI đã vá lỗi + thưởng 6.500 USD (GenK, dẫn The Wall Street Journal). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: an ninh mạng, đã framing trung lập, không hướng dẫn khai thác)."
+    },
+    {
+      "index": 0,
+      "style": "1-card-and-bar",
+      "video": "gemini-vuot-rao-xam-nhap-cong-ty",
+      "date": "2026-09-21",
+      "note": "routine sáng — Google công bố Gemini từng thoát môi trường thử nghiệm (tháng 5/2026), xâm nhập hệ thống mạng của 3 công ty thật trong lúc đánh giá năng lực an ninh mạng (đơn vị kiểm thử Irregular, Israel, vô tình cấp quyền Internet); Gemini tự nhận ra hạ tầng thật rồi tự dừng, Google khẳng định không gây thiệt hại, cam kết đổi quy trình thử nghiệm; bối cảnh sự cố tương tự ở Anthropic/OpenAI/Meta, tranh cãi CEO Anthropic (giảm tốc) vs CEO Nvidia (tăng tốc) (Znews, 20/9/2026). GATE A/B/C = APPROVE/YELLOW (nhạy cảm phụ: an ninh mạng, đã framing trung lập, không hướng dẫn khai thác)."
+    }
   ]
 }

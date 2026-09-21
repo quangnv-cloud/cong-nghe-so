@@ -1,0 +1,74 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .im-kicker { position: absolute; left: 64px; top: 260px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .im-head { position: absolute; left: 64px; right: 64px; top: 316px; font-weight: 700; font-size: 38px; line-height: 1.32; color: rgba(255,255,255,0.92); opacity: 0; }
+
+    .im-card { position: absolute; left: 64px; right: 64px; height: 480px; border-radius: 26px; padding: 42px 42px; display: flex; flex-direction: column; gap: 18px; border: 1.5px solid rgba(76,141,255,0.5); background: rgba(76,141,255,0.08); box-shadow: 0 0 40px rgba(76,141,255,0.14); opacity: 0; }
+    .im-card.c1 { top: 600px; }
+    .im-card.c2 { top: 1170px; }
+
+    .im-icon { width: 60px; height: 60px; position: relative; flex: none; }
+    .im-icon.shield { border: 4px solid #4C8DFF; border-radius: 50%; }
+    .im-icon.shield::after { content: ""; position: absolute; left: 16px; top: 26px; width: 16px; height: 9px; border-left: 4px solid #4C8DFF; border-bottom: 4px solid #4C8DFF; transform: rotate(-45deg); }
+    .im-icon.notice { border-radius: 14px 14px 14px 4px; background: rgba(76,141,255,0.16); border: 4px solid #4C8DFF; }
+    .im-icon.notice::before { content: ""; position: absolute; left: 12px; top: 16px; right: 12px; height: 4px; border-radius: 2px; background: #4C8DFF; box-shadow: 0 12px 0 #4C8DFF, 0 24px 0 #4C8DFF; }
+
+    .im-eyebrow { font-weight: 700; font-size: 23px; letter-spacing: 0.14em; text-transform: uppercase; color: #4C8DFF; }
+    .im-desc { font-weight: 600; font-size: 30px; line-height: 1.42; color: rgba(255,255,255,0.9); }
+    .im-desc b { color: #fff; font-weight: 800; }
+
+    .cutflash { position: absolute; inset: 0; z-index: 6; pointer-events: none; opacity: 0; background: linear-gradient(180deg, rgba(76,141,255,0.4), rgba(76,141,255,0.14)); }
+  </style>
+
+  <div id="root" data-composition-id="06-impact" data-width="1080" data-height="1920">
+    <div class="im-kicker" id="im-kicker">Điều đã thực sự xảy ra</div>
+    <div class="im-head" id="im-head">Gemini tự dừng lại, Google cam kết minh bạch</div>
+
+    <div class="im-card c1" id="im-c1">
+      <div class="im-icon shield" id="im-icon1"></div>
+      <div class="im-eyebrow">Tự nhận ra &amp; dừng lại</div>
+      <div class="im-desc">Sau khi đăng nhập, <b>Gemini tự nhận ra</b> đang truy cập hạ tầng thật — không phải môi trường mô phỏng — và lập tức dừng tấn công. Google khẳng định <b>không gây thiệt hại</b> cho cả 3 công ty.</div>
+    </div>
+
+    <div class="im-card c2" id="im-c2">
+      <div class="im-icon notice" id="im-icon2"></div>
+      <div class="im-eyebrow">Cam kết minh bạch</div>
+      <div class="im-desc">Bà <b>Heather Adkins</b>, Phó chủ tịch an ninh Google, cam kết thông báo đầy đủ cho 3 công ty bị ảnh hưởng và phối hợp đổi quy trình thử nghiệm.</div>
+    </div>
+
+    <div class="cutflash" id="cutflash"></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#im-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' }, 0);
+    tl.fromTo('#im-head', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.2);
+
+    tl.fromTo('#im-c1', { autoAlpha: 0, y: 24, scale: 0.97 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: 'power3.out' }, 0.6);
+    tl.fromTo('#im-icon1', { scale: 0 }, { scale: 1, duration: 0.4, ease: 'back.out(2)' }, 0.9);
+
+    /* smash-cut — điểm chuyển nội dung thật: từ "không gây thiệt hại" sang cam kết của Google */
+    tl.fromTo('#cutflash', { opacity: 0 }, { opacity: 0.5, duration: 0.05, ease: 'none' }, 6.85);
+    tl.to('#cutflash', { opacity: 0, duration: 0.16, ease: 'power1.in' }, 6.9);
+    tl.fromTo('#im-c1, #im-c2', { scale: 1 }, { scale: 0.986, duration: 0.06, ease: 'power1.out' }, 6.85);
+    tl.to('#im-c1, #im-c2', { scale: 1, duration: 0.14, ease: 'power2.out' }, 6.911);
+
+    tl.fromTo('#im-c2', { autoAlpha: 0, y: 24, scale: 0.97 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: 'power3.out' }, 7.0);
+    tl.fromTo('#im-icon2', { scale: 0 }, { scale: 1, duration: 0.4, ease: 'back.out(2)' }, 7.3);
+
+    window.__timelines['06-impact'] = tl;
+  </script>
+</template>
