@@ -1,0 +1,75 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .fc-kicker { position: absolute; left: 64px; top: 168px; font-weight: 700; font-size: 27px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .fc-head { position: absolute; left: 64px; right: 64px; top: 224px; font-weight: 900; font-size: 60px; line-height: 1.18; color: #fff; }
+    .fc-head .ln { overflow: hidden; }
+    .fc-head .ln > span { display: block; }
+
+    .fc-list { position: absolute; left: 64px; right: 64px; top: 480px; display: flex; flex-direction: column; gap: 84px; }
+    .fc-row { display: flex; align-items: center; gap: 40px; padding: 52px 44px; border-radius: 26px; background: #121724; box-shadow: 0 0 36px rgba(76,141,255,0.14); opacity: 0; }
+    .fc-ring { width: 160px; height: 160px; flex: none; position: relative; }
+    .fc-ring svg { width: 100%; height: 100%; }
+    .fc-ring circle.bg { fill: none; stroke: rgba(255,255,255,0.12); stroke-width: 14; }
+    .fc-ring circle.fg { fill: none; stroke: #4C8DFF; stroke-width: 14; stroke-linecap: round; }
+    .fc-ring.warn circle.fg { stroke: #FF8A5B; }
+    .fc-ring .pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 40px; color: #fff; }
+    .fc-txt .who { font-weight: 700; font-size: 26px; letter-spacing: 0.02em; color: #4C8DFF; margin-bottom: 10px; }
+    .fc-txt .who.warn { color: #FF8A5B; }
+    .fc-txt .body { font-weight: 600; font-size: 32px; line-height: 1.44; color: #fff; }
+  </style>
+
+  <div data-hf-id="hf-f-root" id="root" data-composition-id="03-facts" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-f-kicker" class="fc-kicker" id="fc-kicker">Ba điểm nóng</div>
+    <div data-hf-id="hf-f-head" class="fc-head">
+      <div data-hf-id="hf-f-ln1" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-f-h1" id="fc-h1">Ai nói gì</span></div>
+    </div>
+
+    <div data-hf-id="hf-f-list" class="fc-list">
+      <div data-hf-id="hf-f-row1" class="fc-row" id="fc-row1">
+        <div data-hf-id="hf-f-ring1" class="fc-ring">
+          <svg data-hf-id="hf-f-svg1" viewBox="0 0 160 160"><circle data-hf-id="hf-f-bg1" class="bg" cx="80" cy="80" r="68"/><circle data-hf-id="hf-f-fg1" class="fg" id="fc-fg1" cx="80" cy="80" r="68" stroke-dasharray="427.26" stroke-dashoffset="427.26" transform="rotate(-90 80 80)"/></svg>
+          <div data-hf-id="hf-f-pct1" class="pct">0%</div>
+        </div>
+        <div data-hf-id="hf-f-txt1" class="fc-txt"><div data-hf-id="hf-f-who1" class="who">Jensen Huang, CEO Nvidia</div><div data-hf-id="hf-f-body1" class="body">Trả lời CBS News: khả năng trí tuệ nhân tạo gây tận thế là 0%.</div></div>
+      </div>
+      <div data-hf-id="hf-f-row2" class="fc-row" id="fc-row2">
+        <div data-hf-id="hf-f-ring2" class="fc-ring warn">
+          <svg data-hf-id="hf-f-svg2" viewBox="0 0 160 160"><circle data-hf-id="hf-f-bg2" class="bg" cx="80" cy="80" r="68"/><circle data-hf-id="hf-f-fg2" class="fg" id="fc-fg2" cx="80" cy="80" r="68" stroke-dasharray="427.26" stroke-dashoffset="427.26" transform="rotate(-90 80 80)"/></svg>
+          <div data-hf-id="hf-f-pct2" class="pct">!</div>
+        </div>
+        <div data-hf-id="hf-f-txt2" class="fc-txt"><div data-hf-id="hf-f-who2" class="who warn">Jacob Coxon, cựu Anthropic</div><div data-hf-id="hf-f-body2" class="body">Cảnh báo trí tuệ nhân tạo có thể gây thảm hoạ trước cuối thập kỷ.</div></div>
+      </div>
+      <div data-hf-id="hf-f-row3" class="fc-row" id="fc-row3">
+        <div data-hf-id="hf-f-ring3" class="fc-ring">
+          <svg data-hf-id="hf-f-svg3" viewBox="0 0 160 160"><circle data-hf-id="hf-f-bg3" class="bg" cx="80" cy="80" r="68"/><circle data-hf-id="hf-f-fg3" class="fg" id="fc-fg3" cx="80" cy="80" r="68" stroke-dasharray="427.26" stroke-dashoffset="427.26" transform="rotate(-90 80 80)"/></svg>
+          <div data-hf-id="hf-f-pct3" class="pct">OK</div>
+        </div>
+        <div data-hf-id="hf-f-txt3" class="fc-txt"><div data-hf-id="hf-f-who3" class="who">Lập trường của Huang</div><div data-hf-id="hf-f-body3" class="body">Mỹ chưa cần luật riêng — dùng ngay quy định hiện hành.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#fc-kicker', { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#fc-h1', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.16);
+    tl.fromTo('#fc-row1', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 0.85);
+    tl.fromTo('#fc-fg1', { strokeDashoffset: 427.26 }, { strokeDashoffset: 427.26, duration: 0.5 }, 0.95);
+    tl.fromTo('#fc-row2', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 1.55);
+    tl.fromTo('#fc-fg2', { strokeDashoffset: 427.26 }, { strokeDashoffset: 0, duration: 0.6, ease: 'power3.out' }, 1.65);
+    tl.fromTo('#fc-row3', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 2.35);
+    tl.fromTo('#fc-fg3', { strokeDashoffset: 427.26 }, { strokeDashoffset: 0, duration: 0.6, ease: 'power3.out' }, 2.45);
+    window.__timelines['03-facts'] = tl;
+  </script>
+</template>

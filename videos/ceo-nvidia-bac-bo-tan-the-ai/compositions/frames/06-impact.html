@@ -1,0 +1,75 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .im-kicker { position: absolute; left: 64px; top: 168px; font-weight: 700; font-size: 27px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .im-head { position: absolute; left: 64px; right: 64px; top: 224px; font-weight: 900; font-size: 58px; line-height: 1.2; color: #fff; }
+    .im-head .ln { overflow: hidden; }
+    .im-head .ln > span { display: block; }
+
+    .im-rings { position: absolute; left: 64px; right: 64px; top: 520px; display: flex; justify-content: space-between; gap: 32px; }
+    .im-col { display: flex; flex-direction: column; align-items: center; width: 470px; opacity: 0; }
+    .im-ring { width: 340px; height: 340px; position: relative; }
+    .im-ring svg { width: 100%; height: 100%; }
+    .im-ring circle.bg { fill: none; stroke: rgba(255,255,255,0.10); stroke-width: 22; }
+    .im-ring circle.fg { fill: none; stroke: #4C8DFF; stroke-width: 22; stroke-linecap: round; }
+    .im-ring.warn circle.fg { stroke: #FF8A5B; }
+    .im-ring .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .im-ring .center .n { font-weight: 900; font-size: 56px; color: #fff; }
+    .im-lab { margin-top: 26px; font-weight: 600; font-size: 27px; line-height: 1.38; color: rgba(255,255,255,0.82); text-align: center; }
+
+    .im-banner { position: absolute; left: 64px; right: 64px; top: 1350px; padding: 40px 40px; border-radius: 22px; background: #121724; box-shadow: 0 0 40px rgba(76,141,255,0.16); opacity: 0; }
+    .im-banner .txt { font-weight: 700; font-size: 33px; line-height: 1.5; color: #fff; text-align: center; }
+  </style>
+
+  <div data-hf-id="hf-i-root" id="root" data-composition-id="06-impact" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-i-kicker" class="im-kicker" id="im-kicker">Thực tế đã xảy ra</div>
+    <div data-hf-id="hf-i-head" class="im-head">
+      <div data-hf-id="hf-i-ln1" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-i-h1" id="im-h1">Ngành công nghệ</span></div>
+      <div data-hf-id="hf-i-ln2" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-i-h2" id="im-h2">chưa đồng thuận</span></div>
+    </div>
+
+    <div data-hf-id="hf-i-rings" class="im-rings">
+      <div data-hf-id="hf-i-col1" class="im-col" id="im-col1">
+        <div data-hf-id="hf-i-ring1" class="im-ring">
+          <svg data-hf-id="hf-i-svg1" viewBox="0 0 340 340"><circle data-hf-id="hf-i-bg1" class="bg" cx="170" cy="170" r="145"/><circle data-hf-id="hf-i-fg1" class="fg" id="im-fg1" cx="170" cy="170" r="145" stroke-dasharray="911.06" stroke-dashoffset="911.06" transform="rotate(-90 170 170)"/></svg>
+          <div data-hf-id="hf-i-c1" class="center"><div data-hf-id="hf-i-n1" class="n">0%</div></div>
+        </div>
+        <div data-hf-id="hf-i-lab1" class="im-lab">Huang: kịch bản cực đoan chưa đủ bằng chứng</div>
+      </div>
+      <div data-hf-id="hf-i-col2" class="im-col" id="im-col2">
+        <div data-hf-id="hf-i-ring2" class="im-ring warn">
+          <svg data-hf-id="hf-i-svg2" viewBox="0 0 340 340"><circle data-hf-id="hf-i-bg2" class="bg" cx="170" cy="170" r="145"/><circle data-hf-id="hf-i-fg2" class="fg" id="im-fg2" cx="170" cy="170" r="145" stroke-dasharray="911.06" stroke-dashoffset="911.06" transform="rotate(-90 170 170)"/></svg>
+          <div data-hf-id="hf-i-c2" class="center"><div data-hf-id="hf-i-n2" class="n">!</div></div>
+        </div>
+        <div data-hf-id="hf-i-lab2" class="im-lab">Giới nghiên cứu: tốc độ có thể vượt tầm kiểm soát</div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-i-banner" class="im-banner" id="im-banner">
+      <div data-hf-id="hf-i-btxt" class="txt">Giới công nghệ hiện chưa có đồng thuận về mức độ rủi ro của trí tuệ nhân tạo tiên tiến</div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#im-kicker', { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#im-h1', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.16);
+    tl.fromTo('#im-h2', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.3);
+    tl.fromTo('#im-col1', { autoAlpha: 0, x: -24 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'power2.out' }, 1.0);
+    tl.fromTo('#im-fg1', { strokeDashoffset: 911.06 }, { strokeDashoffset: 911.06, duration: 0.4 }, 1.1);
+    tl.fromTo('#im-col2', { autoAlpha: 0, x: 24 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'power2.out' }, 1.5);
+    tl.fromTo('#im-fg2', { strokeDashoffset: 911.06 }, { strokeDashoffset: 0, duration: 0.6, ease: 'power3.out' }, 1.6);
+    tl.fromTo('#im-banner', { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 2.3);
+    window.__timelines['06-impact'] = tl;
+  </script>
+</template>

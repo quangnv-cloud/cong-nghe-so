@@ -195,6 +195,13 @@
       "video": "ai-code-tq-tu-dong-tai-cloud",
       "date": "2026-09-22",
       "note": "routine chiều — Công cụ AI lập trình ZCode của Z.ai (Zhipu AI, Trung Quốc) bị phát hiện âm thầm tải dự án của lập trình viên lên cloud Alibaba: hệ thống âm thầm thử tải 1 tệp nén 313 MB (chứa lịch sử Git) tới 564 lần, do tính năng lập chỉ mục mã nguồn bật mặc định và không có nút tắt; sau khi bị phát hiện, Z.ai vô hiệu hoá tính năng, xin lỗi, vá lỗi và cam kết mở mã nguồn ZCode để cộng đồng kiểm tra độc lập (GenK, 22/9/2026). GATE A/B/C = APPROVE/YELLOW (quyền riêng tư / bảo mật dữ liệu, đã framing trung lập, không dùng tuyên bố đã bị rút lại). Ghi chú kỹ thuật: tên blogger \"Ferstar\" bị ElevenLabs eleven_v3 đọc sai — đã bỏ khỏi lời thoại, chỉ giữ trên chữ hiển thị."
+    },
+    {
+      "index": 5,
+      "style": "6-ring-progress",
+      "video": "ceo-nvidia-bac-bo-tan-the-ai",
+      "date": "2026-09-22",
+      "note": "routine tối — CEO Nvidia Jensen Huang bác bỏ cảnh báo AI có thể gây tận thế, nói với CBS News khả năng đó là 0%, giữa lúc cựu nghiên cứu viên Anthropic Jacob Coxon cảnh báo ngược lại; Nvidia hiện trị giá khoảng 5,3 nghìn tỷ đô la Mỹ nhờ làn sóng AI (Znews, 22/9/2026). GATE A/B/C = APPROVE/YELLOW (AI & an toàn/rủi ro hiện sinh, đã framing trung lập, trình bày cả 2 phía). BGM: Lyria thành công lần thử đầu, không cần fallback."
     }
   ]
 }
