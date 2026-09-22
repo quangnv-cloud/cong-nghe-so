@@ -1,0 +1,108 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 45% at 50% 8%, rgba(76,141,255,0.10), transparent 60%); }
+    .fc-map { position: absolute; inset: 0; opacity: 0.16; }
+
+    .fc-wrap { position: absolute; left: 60px; right: 60px; top: 300px; }
+    .fc-kicker { font-weight: 700; font-size: 27px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .fc-head { margin-top: 24px; font-weight: 900; font-size: 56px; line-height: 1.2; color: #fff; }
+    .fc-head .ln { overflow: hidden; }
+    .fc-head .ln > span { display: block; }
+    .fc-sub { margin-top: 22px; font-weight: 500; font-size: 28px; line-height: 1.5; color: rgba(255,255,255,0.6); opacity: 0; }
+
+    .fc-list { margin-top: 90px; display: flex; flex-direction: column; gap: 42px; }
+    .fc-row { display: flex; align-items: center; gap: 28px; padding: 46px 36px; border-radius: 20px; background: #121724; box-shadow: 0 0 40px rgba(76,141,255,0.14); opacity: 0; }
+    .fc-pin { flex: none; width: 60px; height: 60px; border-radius: 40px 40px 40px 8px; background: rgba(76,141,255,0.14); border: 2px solid #4C8DFF; display: flex; align-items: center; justify-content: center; transform: rotate(-45deg); }
+    .fc-pin span { transform: rotate(45deg); font-weight: 900; font-size: 26px; color: #4C8DFF; }
+    .fc-divider { flex: none; width: 1px; height: 76px; background: rgba(255,255,255,0.14); }
+    .fc-text { display: flex; flex-direction: column; gap: 10px; }
+    .fc-lab { font-weight: 600; font-size: 24px; color: rgba(255,255,255,0.5); }
+    .fc-val { font-weight: 800; font-size: 36px; line-height: 1.3; color: #fff; }
+
+    .fc-total { margin-top: 80px; display: flex; align-items: center; justify-content: space-between; padding: 40px 36px; border-radius: 18px; background: rgba(255,138,91,0.12); border: 1.5px solid rgba(255,138,91,0.6); opacity: 0; }
+    .fc-total .lab { font-weight: 600; font-size: 26px; color: rgba(255,255,255,0.75); }
+    .fc-total .val { font-weight: 900; font-size: 34px; color: #FF8A5B; }
+  </style>
+
+  <div id="root" data-composition-id="03-facts" data-width="1080" data-height="1920">
+    <svg class="fc-map" viewBox="0 0 1080 1920" id="fc-map-svg"></svg>
+    <div class="fc-wrap">
+      <div class="fc-kicker" id="fc-kicker">Ai phát hiện · Bằng cách nào</div>
+      <div class="fc-head">
+        <div class="ln" data-layout-allow-overflow=""><span id="fc-h1">Ba chi tiết</span></div>
+        <div class="ln" data-layout-allow-overflow=""><span id="fc-h2">đáng chú ý nhất</span></div>
+      </div>
+      <div class="fc-sub" id="fc-sub">Ferstar, blogger công nghệ Trung Quốc, là người phát hiện đầu tiên.</div>
+
+      <div class="fc-list">
+        <div class="fc-row" id="fc-r1">
+          <div class="fc-pin"><span>1</span></div>
+          <div class="fc-divider"></div>
+          <div class="fc-text"><span class="fc-lab">Thời điểm</span><span class="fc-val">Phát hiện ngày 18 tháng 9</span></div>
+        </div>
+        <div class="fc-row" id="fc-r2">
+          <div class="fc-pin"><span>2</span></div>
+          <div class="fc-divider"></div>
+          <div class="fc-text"><span class="fc-lab">Tệp bị tải lên</span><span class="fc-val">Tệp nén 313 MB, chứa lịch sử Git</span></div>
+        </div>
+        <div class="fc-row" id="fc-r3">
+          <div class="fc-pin"><span>3</span></div>
+          <div class="fc-divider"></div>
+          <div class="fc-text"><span class="fc-lab">Kiểm soát dữ liệu</span><span class="fc-val">Khoá giải mã nằm ở máy chủ Z.ai</span></div>
+        </div>
+      </div>
+
+      <div class="fc-total" id="fc-total"><span class="lab">Dự án bị nhắm tới</span><span class="val">Dự án thương mại</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Bản đồ chấm trang trí phía sau — lưới điểm PRNG seed cố định, KHÔNG phải địa lý chính xác.
+    (function () {
+      function mulberry32(seed) {
+        return function () {
+          seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+          var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+          t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+          return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+      var rand = mulberry32(9902231);
+      var svg = document.getElementById('fc-map-svg');
+      for (var i = 0; i < 90; i++) {
+        var cx = Math.round(rand() * 1080);
+        var cy = Math.round(200 + rand() * 900);
+        var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', cx); c.setAttribute('cy', cy);
+        c.setAttribute('r', (1 + rand() * 1.4).toFixed(2));
+        c.setAttribute('fill', '#4C8DFF');
+        c.setAttribute('opacity', (0.25 + rand() * 0.35).toFixed(2));
+        svg.appendChild(c);
+      }
+    })();
+
+    tl.fromTo('#fc-kicker', { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#fc-h1', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.2);
+    tl.fromTo('#fc-h2', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.32);
+    tl.fromTo('#fc-sub', { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.75);
+    tl.fromTo('#fc-r1', { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.45, ease: 'power3.out' }, 1.1);
+    tl.fromTo('#fc-r2', { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.45, ease: 'power3.out' }, 1.45);
+    tl.fromTo('#fc-r3', { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.45, ease: 'power3.out' }, 1.8);
+    tl.fromTo('#fc-total', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 2.2);
+    window.__timelines['03-facts'] = tl;
+  </script>
+</template>
