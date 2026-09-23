@@ -1,0 +1,2466 @@
+{
+  "line1": {
+    "language_code": "vie",
+    "language_probability": 0.9589239954948425,
+    "text": "Anthropic vừa ra mắt Claude Opus 5.5, mô hình mà hãng gọi là mạnh nhất từng thử nghiệm",
+    "words": [
+      {
+        "text": "Anthropic",
+        "start": 0.08,
+        "end": 0.68,
+        "type": "word",
+        "logprob": -0.029682795323121052
+      },
+      {
+        "text": " ",
+        "start": 0.68,
+        "end": 0.74,
+        "type": "spacing",
+        "logprob": -5.245195097813848e-06
+      },
+      {
+        "text": "vừa",
+        "start": 0.74,
+        "end": 0.9,
+        "type": "word",
+        "logprob": -5.245195097813848e-06
+      },
+      {
+        "text": " ",
+        "start": 0.9,
+        "end": 0.98,
+        "type": "spacing",
+        "logprob": -7.152531907195225e-06
+      },
+      {
+        "text": "ra",
+        "start": 0.98,
+        "end": 1.08,
+        "type": "word",
+        "logprob": -7.152531907195225e-06
+      },
+      {
+        "text": " ",
+        "start": 1.08,
+        "end": 1.16,
+        "type": "spacing",
+        "logprob": -3.71926071238704e-05
+      },
+      {
+        "text": "mắt",
+        "start": 1.16,
+        "end": 1.34,
+        "type": "word",
+        "logprob": -3.71926071238704e-05
+      },
+      {
+        "text": " ",
+        "start": 1.34,
+        "end": 1.42,
+        "type": "spacing",
+        "logprob": -0.0028509944677352905
+      },
+      {
+        "text": "Claude",
+        "start": 1.42,
+        "end": 1.72,
+        "type": "word",
+        "logprob": -0.0028509944677352905
+      },
+      {
+        "text": " ",
+        "start": 1.72,
+        "end": 1.84,
+        "type": "spacing",
+        "logprob": -0.0030157347209751606
+      },
+      {
+        "text": "Opus",
+        "start": 1.84,
+        "end": 2.18,
+        "type": "word",
+        "logprob": -0.0030157347209751606
+      },
+      {
+        "text": " ",
+        "start": 2.18,
+        "end": 2.42,
+        "type": "spacing",
+        "logprob": -4.7205765440594405e-05
+      },
+      {
+        "text": "5.5,",
+        "start": 2.42,
+        "end": 2.86,
+        "type": "word",
+        "logprob": -0.0006966961473153788
+      },
+      {
+        "text": " ",
+        "start": 2.86,
+        "end": 2.86,
+        "type": "spacing",
+        "logprob": -3.099393507000059e-05
+      },
+      {
+        "text": "mô",
+        "start": 3.18,
+        "end": 3.28,
+        "type": "word",
+        "logprob": -3.099393507000059e-05
+      },
+      {
+        "text": " ",
+        "start": 3.28,
+        "end": 3.32,
+        "type": "spacing",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": "hình",
+        "start": 3.32,
+        "end": 3.48,
+        "type": "word",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": " ",
+        "start": 3.48,
+        "end": 3.56,
+        "type": "spacing",
+        "logprob": -1.6689286894688848e-06
+      },
+      {
+        "text": "mà",
+        "start": 3.56,
+        "end": 3.7,
+        "type": "word",
+        "logprob": -1.6689286894688848e-06
+      },
+      {
+        "text": " ",
+        "start": 3.7,
+        "end": 3.74,
+        "type": "spacing",
+        "logprob": -6.151010165922344e-05
+      },
+      {
+        "text": "hãng",
+        "start": 3.74,
+        "end": 3.92,
+        "type": "word",
+        "logprob": -6.151010165922344e-05
+      },
+      {
+        "text": " ",
+        "start": 3.92,
+        "end": 4.0,
+        "type": "spacing",
+        "logprob": -1.4305104514278355e-06
+      },
+      {
+        "text": "gọi",
+        "start": 4.0,
+        "end": 4.26,
+        "type": "word",
+        "logprob": -1.4305104514278355e-06
+      },
+      {
+        "text": " ",
+        "start": 4.26,
+        "end": 4.32,
+        "type": "spacing",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": "là",
+        "start": 4.32,
+        "end": 4.5,
+        "type": "word",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": " ",
+        "start": 4.5,
+        "end": 4.72,
+        "type": "spacing",
+        "logprob": -0.00701784435659647
+      },
+      {
+        "text": "mạnh",
+        "start": 4.72,
+        "end": 4.9,
+        "type": "word",
+        "logprob": -0.00701784435659647
+      },
+      {
+        "text": " ",
+        "start": 4.9,
+        "end": 4.94,
+        "type": "spacing",
+        "logprob": -3.3378546504536644e-06
+      },
+      {
+        "text": "nhất",
+        "start": 4.94,
+        "end": 5.16,
+        "type": "word",
+        "logprob": -3.3378546504536644e-06
+      },
+      {
+        "text": " ",
+        "start": 5.16,
+        "end": 5.26,
+        "type": "spacing",
+        "logprob": -1.5735502529423684e-05
+      },
+      {
+        "text": "từng",
+        "start": 5.26,
+        "end": 5.46,
+        "type": "word",
+        "logprob": -1.5735502529423684e-05
+      },
+      {
+        "text": " ",
+        "start": 5.46,
+        "end": 5.48,
+        "type": "spacing",
+        "logprob": -0.00016604475968051702
+      },
+      {
+        "text": "thử",
+        "start": 5.48,
+        "end": 5.58,
+        "type": "word",
+        "logprob": -0.00016604475968051702
+      },
+      {
+        "text": " ",
+        "start": 5.58,
+        "end": 5.66,
+        "type": "spacing",
+        "logprob": -3.313963316031732e-05
+      },
+      {
+        "text": "nghiệm",
+        "start": 5.66,
+        "end": 5.88,
+        "type": "word",
+        "logprob": -3.313963316031732e-05
+      }
+    ],
+    "transcription_id": "CPzokOsI8Vs3jfCjBzD6",
+    "audio_duration_secs": 5.92
+  },
+  "line2": {
+    "language_code": "vie",
+    "language_probability": 0.9895027875900269,
+    "text": "Ra mắt ngày 22 tháng Chín, chỉ ba tuần sau khi Anthropic tung ra mô hình cao cấp Fable 5.1",
+    "words": [
+      {
+        "text": "Ra",
+        "start": 0.1,
+        "end": 0.22,
+        "type": "word",
+        "logprob": -0.01162009872496128
+      },
+      {
+        "text": " ",
+        "start": 0.22,
+        "end": 0.28,
+        "type": "spacing",
+        "logprob": -3.7431014789035544e-05
+      },
+      {
+        "text": "mắt",
+        "start": 0.28,
+        "end": 0.42,
+        "type": "word",
+        "logprob": -3.7431014789035544e-05
+      },
+      {
+        "text": " ",
+        "start": 0.42,
+        "end": 0.46,
+        "type": "spacing",
+        "logprob": -1.3232143828645349e-05
+      },
+      {
+        "text": "ngày",
+        "start": 0.46,
+        "end": 0.64,
+        "type": "word",
+        "logprob": -1.3232143828645349e-05
+      },
+      {
+        "text": " ",
+        "start": 0.64,
+        "end": 0.84,
+        "type": "spacing",
+        "logprob": -6.770858453819528e-05
+      },
+      {
+        "text": "22",
+        "start": 0.84,
+        "end": 1.18,
+        "type": "word",
+        "logprob": -1.6093233341507585e-06
+      },
+      {
+        "text": " ",
+        "start": 1.18,
+        "end": 1.2,
+        "type": "spacing",
+        "logprob": -0.043133508414030075
+      },
+      {
+        "text": "tháng",
+        "start": 1.2,
+        "end": 1.32,
+        "type": "word",
+        "logprob": -0.043133508414030075
+      },
+      {
+        "text": " ",
+        "start": 1.32,
+        "end": 1.42,
+        "type": "spacing",
+        "logprob": -0.2417570948600769
+      },
+      {
+        "text": "Chín,",
+        "start": 1.42,
+        "end": 1.64,
+        "type": "word",
+        "logprob": -0.09673452150291269
+      },
+      {
+        "text": " ",
+        "start": 1.64,
+        "end": 2.04,
+        "type": "spacing",
+        "logprob": -4.291525328881107e-06
+      },
+      {
+        "text": "chỉ",
+        "start": 2.04,
+        "end": 2.22,
+        "type": "word",
+        "logprob": -4.291525328881107e-06
+      },
+      {
+        "text": " ",
+        "start": 2.22,
+        "end": 2.34,
+        "type": "spacing",
+        "logprob": -1.5735502529423684e-05
+      },
+      {
+        "text": "ba",
+        "start": 2.34,
+        "end": 2.44,
+        "type": "word",
+        "logprob": -1.5735502529423684e-05
+      },
+      {
+        "text": " ",
+        "start": 2.44,
+        "end": 2.54,
+        "type": "spacing",
+        "logprob": -1.5616295058862306e-05
+      },
+      {
+        "text": "tuần",
+        "start": 2.54,
+        "end": 2.74,
+        "type": "word",
+        "logprob": -1.5616295058862306e-05
+      },
+      {
+        "text": " ",
+        "start": 2.74,
+        "end": 2.86,
+        "type": "spacing",
+        "logprob": -5.602820692729438e-06
+      },
+      {
+        "text": "sau",
+        "start": 2.86,
+        "end": 3.0,
+        "type": "word",
+        "logprob": -5.602820692729438e-06
+      },
+      {
+        "text": " ",
+        "start": 3.0,
+        "end": 3.02,
+        "type": "spacing",
+        "logprob": -7.748573807475623e-06
+      },
+      {
+        "text": "khi",
+        "start": 3.02,
+        "end": 3.14,
+        "type": "word",
+        "logprob": -7.748573807475623e-06
+      },
+      {
+        "text": " ",
+        "start": 3.14,
+        "end": 3.18,
+        "type": "spacing",
+        "logprob": -0.013345791958272457
+      },
+      {
+        "text": "Anthropic",
+        "start": 3.18,
+        "end": 3.64,
+        "type": "word",
+        "logprob": -0.0064342986701780725
+      },
+      {
+        "text": " ",
+        "start": 3.64,
+        "end": 3.74,
+        "type": "spacing",
+        "logprob": -1.2159273865108844e-05
+      },
+      {
+        "text": "tung",
+        "start": 3.76,
+        "end": 3.9,
+        "type": "word",
+        "logprob": -1.2159273865108844e-05
+      },
+      {
+        "text": " ",
+        "start": 3.9,
+        "end": 3.98,
+        "type": "spacing",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": "ra",
+        "start": 3.98,
+        "end": 4.12,
+        "type": "word",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": " ",
+        "start": 4.12,
+        "end": 4.22,
+        "type": "spacing",
+        "logprob": -5.245195097813848e-06
+      },
+      {
+        "text": "mô",
+        "start": 4.22,
+        "end": 4.32,
+        "type": "word",
+        "logprob": -5.245195097813848e-06
+      },
+      {
+        "text": " ",
+        "start": 4.32,
+        "end": 4.36,
+        "type": "spacing",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": "hình",
+        "start": 4.36,
+        "end": 4.5,
+        "type": "word",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": " ",
+        "start": 4.5,
+        "end": 4.6,
+        "type": "spacing",
+        "logprob": -1.549708758830093e-05
+      },
+      {
+        "text": "cao",
+        "start": 4.6,
+        "end": 4.7,
+        "type": "word",
+        "logprob": -1.549708758830093e-05
+      },
+      {
+        "text": " ",
+        "start": 4.7,
+        "end": 4.8,
+        "type": "spacing",
+        "logprob": -7.867782187531702e-06
+      },
+      {
+        "text": "cấp",
+        "start": 4.8,
+        "end": 4.98,
+        "type": "word",
+        "logprob": -7.867782187531702e-06
+      },
+      {
+        "text": " ",
+        "start": 4.98,
+        "end": 5.12,
+        "type": "spacing",
+        "logprob": -0.008941018022596836
+      },
+      {
+        "text": "Fable",
+        "start": 5.12,
+        "end": 5.46,
+        "type": "word",
+        "logprob": -0.023967534489929675
+      },
+      {
+        "text": " ",
+        "start": 5.46,
+        "end": 5.7,
+        "type": "spacing",
+        "logprob": -2.6940935640595853e-05
+      },
+      {
+        "text": "5.1",
+        "start": 5.7,
+        "end": 6.18,
+        "type": "word",
+        "logprob": -2.2688756679656308e-05
+      }
+    ],
+    "transcription_id": "HvbgZXnIfgKE3lBjE8Xu",
+    "audio_duration_secs": 6.24
+  },
+  "line3": {
+    "language_code": "vie",
+    "language_probability": 0.994012176990509,
+    "text": "Opus 5.5 làm ngang Fable 5.1 ở hầu hết công việc, nhưng giá mỗi triệu token đầu vào chỉ 4 USD, đầu ra 20 USD, rẻ hơn khoảng 60%.",
+    "words": [
+      {
+        "text": "Opus",
+        "start": 0.08,
+        "end": 0.4,
+        "type": "word",
+        "logprob": -0.010624235685099848
+      },
+      {
+        "text": " ",
+        "start": 0.4,
+        "end": 0.68,
+        "type": "spacing",
+        "logprob": -0.0003844952443614602
+      },
+      {
+        "text": "5.5",
+        "start": 0.68,
+        "end": 1.14,
+        "type": "word",
+        "logprob": -1.5536640641281945e-05
+      },
+      {
+        "text": " ",
+        "start": 1.14,
+        "end": 1.36,
+        "type": "spacing",
+        "logprob": -0.0006005152827128768
+      },
+      {
+        "text": "làm",
+        "start": 1.36,
+        "end": 1.5,
+        "type": "word",
+        "logprob": -0.0006005152827128768
+      },
+      {
+        "text": " ",
+        "start": 1.5,
+        "end": 1.56,
+        "type": "spacing",
+        "logprob": -3.2543604902457446e-05
+      },
+      {
+        "text": "ngang",
+        "start": 1.56,
+        "end": 1.78,
+        "type": "word",
+        "logprob": -3.2543604902457446e-05
+      },
+      {
+        "text": " ",
+        "start": 1.78,
+        "end": 1.88,
+        "type": "spacing",
+        "logprob": -0.003134934464469552
+      },
+      {
+        "text": "Fable",
+        "start": 1.88,
+        "end": 2.24,
+        "type": "word",
+        "logprob": -0.04597033229656518
+      },
+      {
+        "text": " ",
+        "start": 2.24,
+        "end": 2.48,
+        "type": "spacing",
+        "logprob": -2.145764938177308e-06
+      },
+      {
+        "text": "5.1",
+        "start": 2.48,
+        "end": 3.06,
+        "type": "word",
+        "logprob": -1.9470823318101793e-06
+      },
+      {
+        "text": " ",
+        "start": 3.06,
+        "end": 3.14,
+        "type": "spacing",
+        "logprob": -8.642300235806033e-05
+      },
+      {
+        "text": "ở",
+        "start": 3.14,
+        "end": 3.22,
+        "type": "word",
+        "logprob": -8.642300235806033e-05
+      },
+      {
+        "text": " ",
+        "start": 3.22,
+        "end": 3.26,
+        "type": "spacing",
+        "logprob": -1.2397689715726301e-05
+      },
+      {
+        "text": "hầu",
+        "start": 3.26,
+        "end": 3.42,
+        "type": "word",
+        "logprob": -1.2397689715726301e-05
+      },
+      {
+        "text": " ",
+        "start": 3.42,
+        "end": 3.46,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "hết",
+        "start": 3.46,
+        "end": 3.64,
+        "type": "word",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": " ",
+        "start": 3.64,
+        "end": 3.68,
+        "type": "spacing",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": "công",
+        "start": 3.68,
+        "end": 3.78,
+        "type": "word",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": " ",
+        "start": 3.78,
+        "end": 3.84,
+        "type": "spacing",
+        "logprob": -2.7418097943154862e-06
+      },
+      {
+        "text": "việc,",
+        "start": 3.84,
+        "end": 4.04,
+        "type": "word",
+        "logprob": -0.02902618348289252
+      },
+      {
+        "text": " ",
+        "start": 4.04,
+        "end": 4.04,
+        "type": "spacing",
+        "logprob": -7.271740287251305e-06
+      },
+      {
+        "text": "nhưng",
+        "start": 4.5,
+        "end": 4.68,
+        "type": "word",
+        "logprob": -7.271740287251305e-06
+      },
+      {
+        "text": " ",
+        "start": 4.68,
+        "end": 4.76,
+        "type": "spacing",
+        "logprob": -6.198863957251888e-06
+      },
+      {
+        "text": "giá",
+        "start": 4.76,
+        "end": 4.96,
+        "type": "word",
+        "logprob": -6.198863957251888e-06
+      },
+      {
+        "text": " ",
+        "start": 4.96,
+        "end": 5.08,
+        "type": "spacing",
+        "logprob": -2.992108420585282e-05
+      },
+      {
+        "text": "mỗi",
+        "start": 5.08,
+        "end": 5.2,
+        "type": "word",
+        "logprob": -2.992108420585282e-05
+      },
+      {
+        "text": " ",
+        "start": 5.2,
+        "end": 5.26,
+        "type": "spacing",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": "triệu",
+        "start": 5.26,
+        "end": 5.52,
+        "type": "word",
+        "logprob": -1.0728830375228426e-06
+      },
+      {
+        "text": " ",
+        "start": 5.52,
+        "end": 5.54,
+        "type": "spacing",
+        "logprob": -0.00012861855793744326
+      },
+      {
+        "text": "token",
+        "start": 5.54,
+        "end": 5.86,
+        "type": "word",
+        "logprob": -0.00012861855793744326
+      },
+      {
+        "text": " ",
+        "start": 5.86,
+        "end": 5.9,
+        "type": "spacing",
+        "logprob": -4.434487345861271e-05
+      },
+      {
+        "text": "đầu",
+        "start": 5.9,
+        "end": 6.06,
+        "type": "word",
+        "logprob": -4.434487345861271e-05
+      },
+      {
+        "text": " ",
+        "start": 6.06,
+        "end": 6.1,
+        "type": "spacing",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": "vào",
+        "start": 6.1,
+        "end": 6.3,
+        "type": "word",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": " ",
+        "start": 6.3,
+        "end": 6.4,
+        "type": "spacing",
+        "logprob": -4.529942543740617e-06
+      },
+      {
+        "text": "chỉ",
+        "start": 6.4,
+        "end": 6.56,
+        "type": "word",
+        "logprob": -4.529942543740617e-06
+      },
+      {
+        "text": " ",
+        "start": 6.56,
+        "end": 6.8,
+        "type": "spacing",
+        "logprob": -0.30111974477767944
+      },
+      {
+        "text": "4",
+        "start": 6.8,
+        "end": 6.82,
+        "type": "word",
+        "logprob": -9.536697689327411e-06
+      },
+      {
+        "text": " ",
+        "start": 6.82,
+        "end": 6.9,
+        "type": "spacing",
+        "logprob": -0.3585337698459625
+      },
+      {
+        "text": "USD,",
+        "start": 6.9,
+        "end": 7.36,
+        "type": "word",
+        "logprob": -0.2689809296716703
+      },
+      {
+        "text": " ",
+        "start": 7.36,
+        "end": 7.36,
+        "type": "spacing",
+        "logprob": -3.6238969187252223e-05
+      },
+      {
+        "text": "đầu",
+        "start": 7.7,
+        "end": 7.84,
+        "type": "word",
+        "logprob": -3.6238969187252223e-05
+      },
+      {
+        "text": " ",
+        "start": 7.84,
+        "end": 7.94,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "ra",
+        "start": 7.94,
+        "end": 8.119,
+        "type": "word",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": " ",
+        "start": 8.119,
+        "end": 8.42,
+        "type": "spacing",
+        "logprob": -3.290122185717337e-05
+      },
+      {
+        "text": "20",
+        "start": 8.42,
+        "end": 8.64,
+        "type": "word",
+        "logprob": -4.947172101310571e-06
+      },
+      {
+        "text": " ",
+        "start": 8.64,
+        "end": 8.68,
+        "type": "spacing",
+        "logprob": -0.00032443503732793033
+      },
+      {
+        "text": "USD,",
+        "start": 8.68,
+        "end": 9.14,
+        "type": "word",
+        "logprob": -0.00043467335490277037
+      },
+      {
+        "text": " ",
+        "start": 9.14,
+        "end": 9.54,
+        "type": "spacing",
+        "logprob": -6.16293036728166e-05
+      },
+      {
+        "text": "rẻ",
+        "start": 9.54,
+        "end": 9.7,
+        "type": "word",
+        "logprob": -6.16293036728166e-05
+      },
+      {
+        "text": " ",
+        "start": 9.7,
+        "end": 9.76,
+        "type": "spacing",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": "hơn",
+        "start": 9.76,
+        "end": 9.96,
+        "type": "word",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": " ",
+        "start": 9.96,
+        "end": 10.04,
+        "type": "spacing",
+        "logprob": -2.038458114839159e-05
+      },
+      {
+        "text": "khoảng",
+        "start": 10.04,
+        "end": 10.26,
+        "type": "word",
+        "logprob": -2.038458114839159e-05
+      },
+      {
+        "text": " ",
+        "start": 10.26,
+        "end": 10.6,
+        "type": "spacing",
+        "logprob": -0.0021906918846070766
+      },
+      {
+        "text": "60%.",
+        "start": 10.6,
+        "end": 11.26,
+        "type": "word",
+        "logprob": -0.015140057540634189
+      }
+    ],
+    "transcription_id": "pTod6xF0LsAcKqGTTvgF",
+    "audio_duration_secs": 11.36
+  },
+  "line4": {
+    "language_code": "vie",
+    "language_probability": 0.9999713897705078,
+    "text": "Terminal Bench 4.0 Opus 5.5 đạt 66,4%, vượt Fable 5.1 với 55,8% và Opus 5 đời trước chỉ 52,3%.",
+    "words": [
+      {
+        "text": "Terminal",
+        "start": 0.12,
+        "end": 0.54,
+        "type": "word",
+        "logprob": -0.0011241076281294227
+      },
+      {
+        "text": " ",
+        "start": 0.54,
+        "end": 0.62,
+        "type": "spacing",
+        "logprob": -0.4337959289550781
+      },
+      {
+        "text": "Bench",
+        "start": 0.62,
+        "end": 0.88,
+        "type": "word",
+        "logprob": -0.4337959289550781
+      },
+      {
+        "text": " ",
+        "start": 0.88,
+        "end": 1.14,
+        "type": "spacing",
+        "logprob": -1.680836794548668e-05
+      },
+      {
+        "text": "4.0",
+        "start": 1.14,
+        "end": 1.62,
+        "type": "word",
+        "logprob": -1.4344593447882895e-05
+      },
+      {
+        "text": " ",
+        "start": 1.62,
+        "end": 1.9,
+        "type": "spacing",
+        "logprob": -0.26201149821281433
+      },
+      {
+        "text": "Opus",
+        "start": 1.9,
+        "end": 2.24,
+        "type": "word",
+        "logprob": -0.26201149821281433
+      },
+      {
+        "text": " ",
+        "start": 2.24,
+        "end": 2.24,
+        "type": "spacing",
+        "logprob": -1.597391747054644e-05
+      },
+      {
+        "text": "5.5",
+        "start": 2.54,
+        "end": 3.0,
+        "type": "word",
+        "logprob": -2.662335399842656e-06
+      },
+      {
+        "text": " ",
+        "start": 3.0,
+        "end": 3.26,
+        "type": "spacing",
+        "logprob": -0.0007172634359449148
+      },
+      {
+        "text": "đạt",
+        "start": 3.26,
+        "end": 3.44,
+        "type": "word",
+        "logprob": -0.0007172634359449148
+      },
+      {
+        "text": " ",
+        "start": 3.44,
+        "end": 3.68,
+        "type": "spacing",
+        "logprob": -6.9141146923357155e-06
+      },
+      {
+        "text": "66,4%,",
+        "start": 3.68,
+        "end": 4.76,
+        "type": "word",
+        "logprob": -0.0015010544986561551
+      },
+      {
+        "text": " ",
+        "start": 4.76,
+        "end": 4.76,
+        "type": "spacing",
+        "logprob": -4.6967357775429264e-05
+      },
+      {
+        "text": "vượt",
+        "start": 5.16,
+        "end": 5.32,
+        "type": "word",
+        "logprob": -4.6967357775429264e-05
+      },
+      {
+        "text": " ",
+        "start": 5.32,
+        "end": 5.42,
+        "type": "spacing",
+        "logprob": -0.0031981533393263817
+      },
+      {
+        "text": "Fable",
+        "start": 5.42,
+        "end": 5.8,
+        "type": "word",
+        "logprob": -0.0036901427432894708
+      },
+      {
+        "text": " ",
+        "start": 5.8,
+        "end": 6.08,
+        "type": "spacing",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": "5.1",
+        "start": 6.08,
+        "end": 6.58,
+        "type": "word",
+        "logprob": -5.443854765492991e-06
+      },
+      {
+        "text": " ",
+        "start": 6.58,
+        "end": 6.64,
+        "type": "spacing",
+        "logprob": -9.894321920000948e-06
+      },
+      {
+        "text": "với",
+        "start": 6.64,
+        "end": 6.78,
+        "type": "word",
+        "logprob": -9.894321920000948e-06
+      },
+      {
+        "text": " ",
+        "start": 6.78,
+        "end": 6.98,
+        "type": "spacing",
+        "logprob": -7.152555099310121e-07
+      },
+      {
+        "text": "55,8%",
+        "start": 6.98,
+        "end": 8.039,
+        "type": "word",
+        "logprob": -0.0013653282547238632
+      },
+      {
+        "text": " ",
+        "start": 8.039,
+        "end": 8.4,
+        "type": "spacing",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": "và",
+        "start": 8.4,
+        "end": 8.52,
+        "type": "word",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": " ",
+        "start": 8.52,
+        "end": 8.66,
+        "type": "spacing",
+        "logprob": -0.00011216964776394889
+      },
+      {
+        "text": "Opus",
+        "start": 8.66,
+        "end": 8.98,
+        "type": "word",
+        "logprob": -0.00011216964776394889
+      },
+      {
+        "text": " ",
+        "start": 8.98,
+        "end": 9.12,
+        "type": "spacing",
+        "logprob": -0.28121498227119446
+      },
+      {
+        "text": "5",
+        "start": 9.26,
+        "end": 9.3,
+        "type": "word",
+        "logprob": -4.529942543740617e-06
+      },
+      {
+        "text": " ",
+        "start": 9.3,
+        "end": 9.36,
+        "type": "spacing",
+        "logprob": -5.1020273531321436e-05
+      },
+      {
+        "text": "đời",
+        "start": 9.36,
+        "end": 9.46,
+        "type": "word",
+        "logprob": -5.1020273531321436e-05
+      },
+      {
+        "text": " ",
+        "start": 9.46,
+        "end": 9.54,
+        "type": "spacing",
+        "logprob": -2.062299427052494e-05
+      },
+      {
+        "text": "trước",
+        "start": 9.54,
+        "end": 9.8,
+        "type": "word",
+        "logprob": -2.062299427052494e-05
+      },
+      {
+        "text": " ",
+        "start": 9.8,
+        "end": 9.94,
+        "type": "spacing",
+        "logprob": -1.728519782773219e-05
+      },
+      {
+        "text": "chỉ",
+        "start": 9.94,
+        "end": 10.1,
+        "type": "word",
+        "logprob": -1.728519782773219e-05
+      },
+      {
+        "text": " ",
+        "start": 10.1,
+        "end": 10.34,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "52,3%.",
+        "start": 10.34,
+        "end": 11.42,
+        "type": "word",
+        "logprob": -0.04240686197149065
+      }
+    ],
+    "transcription_id": "QuaMHUawb7Lqo9YpRvSu",
+    "audio_duration_secs": 11.52
+  },
+  "line5": {
+    "language_code": "vie",
+    "language_probability": 0.9766265153884888,
+    "text": "Theo dòng thời gian, Opus 5 giá 5 USD, Fable 5.1 tăng lên 10 USD, Opus 5.5 giảm còn 4 USD, trong khi điểm benchmark liên tục tăng",
+    "words": [
+      {
+        "text": "Theo",
+        "start": 0.08,
+        "end": 0.28,
+        "type": "word",
+        "logprob": -0.0009201106731779873
+      },
+      {
+        "text": " ",
+        "start": 0.28,
+        "end": 0.38,
+        "type": "spacing",
+        "logprob": -0.0021214615553617477
+      },
+      {
+        "text": "dòng",
+        "start": 0.38,
+        "end": 0.52,
+        "type": "word",
+        "logprob": -0.0021214615553617477
+      },
+      {
+        "text": " ",
+        "start": 0.52,
+        "end": 0.6,
+        "type": "spacing",
+        "logprob": -8.106198947643861e-06
+      },
+      {
+        "text": "thời",
+        "start": 0.6,
+        "end": 0.74,
+        "type": "word",
+        "logprob": -8.106198947643861e-06
+      },
+      {
+        "text": " ",
+        "start": 0.74,
+        "end": 0.8,
+        "type": "spacing",
+        "logprob": -9.536697689327411e-06
+      },
+      {
+        "text": "gian,",
+        "start": 0.8,
+        "end": 1.06,
+        "type": "word",
+        "logprob": -0.009360453450062778
+      },
+      {
+        "text": " ",
+        "start": 1.06,
+        "end": 1.32,
+        "type": "spacing",
+        "logprob": -0.013819606974720955
+      },
+      {
+        "text": "Opus",
+        "start": 1.32,
+        "end": 1.6,
+        "type": "word",
+        "logprob": -0.013819606974720955
+      },
+      {
+        "text": " ",
+        "start": 1.6,
+        "end": 1.86,
+        "type": "spacing",
+        "logprob": -0.00013553177996072918
+      },
+      {
+        "text": "5",
+        "start": 1.86,
+        "end": 1.88,
+        "type": "word",
+        "logprob": -5.960462772236497e-07
+      },
+      {
+        "text": " ",
+        "start": 1.88,
+        "end": 2.02,
+        "type": "spacing",
+        "logprob": -0.000929281348362565
+      },
+      {
+        "text": "giá",
+        "start": 2.02,
+        "end": 2.22,
+        "type": "word",
+        "logprob": -0.000929281348362565
+      },
+      {
+        "text": " ",
+        "start": 2.22,
+        "end": 2.42,
+        "type": "spacing",
+        "logprob": -0.063700370490551
+      },
+      {
+        "text": "5",
+        "start": 2.42,
+        "end": 2.46,
+        "type": "word",
+        "logprob": -1.811964830267243e-05
+      },
+      {
+        "text": " ",
+        "start": 2.46,
+        "end": 2.52,
+        "type": "spacing",
+        "logprob": -0.6243253350257874
+      },
+      {
+        "text": "USD,",
+        "start": 2.52,
+        "end": 2.96,
+        "type": "word",
+        "logprob": -0.4757848884910345
+      },
+      {
+        "text": " ",
+        "start": 2.96,
+        "end": 2.96,
+        "type": "spacing",
+        "logprob": -0.0022100803907960653
+      },
+      {
+        "text": "Fable",
+        "start": 3.36,
+        "end": 3.72,
+        "type": "word",
+        "logprob": -0.004560045851394534
+      },
+      {
+        "text": " ",
+        "start": 3.72,
+        "end": 3.92,
+        "type": "spacing",
+        "logprob": -1.5497195136049413e-06
+      },
+      {
+        "text": "5.1",
+        "start": 3.92,
+        "end": 4.36,
+        "type": "word",
+        "logprob": -4.092832758336347e-06
+      },
+      {
+        "text": " ",
+        "start": 4.36,
+        "end": 4.48,
+        "type": "spacing",
+        "logprob": -7.426462980220094e-05
+      },
+      {
+        "text": "tăng",
+        "start": 4.48,
+        "end": 4.6,
+        "type": "word",
+        "logprob": -7.426462980220094e-05
+      },
+      {
+        "text": " ",
+        "start": 4.6,
+        "end": 4.66,
+        "type": "spacing",
+        "logprob": -1.311301275563892e-06
+      },
+      {
+        "text": "lên",
+        "start": 4.66,
+        "end": 4.84,
+        "type": "word",
+        "logprob": -1.311301275563892e-06
+      },
+      {
+        "text": " ",
+        "start": 4.84,
+        "end": 4.92,
+        "type": "spacing",
+        "logprob": -3.0874729418428615e-05
+      },
+      {
+        "text": "10",
+        "start": 4.92,
+        "end": 5.08,
+        "type": "word",
+        "logprob": -8.940692737269273e-07
+      },
+      {
+        "text": " ",
+        "start": 5.08,
+        "end": 5.16,
+        "type": "spacing",
+        "logprob": -0.0003965306677855551
+      },
+      {
+        "text": "USD,",
+        "start": 5.18,
+        "end": 5.62,
+        "type": "word",
+        "logprob": -0.03603223401296418
+      },
+      {
+        "text": " ",
+        "start": 5.62,
+        "end": 5.62,
+        "type": "spacing",
+        "logprob": -0.0004960260121151805
+      },
+      {
+        "text": "Opus",
+        "start": 6.1,
+        "end": 6.4,
+        "type": "word",
+        "logprob": -0.0004960260121151805
+      },
+      {
+        "text": " ",
+        "start": 6.4,
+        "end": 6.62,
+        "type": "spacing",
+        "logprob": -1.6689286894688848e-06
+      },
+      {
+        "text": "5.5",
+        "start": 6.62,
+        "end": 7.04,
+        "type": "word",
+        "logprob": -1.3907731120828732e-06
+      },
+      {
+        "text": " ",
+        "start": 7.04,
+        "end": 7.24,
+        "type": "spacing",
+        "logprob": -1.7881233361549675e-05
+      },
+      {
+        "text": "giảm",
+        "start": 7.24,
+        "end": 7.44,
+        "type": "word",
+        "logprob": -1.7881233361549675e-05
+      },
+      {
+        "text": " ",
+        "start": 7.44,
+        "end": 7.56,
+        "type": "spacing",
+        "logprob": -7.271740287251305e-06
+      },
+      {
+        "text": "còn",
+        "start": 7.56,
+        "end": 7.76,
+        "type": "word",
+        "logprob": -7.271740287251305e-06
+      },
+      {
+        "text": " ",
+        "start": 7.76,
+        "end": 7.98,
+        "type": "spacing",
+        "logprob": -4.732496745418757e-05
+      },
+      {
+        "text": "4",
+        "start": 7.98,
+        "end": 8.0,
+        "type": "word",
+        "logprob": -1.5497195136049413e-06
+      },
+      {
+        "text": " ",
+        "start": 8.0,
+        "end": 8.08,
+        "type": "spacing",
+        "logprob": -0.0003121604095213115
+      },
+      {
+        "text": "USD,",
+        "start": 8.08,
+        "end": 8.5,
+        "type": "word",
+        "logprob": -0.11293033581750933
+      },
+      {
+        "text": " ",
+        "start": 8.5,
+        "end": 8.52,
+        "type": "spacing",
+        "logprob": -7.152531907195225e-06
+      },
+      {
+        "text": "trong",
+        "start": 8.9,
+        "end": 9.08,
+        "type": "word",
+        "logprob": -7.152531907195225e-06
+      },
+      {
+        "text": " ",
+        "start": 9.08,
+        "end": 9.1,
+        "type": "spacing",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": "khi",
+        "start": 9.1,
+        "end": 9.24,
+        "type": "word",
+        "logprob": -2.3841855067985307e-07
+      },
+      {
+        "text": " ",
+        "start": 9.24,
+        "end": 9.34,
+        "type": "spacing",
+        "logprob": -5.125986263010418e-06
+      },
+      {
+        "text": "điểm",
+        "start": 9.34,
+        "end": 9.5,
+        "type": "word",
+        "logprob": -5.125986263010418e-06
+      },
+      {
+        "text": " ",
+        "start": 9.5,
+        "end": 9.54,
+        "type": "spacing",
+        "logprob": -0.0142558254301548
+      },
+      {
+        "text": "benchmark",
+        "start": 9.54,
+        "end": 10.04,
+        "type": "word",
+        "logprob": -0.0142558254301548
+      },
+      {
+        "text": " ",
+        "start": 10.04,
+        "end": 10.08,
+        "type": "spacing",
+        "logprob": -0.00010859376925509423
+      },
+      {
+        "text": "liên",
+        "start": 10.08,
+        "end": 10.22,
+        "type": "word",
+        "logprob": -0.00010859376925509423
+      },
+      {
+        "text": " ",
+        "start": 10.22,
+        "end": 10.28,
+        "type": "spacing",
+        "logprob": -7.748573807475623e-06
+      },
+      {
+        "text": "tục",
+        "start": 10.28,
+        "end": 10.4,
+        "type": "word",
+        "logprob": -7.748573807475623e-06
+      },
+      {
+        "text": " ",
+        "start": 10.4,
+        "end": 10.48,
+        "type": "spacing",
+        "logprob": -1.537788011773955e-05
+      },
+      {
+        "text": "tăng",
+        "start": 10.48,
+        "end": 10.66,
+        "type": "word",
+        "logprob": -1.537788011773955e-05
+      }
+    ],
+    "transcription_id": "ucNsiKAkllTPnaRk6m6r",
+    "audio_duration_secs": 10.72
+  },
+  "line6": {
+    "language_code": "vie",
+    "language_probability": 0.9991177320480347,
+    "text": "Đánh giá độc lập của Sonar cho thấy Opus 5.5 viết code gọn hơn nhưng mật độ lỗi tăng 12%, lỗi xử lý đồng thời tăng tới 44%.",
+    "words": [
+      {
+        "text": "Đánh",
+        "start": 0.1,
+        "end": 0.22,
+        "type": "word",
+        "logprob": -0.00019351502487552352
+      },
+      {
+        "text": " ",
+        "start": 0.22,
+        "end": 0.26,
+        "type": "spacing",
+        "logprob": -1.1920922133867862e-06
+      },
+      {
+        "text": "giá",
+        "start": 0.26,
+        "end": 0.4,
+        "type": "word",
+        "logprob": -1.1920922133867862e-06
+      },
+      {
+        "text": " ",
+        "start": 0.4,
+        "end": 0.46,
+        "type": "spacing",
+        "logprob": -8.49926145747304e-05
+      },
+      {
+        "text": "độc",
+        "start": 0.46,
+        "end": 0.58,
+        "type": "word",
+        "logprob": -8.49926145747304e-05
+      },
+      {
+        "text": " ",
+        "start": 0.58,
+        "end": 0.62,
+        "type": "spacing",
+        "logprob": -0.00010072677832795307
+      },
+      {
+        "text": "lập",
+        "start": 0.62,
+        "end": 0.78,
+        "type": "word",
+        "logprob": -0.00010072677832795307
+      },
+      {
+        "text": " ",
+        "start": 0.78,
+        "end": 0.86,
+        "type": "spacing",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": "của",
+        "start": 0.86,
+        "end": 1.02,
+        "type": "word",
+        "logprob": -1.1920928244535389e-07
+      },
+      {
+        "text": " ",
+        "start": 1.02,
+        "end": 1.1,
+        "type": "spacing",
+        "logprob": -0.21790562570095062
+      },
+      {
+        "text": "Sonar",
+        "start": 1.1,
+        "end": 1.44,
+        "type": "word",
+        "logprob": -0.1308445951435715
+      },
+      {
+        "text": " ",
+        "start": 1.44,
+        "end": 1.5,
+        "type": "spacing",
+        "logprob": -1.0967194612021558e-05
+      },
+      {
+        "text": "cho",
+        "start": 1.5,
+        "end": 1.62,
+        "type": "word",
+        "logprob": -1.0967194612021558e-05
+      },
+      {
+        "text": " ",
+        "start": 1.62,
+        "end": 1.68,
+        "type": "spacing",
+        "logprob": -1.9550132492440753e-05
+      },
+      {
+        "text": "thấy",
+        "start": 1.68,
+        "end": 1.92,
+        "type": "word",
+        "logprob": -1.9550132492440753e-05
+      },
+      {
+        "text": " ",
+        "start": 1.92,
+        "end": 2.12,
+        "type": "spacing",
+        "logprob": -0.03613332286477089
+      },
+      {
+        "text": "Opus",
+        "start": 2.12,
+        "end": 2.4,
+        "type": "word",
+        "logprob": -0.03613332286477089
+      },
+      {
+        "text": " ",
+        "start": 2.4,
+        "end": 2.62,
+        "type": "spacing",
+        "logprob": -1.1920922133867862e-06
+      },
+      {
+        "text": "5.5",
+        "start": 2.62,
+        "end": 3.06,
+        "type": "word",
+        "logprob": -6.755190611329454e-07
+      },
+      {
+        "text": " ",
+        "start": 3.06,
+        "end": 3.2,
+        "type": "spacing",
+        "logprob": -1.1444026313256472e-05
+      },
+      {
+        "text": "viết",
+        "start": 3.2,
+        "end": 3.36,
+        "type": "word",
+        "logprob": -1.1444026313256472e-05
+      },
+      {
+        "text": " ",
+        "start": 3.36,
+        "end": 3.46,
+        "type": "spacing",
+        "logprob": -8.380061626667157e-05
+      },
+      {
+        "text": "code",
+        "start": 3.46,
+        "end": 3.66,
+        "type": "word",
+        "logprob": -8.380061626667157e-05
+      },
+      {
+        "text": " ",
+        "start": 3.66,
+        "end": 3.74,
+        "type": "spacing",
+        "logprob": -4.184158387943171e-05
+      },
+      {
+        "text": "gọn",
+        "start": 3.74,
+        "end": 3.92,
+        "type": "word",
+        "logprob": -4.184158387943171e-05
+      },
+      {
+        "text": " ",
+        "start": 3.92,
+        "end": 3.96,
+        "type": "spacing",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": "hơn",
+        "start": 3.96,
+        "end": 4.16,
+        "type": "word",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": " ",
+        "start": 4.16,
+        "end": 4.44,
+        "type": "spacing",
+        "logprob": -0.0005024601123295724
+      },
+      {
+        "text": "nhưng",
+        "start": 4.44,
+        "end": 4.58,
+        "type": "word",
+        "logprob": -0.0005024601123295724
+      },
+      {
+        "text": " ",
+        "start": 4.58,
+        "end": 4.62,
+        "type": "spacing",
+        "logprob": -1.0490362910786644e-05
+      },
+      {
+        "text": "mật",
+        "start": 4.62,
+        "end": 4.76,
+        "type": "word",
+        "logprob": -1.0490362910786644e-05
+      },
+      {
+        "text": " ",
+        "start": 4.76,
+        "end": 4.8,
+        "type": "spacing",
+        "logprob": -1.6212332411669195e-05
+      },
+      {
+        "text": "độ",
+        "start": 4.8,
+        "end": 4.94,
+        "type": "word",
+        "logprob": -1.6212332411669195e-05
+      },
+      {
+        "text": " ",
+        "start": 4.94,
+        "end": 4.98,
+        "type": "spacing",
+        "logprob": -0.00014804698002990335
+      },
+      {
+        "text": "lỗi",
+        "start": 4.98,
+        "end": 5.16,
+        "type": "word",
+        "logprob": -0.00014804698002990335
+      },
+      {
+        "text": " ",
+        "start": 5.16,
+        "end": 5.3,
+        "type": "spacing",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": "tăng",
+        "start": 5.3,
+        "end": 5.44,
+        "type": "word",
+        "logprob": -2.50339189733495e-06
+      },
+      {
+        "text": " ",
+        "start": 5.44,
+        "end": 5.5,
+        "type": "spacing",
+        "logprob": -0.2255447804927826
+      },
+      {
+        "text": "12%,",
+        "start": 5.5,
+        "end": 6.28,
+        "type": "word",
+        "logprob": -0.09011540561890286
+      },
+      {
+        "text": " ",
+        "start": 6.28,
+        "end": 6.28,
+        "type": "spacing",
+        "logprob": -0.002351259347051382
+      },
+      {
+        "text": "lỗi",
+        "start": 6.72,
+        "end": 6.86,
+        "type": "word",
+        "logprob": -0.002351259347051382
+      },
+      {
+        "text": " ",
+        "start": 6.86,
+        "end": 6.96,
+        "type": "spacing",
+        "logprob": -4.529942543740617e-06
+      },
+      {
+        "text": "xử",
+        "start": 6.96,
+        "end": 7.06,
+        "type": "word",
+        "logprob": -4.529942543740617e-06
+      },
+      {
+        "text": " ",
+        "start": 7.06,
+        "end": 7.1,
+        "type": "spacing",
+        "logprob": -0.0002040654799202457
+      },
+      {
+        "text": "lý",
+        "start": 7.1,
+        "end": 7.22,
+        "type": "word",
+        "logprob": -0.0002040654799202457
+      },
+      {
+        "text": " ",
+        "start": 7.22,
+        "end": 7.3,
+        "type": "spacing",
+        "logprob": -4.768360213347478e-06
+      },
+      {
+        "text": "đồng",
+        "start": 7.3,
+        "end": 7.46,
+        "type": "word",
+        "logprob": -4.768360213347478e-06
+      },
+      {
+        "text": " ",
+        "start": 7.46,
+        "end": 7.48,
+        "type": "spacing",
+        "logprob": -7.10462118149735e-05
+      },
+      {
+        "text": "thời",
+        "start": 7.48,
+        "end": 7.72,
+        "type": "word",
+        "logprob": -7.10462118149735e-05
+      },
+      {
+        "text": " ",
+        "start": 7.72,
+        "end": 7.88,
+        "type": "spacing",
+        "logprob": -2.4676019165781327e-05
+      },
+      {
+        "text": "tăng",
+        "start": 7.88,
+        "end": 8.039,
+        "type": "word",
+        "logprob": -2.4676019165781327e-05
+      },
+      {
+        "text": " ",
+        "start": 8.039,
+        "end": 8.14,
+        "type": "spacing",
+        "logprob": -1.6689286894688848e-06
+      },
+      {
+        "text": "tới",
+        "start": 8.14,
+        "end": 8.38,
+        "type": "word",
+        "logprob": -1.6689286894688848e-06
+      },
+      {
+        "text": " ",
+        "start": 8.38,
+        "end": 8.54,
+        "type": "spacing",
+        "logprob": -4.6491513785440475e-06
+      },
+      {
+        "text": "44%.",
+        "start": 8.54,
+        "end": 9.26,
+        "type": "word",
+        "logprob": -0.3164378702623196
+      }
+    ],
+    "transcription_id": "9oosOco9I5VQil6aYNDK",
+    "audio_duration_secs": 9.28
+  },
+  "line7": {
+    "language_code": "vie",
+    "language_probability": 0.996067464351654,
+    "text": "Giá rẻ hơn, nhanh hơn nhưng lỗi xử lý đồng thời lại tăng mạnh. Bước tiến đáng mừng hay mối lo đáng cân nhắc? Để lại bình luận quan điểm của bạn nhé",
+    "words": [
+      {
+        "text": "Giá",
+        "start": 0.08,
+        "end": 0.26,
+        "type": "word",
+        "logprob": -0.04389534518122673
+      },
+      {
+        "text": " ",
+        "start": 0.26,
+        "end": 0.36,
+        "type": "spacing",
+        "logprob": -0.00014280252798926085
+      },
+      {
+        "text": "rẻ",
+        "start": 0.36,
+        "end": 0.5,
+        "type": "word",
+        "logprob": -0.00014280252798926085
+      },
+      {
+        "text": " ",
+        "start": 0.5,
+        "end": 0.58,
+        "type": "spacing",
+        "logprob": -3.933898824470816e-06
+      },
+      {
+        "text": "hơn,",
+        "start": 0.58,
+        "end": 0.8,
+        "type": "word",
+        "logprob": -6.407469641089847e-06
+      },
+      {
+        "text": " ",
+        "start": 0.8,
+        "end": 1.04,
+        "type": "spacing",
+        "logprob": -3.2186455882765586e-06
+      },
+      {
+        "text": "nhanh",
+        "start": 1.04,
+        "end": 1.24,
+        "type": "word",
+        "logprob": -3.2186455882765586e-06
+      },
+      {
+        "text": " ",
+        "start": 1.24,
+        "end": 1.3,
+        "type": "spacing",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": "hơn",
+        "start": 1.3,
+        "end": 1.52,
+        "type": "word",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": " ",
+        "start": 1.52,
+        "end": 1.82,
+        "type": "spacing",
+        "logprob": -0.00976936612278223
+      },
+      {
+        "text": "nhưng",
+        "start": 1.82,
+        "end": 2.06,
+        "type": "word",
+        "logprob": -0.00976936612278223
+      },
+      {
+        "text": " ",
+        "start": 2.06,
+        "end": 2.1,
+        "type": "spacing",
+        "logprob": -0.0002698534226510674
+      },
+      {
+        "text": "lỗi",
+        "start": 2.1,
+        "end": 2.26,
+        "type": "word",
+        "logprob": -0.0002698534226510674
+      },
+      {
+        "text": " ",
+        "start": 2.26,
+        "end": 2.36,
+        "type": "spacing",
+        "logprob": -1.3828182090946939e-05
+      },
+      {
+        "text": "xử",
+        "start": 2.36,
+        "end": 2.48,
+        "type": "word",
+        "logprob": -1.3828182090946939e-05
+      },
+      {
+        "text": " ",
+        "start": 2.48,
+        "end": 2.54,
+        "type": "spacing",
+        "logprob": -0.0001429217227268964
+      },
+      {
+        "text": "lý",
+        "start": 2.54,
+        "end": 2.72,
+        "type": "word",
+        "logprob": -0.0001429217227268964
+      },
+      {
+        "text": " ",
+        "start": 2.72,
+        "end": 2.96,
+        "type": "spacing",
+        "logprob": -9.65590606938349e-06
+      },
+      {
+        "text": "đồng",
+        "start": 2.96,
+        "end": 3.12,
+        "type": "word",
+        "logprob": -9.65590606938349e-06
+      },
+      {
+        "text": " ",
+        "start": 3.12,
+        "end": 3.14,
+        "type": "spacing",
+        "logprob": -1.5139465176616795e-05
+      },
+      {
+        "text": "thời",
+        "start": 3.14,
+        "end": 3.42,
+        "type": "word",
+        "logprob": -1.5139465176616795e-05
+      },
+      {
+        "text": " ",
+        "start": 3.42,
+        "end": 3.48,
+        "type": "spacing",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": "lại",
+        "start": 3.48,
+        "end": 3.68,
+        "type": "word",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": " ",
+        "start": 3.68,
+        "end": 3.7,
+        "type": "spacing",
+        "logprob": -3.576272320060525e-06
+      },
+      {
+        "text": "tăng",
+        "start": 3.7,
+        "end": 3.86,
+        "type": "word",
+        "logprob": -3.576272320060525e-06
+      },
+      {
+        "text": " ",
+        "start": 3.86,
+        "end": 3.9,
+        "type": "spacing",
+        "logprob": -1.5258672647178173e-05
+      },
+      {
+        "text": "mạnh.",
+        "start": 3.9,
+        "end": 4.1,
+        "type": "word",
+        "logprob": -1.6951411453192122e-05
+      },
+      {
+        "text": " ",
+        "start": 4.1,
+        "end": 4.1,
+        "type": "spacing",
+        "logprob": -0.0007724162423983216
+      },
+      {
+        "text": "Bước",
+        "start": 4.68,
+        "end": 4.8,
+        "type": "word",
+        "logprob": -0.0007724162423983216
+      },
+      {
+        "text": " ",
+        "start": 4.8,
+        "end": 4.86,
+        "type": "spacing",
+        "logprob": -7.676783570786938e-05
+      },
+      {
+        "text": "tiến",
+        "start": 4.86,
+        "end": 5.14,
+        "type": "word",
+        "logprob": -7.676783570786938e-05
+      },
+      {
+        "text": " ",
+        "start": 5.14,
+        "end": 5.18,
+        "type": "spacing",
+        "logprob": -1.2040065485052764e-05
+      },
+      {
+        "text": "đáng",
+        "start": 5.18,
+        "end": 5.36,
+        "type": "word",
+        "logprob": -1.2040065485052764e-05
+      },
+      {
+        "text": " ",
+        "start": 5.36,
+        "end": 5.42,
+        "type": "spacing",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": "mừng",
+        "start": 5.42,
+        "end": 5.6,
+        "type": "word",
+        "logprob": -4.768370445162873e-07
+      },
+      {
+        "text": " ",
+        "start": 5.6,
+        "end": 5.84,
+        "type": "spacing",
+        "logprob": -4.0531076592742465e-06
+      },
+      {
+        "text": "hay",
+        "start": 5.84,
+        "end": 6.04,
+        "type": "word",
+        "logprob": -4.0531076592742465e-06
+      },
+      {
+        "text": " ",
+        "start": 6.04,
+        "end": 6.16,
+        "type": "spacing",
+        "logprob": -9.476689592702314e-05
+      },
+      {
+        "text": "mối",
+        "start": 6.16,
+        "end": 6.34,
+        "type": "word",
+        "logprob": -9.476689592702314e-05
+      },
+      {
+        "text": " ",
+        "start": 6.34,
+        "end": 6.38,
+        "type": "spacing",
+        "logprob": -3.3378546504536644e-06
+      },
+      {
+        "text": "lo",
+        "start": 6.38,
+        "end": 6.58,
+        "type": "word",
+        "logprob": -3.3378546504536644e-06
+      },
+      {
+        "text": " ",
+        "start": 6.58,
+        "end": 6.68,
+        "type": "spacing",
+        "logprob": -1.3112935448589269e-05
+      },
+      {
+        "text": "đáng",
+        "start": 6.68,
+        "end": 6.84,
+        "type": "word",
+        "logprob": -1.3112935448589269e-05
+      },
+      {
+        "text": " ",
+        "start": 6.84,
+        "end": 6.92,
+        "type": "spacing",
+        "logprob": -0.00010644822759786621
+      },
+      {
+        "text": "cân",
+        "start": 6.92,
+        "end": 7.04,
+        "type": "word",
+        "logprob": -0.00010644822759786621
+      },
+      {
+        "text": " ",
+        "start": 7.04,
+        "end": 7.08,
+        "type": "spacing",
+        "logprob": -0.00025197668583132327
+      },
+      {
+        "text": "nhắc?",
+        "start": 7.08,
+        "end": 7.3,
+        "type": "word",
+        "logprob": -0.00020396552026795688
+      },
+      {
+        "text": " ",
+        "start": 7.3,
+        "end": 7.32,
+        "type": "spacing",
+        "logprob": -0.0005781171494163573
+      },
+      {
+        "text": "Để",
+        "start": 7.94,
+        "end": 8.02,
+        "type": "word",
+        "logprob": -0.0005781171494163573
+      },
+      {
+        "text": " ",
+        "start": 8.02,
+        "end": 8.08,
+        "type": "spacing",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": "lại",
+        "start": 8.08,
+        "end": 8.2,
+        "type": "word",
+        "logprob": -9.536738616588991e-07
+      },
+      {
+        "text": " ",
+        "start": 8.2,
+        "end": 8.24,
+        "type": "spacing",
+        "logprob": -2.9802276912960224e-06
+      },
+      {
+        "text": "bình",
+        "start": 8.24,
+        "end": 8.38,
+        "type": "word",
+        "logprob": -2.9802276912960224e-06
+      },
+      {
+        "text": " ",
+        "start": 8.38,
+        "end": 8.42,
+        "type": "spacing",
+        "logprob": -1.6569954823353328e-05
+      },
+      {
+        "text": "luận",
+        "start": 8.42,
+        "end": 8.6,
+        "type": "word",
+        "logprob": -1.6569954823353328e-05
+      },
+      {
+        "text": " ",
+        "start": 8.6,
+        "end": 8.7,
+        "type": "spacing",
+        "logprob": -1.4066597032069694e-05
+      },
+      {
+        "text": "quan",
+        "start": 8.7,
+        "end": 8.84,
+        "type": "word",
+        "logprob": -1.4066597032069694e-05
+      },
+      {
+        "text": " ",
+        "start": 8.84,
+        "end": 8.88,
+        "type": "spacing",
+        "logprob": -1.168244216387393e-05
+      },
+      {
+        "text": "điểm",
+        "start": 8.88,
+        "end": 9.06,
+        "type": "word",
+        "logprob": -1.168244216387393e-05
+      },
+      {
+        "text": " ",
+        "start": 9.06,
+        "end": 9.14,
+        "type": "spacing",
+        "logprob": 0.0
+      },
+      {
+        "text": "của",
+        "start": 9.14,
+        "end": 9.2,
+        "type": "word",
+        "logprob": 0.0
+      },
+      {
+        "text": " ",
+        "start": 9.2,
+        "end": 9.24,
+        "type": "spacing",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": "bạn",
+        "start": 9.26,
+        "end": 9.38,
+        "type": "word",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": " ",
+        "start": 9.38,
+        "end": 9.42,
+        "type": "spacing",
+        "logprob": -3.576278118089249e-07
+      },
+      {
+        "text": "nhé",
+        "start": 9.42,
+        "end": 9.58,
+        "type": "word",
+        "logprob": -3.576278118089249e-07
+      }
+    ],
+    "transcription_id": "ovjyyDSv9WsXYo6TyBpk",
+    "audio_duration_secs": 9.68
+  }
+}

@@ -1,0 +1,149 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; inset: 0; background: radial-gradient(85% 45% at 85% 8%, rgba(76,141,255,0.12), transparent 60%); }
+
+    #content { position: absolute; inset: 0; }
+
+    .kf-kicker { position: absolute; left: 64px; top: 380px; font-weight: 700; font-size: 26px; letter-spacing: 0.24em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+
+    .kf-list { position: absolute; left: 64px; right: 64px; top: 470px; }
+    .kf-trunk { position: absolute; left: 19px; top: 14px; width: 4px; height: 970px; background: rgba(255,255,255,0.14); border-radius: 2px; }
+    .kf-trunk-fill { position: absolute; left: 19px; top: 14px; width: 4px; height: 970px; background: #4C8DFF; border-radius: 2px; transform-origin: top center; transform: scaleY(0); }
+
+    .kf-item { position: relative; padding-left: 76px; margin-bottom: 255px; }
+    .kf-item:last-child { margin-bottom: 0; }
+    .kf-node { position: absolute; left: 0; top: -6px; width: 44px; height: 44px; border-radius: 50%; background: #121724; border: 4px solid #4C8DFF; box-shadow: 0 0 0 8px rgba(76,141,255,0.16); transform: scale(0); }
+    .kf-item.warn .kf-node { border-color: #FF8A5B; box-shadow: 0 0 0 8px rgba(255,138,91,0.16); }
+    .kf-label { font-weight: 700; font-size: 24px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); opacity: 0; }
+    .kf-value { margin-top: 12px; font-weight: 800; font-size: 58px; line-height: 1.16; color: #fff; opacity: 0; }
+    .kf-value b { color: #4C8DFF; }
+    .kf-item.warn .kf-value b { color: #FF8A5B; }
+    .kf-sub { margin-top: 10px; font-weight: 500; font-size: 30px; color: rgba(255,255,255,0.55); opacity: 0; }
+
+    #cutflash { position: absolute; inset: 0; z-index: 6; pointer-events: none; opacity: 0;
+      background: linear-gradient(180deg, rgba(76,141,255,0.4), rgba(255,138,91,0.18)); }
+
+    .cap-chunk { position: absolute; left: 64px; right: 180px; top: 1500px; text-align: center; opacity: 0; z-index: 7; }
+    .cap-chunk .w { display: inline-block; font-weight: 700; font-size: 38px; color: rgba(255,255,255,0.55); margin: 0 5px; }
+  </style>
+
+  <div id="root" data-composition-id="03-facts" data-width="1080" data-height="1920">
+    <div id="content">
+      <div class="kf-kicker" id="kf-kicker">Điểm chính</div>
+
+      <div class="kf-list">
+        <div class="kf-trunk"></div>
+        <div class="kf-trunk-fill" id="kf-fill"></div>
+
+        <div class="kf-item" id="kf-i1">
+          <div class="kf-node" id="kf-n1"></div>
+          <div class="kf-label" id="kf-l1">Năng lực</div>
+          <div class="kf-value" id="kf-v1">Ngang <b>Fable 5.1</b></div>
+          <div class="kf-sub" id="kf-s1">ở hầu hết công việc</div>
+        </div>
+
+        <div class="kf-item" id="kf-i2">
+          <div class="kf-node" id="kf-n2"></div>
+          <div class="kf-label" id="kf-l2">Giá API</div>
+          <div class="kf-value" id="kf-v2"><b>4 USD</b> vào &middot; <b>20 USD</b> ra</div>
+          <div class="kf-sub" id="kf-s2">mỗi 1 triệu token</div>
+        </div>
+
+        <div class="kf-item warn" id="kf-i3">
+          <div class="kf-node" id="kf-n3"></div>
+          <div class="kf-label" id="kf-l3">Tiết kiệm</div>
+          <div class="kf-value" id="kf-v3">Rẻ hơn <b>khoảng 60%</b></div>
+          <div class="kf-sub" id="kf-s3">so với Fable 5.1</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cutflash"></div>
+
+    <div class="cap-chunk" id="c3-ch0"><span class="w" id="c3-ch0-w0">Opus</span> <span class="w" id="c3-ch0-w1">5.5</span> <span class="w" id="c3-ch0-w2">làm</span> <span class="w" id="c3-ch0-w3">ngang</span> <span class="w" id="c3-ch0-w4">Fable</span> <span class="w" id="c3-ch0-w5">5.1</span></div>
+    <div class="cap-chunk" id="c3-ch1"><span class="w" id="c3-ch1-w0">ở</span> <span class="w" id="c3-ch1-w1">hầu</span> <span class="w" id="c3-ch1-w2">hết</span> <span class="w" id="c3-ch1-w3">công</span> <span class="w" id="c3-ch1-w4">việc,</span></div>
+    <div class="cap-chunk" id="c3-ch2"><span class="w" id="c3-ch2-w0">nhưng</span> <span class="w" id="c3-ch2-w1">giá</span> <span class="w" id="c3-ch2-w2">mỗi</span> <span class="w" id="c3-ch2-w3">triệu</span> <span class="w" id="c3-ch2-w4">token</span> <span class="w" id="c3-ch2-w5">đầu</span></div>
+    <div class="cap-chunk" id="c3-ch3"><span class="w" id="c3-ch3-w0">vào</span> <span class="w" id="c3-ch3-w1">chỉ</span> <span class="w" id="c3-ch3-w2">4</span> <span class="w" id="c3-ch3-w3">USD,</span> <span class="w" id="c3-ch3-w4">đầu</span> <span class="w" id="c3-ch3-w5">ra</span></div>
+    <div class="cap-chunk" id="c3-ch4"><span class="w" id="c3-ch4-w0">20</span> <span class="w" id="c3-ch4-w1">USD,</span> <span class="w" id="c3-ch4-w2">rẻ</span> <span class="w" id="c3-ch4-w3">hơn</span> <span class="w" id="c3-ch4-w4">khoảng</span> <span class="w" id="c3-ch4-w5">60%.</span></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#kf-kicker', { autoAlpha: 0, x: -14 }, { autoAlpha: 1, x: 0, duration: 0.38, ease: 'power2.out' }, 0);
+    tl.fromTo('#kf-fill', { scaleY: 0 }, { scaleY: 0.36, duration: 0.5, ease: 'power2.out' }, 0.5);
+
+    tl.fromTo('#kf-n1', { scale: 0 }, { scale: 1, duration: 0.4, ease: 'back.out(2.4)' }, 0.55);
+    tl.fromTo('#kf-l1', { autoAlpha: 0, x: -12 }, { autoAlpha: 1, x: 0, duration: 0.32 }, 0.68);
+    tl.fromTo('#kf-v1', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.8);
+    tl.fromTo('#kf-s1', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }, 1.05);
+
+    tl.fromTo('#kf-fill', { scaleY: 0.36 }, { scaleY: 0.68, duration: 0.5, ease: 'power2.out' }, 3.5);
+    tl.fromTo('#kf-n2', { scale: 0 }, { scale: 1, duration: 0.4, ease: 'back.out(2.4)' }, 3.55);
+    tl.fromTo('#kf-l2', { autoAlpha: 0, x: -12 }, { autoAlpha: 1, x: 0, duration: 0.32 }, 3.68);
+    tl.fromTo('#kf-v2', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 3.8);
+    tl.fromTo('#kf-s2', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }, 4.05);
+
+    tl.fromTo('#cutflash', { opacity: 0 }, { opacity: 0.55, duration: 0.05, ease: 'none' }, 8.28);
+    tl.to('#cutflash', { opacity: 0, duration: 0.16, ease: 'power1.in' }, 8.33);
+    tl.fromTo('#content', { scale: 1 }, { scale: 0.986, duration: 0.06, ease: 'power1.out' }, 8.28);
+    tl.to('#content', { scale: 1, duration: 0.14, ease: 'power2.out' }, 8.341);
+
+    tl.fromTo('#kf-fill', { scaleY: 0.68 }, { scaleY: 1, duration: 0.5, ease: 'power2.out' }, 8.3);
+    tl.fromTo('#kf-n3', { scale: 0 }, { scale: 1, duration: 0.44, ease: 'back.out(2.6)' }, 8.35);
+    tl.fromTo('#kf-l3', { autoAlpha: 0, x: -12 }, { autoAlpha: 1, x: 0, duration: 0.32 }, 8.5);
+    tl.fromTo('#kf-v3', { autoAlpha: 0, y: 16, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.44, ease: 'back.out(1.6)' }, 8.62);
+    tl.fromTo('#kf-s3', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }, 8.9);
+
+    tl.fromTo('#c3-ch0', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 0.08);
+    tl.to('#c3-ch0', {autoAlpha:0,duration:0.1}, 3.10);
+    tl.to('#c3-ch0-w0', {color:'#4C8DFF', duration:0.1}, 0.08);
+    tl.to('#c3-ch0-w1', {color:'#4C8DFF', duration:0.1}, 0.68);
+    tl.to('#c3-ch0-w2', {color:'#4C8DFF', duration:0.1}, 1.36);
+    tl.to('#c3-ch0-w3', {color:'#4C8DFF', duration:0.1}, 1.56);
+    tl.to('#c3-ch0-w4', {color:'#4C8DFF', duration:0.1}, 1.88);
+    tl.to('#c3-ch0-w5', {color:'#4C8DFF', duration:0.1}, 2.48);
+    tl.fromTo('#c3-ch1', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 3.14);
+    tl.to('#c3-ch1', {autoAlpha:0,duration:0.1}, 4.32);
+    tl.to('#c3-ch1-w0', {color:'#4C8DFF', duration:0.1}, 3.14);
+    tl.to('#c3-ch1-w1', {color:'#4C8DFF', duration:0.1}, 3.26);
+    tl.to('#c3-ch1-w2', {color:'#4C8DFF', duration:0.1}, 3.46);
+    tl.to('#c3-ch1-w3', {color:'#4C8DFF', duration:0.1}, 3.68);
+    tl.to('#c3-ch1-w4', {color:'#4C8DFF', duration:0.1}, 3.84);
+    tl.fromTo('#c3-ch2', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 4.50);
+    tl.to('#c3-ch2', {autoAlpha:0,duration:0.1}, 6.06);
+    tl.to('#c3-ch2-w0', {color:'#4C8DFF', duration:0.1}, 4.50);
+    tl.to('#c3-ch2-w1', {color:'#4C8DFF', duration:0.1}, 4.76);
+    tl.to('#c3-ch2-w2', {color:'#4C8DFF', duration:0.1}, 5.08);
+    tl.to('#c3-ch2-w3', {color:'#4C8DFF', duration:0.1}, 5.26);
+    tl.to('#c3-ch2-w4', {color:'#4C8DFF', duration:0.1}, 5.54);
+    tl.to('#c3-ch2-w5', {color:'#4C8DFF', duration:0.1}, 5.90);
+    tl.fromTo('#c3-ch3', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 6.10);
+    tl.to('#c3-ch3', {autoAlpha:0,duration:0.1}, 8.38);
+    tl.to('#c3-ch3-w0', {color:'#4C8DFF', duration:0.1}, 6.10);
+    tl.to('#c3-ch3-w1', {color:'#4C8DFF', duration:0.1}, 6.40);
+    tl.to('#c3-ch3-w2', {color:'#4C8DFF', duration:0.1}, 6.80);
+    tl.to('#c3-ch3-w3', {color:'#4C8DFF', duration:0.1}, 6.90);
+    tl.to('#c3-ch3-w4', {color:'#4C8DFF', duration:0.1}, 7.70);
+    tl.to('#c3-ch3-w5', {color:'#4C8DFF', duration:0.1}, 7.94);
+    tl.fromTo('#c3-ch4', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 8.42);
+    tl.to('#c3-ch4', {autoAlpha:0,duration:0.1}, 11.54);
+    tl.to('#c3-ch4-w0', {color:'#4C8DFF', duration:0.1}, 8.42);
+    tl.to('#c3-ch4-w1', {color:'#4C8DFF', duration:0.1}, 8.68);
+    tl.to('#c3-ch4-w2', {color:'#4C8DFF', duration:0.1}, 9.54);
+    tl.to('#c3-ch4-w3', {color:'#4C8DFF', duration:0.1}, 9.76);
+    tl.to('#c3-ch4-w4', {color:'#4C8DFF', duration:0.1}, 10.04);
+    tl.to('#c3-ch4-w5', {color:'#4C8DFF', duration:0.1}, 10.60);
+
+    window.__timelines['03-facts'] = tl;
+  </script>
+</template>
