@@ -202,6 +202,13 @@
       "video": "ceo-nvidia-bac-bo-tan-the-ai",
       "date": "2026-09-22",
       "note": "routine tối — CEO Nvidia Jensen Huang bác bỏ cảnh báo AI có thể gây tận thế, nói với CBS News khả năng đó là 0%, giữa lúc cựu nghiên cứu viên Anthropic Jacob Coxon cảnh báo ngược lại; Nvidia hiện trị giá khoảng 5,3 nghìn tỷ đô la Mỹ nhờ làn sóng AI (Znews, 22/9/2026). GATE A/B/C = APPROVE/YELLOW (AI & an toàn/rủi ro hiện sinh, đã framing trung lập, trình bày cả 2 phía). BGM: Lyria thành công lần thử đầu, không cần fallback."
+    },
+    {
+      "index": 6,
+      "style": "7-timeline-chronology",
+      "video": "claude-opus-55-re-hon-fable",
+      "date": "2026-09-23",
+      "note": "routine sáng — Anthropic ra mắt Claude Opus 5.5, hãng gọi là mô hình mạnh nhất từng thử nghiệm: ngang năng lực Claude Fable 5.1 ở hầu hết công việc nhưng giá API rẻ hơn khoảng 60% (4 USD/20 USD mỗi triệu token), Terminal-Bench 4.0 đạt 66,4% cao nhất 3 đời model; đánh giá độc lập của Sonar trên 544 tác vụ lập trình cho thấy code gọn hơn nhưng mật độ lỗi tăng 12%, lỗi xử lý đồng thời tăng 44% (GenK, 22/9/2026). GATE A/B/C = APPROVE/GREEN (ra mắt sản phẩm/mô hình AI, số liệu đầy đủ từ nguồn, framing trung lập cả mặt tích cực lẫn mặt rủi ro dù tin liên quan trực tiếp tới Claude/Anthropic). BGM: Lyria thành công. 2 vòng sửa trước khi duyệt: bỏ số liệu 'chỉ 3 tuần' không có trong nguồn (chỉ ghi 'đầu tháng 9'), khôi phục gán nguồn 'theo Anthropic' cho claim năng lực ngang Fable 5.1, và giãn đuôi Hook để thumbnail không dính caption cắt giữa câu."
     }
   ]
 }
