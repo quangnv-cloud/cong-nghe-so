@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+        @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+        @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+        @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+        @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+        #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0E14; font-family: "Montserrat", sans-serif; color: #fff; }
+
+        .i6-kicker { position: absolute; left: 70px; top: 230px; font-weight: 700; font-size: 26px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+        .i6-cap { position: absolute; left: 70px; right: 70px; top: 296px; z-index: 5; }
+        .i6-cap .chunk { position: absolute; top: 0; left: 0; right: 0; opacity: 0; font-weight: 600; font-size: 29px; line-height: 1.3; color: rgba(255,255,255,0.85); }
+        .i6-cap .chunk .w { color: rgba(255,255,255,0.42); }
+
+        .i6-clip { position: absolute; border-radius: 10px; background: #121724; border: 1px solid rgba(255,255,255,0.08); padding: 40px 42px; opacity: 0; }
+        .i6-clip1 { left: 80px; top: 420px; width: 780px; height: 420px; box-shadow: 0 24px 50px rgba(0,0,0,0.55); z-index: 2; }
+        .i6-clip2 { left: 240px; top: 800px; width: 780px; height: 420px; box-shadow: 0 28px 60px rgba(0,0,0,0.6), 0 0 40px rgba(76,141,255,0.16); z-index: 3; }
+        .i6-ico { width: 76px; height: 76px; border-radius: 18px; background: rgba(255,138,91,0.12); border: 1px solid rgba(255,138,91,0.4); position: relative; }
+        .i6-clip2 .i6-ico { background: rgba(76,141,255,0.12); border-color: rgba(76,141,255,0.4); }
+        .i6-ico .eye::before { content: ""; position: absolute; left: 14px; top: 32px; width: 48px; height: 26px; border: 3px solid #FF8A5B; border-radius: 50% / 60%; }
+        .i6-ico .eye::after { content: ""; position: absolute; left: 32px; top: 40px; width: 12px; height: 12px; border-radius: 50%; background: #FF8A5B; }
+        .i6-ico .clock::before { content: ""; position: absolute; left: 16px; top: 16px; width: 44px; height: 44px; border: 4px solid #4C8DFF; border-radius: 50%; }
+        .i6-ico .clock::after { content: ""; position: absolute; left: 38px; top: 20px; width: 4px; height: 20px; background: #4C8DFF; transform-origin: bottom center; }
+        .i6-h { margin-top: 26px; font-weight: 800; font-size: 44px; line-height: 1.25; color: #fff; }
+        .i6-h .hi1 { color: #FF8A5B; }
+        .i6-h .hi2 { color: #4C8DFF; }
+        .i6-s { margin-top: 18px; font-weight: 600; font-size: 25px; line-height: 1.5; color: rgba(255,255,255,0.6); }
+
+        .i6-banner { position: absolute; left: 70px; right: 70px; top: 1300px; display: flex; align-items: center; gap: 24px; padding: 40px 36px; border-radius: 18px; background: rgba(76,141,255,0.08); border: 1px solid rgba(76,141,255,0.35); box-shadow: 0 0 40px rgba(76,141,255,0.16); opacity: 0; }
+        .i6-banner .dot { width: 14px; height: 14px; border-radius: 50%; background: #4C8DFF; flex: none; }
+        .i6-banner span { font-weight: 700; font-size: 29px; line-height: 1.45; color: #fff; }
+      </style>
+
+      <div id="root" data-composition-id="06-impact" data-width="1080" data-height="1920">
+        <div class="i6-kicker" id="i6-kicker">Tác động</div>
+        <div class="i6-cap" id="i6-cap"></div>
+
+        <div class="i6-clip i6-clip1" id="i6-clip1">
+          <div class="i6-ico"><span class="eye"></span></div>
+          <div class="i6-h"><span class="hi1">Chi phí ẩn</span> giữa giá mua và bán lại</div>
+          <div class="i6-s">Không thấy lúc ký hợp đồng — chỉ hiện ra khi mang xe ra bãi hỏi giá.</div>
+        </div>
+
+        <div class="i6-clip i6-clip2" id="i6-clip2">
+          <div class="i6-ico"><span class="clock"></span></div>
+          <div class="i6-h">Thái Lan đi trước <span class="hi2">Việt Nam ~3 năm</span></div>
+          <div class="i6-s">Trong việc đón xe điện Trung Quốc — số liệu bán lại ở đó đáng được theo dõi.</div>
+        </div>
+
+        <div class="i6-banner" id="i6-banner"><span class="dot"></span><span>Đây là dữ liệu thực tế đã ghi nhận, không phải suy đoán cho thị trường Việt Nam.</span></div>
+      </div>
+
+      <script>
+        (function () {
+          var CAPS = [{"start":0.379,"end":1.535,"words":[{"t":"Khoảng","s":0.379,"e":0.663},{"t":"cách","s":0.663,"e":0.895},{"t":"giữa","s":0.895,"e":1.076},{"t":"giá","s":1.076,"e":1.274},{"t":"mua","s":1.274,"e":1.515}]},{"start":1.515,"end":2.422,"words":[{"t":"và","s":1.515,"e":1.687},{"t":"giá","s":1.687,"e":1.911},{"t":"bán","s":1.911,"e":2.126},{"t":"lại","s":2.126,"e":2.255},{"t":"là","s":2.255,"e":2.402}]},{"start":2.402,"end":3.308,"words":[{"t":"chi","s":2.402,"e":2.548},{"t":"phí","s":2.548,"e":2.72},{"t":"người","s":2.72,"e":2.944},{"t":"mua","s":2.944,"e":3.09},{"t":"không","s":3.09,"e":3.288}]},{"start":3.288,"end":4.313,"words":[{"t":"thấy","s":3.288,"e":3.443},{"t":"lúc","s":3.443,"e":3.607},{"t":"ký","s":3.607,"e":3.77},{"t":"hợp","s":3.77,"e":3.908},{"t":"đồng,","s":3.908,"e":4.304}]},{"start":4.313,"end":5.116,"words":[{"t":"chỉ","s":4.313,"e":4.442},{"t":"hiện","s":4.442,"e":4.623},{"t":"ra","s":4.623,"e":4.786},{"t":"khi","s":4.786,"e":4.907},{"t":"mang","s":4.907,"e":5.096}]},{"start":5.096,"end":6.344,"words":[{"t":"xe","s":5.096,"e":5.277},{"t":"ra","s":5.277,"e":5.397},{"t":"bãi","s":5.397,"e":5.561},{"t":"hỏi","s":5.561,"e":5.733},{"t":"giá.","s":5.733,"e":6.043}]},{"start":6.344,"end":7.285,"words":[{"t":"Thái","s":6.344,"e":6.568},{"t":"Lan","s":6.568,"e":6.758},{"t":"đi","s":6.758,"e":6.895},{"t":"trước","s":6.895,"e":7.093},{"t":"Việt","s":7.093,"e":7.265}]},{"start":7.265,"end":8.267,"words":[{"t":"Nam","s":7.265,"e":7.446},{"t":"khoảng","s":7.446,"e":7.696},{"t":"ba","s":7.696,"e":7.928},{"t":"năm","s":7.928,"e":8.075},{"t":"đón","s":8.075,"e":8.247}]},{"start":8.247,"end":9.377,"words":[{"t":"xe","s":8.247,"e":8.41},{"t":"điện","s":8.41,"e":8.557},{"t":"Trung","s":8.557,"e":8.781},{"t":"Quốc,","s":8.781,"e":9.151},{"t":"nên","s":9.202,"e":9.357}]},{"start":9.357,"end":10.204,"words":[{"t":"các","s":9.357,"e":9.486},{"t":"con","s":9.486,"e":9.607},{"t":"số","s":9.607,"e":9.805},{"t":"bán","s":9.805,"e":9.986},{"t":"lại","s":9.986,"e":10.184}]},{"start":10.184,"end":11.62,"words":[{"t":"ở","s":10.184,"e":10.296},{"t":"đó","s":10.296,"e":10.494},{"t":"đáng","s":10.494,"e":10.709},{"t":"được","s":10.709,"e":10.872},{"t":"theo","s":10.872,"e":11.045},{"t":"dõi.","s":11.045,"e":11.32}]}];
+          var cap = document.getElementById('i6-cap');
+          CAPS.forEach(function (c) {
+            var div = document.createElement('div');
+            div.className = 'chunk';
+            c.words.forEach(function (w, i) {
+              var sp = document.createElement('span');
+              sp.className = 'w';
+              sp.textContent = w.t + (i < c.words.length - 1 ? ' ' : '');
+              div.appendChild(sp);
+            });
+            cap.appendChild(div);
+          });
+
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo('#i6-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 0.1);
+          tl.fromTo('#i6-clip1', { autoAlpha: 0, y: 30, rotation: 1 }, { autoAlpha: 1, y: 0, rotation: -3, duration: 0.5, ease: 'power2.out' }, 0.35);
+          tl.fromTo('#i6-clip2', { autoAlpha: 0, y: 30, rotation: -1 }, { autoAlpha: 1, y: 0, rotation: 2.2, duration: 0.5, ease: 'power2.out' }, 1.05);
+          tl.fromTo('#i6-banner', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 6.5);
+
+          var chunkDivs = cap.querySelectorAll('.chunk');
+          CAPS.forEach(function (c, idx) {
+            var div = chunkDivs[idx];
+            tl.set(div, { opacity: 1 }, c.start);
+            tl.set(div, { opacity: 0 }, c.end);
+            c.words.forEach(function (w, i) {
+              tl.to(div.children[i], { color: '#4C8DFF', duration: 0.1 }, w.s);
+            });
+          });
+
+          window.__timelines['06-impact'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

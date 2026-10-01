@@ -1,0 +1,322 @@
+[
+ {
+  "word": "Giai",
+  "start": 0.3,
+  "end": 0.51
+ },
+ {
+  "word": "đoạn",
+  "start": 0.51,
+  "end": 0.9
+ },
+ {
+  "word": "hai",
+  "start": 0.9,
+  "end": 1.13
+ },
+ {
+  "word": "nghìn",
+  "start": 1.13,
+  "end": 1.41
+ },
+ {
+  "word": "hai",
+  "start": 1.41,
+  "end": 1.58
+ },
+ {
+  "word": "mươi",
+  "start": 1.58,
+  "end": 1.83
+ },
+ {
+  "word": "ba",
+  "start": 1.83,
+  "end": 2.14
+ },
+ {
+  "word": "tới",
+  "start": 2.14,
+  "end": 2.47
+ },
+ {
+  "word": "hai",
+  "start": 2.47,
+  "end": 2.62
+ },
+ {
+  "word": "nghìn",
+  "start": 2.62,
+  "end": 2.87
+ },
+ {
+  "word": "hai",
+  "start": 2.87,
+  "end": 3.06
+ },
+ {
+  "word": "mươi",
+  "start": 3.06,
+  "end": 3.32
+ },
+ {
+  "word": "lăm,",
+  "start": 3.32,
+  "end": 3.74
+ },
+ {
+  "word": "hơn",
+  "start": 3.96,
+  "end": 4.19
+ },
+ {
+  "word": "một",
+  "start": 4.19,
+  "end": 4.41
+ },
+ {
+  "word": "nghìn",
+  "start": 4.41,
+  "end": 4.7
+ },
+ {
+  "word": "bãi",
+  "start": 4.7,
+  "end": 4.96
+ },
+ {
+  "word": "xe",
+  "start": 4.96,
+  "end": 5.14
+ },
+ {
+  "word": "cũ",
+  "start": 5.14,
+  "end": 5.43
+ },
+ {
+  "word": "Thái",
+  "start": 5.43,
+  "end": 5.72
+ },
+ {
+  "word": "Lan",
+  "start": 5.72,
+  "end": 5.99
+ },
+ {
+  "word": "đóng",
+  "start": 5.99,
+  "end": 6.25
+ },
+ {
+  "word": "cửa",
+  "start": 6.25,
+  "end": 6.55
+ },
+ {
+  "word": "hoặc",
+  "start": 6.55,
+  "end": 6.81
+ },
+ {
+  "word": "phá",
+  "start": 6.81,
+  "end": 7.08
+ },
+ {
+  "word": "sản.",
+  "start": 7.08,
+  "end": 7.49
+ },
+ {
+  "word": "Khảo",
+  "start": 8.01,
+  "end": 8.35
+ },
+ {
+  "word": "sát",
+  "start": 8.35,
+  "end": 8.64
+ },
+ {
+  "word": "hơn",
+  "start": 8.64,
+  "end": 8.87
+ },
+ {
+  "word": "hai",
+  "start": 8.87,
+  "end": 9.07
+ },
+ {
+  "word": "nghìn",
+  "start": 9.07,
+  "end": 9.35
+ },
+ {
+  "word": "sáu",
+  "start": 9.35,
+  "end": 9.61
+ },
+ {
+  "word": "trăm",
+  "start": 9.61,
+  "end": 9.94
+ },
+ {
+  "word": "chủ",
+  "start": 9.94,
+  "end": 10.15
+ },
+ {
+  "word": "xe",
+  "start": 10.15,
+  "end": 10.37
+ },
+ {
+  "word": "cho",
+  "start": 10.37,
+  "end": 10.59
+ },
+ {
+  "word": "thấy",
+  "start": 10.59,
+  "end": 10.87
+ },
+ {
+  "word": "chỉ",
+  "start": 10.87,
+  "end": 11.13
+ },
+ {
+  "word": "bốn",
+  "start": 11.13,
+  "end": 11.41
+ },
+ {
+  "word": "mươi",
+  "start": 11.41,
+  "end": 11.66
+ },
+ {
+  "word": "sáu",
+  "start": 11.66,
+  "end": 11.95
+ },
+ {
+  "word": "phần",
+  "start": 11.95,
+  "end": 12.21
+ },
+ {
+  "word": "trăm",
+  "start": 12.21,
+  "end": 12.49
+ },
+ {
+  "word": "người",
+  "start": 12.49,
+  "end": 12.75
+ },
+ {
+  "word": "dùng",
+  "start": 12.75,
+  "end": 12.98
+ },
+ {
+  "word": "xe",
+  "start": 12.98,
+  "end": 13.16
+ },
+ {
+  "word": "Trung",
+  "start": 13.16,
+  "end": 13.43
+ },
+ {
+  "word": "Quốc",
+  "start": 13.43,
+  "end": 13.82
+ },
+ {
+  "word": "muốn",
+  "start": 13.82,
+  "end": 14.13
+ },
+ {
+  "word": "mua",
+  "start": 14.13,
+  "end": 14.33
+ },
+ {
+  "word": "lại",
+  "start": 14.33,
+  "end": 14.62
+ },
+ {
+  "word": "đúng",
+  "start": 14.62,
+  "end": 14.86
+ },
+ {
+  "word": "hãng,",
+  "start": 14.86,
+  "end": 15.34
+ },
+ {
+  "word": "so",
+  "start": 15.48,
+  "end": 15.75
+ },
+ {
+  "word": "với",
+  "start": 15.75,
+  "end": 15.96
+ },
+ {
+  "word": "sáu",
+  "start": 15.96,
+  "end": 16.29
+ },
+ {
+  "word": "mươi",
+  "start": 16.29,
+  "end": 16.54
+ },
+ {
+  "word": "chín",
+  "start": 16.54,
+  "end": 16.89
+ },
+ {
+  "word": "phần",
+  "start": 16.89,
+  "end": 17.15
+ },
+ {
+  "word": "trăm",
+  "start": 17.15,
+  "end": 17.43
+ },
+ {
+  "word": "ở",
+  "start": 17.43,
+  "end": 17.61
+ },
+ {
+  "word": "xe",
+  "start": 17.61,
+  "end": 17.78
+ },
+ {
+  "word": "Nhật",
+  "start": 17.78,
+  "end": 18.06
+ },
+ {
+  "word": "Bản.",
+  "start": 18.06,
+  "end": 18.42
+ }
+]
