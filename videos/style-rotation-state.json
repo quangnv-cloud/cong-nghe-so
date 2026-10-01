@@ -209,6 +209,13 @@
       "video": "claude-opus-55-re-hon-fable",
       "date": "2026-09-23",
       "note": "routine sáng — Anthropic ra mắt Claude Opus 5.5, hãng gọi là mô hình mạnh nhất từng thử nghiệm: ngang năng lực Claude Fable 5.1 ở hầu hết công việc nhưng giá API rẻ hơn khoảng 60% (4 USD/20 USD mỗi triệu token), Terminal-Bench 4.0 đạt 66,4% cao nhất 3 đời model; đánh giá độc lập của Sonar trên 544 tác vụ lập trình cho thấy code gọn hơn nhưng mật độ lỗi tăng 12%, lỗi xử lý đồng thời tăng 44% (GenK, 22/9/2026). GATE A/B/C = APPROVE/GREEN (ra mắt sản phẩm/mô hình AI, số liệu đầy đủ từ nguồn, framing trung lập cả mặt tích cực lẫn mặt rủi ro dù tin liên quan trực tiếp tới Claude/Anthropic). BGM: Lyria thành công. 2 vòng sửa trước khi duyệt: bỏ số liệu 'chỉ 3 tuần' không có trong nguồn (chỉ ghi 'đầu tháng 9'), khôi phục gán nguồn 'theo Anthropic' cho claim năng lực ngang Fable 5.1, và giãn đuôi Hook để thumbnail không dính caption cắt giữa câu."
+    },
+    {
+      "index": 8,
+      "style": "9-editorial-clipping",
+      "video": "xe-dien-tq-mat-gia-thai-lan",
+      "date": "2026-10-01",
+      "note": "routine sáng — Bãi xe cũ Thái Lan kén xe điện Trung Quốc: 1 chiếc BYD Atto 3 đời 2022 rao bán chỉ còn ~256 triệu đồng so với giá niêm yết ~960 triệu đồng (10/2022) — còn khoảng 1/4 giá trị sau 4 năm; Krungthai COMPASS ghi nhận giá xe điện mới giảm 11-35%, 2023-2025 có 1.009 bãi xe cũ đóng cửa/phá sản; khảo sát Differential Thailand (2.651 chủ xe) cho thấy chỉ 46% người dùng xe Trung Quốc muốn mua lại đúng hãng so với 69% ở xe Nhật Bản (GenK, 30/9/2026). GATE A/B/C = APPROVE/GREEN (tin thị trường tiêu dùng/công nghệ thông thường, không yếu tố nhạy cảm). BGM: Lyria thành công lần thử đầu. Sự cố kỹ thuật đã sửa trước khi duyệt: biểu đồ cột act 5 (46%/69%) không hiện trong pipeline render hàng loạt do dùng scaleY+transform-origin (dù hiện đúng ở Studio preview) — đổi sang animate height trực tiếp + bottom-anchor, verify lại bằng frame thật sau khi sửa."
     }
   ]
 }
