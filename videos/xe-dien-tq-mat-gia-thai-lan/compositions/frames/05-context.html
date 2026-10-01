@@ -32,7 +32,7 @@
         .c5-chart-title { position: absolute; left: 70px; right: 70px; top: 780px; text-align: center; font-weight: 700; font-size: 26px; line-height: 1.4; color: rgba(255,255,255,0.75); opacity: 0; }
         .c5-chartwrap { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
         .c5-baseline { position: absolute; left: 140px; width: 800px; top: 1460px; height: 2px; background: rgba(255,255,255,0.2); }
-        .c5-bar { position: absolute; width: 220px; border-radius: 10px 10px 0 0; transform-origin: bottom center; opacity: 0; box-shadow: 0 0 40px rgba(76,141,255,0.16); }
+        .c5-bar { position: absolute; width: 220px; bottom: 460px; height: 0px; border-radius: 10px 10px 0 0; box-shadow: 0 0 40px rgba(76,141,255,0.16); }
         .c5-bar.tq { left: 240px; background: linear-gradient(180deg, #FF8A5B, #c8663c); }
         .c5-bar.jp { left: 620px; background: linear-gradient(180deg, #4C8DFF, #2e5fb8); }
         .c5-val { position: absolute; width: 220px; text-align: center; font-weight: 900; font-size: 54px; opacity: 0; }
@@ -60,10 +60,10 @@
         <div class="c5-chartwrap">
           <div class="c5-baseline"></div>
           <div class="c5-val tq" id="c5-val-tq" style="top:1150px;">46%</div>
-          <div class="c5-bar tq" id="c5-bar-tq" style="top:1230px;height:230px;"></div>
+          <div class="c5-bar tq" id="c5-bar-tq"></div>
           <div class="c5-cat tq" id="c5-cat-tq">Xe điện<br>Trung Quốc</div>
           <div class="c5-val jp" id="c5-val-jp" style="top:1035px;">69%</div>
-          <div class="c5-bar jp" id="c5-bar-jp" style="top:1115px;height:345px;"></div>
+          <div class="c5-bar jp" id="c5-bar-jp"></div>
           <div class="c5-cat jp" id="c5-cat-jp">Xe điện<br>Nhật Bản</div>
           <div class="c5-source" id="c5-source">Khảo sát Differential Thailand · 2.651 chủ xe · cuối 9/2026</div>
         </div>
@@ -97,10 +97,10 @@
           tl.to('#root', { scale: 1, duration: 0.14, ease: 'power2.out' }, T + 0.061);
 
           tl.fromTo('#c5-chart-title', { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.35 }, T + 0.15);
-          tl.fromTo('#c5-bar-tq', { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: 'power2.out' }, T + 0.45);
+          tl.fromTo('#c5-bar-tq', { height: 0 }, { height: 230, duration: 0.55, ease: 'power2.out' }, T + 0.45);
           tl.fromTo('#c5-val-tq', { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: 0.3 }, T + 0.85);
           tl.fromTo('#c5-cat-tq', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, T + 0.5);
-          tl.fromTo('#c5-bar-jp', { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: 'power2.out' }, T + 0.85);
+          tl.fromTo('#c5-bar-jp', { height: 0 }, { height: 345, duration: 0.55, ease: 'power2.out' }, T + 0.85);
           tl.fromTo('#c5-val-jp', { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: 0.3 }, T + 1.25);
           tl.fromTo('#c5-cat-jp', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, T + 0.9);
           tl.fromTo('#c5-source', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, T + 1.5);
