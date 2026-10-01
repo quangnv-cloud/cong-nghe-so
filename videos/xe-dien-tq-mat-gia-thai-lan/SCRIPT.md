@@ -1,0 +1,7 @@
+Tại Thái Lan, xe điện thương hiệu Trung Quốc đang rất khó bán lại, và nhiều bãi xe cũ giờ chỉ nhận có chọn lọc.
+BYD Atto 3 đời hai nghìn hai mươi hai, đã chạy hơn một trăm năm mươi sáu nghìn ki lô mét, vừa rao bán tại Thái Lan chỉ khoảng hai trăm năm mươi sáu triệu đồng, so với giá niêm yết gần chín trăm sáu mươi triệu đồng — còn khoảng một phần tư giá trị sau bốn năm.
+Đại diện chợ xe cũ Yo Ratchada cho biết bãi đã giảm lượng xe điện tồn kho từ hơn bốn mươi chiếc xuống còn hơn mười chiếc, vì xe điện cũ ở Thái Lan gần như chưa có khoản vay ngân hàng nào hỗ trợ.
+Theo Krungthai Compass, xe điện mới tại Thái Lan liên tục giảm giá từ mười một tới ba mươi lăm phần trăm so với giá ra mắt, và mỗi lần giá xe mới hạ, giá xe cũ lại bị kéo xuống theo.
+Giai đoạn hai nghìn hai mươi ba tới hai nghìn hai mươi lăm, hơn một nghìn bãi xe cũ Thái Lan đóng cửa hoặc phá sản. Khảo sát hơn hai nghìn sáu trăm chủ xe cho thấy chỉ bốn mươi sáu phần trăm người dùng xe Trung Quốc muốn mua lại đúng hãng, so với sáu mươi chín phần trăm ở xe Nhật Bản.
+Khoảng cách giữa giá mua và giá bán lại là chi phí người mua không thấy lúc ký hợp đồng, chỉ hiện ra khi mang xe ra bãi hỏi giá. Thái Lan đi trước Việt Nam khoảng ba năm đón xe điện Trung Quốc, nên các con số bán lại ở đó đáng được theo dõi.
+Giá mới rẻ nhưng mất giá rất nhanh khi bán lại: với bạn, xe điện Trung Quốc là món hời đáng mua, hay rủi ro tài sản cần cân nhắc? Hãy để lại bình luận nêu quan điểm của bạn.
