@@ -216,6 +216,13 @@
       "video": "xe-dien-tq-mat-gia-thai-lan",
       "date": "2026-10-01",
       "note": "routine sáng — Bãi xe cũ Thái Lan kén xe điện Trung Quốc: 1 chiếc BYD Atto 3 đời 2022 rao bán chỉ còn ~256 triệu đồng so với giá niêm yết ~960 triệu đồng (10/2022) — còn khoảng 1/4 giá trị sau 4 năm; Krungthai COMPASS ghi nhận giá xe điện mới giảm 11-35%, 2023-2025 có 1.009 bãi xe cũ đóng cửa/phá sản; khảo sát Differential Thailand (2.651 chủ xe) cho thấy chỉ 46% người dùng xe Trung Quốc muốn mua lại đúng hãng so với 69% ở xe Nhật Bản (GenK, 30/9/2026). GATE A/B/C = APPROVE/GREEN (tin thị trường tiêu dùng/công nghệ thông thường, không yếu tố nhạy cảm). BGM: Lyria thành công lần thử đầu. Sự cố kỹ thuật đã sửa trước khi duyệt: biểu đồ cột act 5 (46%/69%) không hiện trong pipeline render hàng loạt do dùng scaleY+transform-origin (dù hiện đúng ở Studio preview) — đổi sang animate height trực tiếp + bottom-anchor, verify lại bằng frame thật sau khi sửa."
+    },
+    {
+      "index": 0,
+      "style": "1-card-and-bar",
+      "video": "gemini-4-argon-ky-su-hoai-nghi",
+      "date": "2026-10-02",
+      "note": "routine sáng — Google ra mắt Gemini 4 Argon (30/9/2026) tuyên bố mô hình mạnh nhất, vượt Astra (OpenAI) về bảo mật, nhưng theo Bloomberg nhân viên nội bộ Google hoài nghi hiệu quả thực tế (kém hơn khi dùng thật, khó ở một số tác vụ lập trình); mỗi sản phẩm Search/Maps/Gmail/Chrome có hơn 1 tỷ người dùng; làn sóng nhân tài Jeff Dean/Sanjay Ghemawat/Oriol Vinyals/TS. Quốc Lê rời Google lập Discovery Loop (7/2026); Edwin Chen (Surge AI) cảnh báo ngành AI chạy theo điểm số benchmark (Thanh Niên dẫn Bloomberg, 1/10/2026; đối chiếu VnExpress). GATE A/B/C = APPROVE/GREEN (ra mắt mô hình AI + phản ứng ngành, không yếu tố nhạy cảm). Voice: Vbee TTS (giọng HN - Ngọc Huyền) — lần đầu dùng Vbee cho tuyến này. BGM: Lyria thành công, không cần fallback. Caption karaoke timing dùng Gemini fallback do ElevenLabs STT hết quota (0 credit)."
     }
   ]
 }
