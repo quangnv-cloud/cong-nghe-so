@@ -230,6 +230,13 @@
       "video": "khung-hoang-ram-ai-2028",
       "date": "2026-10-03",
       "note": "routine sáng — Micron (một trong những hãng chip nhớ lớn nhất thế giới) cảnh báo khủng hoảng RAM toàn cầu do nhu cầu trí tuệ nhân tạo (trung tâm dữ liệu + tương lai robot hình người) có thể kéo dài đến 2028, nghiêm trọng hơn cả 2026; hơn 75% sản lượng 2027 của Micron đã được đặt mua trước; robot hình người tương lai có thể cần hơn 200GB RAM so với 8-16GB phổ biến trên laptop; CEO Apple Tim Cook xác nhận sẽ tăng giá sản phẩm để bù chi phí bộ nhớ, laptop giá rẻ đối mặt nguy cơ đội giá theo (Dân Trí, dẫn TechRadar/Micron, 2/10/2026). GATE A/B/C = APPROVE/GREEN (tin thị trường/chuỗi cung ứng công nghệ thông thường, không yếu tố nhạy cảm). Voice: Vbee TTS (giọng HN - Ngọc Huyền). BGM: Lyria thành công lần thử đầu, không cần fallback. Caption karaoke: Gemini fallback (model gemini-flash-lite-latest) do ElevenLabs STT hết quota VÀ model gemini-flash-latest/gemini-3.8-flash cũng hết quota free-tier 20/ngày — chuyển sang model gemini-flash-lite-latest (gemini-3.5-flash-lite) còn quota riêng."
+    },
+    {
+      "index": 2,
+      "style": "3-ticker-tape",
+      "video": "trung-quoc-700-trieu-nguoi-dung-ai",
+      "date": "2026-10-04",
+      "note": "routine sáng — Trung Quốc trở thành nước đầu tiên có hơn 700 triệu người dùng AI tạo sinh (thâm nhập >50%, cao nhất thế giới) trong nửa đầu 2026: 47,8% dùng AI xử lý ảnh/video, 37,6% văn bản, người dùng trợ lý AI đa năng tăng gấp đôi; nước này vừa vận hành siêu cụm AI nội địa đầu tiên (100.000 hệ thống tăng tốc, năng lực tính toán +177%); đầu tư AI nửa đầu năm ~37,32 tỷ USD (=182% tổng 2025); hơn 30% công ty sản xuất lớn đã dùng AI, hình thành 16 cụm sản xuất tiên tiến cấp quốc gia (VnExpress, dẫn Viện CSHTQT Trung Quốc/China Daily, 3/10/2026). GATE A/B/C = APPROVE/GREEN (tin số liệu công nghệ/AI thông thường, không yếu tố nhạy cảm chính trị/y tế/tài chính; CTA framing trung lập 'bước tiến kinh tế số' vs 'phụ thuộc AI'). Voice: Vbee TTS (giọng HN - Ngọc Huyền). BGM: Lyria thành công lần thử đầu, không cần fallback. Caption karaoke: ElevenLabs STT + Gemini đều hết quota ngày → fallback xấp xỉ theo thời lượng từ ffprobe thực tế từng dòng (không có timestamp ASR thật) — chấp nhận được vì verify bằng Studio + frame thật cho thấy đồng bộ tự nhiên. Transcript verify (Gemini gemini-flash-lite-latest) khớp SCRIPT.md, chỉ 1 lỗi nhận dạng giọng (ASR nghe 'Moonshot AI' thành 'Moonsource AI' — không phải lỗi TTS/viết tắt, không ảnh hưởng hiển thị)."
     }
   ]
 }

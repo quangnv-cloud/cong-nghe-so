@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"></head>
+  <body>
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: transparent; }
+
+    #cutflash { position: absolute; inset: 0; z-index: 6; pointer-events: none; opacity: 0; background: linear-gradient(180deg, rgba(76,141,255,0.4), rgba(255,138,91,0.18)); }
+
+    .c-kicker { position: absolute; left: 64px; top: 260px; font-weight: 700; font-size: 25px; letter-spacing: 0.26em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .c-head { position: absolute; left: 64px; right: 64px; top: 306px; font-weight: 900; font-size: 56px; line-height: 1.2; color: #fff; overflow: hidden; }
+    .c-head > span { display: block; }
+
+    .c-row { position: absolute; left: 64px; right: 64px; height: 176px; border-radius: 18px; background: #121724; border: 1px solid rgba(255,255,255,0.08); padding: 26px 30px; overflow: hidden; opacity: 0; box-shadow: 0 0 36px rgba(76,141,255,0.10); }
+    .c-row .spark { position: absolute; left: 0; right: 0; bottom: 0; height: 72px; opacity: 0; }
+    .c-row .spark svg { width: 100%; height: 100%; display: block; }
+    .c-lbl { font-weight: 600; font-size: 25px; color: rgba(255,255,255,0.58); letter-spacing: 0.01em; }
+    .c-val { display: flex; align-items: center; gap: 14px; margin-top: 10px; font-weight: 800; font-size: 42px; color: #fff; }
+    .tri-up { width: 0; height: 0; border-left: 13px solid transparent; border-right: 13px solid transparent; border-bottom: 20px solid #4C8DFF; }
+
+    .c-note { position: absolute; left: 64px; right: 64px; top: 878px; font-weight: 600; font-size: 27px; color: rgba(255,255,255,0.68); opacity: 0; }
+
+    .c-quote { position: absolute; left: 64px; right: 64px; top: 952px; padding: 34px 36px; border-radius: 20px; background: rgba(76,141,255,0.08); border: 1.5px solid rgba(76,141,255,0.4); opacity: 0; }
+    .c-quote .mk { font-weight: 900; font-size: 80px; color: #4C8DFF; opacity: 0.3; line-height: 0.5; margin-bottom: 4px; }
+    .c-quote p { font-weight: 600; font-size: 32px; line-height: 1.42; color: rgba(255,255,255,0.92); }
+    .c-quote .src { margin-top: 18px; font-weight: 600; font-size: 24px; color: rgba(255,255,255,0.5); }
+
+    .cap-chunk { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; gap: 0 14px; opacity: 0; }
+    .cap-chunk .w { font-weight: 700; font-size: 38px; line-height: 1.3; color: rgba(255,255,255,0.5); }
+    #cap-dock-05 { position: absolute; left: 64px; right: 200px; top: 1432px; height: 150px; }
+  </style>
+
+  <div data-hf-id="hf-3o8a" id="root" data-composition-id="05-context" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-cxqb" id="cutflash"></div>
+    <div data-hf-id="hf-brom" class="c-kicker" id="c-kicker">Bối cảnh</div>
+    <div data-hf-id="hf-cx0q" class="c-head"><span data-hf-id="hf-x3qh" id="c-h1">Nội lực công nghệ Trung Quốc</span></div>
+
+    <div data-hf-id="hf-l3yt" class="c-row" id="c-row1" style="top:420px;">
+      <div data-hf-id="hf-dlfp" class="spark" id="c-spark1"><svg data-hf-id="hf-5qos" viewBox="0 0 400 72" preserveAspectRatio="none"><polyline data-hf-id="hf-wcta" points="0,60 60,52 120,55 180,38 240,40 300,20 360,16 400,8" fill="none" stroke="#4C8DFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+      <div data-hf-id="hf-lcxx" class="c-lbl">Mô hình mã nguồn mở nội địa</div>
+      <div data-hf-id="hf-bfdl" class="c-val"><span data-hf-id="hf-3zce" class="tri-up"></span><span data-hf-id="hf-7pgv">DeepSeek · Moonshot AI</span></div>
+    </div>
+
+    <div data-hf-id="hf-7oni" class="c-row" id="c-row2" style="top:620px;">
+      <div data-hf-id="hf-hjjq" class="spark" id="c-spark2"><svg data-hf-id="hf-u3is" viewBox="0 0 400 72" preserveAspectRatio="none"><polyline data-hf-id="hf-540n" points="0,64 60,58 120,60 180,46 240,34 300,30 360,14 400,6" fill="none" stroke="#4C8DFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+      <div data-hf-id="hf-9fu5" class="c-lbl">Vốn đầu tư AI nửa đầu 2026</div>
+      <div data-hf-id="hf-kiul" class="c-val"><span data-hf-id="hf-a7xu" class="tri-up"></span><span data-hf-id="hf-gb4s">~37 tỷ USD</span></div>
+    </div>
+
+    <div data-hf-id="hf-vse1" class="c-note" id="c-note">Gần gấp đôi tổng vốn đầu tư AI cả năm 2025 — chỉ trong 6 tháng.</div>
+
+    <div data-hf-id="hf-9gaq" class="c-quote" id="c-quote">
+      <div data-hf-id="hf-3mig" class="mk" data-layout-allow-overlap="">"</div>
+      <p data-hf-id="hf-3yzb">Ưu tiên mở rộng AI chiến lược, xây năng lực điện toán nội địa, giảm phụ thuộc công nghệ nước ngoài.</p>
+      <div data-hf-id="hf-n9cs" class="src">— China Daily</div>
+    </div>
+
+    <div data-hf-id="hf-h5j3" id="cap-dock-05">
+      <div data-hf-id="hf-gydl" class="cap-chunk" id="cap-l5-0"><span data-hf-id="hf-cqhl" class="w">Các</span> <span data-hf-id="hf-0w0s" class="w">công</span> <span data-hf-id="hf-rzon" class="w">ty</span> <span data-hf-id="hf-4oig" class="w">nội</span> <span data-hf-id="hf-yuwj" class="w">địa</span> <span data-hf-id="hf-ya2y" class="w">như</span></div>
+      <div data-hf-id="hf-dz40" class="cap-chunk" id="cap-l5-1"><span data-hf-id="hf-vql2" class="w">DeepSeek,</span> <span data-hf-id="hf-57l5" class="w">Moonshot</span> <span data-hf-id="hf-hlbq" class="w">AI</span> <span data-hf-id="hf-emf7" class="w">liên</span> <span data-hf-id="hf-ocgg" class="w">tục</span> <span data-hf-id="hf-req8" class="w">tung</span></div>
+      <div data-hf-id="hf-ouln" class="cap-chunk" id="cap-l5-2"><span data-hf-id="hf-02u9" class="w">mô</span> <span data-hf-id="hf-3e36" class="w">hình</span> <span data-hf-id="hf-61fo" class="w">mã</span> <span data-hf-id="hf-9yu3" class="w">nguồn</span> <span data-hf-id="hf-4yvo" class="w">mở,</span> <span data-hf-id="hf-c0hg" class="w">trong</span></div>
+      <div data-hf-id="hf-kwhm" class="cap-chunk" id="cap-l5-3"><span data-hf-id="hf-ej4e" class="w">khi</span> <span data-hf-id="hf-j704" class="w">giới</span> <span data-hf-id="hf-t7z7" class="w">đầu</span> <span data-hf-id="hf-zv98" class="w">tư</span> <span data-hf-id="hf-j2ii" class="w">đổ</span> <span data-hf-id="hf-odb7" class="w">vào</span></div>
+      <div data-hf-id="hf-24rx" class="cap-chunk" id="cap-l5-4"><span data-hf-id="hf-qkw3" class="w">ngành</span> <span data-hf-id="hf-rrf1" class="w">này</span> <span data-hf-id="hf-jspe" class="w">khoảng</span> <span data-hf-id="hf-rfo2" class="w">37</span> <span data-hf-id="hf-i33d" class="w">tỷ</span> <span data-hf-id="hf-j819" class="w">đô</span></div>
+      <div data-hf-id="hf-1d44" class="cap-chunk" id="cap-l5-5"><span data-hf-id="hf-5tyf" class="w">la</span> <span data-hf-id="hf-8uaq" class="w">Mỹ</span> <span data-hf-id="hf-ak4m" class="w">chỉ</span> <span data-hf-id="hf-uirw" class="w">trong</span> <span data-hf-id="hf-9k8k" class="w">nửa</span> <span data-hf-id="hf-zctf" class="w">đầu</span></div>
+      <div data-hf-id="hf-a0zz" class="cap-chunk" id="cap-l5-6"><span data-hf-id="hf-tdk2" class="w">năm,</span> <span data-hf-id="hf-kvdc" class="w">gần</span> <span data-hf-id="hf-hx20" class="w">gấp</span></div>
+      <div data-hf-id="hf-62vy" class="cap-chunk" id="cap-l5-7"><span data-hf-id="hf-dtn0" class="w">đôi</span> <span data-hf-id="hf-dhdy" class="w">cả</span> <span data-hf-id="hf-y5tm" class="w">năm</span> <span data-hf-id="hf-xlww" class="w">ngoái.</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#c-kicker', { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#c-h1', { yPercent: 120 }, { yPercent: 0, duration: 0.5, ease: 'power4.out' }, 0.16);
+
+    tl.fromTo('#c-row1', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.75);
+    tl.fromTo('#c-spark1', { autoAlpha: 0, scaleX: 0 }, { autoAlpha: 0.5, scaleX: 1, duration: 0.6, ease: 'power1.out', transformOrigin: 'left' }, 0.95);
+
+    tl.fromTo('#c-row2', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 1.5);
+    tl.fromTo('#c-spark2', { autoAlpha: 0, scaleX: 0 }, { autoAlpha: 0.5, scaleX: 1, duration: 0.6, ease: 'power1.out', transformOrigin: 'left' }, 1.7);
+
+    tl.fromTo('#c-note', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }, 2.35);
+
+    // Smash-cut: shift from data rows to strategic quote
+    const T = 3.0;
+    tl.fromTo('#cutflash', { opacity: 0 }, { opacity: 0.5, duration: 0.05, ease: 'none' }, T);
+    tl.to('#cutflash', { opacity: 0, duration: 0.16, ease: 'power1.in' }, T + 0.05);
+    tl.fromTo('#root', { scale: 1 }, { scale: 0.986, duration: 0.06, ease: 'power1.out' }, T);
+    tl.to('#root', { scale: 1, duration: 0.14, ease: 'power2.out' }, T + 0.061);
+
+    tl.fromTo('#c-quote', { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.46, ease: 'power3.out' }, T + 0.1);
+
+    // CAPTION JS
+tl.fromTo('#cap-l5-0', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 0.04);
+tl.to('#cap-l5-0', {autoAlpha:0, duration:0.1}, 1.088);
+tl.fromTo('#cap-l5-0 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.1);
+tl.fromTo('#cap-l5-0 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.296);
+tl.fromTo('#cap-l5-0 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.535);
+tl.fromTo('#cap-l5-0 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.689);
+tl.fromTo('#cap-l5-0 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.885);
+tl.fromTo('#cap-l5-0 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.082);
+tl.fromTo('#cap-l5-1', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 1.218);
+tl.to('#cap-l5-1', {autoAlpha:0, duration:0.1}, 2.812);
+tl.fromTo('#cap-l5-1 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.278);
+tl.fromTo('#cap-l5-1 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.764);
+tl.fromTo('#cap-l5-1 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.174);
+tl.fromTo('#cap-l5-1 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.328);
+tl.fromTo('#cap-l5-1 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.567);
+tl.fromTo('#cap-l5-1 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.763);
+tl.fromTo('#cap-l5-2', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 2.942);
+tl.to('#cap-l5-2', {autoAlpha:0, duration:0.1}, 4.152);
+tl.fromTo('#cap-l5-2 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.002);
+tl.fromTo('#cap-l5-2 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.156);
+tl.fromTo('#cap-l5-2 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.395);
+tl.fromTo('#cap-l5-2 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.548);
+tl.fromTo('#cap-l5-2 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.83);
+tl.fromTo('#cap-l5-2 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.06);
+tl.fromTo('#cap-l5-3', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 4.282);
+tl.to('#cap-l5-3', {autoAlpha:0, duration:0.1}, 5.287);
+tl.fromTo('#cap-l5-3 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.342);
+tl.fromTo('#cap-l5-3 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.538);
+tl.fromTo('#cap-l5-3 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.777);
+tl.fromTo('#cap-l5-3 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.974);
+tl.fromTo('#cap-l5-3 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.127);
+tl.fromTo('#cap-l5-3 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.281);
+tl.fromTo('#cap-l5-4', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 5.417);
+tl.to('#cap-l5-4', {autoAlpha:0, duration:0.1}, 6.55);
+tl.fromTo('#cap-l5-4 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.477);
+tl.fromTo('#cap-l5-4 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.759);
+tl.fromTo('#cap-l5-4 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.955);
+tl.fromTo('#cap-l5-4 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.28);
+tl.fromTo('#cap-l5-4 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.433);
+tl.fromTo('#cap-l5-4 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.587);
+tl.fromTo('#cap-l5-5', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 6.68);
+tl.to('#cap-l5-5', {autoAlpha:0, duration:0.1}, 7.728);
+tl.fromTo('#cap-l5-5 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.74);
+tl.fromTo('#cap-l5-5 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.894);
+tl.fromTo('#cap-l5-5 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.048);
+tl.fromTo('#cap-l5-5 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.244);
+tl.fromTo('#cap-l5-5 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.526);
+tl.fromTo('#cap-l5-5 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.722);
+tl.fromTo('#cap-l5-6', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 7.858);
+tl.to('#cap-l5-6', {autoAlpha:0, duration:0.1}, 8.394);
+tl.fromTo('#cap-l5-6 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.918);
+tl.fromTo('#cap-l5-6 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.191);
+tl.fromTo('#cap-l5-6 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.388);
+tl.fromTo('#cap-l5-7', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 8.524);
+tl.to('#cap-l5-7', {autoAlpha:0, duration:0.1}, 9.683);
+tl.fromTo('#cap-l5-7 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.584);
+tl.fromTo('#cap-l5-7 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.78);
+tl.fromTo('#cap-l5-7 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.934);
+tl.fromTo('#cap-l5-7 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 9.13);
+
+    window.__timelines['05-context'] = tl;
+  </script>
+</template>
+  </body>
+</html>

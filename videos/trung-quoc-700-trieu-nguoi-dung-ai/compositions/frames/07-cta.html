@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"></head>
+  <body>
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 50% at 50% 30%, rgba(76,141,255,0.14), transparent 60%); }
+
+    .t-wrap { position: absolute; left: 64px; right: 64px; top: 360px; text-align: center; }
+    .t-kicker { font-weight: 700; font-size: 26px; letter-spacing: 0.26em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .t-head { margin-top: 28px; font-weight: 900; font-size: 82px; line-height: 1.16; color: #fff; }
+    .t-head .ln { overflow: hidden; }
+    .t-head .ln > span { display: block; }
+
+    .t-opts { display: flex; justify-content: center; align-items: stretch; gap: 20px; margin-top: 58px; }
+    .t-opt { flex: 1; max-width: 410px; padding: 36px 24px; border-radius: 18px; border: 2px solid; opacity: 0; box-shadow: 0 0 40px rgba(76, 141, 255, 0.12); }
+    .t-opt.up { border-color: rgba(76,141,255,0.7); background: rgba(76,141,255,0.1); }
+    .t-opt.down { border-color: rgba(255,138,91,0.7); background: rgba(255,138,91,0.1); }
+    .t-opt .ic { width: 48px; height: 48px; margin: 0 auto; position: relative; }
+    .t-opt.up .ic { border: 4px solid #4C8DFF; border-radius: 50%; }
+    .t-opt.up .ic::after { content: ""; position: absolute; left: 50%; top: 12px; width: 13px; height: 13px; border-top: 4px solid #4C8DFF; border-right: 4px solid #4C8DFF; transform: translateX(-50%) rotate(-45deg); }
+    .t-opt.down .ic::before { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 0; border-left: 24px solid transparent; border-right: 24px solid transparent; border-bottom: 42px solid #FF8A5B; }
+    .t-opt.down .ic::after { content: "!"; position: absolute; left: 0; right: 0; bottom: -2px; text-align: center; font-weight: 900; font-size: 25px; color: #0B0E14; }
+    .t-opt .lab { margin-top: 18px; font-weight: 800; font-size: 33px; line-height: 1.22; color: #fff; }
+    .t-vs { display: flex; align-items: center; font-weight: 900; font-size: 32px; color: rgba(255,255,255,0.35); opacity: 0; }
+
+    .t-cta { display: inline-flex; align-items: center; gap: 18px; margin-top: 60px; padding: 22px 38px; border-radius: 100px; background: #4C8DFF; opacity: 0; }
+    .t-cta .ico { width: 38px; height: 38px; flex: none; border-radius: 12px 12px 12px 4px; background: #fff; position: relative; }
+    .t-cta .ico::before { content: ""; position: absolute; left: 9px; top: 11px; right: 9px; height: 4px; border-radius: 2px; background: #4C8DFF; box-shadow: 0 9px 0 #4C8DFF; }
+    .t-cta span { font-weight: 800; font-size: 34px; letter-spacing: 0.01em; color: #06101f; }
+
+    .t-sign { position: absolute; left: 0; right: 0; bottom: 340px; display: flex; align-items: center; justify-content: center; gap: 12px; opacity: 0; }
+    .t-sign .m { width: 38px; height: 38px; }
+    .t-sign .w { font-weight: 800; font-size: 27px; color: rgba(255,255,255,0.85); }
+
+    .cap-chunk { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 12px; opacity: 0; }
+    .cap-chunk .w { font-weight: 700; font-size: 32px; line-height: 1.3; color: rgba(255,255,255,0.5); }
+    #cap-dock-07 { position: absolute; left: 100px; right: 100px; top: 150px; height: 130px; }
+  </style>
+
+  <div data-hf-id="hf-asjh" id="root" data-composition-id="07-cta" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-vly9" class="t-wrap">
+      <div data-hf-id="hf-ys1r" class="t-kicker" id="t-kicker">Góc nhìn của bạn</div>
+      <div data-hf-id="hf-ymkb" class="t-head">
+        <div data-hf-id="hf-27gf" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-fhic" id="t-h1">Bước tiến đáng mừng</span></div>
+        <div data-hf-id="hf-l64f" class="ln" data-layout-allow-overflow=""><span data-hf-id="hf-wr88" id="t-h2">hay mối lo công nghệ?</span></div>
+      </div>
+
+      <div data-hf-id="hf-j4vn" class="t-opts">
+        <div data-hf-id="hf-pmdw" class="t-opt up" id="t-o1"><div data-hf-id="hf-w92w" class="ic"></div><div data-hf-id="hf-6nuv" class="lab">Kinh tế số bứt tốc</div></div>
+        <div data-hf-id="hf-4dld" class="t-vs" id="t-vs">VS</div>
+        <div data-hf-id="hf-bbpk" class="t-opt down" id="t-o2"><div data-hf-id="hf-yz80" class="ic"></div><div data-hf-id="hf-u112" class="lab">Phụ thuộc AI ngày càng lớn</div></div>
+      </div>
+
+      <div data-hf-id="hf-o4r8" class="t-cta" id="t-cta"><span data-hf-id="hf-gm9w" class="ico"></span><span data-hf-id="hf-xvn6">Bình luận quan điểm của bạn</span></div>
+    </div>
+
+    <div data-hf-id="hf-2ptu" class="t-sign" id="t-sign">
+      <img data-hf-id="hf-96jg" class="m" src="public/logo.png" alt="">
+      <span data-hf-id="hf-jm82" class="w">Công Nghệ Số</span>
+    </div>
+
+    <div data-hf-id="hf-99b1" id="cap-dock-07">
+      <div data-hf-id="hf-7fwn" class="cap-chunk" id="cap-l7-0"><span data-hf-id="hf-mz7o" class="w">Tốc</span> <span data-hf-id="hf-nu6u" class="w">độ</span> <span data-hf-id="hf-mwpr" class="w">phổ</span> <span data-hf-id="hf-kjvg" class="w">cập</span> <span data-hf-id="hf-nrq5" class="w">trí</span> <span data-hf-id="hf-0dfw" class="w">tuệ</span></div>
+      <div data-hf-id="hf-1a6u" class="cap-chunk" id="cap-l7-1"><span data-hf-id="hf-eedq" class="w">nhân</span> <span data-hf-id="hf-qids" class="w">tạo</span> <span data-hf-id="hf-6dxc" class="w">chưa</span> <span data-hf-id="hf-2u3u" class="w">từng</span> <span data-hf-id="hf-t07y" class="w">thấy</span> <span data-hf-id="hf-rrf1" class="w">này</span></div>
+      <div data-hf-id="hf-xc2t" class="cap-chunk" id="cap-l7-2"><span data-hf-id="hf-p5g4" class="w">là</span> <span data-hf-id="hf-2a9c" class="w">bước</span> <span data-hf-id="hf-v54y" class="w">tiến</span> <span data-hf-id="hf-uthx" class="w">đáng</span> <span data-hf-id="hf-13xp" class="w">mừng,</span> <span data-hf-id="hf-udam" class="w">hay</span></div>
+      <div data-hf-id="hf-wkf0" class="cap-chunk" id="cap-l7-3"><span data-hf-id="hf-kdny" class="w">lời</span> <span data-hf-id="hf-61cw" class="w">nhắc</span> <span data-hf-id="hf-k7o1" class="w">về</span> <span data-hf-id="hf-jspe" class="w">khoảng</span> <span data-hf-id="hf-6ewz" class="w">cách</span> <span data-hf-id="hf-0w0s" class="w">công</span></div>
+      <div data-hf-id="hf-k1wj" class="cap-chunk" id="cap-l7-4"><span data-hf-id="hf-k4k6" class="w">nghệ</span> <span data-hf-id="hf-vi64" class="w">ngày</span> <span data-hf-id="hf-17eo" class="w">càng</span> <span data-hf-id="hf-j7dw" class="w">xa?</span> <span data-hf-id="hf-hv9s" class="w">Hãy</span> <span data-hf-id="hf-rt94" class="w">để</span></div>
+      <div data-hf-id="hf-g3si" class="cap-chunk" id="cap-l7-5"><span data-hf-id="hf-9f0q" class="w">lại</span> <span data-hf-id="hf-tplc" class="w">bình</span> <span data-hf-id="hf-jj9w" class="w">luận</span></div>
+      <div data-hf-id="hf-c5oh" class="cap-chunk" id="cap-l7-6"><span data-hf-id="hf-nvnh" class="w">quan</span> <span data-hf-id="hf-tpyu" class="w">điểm</span> <span data-hf-id="hf-mdah" class="w">của</span> <span data-hf-id="hf-krj9" class="w">bạn.</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#t-kicker', { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#t-h1', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.2);
+    tl.fromTo('#t-h2', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.36);
+    tl.fromTo('#t-o1', { autoAlpha: 0, y: 28, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.42, ease: 'back.out(1.5)' }, 1.1);
+    tl.fromTo('#t-vs', { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, 1.35);
+    tl.fromTo('#t-o2', { autoAlpha: 0, y: 28, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.42, ease: 'back.out(1.5)' }, 1.45);
+    tl.fromTo('#t-cta', { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.44, ease: 'power3.out' }, 2.4);
+    tl.fromTo('#t-cta', { scale: 1 }, { scale: 1.04, duration: 0.5, yoyo: true, repeat: 3, ease: 'sine.inOut', immediateRender: false }, 3.1);
+    tl.fromTo('#t-sign', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 2.7);
+
+    // CAPTION JS
+tl.fromTo('#cap-l7-0', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 0.04);
+tl.to('#cap-l7-0', {autoAlpha:0, duration:0.1}, 0.925);
+tl.fromTo('#cap-l7-0 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.1);
+tl.fromTo('#cap-l7-0 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.275);
+tl.fromTo('#cap-l7-0 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.413);
+tl.fromTo('#cap-l7-0 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.588);
+tl.fromTo('#cap-l7-0 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.764);
+tl.fromTo('#cap-l7-0 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.939);
+tl.fromTo('#cap-l7-1', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 1.055);
+tl.to('#cap-l7-1', {autoAlpha:0, duration:0.1}, 2.13);
+tl.fromTo('#cap-l7-1 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.115);
+tl.fromTo('#cap-l7-1 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.328);
+tl.fromTo('#cap-l7-1 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.504);
+tl.fromTo('#cap-l7-1 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.717);
+tl.fromTo('#cap-l7-1 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.931);
+tl.fromTo('#cap-l7-1 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.145);
+tl.fromTo('#cap-l7-2', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 2.26);
+tl.to('#cap-l7-2', {autoAlpha:0, duration:0.1}, 3.366);
+tl.fromTo('#cap-l7-2 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.32);
+tl.fromTo('#cap-l7-2 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.457);
+tl.fromTo('#cap-l7-2 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.671);
+tl.fromTo('#cap-l7-2 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.885);
+tl.fromTo('#cap-l7-2 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.098);
+tl.fromTo('#cap-l7-2 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.38);
+tl.fromTo('#cap-l7-3', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 3.496);
+tl.to('#cap-l7-3', {autoAlpha:0, duration:0.1}, 4.609);
+tl.fromTo('#cap-l7-3 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.556);
+tl.fromTo('#cap-l7-3 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.731);
+tl.fromTo('#cap-l7-3 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.945);
+tl.fromTo('#cap-l7-3 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.082);
+tl.fromTo('#cap-l7-3 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.372);
+tl.fromTo('#cap-l7-3 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.586);
+tl.fromTo('#cap-l7-4', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 4.739);
+tl.to('#cap-l7-4', {autoAlpha:0, duration:0.1}, 5.815);
+tl.fromTo('#cap-l7-4 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.799);
+tl.fromTo('#cap-l7-4 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.013);
+tl.fromTo('#cap-l7-4 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.227);
+tl.fromTo('#cap-l7-4 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.44);
+tl.fromTo('#cap-l7-4 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.692);
+tl.fromTo('#cap-l7-4 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.867);
+tl.fromTo('#cap-l7-5', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 5.945);
+tl.to('#cap-l7-5', {autoAlpha:0, duration:0.1}, 6.417);
+tl.fromTo('#cap-l7-5 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.005);
+tl.fromTo('#cap-l7-5 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.18);
+tl.fromTo('#cap-l7-5 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.394);
+tl.fromTo('#cap-l7-6', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 6.547);
+tl.to('#cap-l7-6', {autoAlpha:0, duration:0.1}, 7.659);
+tl.fromTo('#cap-l7-6 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.607);
+tl.fromTo('#cap-l7-6 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.821);
+tl.fromTo('#cap-l7-6 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.035);
+tl.fromTo('#cap-l7-6 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.21);
+
+    window.__timelines['07-cta'] = tl;
+  </script>
+</template>
+  </body>
+</html>
