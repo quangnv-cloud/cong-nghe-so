@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"></head>
+  <body>
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: transparent; }
+    #content { position: absolute; inset: 0; }
+
+    .dm-kicker { position: absolute; left: 64px; right: 64px; top: 300px; text-align: center; font-weight: 700; font-size: 26px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+
+    .dm-left { position: absolute; left: 50px; width: 420px; top: 460px; text-align: center; }
+    .dm-l-num { font-weight: 800; font-size: 86px; line-height: 1; color: rgba(255,255,255,0.46); opacity: 0; }
+    .dm-l-unit { margin-top: 6px; font-weight: 700; font-size: 32px; color: rgba(255,255,255,0.42); opacity: 0; }
+    .dm-l-label { margin-top: 14px; font-weight: 600; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.62); opacity: 0; }
+
+    .dm-arrow { position: absolute; left: 500px; top: 470px; width: 80px; height: 150px; opacity: 0; }
+    .dm-arrow .bar { position: absolute; left: 39px; top: 0; bottom: 0; width: 2px; background: rgba(76,141,255,0.5); }
+    .dm-arrow .chev { position: absolute; left: 24px; top: 50%; width: 32px; height: 32px; border-top: 5px solid #4C8DFF; border-right: 5px solid #4C8DFF; transform: translateY(-50%) rotate(45deg); }
+
+    .dm-right { position: absolute; right: 48px; width: 450px; top: 440px; text-align: center; }
+    .dm-r-num { font-weight: 900; font-size: 104px; line-height: 1; letter-spacing: -0.01em; color: #4C8DFF; text-shadow: 0 0 50px rgba(76,141,255,0.55); opacity: 0; white-space: nowrap; }
+    .dm-r-unit { margin-top: 16px; font-weight: 800; font-size: 34px; letter-spacing: 0.04em; color: #fff; opacity: 0; }
+    .dm-r-label { margin-top: 14px; font-weight: 600; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.72); opacity: 0; }
+
+    .dm-bars { position: absolute; left: 64px; right: 64px; top: 760px; height: 320px; opacity: 0; }
+    .dm-bar-col { position: absolute; bottom: 0; width: 220px; display: flex; flex-direction: column; align-items: center; }
+    .dm-bar-col.left { left: 90px; }
+    .dm-bar-col.right { right: 90px; }
+    .dm-bar-role { font-weight: 700; font-size: 25px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+    .dm-bar { width: 108px; border-radius: 12px 12px 0 0; transform: scaleY(0); transform-origin: bottom; }
+    .dm-bar.a { height: 90px; background: rgba(255,255,255,0.18); }
+    .dm-bar.b { height: 280px; background: #4C8DFF; box-shadow: 0 0 36px rgba(76,141,255,0.45); }
+    .dm-bar-base { width: 100%; height: 3px; background: rgba(255,255,255,0.15); margin-top: 0; }
+
+    .dm-note { position: absolute; left: 64px; right: 64px; top: 1320px; padding: 30px 32px; border-radius: 18px; background: #121724; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 0 40px rgba(76,141,255,0.14); display: flex; align-items: center; gap: 22px; opacity: 0; }
+    .dm-note .ic { width: 52px; height: 52px; flex: none; border-radius: 50%; border: 3px solid rgba(76,141,255,0.7); position: relative; }
+    .dm-note .ic::before { content: ""; position: absolute; left: 50%; top: 10px; width: 4px; height: 18px; background: #4C8DFF; transform: translateX(-50%); border-radius: 2px; }
+    .dm-note .ic::after { content: ""; position: absolute; left: 50%; bottom: 10px; width: 4px; height: 4px; background: #4C8DFF; transform: translateX(-50%); border-radius: 50%; }
+    .dm-note .txt b { display: block; font-weight: 800; font-size: 29px; color: #fff; }
+    .dm-note .txt span { font-weight: 500; font-size: 24px; color: rgba(255,255,255,0.68); }
+
+    .cutflash { position: absolute; inset: 0; z-index: 6; pointer-events: none; opacity: 0; background: linear-gradient(180deg, rgba(76,141,255,0.4), rgba(255,138,91,0.16)); }
+
+    .cap-chunk { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; gap: 0 12px; opacity: 0; }
+    .cap-chunk .w { font-weight: 700; font-size: 32px; line-height: 1.3; color: rgba(255,255,255,0.5); }
+    #cap-dock-04 { position: absolute; left: 64px; right: 200px; top: 190px; height: 90px; z-index: 5; }
+  </style>
+
+  <div data-hf-id="hf-d-root" id="root" data-composition-id="04-data" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-d-content" id="content">
+      <div data-hf-id="hf-d-kicker" class="dm-kicker" id="dm-kicker">Quy mô rà soát</div>
+
+      <div data-hf-id="hf-d-left" class="dm-left">
+        <div data-hf-id="hf-d-lnum" class="dm-l-num" id="dm-l-num">66 triệu</div>
+        <div data-hf-id="hf-d-lunit" class="dm-l-unit" id="dm-l-unit">năm</div>
+        <div data-hf-id="hf-d-llabel" class="dm-l-label" id="dm-l-label">Nếu làm thủ công</div>
+      </div>
+
+      <div data-hf-id="hf-d-arrow" class="dm-arrow" id="dm-arrow">
+        <div data-hf-id="hf-d-arrowbar" class="bar"></div>
+        <div data-hf-id="hf-d-chev" class="chev"></div>
+      </div>
+
+      <div data-hf-id="hf-d-right" class="dm-right">
+        <div data-hf-id="hf-d-rnum" class="dm-r-num" id="dm-r-num">0</div>
+        <div data-hf-id="hf-d-runit" class="dm-r-unit" id="dm-r-unit">USD / ngày</div>
+        <div data-hf-id="hf-d-rlabel" class="dm-r-label" id="dm-r-label">Chi phí có AI hỗ trợ</div>
+      </div>
+
+      <div data-hf-id="hf-d-bars" class="dm-bars" id="dm-bars">
+        <div data-hf-id="hf-d-barleft" class="dm-bar-col left">
+          <div data-hf-id="hf-d-barlrole" class="dm-bar-role">Cách cũ</div>
+          <div data-hf-id="hf-d-bara" class="dm-bar a" id="dm-bar-a"></div>
+          <div data-hf-id="hf-d-barlbase" class="dm-bar-base"></div>
+        </div>
+        <div data-hf-id="hf-d-barright" class="dm-bar-col right">
+          <div data-hf-id="hf-d-barrrole" class="dm-bar-role">Có AI hỗ trợ</div>
+          <div data-hf-id="hf-d-barb" class="dm-bar b" id="dm-bar-b"></div>
+          <div data-hf-id="hf-d-barrbase" class="dm-bar-base"></div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-d-note" class="dm-note" id="dm-note">
+        <div data-hf-id="hf-d-noteic" class="ic"></div>
+        <div data-hf-id="hf-d-notetxt" class="txt"><b data-hf-id="hf-d-noteb">50 triệu GB dữ liệu</b><span data-hf-id="hf-d-notes">cần rà soát toàn bộ</span></div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-d-cutflash" class="cutflash" id="dm-cutflash"></div>
+
+    <div data-hf-id="hf-d-capdock" id="cap-dock-04">
+      <div data-hf-id="hf-capd4-0" class="cap-chunk" id="cap-l4-0"><span data-hf-id="hf-cap4-0-0" class="w">OpenAI</span> <span data-hf-id="hf-cap4-0-1" class="w">phải</span> <span data-hf-id="hf-cap4-0-2" class="w">rà</span> <span data-hf-id="hf-cap4-0-3" class="w">soát</span> <span data-hf-id="hf-cap4-0-4" class="w">tới</span></div>
+      <div data-hf-id="hf-capd4-1" class="cap-chunk" id="cap-l4-1"><span data-hf-id="hf-cap4-1-0" class="w">50</span> <span data-hf-id="hf-cap4-1-1" class="w">triệu</span> <span data-hf-id="hf-cap4-1-2" class="w">gi-ga-bai</span> <span data-hf-id="hf-cap4-1-3" class="w">dữ</span> <span data-hf-id="hf-cap4-1-4" class="w">liệu,</span></div>
+      <div data-hf-id="hf-capd4-2" class="cap-chunk" id="cap-l4-2"><span data-hf-id="hf-cap4-2-0" class="w">khối</span> <span data-hf-id="hf-cap4-2-1" class="w">lượng</span> <span data-hf-id="hf-cap4-2-2" class="w">mà</span> <span data-hf-id="hf-cap4-2-3" class="w">con</span> <span data-hf-id="hf-cap4-2-4" class="w">người</span></div>
+      <div data-hf-id="hf-capd4-3" class="cap-chunk" id="cap-l4-3"><span data-hf-id="hf-cap4-3-0" class="w">làm</span> <span data-hf-id="hf-cap4-3-1" class="w">thủ</span> <span data-hf-id="hf-cap4-3-2" class="w">công</span> <span data-hf-id="hf-cap4-3-3" class="w">sẽ</span> <span data-hf-id="hf-cap4-3-4" class="w">mất</span></div>
+      <div data-hf-id="hf-capd4-4" class="cap-chunk" id="cap-l4-4"><span data-hf-id="hf-cap4-4-0" class="w">66</span> <span data-hf-id="hf-cap4-4-1" class="w">triệu</span> <span data-hf-id="hf-cap4-4-2" class="w">năm</span> <span data-hf-id="hf-cap4-4-3" class="w">mới</span> <span data-hf-id="hf-cap4-4-4" class="w">đọc</span></div>
+      <div data-hf-id="hf-capd4-5" class="cap-chunk" id="cap-l4-5"><span data-hf-id="hf-cap4-5-0" class="w">hết;</span> <span data-hf-id="hf-cap4-5-1" class="w">chi</span> <span data-hf-id="hf-cap4-5-2" class="w">phí</span> <span data-hf-id="hf-cap4-5-3" class="w">điều</span> <span data-hf-id="hf-cap4-5-4" class="w">tra</span></div>
+      <div data-hf-id="hf-capd4-6" class="cap-chunk" id="cap-l4-6"><span data-hf-id="hf-cap4-6-0" class="w">nhờ</span> <span data-hf-id="hf-cap4-6-1" class="w">trí</span> <span data-hf-id="hf-cap4-6-2" class="w">tuệ</span> <span data-hf-id="hf-cap4-6-3" class="w">nhân</span> <span data-hf-id="hf-cap4-6-4" class="w">tạo</span></div>
+      <div data-hf-id="hf-capd4-7" class="cap-chunk" id="cap-l4-7"><span data-hf-id="hf-cap4-7-0" class="w">hỗ</span> <span data-hf-id="hf-cap4-7-1" class="w">trợ</span> <span data-hf-id="hf-cap4-7-2" class="w">vì</span> <span data-hf-id="hf-cap4-7-3" class="w">vậy</span> <span data-hf-id="hf-cap4-7-4" class="w">đã</span></div>
+      <div data-hf-id="hf-capd4-8" class="cap-chunk" id="cap-l4-8"><span data-hf-id="hf-cap4-8-0" class="w">vượt</span> <span data-hf-id="hf-cap4-8-1" class="w">500.000</span> <span data-hf-id="hf-cap4-8-2" class="w">đô</span> <span data-hf-id="hf-cap4-8-3" class="w">la</span> <span data-hf-id="hf-cap4-8-4" class="w">Mỹ</span> <span data-hf-id="hf-cap4-8-5" class="w">mỗi</span> <span data-hf-id="hf-cap4-8-6" class="w">ngày.</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#dm-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 0);
+
+    tl.fromTo('#dm-l-num', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.42 }, 0.5);
+    tl.fromTo('#dm-l-unit', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 0.72);
+    tl.fromTo('#dm-l-label', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 0.9);
+    tl.fromTo('#dm-arrow', { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }, 1.3);
+    tl.to('#dm-arrow', { scale: 1.08, duration: 0.4, yoyo: true, repeat: 1, ease: 'sine.inOut' }, 1.75);
+
+    tl.fromTo('#dm-r-unit', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 1.7);
+    const counter = { v: 0 };
+    tl.to(counter, {
+      v: 500000, duration: 1.0, ease: 'power2.out',
+      onUpdate: function () {
+        document.getElementById('dm-r-num').style.opacity = 1;
+        document.getElementById('dm-r-num').textContent = Math.round(counter.v).toLocaleString('vi-VN');
+      }
+    }, 1.75);
+    tl.fromTo('#dm-r-label', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 2.9);
+
+    // smash-cut: transition from headline numbers to supporting bars/note
+    tl.fromTo('#dm-cutflash', { opacity: 0 }, { opacity: 0.5, duration: 0.05, ease: 'none' }, 4.5);
+    tl.to('#dm-cutflash', { opacity: 0, duration: 0.16, ease: 'power1.in' }, 4.551);
+    tl.fromTo('#content', { scale: 1 }, { scale: 0.986, duration: 0.06, ease: 'power1.out' }, 4.5);
+    tl.to('#content', { scale: 1, duration: 0.14, ease: 'power2.out' }, 4.561);
+
+    tl.fromTo('#dm-bars', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 4.6);
+    tl.fromTo('#dm-bar-a', { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: 'power2.out' }, 4.7);
+    tl.fromTo('#dm-bar-b', { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: 'back.out(1.3)' }, 4.95);
+
+    tl.fromTo('#dm-note', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.42, ease: 'power3.out' }, 5.8);
+
+    // CAPTION JS
+    tl.fromTo('#cap-l4-0', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 0.050);
+    tl.to('#cap-l4-0', {autoAlpha:0, duration:0.1}, 1.128);
+    tl.fromTo('#cap-l4-0 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.000);
+    tl.fromTo('#cap-l4-0 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.226);
+    tl.fromTo('#cap-l4-0 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.451);
+    tl.fromTo('#cap-l4-0 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.677);
+    tl.fromTo('#cap-l4-0 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 0.903);
+    tl.fromTo('#cap-l4-1', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 1.128);
+    tl.to('#cap-l4-1', {autoAlpha:0, duration:0.1}, 2.257);
+    tl.fromTo('#cap-l4-1 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.128);
+    tl.fromTo('#cap-l4-1 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.354);
+    tl.fromTo('#cap-l4-1 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.580);
+    tl.fromTo('#cap-l4-1 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 1.805);
+    tl.fromTo('#cap-l4-1 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.031);
+    tl.fromTo('#cap-l4-2', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 2.257);
+    tl.to('#cap-l4-2', {autoAlpha:0, duration:0.1}, 3.385);
+    tl.fromTo('#cap-l4-2 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.257);
+    tl.fromTo('#cap-l4-2 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.482);
+    tl.fromTo('#cap-l4-2 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.708);
+    tl.fromTo('#cap-l4-2 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 2.933);
+    tl.fromTo('#cap-l4-2 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.159);
+    tl.fromTo('#cap-l4-3', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 3.385);
+    tl.to('#cap-l4-3', {autoAlpha:0, duration:0.1}, 4.513);
+    tl.fromTo('#cap-l4-3 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.385);
+    tl.fromTo('#cap-l4-3 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.610);
+    tl.fromTo('#cap-l4-3 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 3.836);
+    tl.fromTo('#cap-l4-3 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.062);
+    tl.fromTo('#cap-l4-3 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.287);
+    tl.fromTo('#cap-l4-4', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 4.513);
+    tl.to('#cap-l4-4', {autoAlpha:0, duration:0.1}, 5.641);
+    tl.fromTo('#cap-l4-4 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.513);
+    tl.fromTo('#cap-l4-4 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.739);
+    tl.fromTo('#cap-l4-4 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 4.964);
+    tl.fromTo('#cap-l4-4 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.190);
+    tl.fromTo('#cap-l4-4 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.416);
+    tl.fromTo('#cap-l4-5', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 5.641);
+    tl.to('#cap-l4-5', {autoAlpha:0, duration:0.1}, 6.770);
+    tl.fromTo('#cap-l4-5 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.641);
+    tl.fromTo('#cap-l4-5 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 5.867);
+    tl.fromTo('#cap-l4-5 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.093);
+    tl.fromTo('#cap-l4-5 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.318);
+    tl.fromTo('#cap-l4-5 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.544);
+    tl.fromTo('#cap-l4-6', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 6.770);
+    tl.to('#cap-l4-6', {autoAlpha:0, duration:0.1}, 7.898);
+    tl.fromTo('#cap-l4-6 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.770);
+    tl.fromTo('#cap-l4-6 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 6.995);
+    tl.fromTo('#cap-l4-6 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.221);
+    tl.fromTo('#cap-l4-6 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.447);
+    tl.fromTo('#cap-l4-6 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.672);
+    tl.fromTo('#cap-l4-7', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 7.898);
+    tl.to('#cap-l4-7', {autoAlpha:0, duration:0.1}, 9.026);
+    tl.fromTo('#cap-l4-7 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 7.898);
+    tl.fromTo('#cap-l4-7 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.124);
+    tl.fromTo('#cap-l4-7 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.349);
+    tl.fromTo('#cap-l4-7 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.575);
+    tl.fromTo('#cap-l4-7 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 8.800);
+    tl.fromTo('#cap-l4-8', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 9.026);
+    tl.to('#cap-l4-8', {autoAlpha:0, duration:0.1}, 10.606);
+    tl.fromTo('#cap-l4-8 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 9.026);
+    tl.fromTo('#cap-l4-8 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 9.252);
+    tl.fromTo('#cap-l4-8 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 9.477);
+    tl.fromTo('#cap-l4-8 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 9.703);
+    tl.fromTo('#cap-l4-8 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 9.929);
+    tl.fromTo('#cap-l4-8 .w:nth-child(6)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 10.154);
+    tl.fromTo('#cap-l4-8 .w:nth-child(7)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.1, ease:'none'}, 10.380);
+
+    window.__timelines['04-data'] = tl;
+  </script>
+</template>
+  </body>
+</html>
