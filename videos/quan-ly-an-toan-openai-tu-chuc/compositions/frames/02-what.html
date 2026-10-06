@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"></head>
+  <body>
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .wt-kicker { position: absolute; left: 64px; right: 64px; top: 258px; font-weight: 700; font-size: 26px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+
+    .wt-card { position: absolute; left: 64px; right: 64px; top: 320px; height: 480px; border-radius: 26px; overflow: hidden; background: #05070c; box-shadow: 0 0 46px rgba(76,141,255,0.18); }
+    .wt-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .wt-card .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,7,12,0.05) 40%, rgba(5,7,12,0.55) 100%); }
+
+    .wt-src { position: absolute; left: 36px; top: 288px; width: 68px; height: 68px; border-radius: 50%; background: #0B0E14; border: 2.5px solid #4C8DFF; display: flex; align-items: center; justify-content: center; opacity: 0; box-shadow: 0 0 22px rgba(76,141,255,0.4); z-index: 3; }
+    .wt-src span { font-weight: 800; font-size: 18px; letter-spacing: 0.02em; color: #4C8DFF; }
+
+    .wt-pin { position: absolute; right: 52px; top: 726px; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px 10px 12px; border-radius: 9px; background: rgba(11,14,20,0.82); border: 1.5px solid rgba(76,141,255,0.65); opacity: 0; z-index: 3; }
+    .wt-pin .tip { position: relative; width: 16px; height: 20px; }
+    .wt-pin .tip::before { content: ""; position: absolute; left: 0; top: 0; width: 16px; height: 16px; border-radius: 50% 50% 50% 0; background: #4C8DFF; transform: rotate(-45deg); }
+    .wt-pin .tip::after { content: ""; position: absolute; left: 5px; top: 4px; width: 6px; height: 6px; border-radius: 50%; background: #0B0E14; }
+    .wt-pin span.lab { font-weight: 700; font-size: 20px; color: #fff; white-space: nowrap; }
+
+    .wt-head { position: absolute; left: 64px; right: 64px; top: 862px; font-weight: 800; font-size: 54px; line-height: 1.24; color: #fff; }
+    .wt-head .ln { overflow: hidden; }
+    .wt-head .ln > span { display: block; }
+    .wt-head .hi { color: #4C8DFF; }
+
+    .wt-sub-wrap { overflow: hidden; margin-top: 4px; }
+    .wt-sub { position: absolute; left: 64px; right: 64px; top: 1032px; font-weight: 500; font-size: 32px; line-height: 1.42; color: rgba(255,255,255,0.72); opacity: 0; }
+
+    .wt-rule { position: absolute; left: 64px; right: 64px; top: 1198px; height: 1px; background: rgba(255,255,255,0.1); transform: scaleX(0); }
+
+    .wt-locrow { position: absolute; left: 64px; right: 64px; top: 1240px; height: 220px; border-radius: 20px; background: #121724; border: 1px solid rgba(76,141,255,0.22); padding: 30px 32px; overflow: hidden; opacity: 0; box-shadow: 0 0 34px rgba(76,141,255,0.1); }
+    .wt-locrow .globe { position: absolute; right: -40px; top: -40px; width: 220px; height: 220px; border: 1.5px solid rgba(76,141,255,0.16); border-radius: 50%; }
+    .wt-locrow .globe::before { content: ""; position: absolute; inset: 24px; border: 1px solid rgba(76,141,255,0.14); border-radius: 50%; }
+    .wt-loctitle { display: flex; align-items: center; gap: 12px; }
+    .wt-loctitle .tip2 { position: relative; width: 16px; height: 20px; flex: none; }
+    .wt-loctitle .tip2::before { content: ""; position: absolute; left: 0; top: 0; width: 16px; height: 16px; border-radius: 50% 50% 50% 0; background: #FF8A5B; transform: rotate(-45deg); }
+    .wt-loctitle .tip2::after { content: ""; position: absolute; left: 5px; top: 4px; width: 6px; height: 6px; border-radius: 50%; background: #121724; }
+    .wt-loctitle span { font-weight: 800; font-size: 34px; color: #fff; }
+    .wt-locsub { margin-top: 14px; font-weight: 500; font-size: 27px; line-height: 1.4; color: rgba(255,255,255,0.68); max-width: 820px; }
+
+    .cap-chunk { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; gap: 0 12px; opacity: 0; }
+    .cap-chunk .w { font-weight: 700; font-size: 30px; line-height: 1.3; color: rgba(255,255,255,0.5); }
+    #cap-dock-02 { position: absolute; left: 64px; right: 200px; top: 150px; height: 90px; z-index: 5; }
+  </style>
+
+  <div data-hf-id="hf-w-root" id="root" data-composition-id="02-what" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-w-kicker" class="wt-kicker" id="wt-kicker">Chuyện gì xảy ra</div>
+
+    <div data-hf-id="hf-w-card" class="wt-card" id="wt-card">
+      <img data-hf-id="hf-w-img" src="assets/img/article-hero.jpg" alt="">
+      <div data-hf-id="hf-w-scrim" class="scrim"></div>
+    </div>
+    <div data-hf-id="hf-w-src" class="wt-src" id="wt-src"><span data-hf-id="hf-w-srctxt">VNE</span></div>
+    <div data-hf-id="hf-w-pin" class="wt-pin" id="wt-pin"><span data-hf-id="hf-w-pintip" class="tip"></span><span data-hf-id="hf-w-pinlab" class="lab">San Francisco, Mỹ</span></div>
+
+    <div data-hf-id="hf-w-head" class="wt-head">
+      <div data-hf-id="hf-w-ln1" class="ln"><span data-hf-id="hf-w-ln1s" id="wt-h1">David Robinson <span data-hf-id="hf-w-hi1" class="hi">rời OpenAI</span></span></div>
+      <div data-hf-id="hf-w-ln2" class="ln"><span data-hf-id="hf-w-ln2s" id="wt-h2">công bố lý do trên Atlantic</span></div>
+    </div>
+
+    <div data-hf-id="hf-w-sub" class="wt-sub" id="wt-sub">Từng giám sát báo cáo an toàn tại OpenAI hơn 3 năm</div>
+
+    <div data-hf-id="hf-w-rule" class="wt-rule" id="wt-rule"></div>
+
+    <div data-hf-id="hf-w-locrow" class="wt-locrow" id="wt-locrow">
+      <div data-hf-id="hf-w-globe" class="globe"></div>
+      <div data-hf-id="hf-w-loctitle" class="wt-loctitle"><span data-hf-id="hf-w-loctip" class="tip2"></span><span data-hf-id="hf-w-loctxt">San Francisco, Mỹ</span></div>
+      <div data-hf-id="hf-w-locsub" class="wt-locsub">Trụ sở OpenAI — nơi Robinson từng giám sát an toàn mô hình</div>
+    </div>
+
+    <div data-hf-id="hf-w-capdock" id="cap-dock-02">
+      <div class="cap-chunk" id="cap-l2-0"><span class="w">David</span> <span class="w">Robinson,</span> <span class="w">giám</span> <span class="w">sát</span> <span class="w">báo</span></div>
+      <div class="cap-chunk" id="cap-l2-1"><span class="w">cáo</span> <span class="w">an</span> <span class="w">toàn</span> <span class="w">tại</span> <span class="w">OpenAI</span></div>
+      <div class="cap-chunk" id="cap-l2-2"><span class="w">hơn</span> <span class="w">ba</span> <span class="w">năm,</span> <span class="w">nghỉ</span> <span class="w">việc</span></div>
+      <div class="cap-chunk" id="cap-l2-3"><span class="w">tuần</span> <span class="w">trước</span> <span class="w">và</span> <span class="w">nêu</span> <span class="w">lý</span></div>
+      <div class="cap-chunk" id="cap-l2-4"><span class="w">do</span> <span class="w">trên</span> <span class="w">tạp</span> <span class="w">chí</span> <span class="w">Atlantic</span></div>
+      <div class="cap-chunk" id="cap-l2-5"><span class="w">ngày</span> <span class="w">ba</span> <span class="w">tháng</span> <span class="w">mười.</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#wt-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 0);
+    tl.fromTo('#wt-card', { autoAlpha: 0, scale: 1.04 }, { autoAlpha: 1, scale: 1, duration: 0.55, ease: 'power2.out' }, 0.12);
+    tl.fromTo('#wt-src', { autoAlpha: 0, scale: 0.7 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }, 0.55);
+    tl.fromTo('#wt-pin', { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.38, ease: 'power2.out' }, 0.85);
+    tl.fromTo('#wt-h1', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 1.15);
+    tl.fromTo('#wt-h2', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 1.32);
+    tl.fromTo('#wt-sub', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 1.9);
+    tl.fromTo('#wt-rule', { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: 'power2.out' }, 2.25);
+    tl.fromTo('#wt-locrow', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 2.45);
+
+    // CAPTION karaoke (fallback: chia đều theo thời lượng thật — ElevenLabs STT quota_exceeded)
+    tl.fromTo('#cap-l2-0', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 0.000);
+    tl.to('#cap-l2-0', {autoAlpha:0, duration:0.1}, 1.428);
+    tl.fromTo('#cap-l2-0 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.000);
+    tl.fromTo('#cap-l2-0 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.268);
+    tl.fromTo('#cap-l2-0 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.535);
+    tl.fromTo('#cap-l2-0 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.803);
+    tl.fromTo('#cap-l2-0 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.070);
+    tl.fromTo('#cap-l2-1', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 1.338);
+    tl.to('#cap-l2-1', {autoAlpha:0, duration:0.1}, 2.765);
+    tl.fromTo('#cap-l2-1 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.338);
+    tl.fromTo('#cap-l2-1 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.605);
+    tl.fromTo('#cap-l2-1 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.873);
+    tl.fromTo('#cap-l2-1 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.140);
+    tl.fromTo('#cap-l2-1 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.408);
+    tl.fromTo('#cap-l2-2', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 2.675);
+    tl.to('#cap-l2-2', {autoAlpha:0, duration:0.1}, 4.103);
+    tl.fromTo('#cap-l2-2 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.675);
+    tl.fromTo('#cap-l2-2 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.943);
+    tl.fromTo('#cap-l2-2 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 3.210);
+    tl.fromTo('#cap-l2-2 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 3.478);
+    tl.fromTo('#cap-l2-2 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 3.745);
+    tl.fromTo('#cap-l2-3', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 4.013);
+    tl.to('#cap-l2-3', {autoAlpha:0, duration:0.1}, 5.441);
+    tl.fromTo('#cap-l2-3 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.013);
+    tl.fromTo('#cap-l2-3 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.280);
+    tl.fromTo('#cap-l2-3 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.548);
+    tl.fromTo('#cap-l2-3 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.816);
+    tl.fromTo('#cap-l2-3 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.083);
+    tl.fromTo('#cap-l2-4', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 5.351);
+    tl.to('#cap-l2-4', {autoAlpha:0, duration:0.1}, 6.778);
+    tl.fromTo('#cap-l2-4 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.351);
+    tl.fromTo('#cap-l2-4 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.618);
+    tl.fromTo('#cap-l2-4 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.886);
+    tl.fromTo('#cap-l2-4 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.153);
+    tl.fromTo('#cap-l2-4 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.421);
+    tl.fromTo('#cap-l2-5', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 6.688);
+    tl.to('#cap-l2-5', {autoAlpha:0, duration:0.1}, 7.848);
+    tl.fromTo('#cap-l2-5 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.688);
+    tl.fromTo('#cap-l2-5 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.956);
+    tl.fromTo('#cap-l2-5 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 7.223);
+    tl.fromTo('#cap-l2-5 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 7.491);
+
+    window.__timelines['02-what'] = tl;
+  </script>
+</template>
+  </body>
+</html>

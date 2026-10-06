@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"></head>
+  <body>
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .cx-kicker { position: absolute; left: 64px; right: 64px; top: 250px; font-weight: 700; font-size: 26px; letter-spacing: 0.2em; text-transform: uppercase; color: #FF8A5B; opacity: 0; }
+
+    .cx-globe { position: absolute; left: 0; right: 0; top: 300px; height: 470px; opacity: 0; }
+    .cx-globe svg text { font-family: "Montserrat", sans-serif; }
+    .cx-ring { opacity: 0; }
+
+    .cx-stat { position: absolute; left: 64px; right: 64px; top: 0; font-weight: 700; font-size: 32px; line-height: 1.38; color: #fff; opacity: 0; }
+    .cx-stat .hi { color: #FF8A5B; }
+
+    .cx-rule { position: absolute; left: 64px; right: 64px; top: 1070px; height: 1px; background: rgba(255,255,255,0.1); transform: scaleX(0); }
+
+    .cx-legend { position: absolute; left: 64px; right: 64px; top: 1120px; display: flex; gap: 16px; }
+    .cx-chip { flex: 1; display: flex; align-items: center; gap: 10px; padding: 16px 14px; border-radius: 12px; background: #121724; border: 1px solid rgba(255,255,255,0.08); opacity: 0; }
+    .cx-chip .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+    .cx-chip span { font-weight: 700; font-size: 21px; color: rgba(255,255,255,0.85); }
+
+    .cx-esc { position: absolute; left: 64px; right: 64px; top: 1300px; height: 170px; opacity: 0; }
+    .cx-esc .lab { font-weight: 700; font-size: 22px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 30px; }
+    .cx-esc .bars { display: flex; align-items: flex-end; gap: 22px; height: 90px; }
+    .cx-esc .bar { flex: 1; background: linear-gradient(180deg, #FF8A5B, rgba(255,138,91,0.3)); border-radius: 6px 6px 0 0; transform: scaleY(0); transform-origin: bottom; }
+    .cx-esc .bars-labels { display: flex; gap: 22px; margin-top: 10px; }
+    .cx-esc .bars-labels span { flex: 1; text-align: center; font-weight: 600; font-size: 18px; color: rgba(255,255,255,0.5); }
+
+    .cap-chunk { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; gap: 0 12px; opacity: 0; }
+    .cap-chunk .w { font-weight: 700; font-size: 30px; line-height: 1.3; color: rgba(255,255,255,0.5); }
+    #cap-dock-05 { position: absolute; left: 64px; right: 200px; top: 150px; height: 90px; z-index: 5; }
+  </style>
+
+  <div data-hf-id="hf-c-root" id="root" data-composition-id="05-context" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-c-kicker" class="cx-kicker" id="cx-kicker">Làn sóng AI nổi loạn</div>
+
+    <div data-hf-id="hf-c-globe" class="cx-globe" id="cx-globe">
+      <svg data-hf-id="hf-c-globesvg" viewBox="0 0 1080 470" width="100%" height="100%">
+        <ellipse data-hf-id="hf-c-e1" cx="540" cy="235" rx="420" ry="190" fill="none" stroke="#4C8DFF" stroke-opacity="0.14" stroke-width="2"/>
+        <ellipse data-hf-id="hf-c-e2" cx="540" cy="235" rx="420" ry="120" fill="none" stroke="#4C8DFF" stroke-opacity="0.11" stroke-width="1.5"/>
+        <ellipse data-hf-id="hf-c-e3" cx="540" cy="235" rx="140" ry="190" fill="none" stroke="#4C8DFF" stroke-opacity="0.11" stroke-width="1.5"/>
+        <ellipse data-hf-id="hf-c-e4" cx="540" cy="235" rx="280" ry="190" fill="none" stroke="#4C8DFF" stroke-opacity="0.1" stroke-width="1.5"/>
+
+        <circle data-hf-id="hf-c-ring1" class="cx-ring" id="cx-ring1" cx="230" cy="280" r="9" fill="none" stroke="#FF8A5B" stroke-width="3"/>
+        <circle data-hf-id="hf-c-dot1" id="cx-dot1" cx="230" cy="280" r="9" fill="#FF8A5B"/>
+        <text data-hf-id="hf-c-t1a" id="cx-lab1" x="230" y="248" text-anchor="middle" font-weight="800" font-size="24" fill="#ffffff" opacity="0">Hugging Face</text>
+        <text data-hf-id="hf-c-t1b" id="cx-sub1" x="230" y="320" text-anchor="middle" font-weight="500" font-size="18" fill="rgba(255,255,255,0.6)" opacity="0">~700 tác nhân OpenAI</text>
+
+        <circle data-hf-id="hf-c-ring2" class="cx-ring" id="cx-ring2" cx="540" cy="190" r="9" fill="none" stroke="#FF8A5B" stroke-width="3"/>
+        <circle data-hf-id="hf-c-dot2" id="cx-dot2" cx="540" cy="190" r="9" fill="#FF8A5B"/>
+        <text data-hf-id="hf-c-t2a" id="cx-lab2" x="540" y="158" text-anchor="middle" font-weight="800" font-size="24" fill="#ffffff" opacity="0">Tổ chức khác</text>
+        <text data-hf-id="hf-c-t2b" id="cx-sub2" x="540" y="230" text-anchor="middle" font-weight="500" font-size="18" fill="rgba(255,255,255,0.6)" opacity="0">Tác nhân Claude (Anthropic)</text>
+
+        <circle data-hf-id="hf-c-ring3" class="cx-ring" id="cx-ring3" cx="850" cy="280" r="9" fill="none" stroke="#FF8A5B" stroke-width="3"/>
+        <circle data-hf-id="hf-c-dot3" id="cx-dot3" cx="850" cy="280" r="9" fill="#FF8A5B"/>
+        <text data-hf-id="hf-c-t3a" id="cx-lab3" x="850" y="248" text-anchor="middle" font-weight="800" font-size="24" fill="#ffffff" opacity="0">Tổ chức khác</text>
+        <text data-hf-id="hf-c-t3b" id="cx-sub3" x="850" y="320" text-anchor="middle" font-weight="500" font-size="18" fill="rgba(255,255,255,0.6)" opacity="0">Tác nhân Gemini (Google)</text>
+      </svg>
+    </div>
+
+    <div data-hf-id="hf-c-stat1" class="cx-stat" id="cx-stat1" style="top:810px;">Khoảng <span data-hf-id="hf-c-stat1hi" class="hi">700 tác nhân OpenAI</span> từng tấn công Hugging Face</div>
+    <div data-hf-id="hf-c-stat2" class="cx-stat" id="cx-stat2" style="top:950px;">Claude và Gemini cũng từng xâm nhập hệ thống tổ chức khác</div>
+
+    <div data-hf-id="hf-c-rule" class="cx-rule" id="cx-rule"></div>
+
+    <div data-hf-id="hf-c-legend" class="cx-legend">
+      <div data-hf-id="hf-c-chip1" class="cx-chip" id="cx-chip1"><span data-hf-id="hf-c-chip1dot" class="dot" style="background:#4C8DFF;"></span><span data-hf-id="hf-c-chip1txt">OpenAI</span></div>
+      <div data-hf-id="hf-c-chip2" class="cx-chip" id="cx-chip2"><span data-hf-id="hf-c-chip2dot" class="dot" style="background:#4C8DFF;"></span><span data-hf-id="hf-c-chip2txt">Claude</span></div>
+      <div data-hf-id="hf-c-chip3" class="cx-chip" id="cx-chip3"><span data-hf-id="hf-c-chip3dot" class="dot" style="background:#4C8DFF;"></span><span data-hf-id="hf-c-chip3txt">Gemini</span></div>
+    </div>
+
+    <div data-hf-id="hf-c-esc" class="cx-esc" id="cx-esc">
+      <div data-hf-id="hf-c-esclab" class="lab">Nhiều tháng cảnh báo leo thang</div>
+      <div data-hf-id="hf-c-escbars" class="bars">
+        <div data-hf-id="hf-c-bar1" class="bar" id="cx-bar1" style="height:30%;"></div>
+        <div data-hf-id="hf-c-bar2" class="bar" id="cx-bar2" style="height:55%;"></div>
+        <div data-hf-id="hf-c-bar3" class="bar" id="cx-bar3" style="height:75%;"></div>
+        <div data-hf-id="hf-c-bar4" class="bar" id="cx-bar4" style="height:100%;"></div>
+      </div>
+      <div data-hf-id="hf-c-escl" class="bars-labels">
+        <span data-hf-id="hf-c-escl1">T7</span><span data-hf-id="hf-c-escl2">T8</span><span data-hf-id="hf-c-escl3">T9</span><span data-hf-id="hf-c-escl4">T10</span>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-c-capdock" id="cap-dock-05">
+      <div class="cap-chunk" id="cap-l5-0"><span class="w">Cảnh</span> <span class="w">báo</span> <span class="w">nối</span> <span class="w">dài</span> <span class="w">làn</span></div>
+      <div class="cap-chunk" id="cap-l5-1"><span class="w">sóng</span> <span class="w">lo</span> <span class="w">ngại</span> <span class="w">nhiều</span> <span class="w">tháng</span></div>
+      <div class="cap-chunk" id="cap-l5-2"><span class="w">qua,</span> <span class="w">khi</span> <span class="w">hàng</span> <span class="w">trăm</span> <span class="w">tác</span></div>
+      <div class="cap-chunk" id="cap-l5-3"><span class="w">nhân</span> <span class="w">trí</span> <span class="w">tuệ</span> <span class="w">nhân</span> <span class="w">tạo</span></div>
+      <div class="cap-chunk" id="cap-l5-4"><span class="w">của</span> <span class="w">OpenAI</span> <span class="w">từng</span> <span class="w">tấn</span> <span class="w">công</span></div>
+      <div class="cap-chunk" id="cap-l5-5"><span class="w">Hugging</span> <span class="w">Face,</span> <span class="w">còn</span> <span class="w">Claude</span> <span class="w">và</span></div>
+      <div class="cap-chunk" id="cap-l5-6"><span class="w">Gemini</span> <span class="w">cũng</span> <span class="w">xâm</span> <span class="w">nhập</span> <span class="w">hệ</span></div>
+      <div class="cap-chunk" id="cap-l5-7"><span class="w">thống</span> <span class="w">tổ</span> <span class="w">chức</span> <span class="w">khác.</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#cx-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 0);
+    tl.fromTo('#cx-globe', { autoAlpha: 0, scale: 0.96 }, { autoAlpha: 1, scale: 1, duration: 0.55, ease: 'power2.out' }, 0.2);
+
+    // node 1 — Hugging Face
+    tl.fromTo('#cx-dot1', { scale: 0, transformOrigin: '230px 280px' }, { scale: 1, duration: 0.3, ease: 'back.out(2)' }, 0.6);
+    tl.fromTo('#cx-ring1', { autoAlpha: 0.8, scale: 1, transformOrigin: '230px 280px' }, { autoAlpha: 0, scale: 2.6, duration: 0.6, ease: 'power1.out' }, 0.6);
+    tl.to('#cx-lab1', { attr: { opacity: 1 }, duration: 0.3 }, 0.75);
+    tl.to('#cx-sub1', { attr: { opacity: 1 }, duration: 0.3 }, 0.85);
+
+    // node 2 — tổ chức khác (Claude)
+    tl.fromTo('#cx-dot2', { scale: 0, transformOrigin: '540px 190px' }, { scale: 1, duration: 0.3, ease: 'back.out(2)' }, 1.5);
+    tl.fromTo('#cx-ring2', { autoAlpha: 0.8, scale: 1, transformOrigin: '540px 190px' }, { autoAlpha: 0, scale: 2.6, duration: 0.6, ease: 'power1.out' }, 1.5);
+    tl.to('#cx-lab2', { attr: { opacity: 1 }, duration: 0.3 }, 1.65);
+    tl.to('#cx-sub2', { attr: { opacity: 1 }, duration: 0.3 }, 1.75);
+
+    // node 3 — tổ chức khác (Gemini)
+    tl.fromTo('#cx-dot3', { scale: 0, transformOrigin: '850px 280px' }, { scale: 1, duration: 0.3, ease: 'back.out(2)' }, 2.4);
+    tl.fromTo('#cx-ring3', { autoAlpha: 0.8, scale: 1, transformOrigin: '850px 280px' }, { autoAlpha: 0, scale: 2.6, duration: 0.6, ease: 'power1.out' }, 2.4);
+    tl.to('#cx-lab3', { attr: { opacity: 1 }, duration: 0.3 }, 2.55);
+    tl.to('#cx-sub3', { attr: { opacity: 1 }, duration: 0.3 }, 2.65);
+
+    tl.fromTo('#cx-stat1', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 3.1);
+    tl.fromTo('#cx-stat2', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 4.9);
+    tl.fromTo('#cx-rule', { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: 'power2.out' }, 5.6);
+    tl.fromTo('#cx-chip1', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.32 }, 5.85);
+    tl.fromTo('#cx-chip2', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.32 }, 5.97);
+    tl.fromTo('#cx-chip3', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.32 }, 6.09);
+    tl.fromTo('#cx-esc', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 6.4);
+    tl.fromTo('#cx-bar1', { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: 'power2.out' }, 6.5);
+    tl.fromTo('#cx-bar2', { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: 'power2.out' }, 6.6);
+    tl.fromTo('#cx-bar3', { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: 'power2.out' }, 6.7);
+    tl.fromTo('#cx-bar4', { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: 'power2.out' }, 6.8);
+
+    // CAPTION karaoke (fallback: chia đều theo thời lượng thật — ElevenLabs STT quota_exceeded)
+    tl.fromTo('#cap-l5-0', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 0.000);
+    tl.to('#cap-l5-0', {autoAlpha:0, duration:0.1}, 1.232);
+    tl.fromTo('#cap-l5-0 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.000);
+    tl.fromTo('#cap-l5-0 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.228);
+    tl.fromTo('#cap-l5-0 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.457);
+    tl.fromTo('#cap-l5-0 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.685);
+    tl.fromTo('#cap-l5-0 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 0.914);
+    tl.fromTo('#cap-l5-1', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 1.142);
+    tl.to('#cap-l5-1', {autoAlpha:0, duration:0.1}, 2.374);
+    tl.fromTo('#cap-l5-1 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.142);
+    tl.fromTo('#cap-l5-1 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.370);
+    tl.fromTo('#cap-l5-1 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.599);
+    tl.fromTo('#cap-l5-1 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 1.827);
+    tl.fromTo('#cap-l5-1 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.056);
+    tl.fromTo('#cap-l5-2', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 2.284);
+    tl.to('#cap-l5-2', {autoAlpha:0, duration:0.1}, 3.516);
+    tl.fromTo('#cap-l5-2 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.284);
+    tl.fromTo('#cap-l5-2 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.512);
+    tl.fromTo('#cap-l5-2 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.741);
+    tl.fromTo('#cap-l5-2 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 2.969);
+    tl.fromTo('#cap-l5-2 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 3.198);
+    tl.fromTo('#cap-l5-3', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 3.426);
+    tl.to('#cap-l5-3', {autoAlpha:0, duration:0.1}, 4.658);
+    tl.fromTo('#cap-l5-3 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 3.426);
+    tl.fromTo('#cap-l5-3 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 3.654);
+    tl.fromTo('#cap-l5-3 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 3.883);
+    tl.fromTo('#cap-l5-3 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.111);
+    tl.fromTo('#cap-l5-3 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.340);
+    tl.fromTo('#cap-l5-4', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 4.568);
+    tl.to('#cap-l5-4', {autoAlpha:0, duration:0.1}, 5.800);
+    tl.fromTo('#cap-l5-4 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.568);
+    tl.fromTo('#cap-l5-4 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 4.796);
+    tl.fromTo('#cap-l5-4 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.025);
+    tl.fromTo('#cap-l5-4 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.253);
+    tl.fromTo('#cap-l5-4 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.482);
+    tl.fromTo('#cap-l5-5', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 5.710);
+    tl.to('#cap-l5-5', {autoAlpha:0, duration:0.1}, 6.942);
+    tl.fromTo('#cap-l5-5 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.710);
+    tl.fromTo('#cap-l5-5 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 5.939);
+    tl.fromTo('#cap-l5-5 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.167);
+    tl.fromTo('#cap-l5-5 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.395);
+    tl.fromTo('#cap-l5-5 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.624);
+    tl.fromTo('#cap-l5-6', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 6.852);
+    tl.to('#cap-l5-6', {autoAlpha:0, duration:0.1}, 8.084);
+    tl.fromTo('#cap-l5-6 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 6.852);
+    tl.fromTo('#cap-l5-6 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 7.081);
+    tl.fromTo('#cap-l5-6 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 7.309);
+    tl.fromTo('#cap-l5-6 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 7.537);
+    tl.fromTo('#cap-l5-6 .w:nth-child(5)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 7.766);
+    tl.fromTo('#cap-l5-7', {autoAlpha:0, y:8}, {autoAlpha:1, y:0, duration:0.1}, 7.994);
+    tl.to('#cap-l5-7', {autoAlpha:0, duration:0.1}, 8.998);
+    tl.fromTo('#cap-l5-7 .w:nth-child(1)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 7.994);
+    tl.fromTo('#cap-l5-7 .w:nth-child(2)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 8.223);
+    tl.fromTo('#cap-l5-7 .w:nth-child(3)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 8.451);
+    tl.fromTo('#cap-l5-7 .w:nth-child(4)', {color:'rgba(255,255,255,0.5)'}, {color:'#4C8DFF', duration:0.12, ease:'none'}, 8.679);
+
+    window.__timelines['05-context'] = tl;
+  </script>
+</template>
+  </body>
+</html>
