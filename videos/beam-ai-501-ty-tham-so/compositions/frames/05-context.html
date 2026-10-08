@@ -1,0 +1,186 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 45% at 50% 18%, rgba(76,141,255,0.14), transparent 60%); }
+
+    .ct-kicker { position: absolute; left: 64px; top: 230px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .ct-head { position: absolute; left: 64px; right: 64px; top: 270px; font-weight: 800; font-size: 46px; line-height: 1.25; color: rgba(255,255,255,0.94); opacity: 0; }
+
+    .ct-axis { position: absolute; left: 64px; width: 952px; top: 680px; height: 4px; background: rgba(255,255,255,0.14); border-radius: 2px; overflow: hidden; }
+    .ct-axis-fill { position: absolute; left: 0; top: 0; height: 100%; width: 100%; background: #4C8DFF; transform-origin: left center; transform: scaleX(0); }
+
+    .ct-node { position: absolute; top: 0; left: 0; border-radius: 50%; transform: translateX(-50%); opacity: 0; }
+    .ct-node.n1 { width: 44px; height: 44px; top: 660px; background: rgba(76,141,255,0.55); }
+    .ct-node.n2 { width: 64px; height: 64px; top: 650px; background: #4C8DFF; }
+    .ct-node.n3 { width: 80px; height: 80px; top: 642px; background: #4C8DFF; box-shadow: 0 10px 28px rgba(76,141,255,0.3); }
+    .ct-node.n4 { width: 100px; height: 100px; top: 632px; background: linear-gradient(150deg, #6aa2ff, #2f66d6); box-shadow: 0 18px 40px rgba(76,141,255,0.4); }
+
+    .ct-val { position: absolute; left: 0; width: 240px; transform: translateX(-50%); text-align: center; color: #fff; opacity: 0; }
+    .ct-lab { position: absolute; left: 0; width: 240px; transform: translateX(-50%); text-align: center; font-weight: 600; font-size: 23px; line-height: 1.3; color: rgba(255,255,255,0.55); opacity: 0; }
+
+    .ct-capcard { position: absolute; left: 64px; right: 64px; top: 1340px; padding: 36px 40px; border-radius: 22px; background: #121724; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 0 40px rgba(76,141,255,0.10); opacity: 0; }
+    .ct-cap-inner { position: relative; min-height: 50px; }
+    .cap-chunk { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; }
+    .cap-chunk .w { display: inline-block; font-weight: 700; font-size: 36px; color: rgba(255,255,255,0.55); margin: 0 5px; }
+  </style>
+
+  <div data-hf-id="hf-3o8a" id="root" data-composition-id="05-context" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-55sk" class="ct-kicker" id="ct-kicker">Vì sao quy mô lớn đến vậy</div>
+    <div data-hf-id="hf-49uv" class="ct-head" id="ct-head">Hành trình huấn luyện Beam<br data-hf-id="hf-x5px">qua bốn giai đoạn</div>
+
+    <div data-hf-id="hf-noq9" class="ct-axis"><div data-hf-id="hf-9ms6" class="ct-axis-fill" id="ct-axis-fill"></div></div>
+
+    <div data-hf-id="hf-xxhd" class="ct-node n1" id="ct-n1" style="left: 140px;"></div>
+    <div data-hf-id="hf-t8jz" class="ct-node n2" id="ct-n2" style="left: 405px;"></div>
+    <div data-hf-id="hf-n7pj" class="ct-node n3" id="ct-n3" style="left: 670px;"></div>
+    <div data-hf-id="hf-njb8" class="ct-node n4" id="ct-n4" style="left: 945px;"></div>
+
+    <div data-hf-id="hf-ig81" class="ct-val" id="ct-v1" style="left: 140px; bottom: 1320px; font-weight: 800; font-size: 28px;">6.144 GPU</div>
+    <div data-hf-id="hf-qfve" class="ct-val" id="ct-v2" style="left: 405px; bottom: 1320px; font-weight: 800; font-size: 26px;">10.500 GPU<br data-hf-id="hf-rsrt">· 4 tuần</div>
+    <div data-hf-id="hf-n493" class="ct-val" id="ct-v3" style="left: 670px; bottom: 1320px; font-weight: 700; font-size: 22px; color: #FF8A5B;">100 triệu+ chuỗi<br data-hf-id="hf-szow">· 170.000 sandbox</div>
+    <div data-hf-id="hf-orfi" class="ct-val" id="ct-v4" style="left: 945px; bottom: 1320px; font-weight: 700; font-size: 22px; color: #4C8DFF;">≈ GLM-5.2<br data-hf-id="hf-sldv">ít hơn 3-4 lần<br data-hf-id="hf-qluq">(ước tính)</div>
+
+    <div data-hf-id="hf-wnx3" class="ct-lab n1" id="ct-l1" style="left: 140px; top: 718px;">Tiền huấn luyện</div>
+    <div data-hf-id="hf-fwre" class="ct-lab n2" id="ct-l2" style="left: 405px; top: 728px;">Học tăng cường</div>
+    <div data-hf-id="hf-d24p" class="ct-lab n3" id="ct-l3" style="left: 670px; top: 736px;">Kiểm thử</div>
+    <div data-hf-id="hf-z1z7" class="ct-lab n4" id="ct-l4" style="left: 945px; top: 746px;">So sánh hiệu năng</div>
+
+    <div data-hf-id="hf-t4ra" class="ct-capcard" id="ct-capcard">
+      <div data-hf-id="hf-1zbt" class="ct-cap-inner">
+        <div data-hf-id="hf-y58y" class="cap-chunk" id="c5-ch0"><span data-hf-id="hf-o7hb" class="w" id="c5-ch0-w0">Hệ</span><span data-hf-id="hf-e8kl" class="w" id="c5-ch0-w1">thống</span><span data-hf-id="hf-5zqc" class="w" id="c5-ch0-w2">tạo</span><span data-hf-id="hf-lquc" class="w" id="c5-ch0-w3">ra</span><span data-hf-id="hf-2iv5" class="w" id="c5-ch0-w4">hơn</span><span data-hf-id="hf-bd9a" class="w" id="c5-ch0-w5">100</span></div>
+        <div data-hf-id="hf-23cz" class="cap-chunk" id="c5-ch1"><span data-hf-id="hf-owky" class="w" id="c5-ch1-w0">triệu</span><span data-hf-id="hf-ds3i" class="w" id="c5-ch1-w1">chuỗi</span><span data-hf-id="hf-bxv1" class="w" id="c5-ch1-w2">tương</span><span data-hf-id="hf-eg16" class="w" id="c5-ch1-w3">tác</span><span data-hf-id="hf-qk5s" class="w" id="c5-ch1-w4">thử</span><span data-hf-id="hf-hceg" class="w" id="c5-ch1-w5">nghiệm,</span></div>
+        <div data-hf-id="hf-r7vc" class="cap-chunk" id="c5-ch2"><span data-hf-id="hf-z5sd" class="w" id="c5-ch2-w0">vận</span><span data-hf-id="hf-fyyb" class="w" id="c5-ch2-w1">hành</span><span data-hf-id="hf-0v4i" class="w" id="c5-ch2-w2">tới</span><span data-hf-id="hf-xor9" class="w" id="c5-ch2-w3">170</span><span data-hf-id="hf-96bb" class="w" id="c5-ch2-w4">nghìn</span><span data-hf-id="hf-l7ab" class="w" id="c5-ch2-w5">môi</span></div>
+        <div data-hf-id="hf-u74x" class="cap-chunk" id="c5-ch3"><span data-hf-id="hf-ezvp" class="w" id="c5-ch3-w0">trường</span><span data-hf-id="hf-e0up" class="w" id="c5-ch3-w1">thử</span><span data-hf-id="hf-f61h" class="w" id="c5-ch3-w2">nghiệm</span><span data-hf-id="hf-rbs2" class="w" id="c5-ch3-w3">ảo</span><span data-hf-id="hf-h1r8" class="w" id="c5-ch3-w4">cùng</span><span data-hf-id="hf-o1ij" class="w" id="c5-ch3-w5">lúc,</span></div>
+        <div data-hf-id="hf-jbna" class="cap-chunk" id="c5-ch4"><span data-hf-id="hf-6h9w" class="w" id="c5-ch4-w0">và</span><span data-hf-id="hf-ftln" class="w" id="c5-ch4-w1">theo</span><span data-hf-id="hf-82it" class="w" id="c5-ch4-w2">Reflection</span><span data-hf-id="hf-n7xx" class="w" id="c5-ch4-w3">AI,</span><span data-hf-id="hf-2p7t" class="w" id="c5-ch4-w4">Beam</span><span data-hf-id="hf-b3tz" class="w" id="c5-ch4-w5">đạt</span></div>
+        <div data-hf-id="hf-n9rb" class="cap-chunk" id="c5-ch5"><span data-hf-id="hf-dmvz" class="w" id="c5-ch5-w0">điểm</span><span data-hf-id="hf-26en" class="w" id="c5-ch5-w1">suy</span><span data-hf-id="hf-tplf" class="w" id="c5-ch5-w2">luận</span><span data-hf-id="hf-8jcy" class="w" id="c5-ch5-w3">tương</span><span data-hf-id="hf-ne8c" class="w" id="c5-ch5-w4">đương</span></div>
+        <div data-hf-id="hf-elvg" class="cap-chunk" id="c5-ch6"><span data-hf-id="hf-qpqw" class="w" id="c5-ch6-w0">GLM-5.2</span><span data-hf-id="hf-exqi" class="w" id="c5-ch6-w1">nhưng</span><span data-hf-id="hf-z3t1" class="w" id="c5-ch6-w2">tốn</span><span data-hf-id="hf-zjyi" class="w" id="c5-ch6-w3">ít</span><span data-hf-id="hf-03nn" class="w" id="c5-ch6-w4">tài</span></div>
+        <div data-hf-id="hf-fdj9" class="cap-chunk" id="c5-ch7"><span data-hf-id="hf-4hou" class="w" id="c5-ch7-w0">nguyên</span><span data-hf-id="hf-e907" class="w" id="c5-ch7-w1">tính</span><span data-hf-id="hf-p7aj" class="w" id="c5-ch7-w2">toán</span><span data-hf-id="hf-gjb7" class="w" id="c5-ch7-w3">hơn</span><span data-hf-id="hf-a449" class="w" id="c5-ch7-w4">khoảng</span></div>
+        <div data-hf-id="hf-6pne" class="cap-chunk" id="c5-ch8"><span data-hf-id="hf-z0an" class="w" id="c5-ch8-w0">3</span><span data-hf-id="hf-mcx7" class="w" id="c5-ch8-w1">đến</span><span data-hf-id="hf-dlrs" class="w" id="c5-ch8-w2">4</span><span data-hf-id="hf-9no6" class="w" id="c5-ch8-w3">lần,</span><span data-hf-id="hf-w5qy" class="w" id="c5-ch8-w4">theo</span></div>
+        <div data-hf-id="hf-anrf" class="cap-chunk" id="c5-ch9"><span data-hf-id="hf-vtn1" class="w" id="c5-ch9-w0">ước</span><span data-hf-id="hf-tkch" class="w" id="c5-ch9-w1">tính</span><span data-hf-id="hf-j7io" class="w" id="c5-ch9-w2">của</span><span data-hf-id="hf-7sq6" class="w" id="c5-ch9-w3">công</span><span data-hf-id="hf-pvfo" class="w" id="c5-ch9-w4">ty.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#ct-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' }, 0);
+    tl.fromTo('#ct-head', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.2);
+    tl.fromTo('#ct-axis-fill', { scaleX: 0 }, { scaleX: 1, duration: 1.3, ease: 'power1.inOut' }, 0.6);
+
+    tl.fromTo('#ct-n1', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, 0.7);
+    tl.fromTo('#ct-v1', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.28 }, 0.78);
+    tl.fromTo('#ct-l1', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 0.84);
+
+    tl.fromTo('#ct-n2', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.32, ease: 'back.out(2)' }, 1.3);
+    tl.fromTo('#ct-v2', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.28 }, 1.38);
+    tl.fromTo('#ct-l2', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 1.44);
+
+    tl.fromTo('#ct-n3', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.34, ease: 'back.out(2)' }, 1.9);
+    tl.fromTo('#ct-v3', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.28 }, 1.98);
+    tl.fromTo('#ct-l3', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 2.04);
+
+    tl.fromTo('#ct-n4', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }, 2.5);
+    tl.fromTo('#ct-v4', { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 2.6);
+    tl.fromTo('#ct-l4', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.28 }, 2.68);
+
+    tl.fromTo('#ct-capcard', { autoAlpha: 0, y: 22 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 3.1);
+
+    tl.fromTo('#c5-ch0', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 0.000);
+    tl.to('#c5-ch0', {autoAlpha:0,duration:0.1}, 1.448);
+    tl.to('#c5-ch0-w0', {color:'#4C8DFF', duration:0.1}, 0.000);
+    tl.to('#c5-ch0-w1', {color:'#4C8DFF', duration:0.1}, 0.245);
+    tl.to('#c5-ch0-w2', {color:'#4C8DFF', duration:0.1}, 0.489);
+    tl.to('#c5-ch0-w3', {color:'#4C8DFF', duration:0.1}, 0.734);
+    tl.to('#c5-ch0-w4', {color:'#4C8DFF', duration:0.1}, 0.978);
+    tl.to('#c5-ch0-w5', {color:'#4C8DFF', duration:0.1}, 1.223);
+
+    tl.fromTo('#c5-ch1', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 1.468);
+    tl.to('#c5-ch1', {autoAlpha:0,duration:0.1}, 2.915);
+    tl.to('#c5-ch1-w0', {color:'#4C8DFF', duration:0.1}, 1.468);
+    tl.to('#c5-ch1-w1', {color:'#4C8DFF', duration:0.1}, 1.712);
+    tl.to('#c5-ch1-w2', {color:'#4C8DFF', duration:0.1}, 1.957);
+    tl.to('#c5-ch1-w3', {color:'#4C8DFF', duration:0.1}, 2.201);
+    tl.to('#c5-ch1-w4', {color:'#4C8DFF', duration:0.1}, 2.446);
+    tl.to('#c5-ch1-w5', {color:'#4C8DFF', duration:0.1}, 2.691);
+
+    tl.fromTo('#c5-ch2', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 2.935);
+    tl.to('#c5-ch2', {autoAlpha:0,duration:0.1}, 4.383);
+    tl.to('#c5-ch2-w0', {color:'#4C8DFF', duration:0.1}, 2.935);
+    tl.to('#c5-ch2-w1', {color:'#4C8DFF', duration:0.1}, 3.180);
+    tl.to('#c5-ch2-w2', {color:'#4C8DFF', duration:0.1}, 3.424);
+    tl.to('#c5-ch2-w3', {color:'#4C8DFF', duration:0.1}, 3.669);
+    tl.to('#c5-ch2-w4', {color:'#4C8DFF', duration:0.1}, 3.914);
+    tl.to('#c5-ch2-w5', {color:'#4C8DFF', duration:0.1}, 4.158);
+
+    tl.fromTo('#c5-ch3', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 4.403);
+    tl.to('#c5-ch3', {autoAlpha:0,duration:0.1}, 5.850);
+    tl.to('#c5-ch3-w0', {color:'#4C8DFF', duration:0.1}, 4.403);
+    tl.to('#c5-ch3-w1', {color:'#4C8DFF', duration:0.1}, 4.647);
+    tl.to('#c5-ch3-w2', {color:'#4C8DFF', duration:0.1}, 4.892);
+    tl.to('#c5-ch3-w3', {color:'#4C8DFF', duration:0.1}, 5.137);
+    tl.to('#c5-ch3-w4', {color:'#4C8DFF', duration:0.1}, 5.381);
+    tl.to('#c5-ch3-w5', {color:'#4C8DFF', duration:0.1}, 5.626);
+
+    tl.fromTo('#c5-ch4', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 5.870);
+    tl.to('#c5-ch4', {autoAlpha:0,duration:0.1}, 7.318);
+    tl.to('#c5-ch4-w0', {color:'#4C8DFF', duration:0.1}, 5.870);
+    tl.to('#c5-ch4-w1', {color:'#4C8DFF', duration:0.1}, 6.115);
+    tl.to('#c5-ch4-w2', {color:'#4C8DFF', duration:0.1}, 6.360);
+    tl.to('#c5-ch4-w3', {color:'#4C8DFF', duration:0.1}, 6.604);
+    tl.to('#c5-ch4-w4', {color:'#4C8DFF', duration:0.1}, 6.849);
+    tl.to('#c5-ch4-w5', {color:'#4C8DFF', duration:0.1}, 7.093);
+
+    tl.fromTo('#c5-ch5', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 7.338);
+    tl.to('#c5-ch5', {autoAlpha:0,duration:0.1}, 8.541);
+    tl.to('#c5-ch5-w0', {color:'#4C8DFF', duration:0.1}, 7.338);
+    tl.to('#c5-ch5-w1', {color:'#4C8DFF', duration:0.1}, 7.583);
+    tl.to('#c5-ch5-w2', {color:'#4C8DFF', duration:0.1}, 7.827);
+    tl.to('#c5-ch5-w3', {color:'#4C8DFF', duration:0.1}, 8.072);
+    tl.to('#c5-ch5-w4', {color:'#4C8DFF', duration:0.1}, 8.316);
+
+    tl.fromTo('#c5-ch6', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 8.561);
+    tl.to('#c5-ch6', {autoAlpha:0,duration:0.1}, 9.764);
+    tl.to('#c5-ch6-w0', {color:'#4C8DFF', duration:0.1}, 8.561);
+    tl.to('#c5-ch6-w1', {color:'#4C8DFF', duration:0.1}, 8.806);
+    tl.to('#c5-ch6-w2', {color:'#4C8DFF', duration:0.1}, 9.050);
+    tl.to('#c5-ch6-w3', {color:'#4C8DFF', duration:0.1}, 9.295);
+    tl.to('#c5-ch6-w4', {color:'#4C8DFF', duration:0.1}, 9.539);
+
+    tl.fromTo('#c5-ch7', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 9.784);
+    tl.to('#c5-ch7', {autoAlpha:0,duration:0.1}, 10.987);
+    tl.to('#c5-ch7-w0', {color:'#4C8DFF', duration:0.1}, 9.784);
+    tl.to('#c5-ch7-w1', {color:'#4C8DFF', duration:0.1}, 10.029);
+    tl.to('#c5-ch7-w2', {color:'#4C8DFF', duration:0.1}, 10.273);
+    tl.to('#c5-ch7-w3', {color:'#4C8DFF', duration:0.1}, 10.518);
+    tl.to('#c5-ch7-w4', {color:'#4C8DFF', duration:0.1}, 10.762);
+
+    tl.fromTo('#c5-ch8', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 11.007);
+    tl.to('#c5-ch8', {autoAlpha:0,duration:0.1}, 12.210);
+    tl.to('#c5-ch8-w0', {color:'#4C8DFF', duration:0.1}, 11.007);
+    tl.to('#c5-ch8-w1', {color:'#4C8DFF', duration:0.1}, 11.252);
+    tl.to('#c5-ch8-w2', {color:'#4C8DFF', duration:0.1}, 11.496);
+    tl.to('#c5-ch8-w3', {color:'#4C8DFF', duration:0.1}, 11.741);
+    tl.to('#c5-ch8-w4', {color:'#4C8DFF', duration:0.1}, 11.985);
+
+    tl.fromTo('#c5-ch9', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 12.230);
+    tl.to('#c5-ch9', {autoAlpha:0,duration:0.1}, 13.753);
+    tl.to('#c5-ch9-w0', {color:'#4C8DFF', duration:0.1}, 12.230);
+    tl.to('#c5-ch9-w1', {color:'#4C8DFF', duration:0.1}, 12.475);
+    tl.to('#c5-ch9-w2', {color:'#4C8DFF', duration:0.1}, 12.719);
+    tl.to('#c5-ch9-w3', {color:'#4C8DFF', duration:0.1}, 12.964);
+    tl.to('#c5-ch9-w4', {color:'#4C8DFF', duration:0.1}, 13.208);
+
+    window.__timelines['05-context'] = tl;
+  </script>
+</template>

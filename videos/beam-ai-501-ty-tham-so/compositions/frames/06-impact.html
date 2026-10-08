@@ -1,0 +1,139 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+
+    .im-kicker { position: absolute; left: 64px; top: 230px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; text-transform: uppercase; color: #4C8DFF; opacity: 0; }
+    .im-head { position: absolute; left: 64px; right: 64px; top: 270px; font-weight: 800; font-size: 44px; line-height: 1.3; color: rgba(255,255,255,0.94); opacity: 0; }
+
+    .im-spine { position: absolute; left: 98px; top: 460px; width: 4px; height: 690px; background: rgba(76,141,255,0.20); border-radius: 2px; }
+    .im-spine-fill { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #4C8DFF; transform-origin: top center; transform: scaleY(0); border-radius: 2px; }
+
+    .im-node { position: absolute; left: 72px; width: 56px; height: 56px; border-radius: 50%; background: #4C8DFF; border: 5px solid #0B0E14; opacity: 0; }
+
+    .im-card { position: absolute; left: 170px; right: 64px; padding: 36px 40px; border-radius: 22px; opacity: 0; }
+    .im-card.c1 { top: 410px; background: rgba(76,141,255,0.10); border: 1.5px solid rgba(76,141,255,0.55); }
+    .im-card.c2 { top: 1100px; background: rgba(76,141,255,0.06); border: 1.5px solid rgba(76,141,255,0.35); }
+
+    .im-eyebrow { font-weight: 700; font-size: 21px; letter-spacing: 0.14em; text-transform: uppercase; color: #4C8DFF; }
+    .im-title { margin-top: 10px; font-weight: 800; font-size: 36px; line-height: 1.22; color: #fff; }
+    .im-desc { margin-top: 12px; font-weight: 500; font-size: 28px; line-height: 1.4; color: rgba(255,255,255,0.78); }
+
+    .cap-chunk { position: absolute; left: 64px; right: 64px; top: 1430px; text-align: center; opacity: 0; }
+    .cap-chunk .w { display: inline-block; font-weight: 700; font-size: 36px; color: rgba(255,255,255,0.55); margin: 0 5px; }
+  </style>
+
+  <div data-hf-id="hf-repe" id="root" data-composition-id="06-impact" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-61vs" class="im-kicker" id="im-kicker">Sự thật đã diễn ra</div>
+    <div data-hf-id="hf-x23x" class="im-head" id="im-head">Beam định hình lại chuẩn mở trọng số quy mô lớn</div>
+
+    <div data-hf-id="hf-7vjw" class="im-spine"><div data-hf-id="hf-i0gq" class="im-spine-fill" id="im-spine-fill"></div></div>
+    <div data-hf-id="hf-rhxy" class="im-node" id="im-n1" style="top: 432px;"></div>
+    <div data-hf-id="hf-odbc" class="im-node" id="im-n2" style="top: 1122px;"></div>
+
+    <div data-hf-id="hf-4zg0" class="im-card c1" id="im-c1">
+      <div data-hf-id="hf-dyml" class="im-eyebrow">Hiếm có ở quy mô này</div>
+      <div data-hf-id="hf-b242" class="im-title">Mở trọng số công khai</div>
+      <div data-hf-id="hf-jm08" class="im-desc">Một trong số rất ít mô hình hơn <span data-hf-id="hf-oczb" style="color:#fff;font-weight:700;">500 tỷ tham số</span> được mở trọng số công khai</div>
+    </div>
+
+    <div data-hf-id="hf-4nhu" class="im-card c2" id="im-c2">
+      <div data-hf-id="hf-6qdf" class="im-eyebrow">Tự do cho nhà phát triển</div>
+      <div data-hf-id="hf-xoiu" class="im-title">Tải về, triển khai, tinh chỉnh</div>
+      <div data-hf-id="hf-7ttz" class="im-desc">Nhà phát triển toàn cầu có thể tải về, triển khai, tinh chỉnh — khác phần lớn mô hình hàng đầu vẫn đóng kín</div>
+    </div>
+
+    <div data-hf-id="hf-u341" class="cap-chunk" id="c6-ch0"><span data-hf-id="hf-66nz" class="w" id="c6-ch0-w0">Ở</span><span data-hf-id="hf-jgkf" class="w" id="c6-ch0-w1">quy</span><span data-hf-id="hf-86go" class="w" id="c6-ch0-w2">mô</span><span data-hf-id="hf-plr3" class="w" id="c6-ch0-w3">hơn</span><span data-hf-id="hf-cn5a" class="w" id="c6-ch0-w4">500</span><span data-hf-id="hf-g00r" class="w" id="c6-ch0-w5">tỷ</span></div>
+    <div data-hf-id="hf-tbg8" class="cap-chunk" id="c6-ch1"><span data-hf-id="hf-tlrm" class="w" id="c6-ch1-w0">tham</span><span data-hf-id="hf-gzwn" class="w" id="c6-ch1-w1">số,</span><span data-hf-id="hf-m775" class="w" id="c6-ch1-w2">Beam</span><span data-hf-id="hf-ao0r" class="w" id="c6-ch1-w3">là</span><span data-hf-id="hf-b22i" class="w" id="c6-ch1-w4">một</span><span data-hf-id="hf-mdqv" class="w" id="c6-ch1-w5">trong</span></div>
+    <div data-hf-id="hf-1zc3" class="cap-chunk" id="c6-ch2"><span data-hf-id="hf-ga4h" class="w" id="c6-ch2-w0">số</span><span data-hf-id="hf-zpqr" class="w" id="c6-ch2-w1">rất</span><span data-hf-id="hf-d6xy" class="w" id="c6-ch2-w2">ít</span><span data-hf-id="hf-wv93" class="w" id="c6-ch2-w3">mô</span><span data-hf-id="hf-at83" class="w" id="c6-ch2-w4">hình</span><span data-hf-id="hf-447r" class="w" id="c6-ch2-w5">được</span></div>
+    <div data-hf-id="hf-y182" class="cap-chunk" id="c6-ch3"><span data-hf-id="hf-5biq" class="w" id="c6-ch3-w0">mở</span><span data-hf-id="hf-h1c3" class="w" id="c6-ch3-w1">trọng</span><span data-hf-id="hf-2se4" class="w" id="c6-ch3-w2">số</span><span data-hf-id="hf-sw0h" class="w" id="c6-ch3-w3">công</span><span data-hf-id="hf-u6dh" class="w" id="c6-ch3-w4">khai,</span><span data-hf-id="hf-e5rs" class="w" id="c6-ch3-w5">khác</span></div>
+    <div data-hf-id="hf-f9id" class="cap-chunk" id="c6-ch4"><span data-hf-id="hf-rzx7" class="w" id="c6-ch4-w0">với</span><span data-hf-id="hf-ykxj" class="w" id="c6-ch4-w1">phần</span><span data-hf-id="hf-0k5u" class="w" id="c6-ch4-w2">lớn</span><span data-hf-id="hf-iyil" class="w" id="c6-ch4-w3">mô</span><span data-hf-id="hf-a9ap" class="w" id="c6-ch4-w4">hình</span><span data-hf-id="hf-yd49" class="w" id="c6-ch4-w5">hàng</span></div>
+    <div data-hf-id="hf-ehuk" class="cap-chunk" id="c6-ch5"><span data-hf-id="hf-2fc3" class="w" id="c6-ch5-w0">đầu</span><span data-hf-id="hf-qtl3" class="w" id="c6-ch5-w1">hiện</span><span data-hf-id="hf-nfdu" class="w" id="c6-ch5-w2">nay</span><span data-hf-id="hf-709y" class="w" id="c6-ch5-w3">vẫn</span><span data-hf-id="hf-1blf" class="w" id="c6-ch5-w4">đóng</span><span data-hf-id="hf-4bgx" class="w" id="c6-ch5-w5">kín</span></div>
+    <div data-hf-id="hf-pdc7" class="cap-chunk" id="c6-ch6"><span data-hf-id="hf-sb79" class="w" id="c6-ch6-w0">mã</span><span data-hf-id="hf-blxn" class="w" id="c6-ch6-w1">nguồn</span><span data-hf-id="hf-wvl9" class="w" id="c6-ch6-w2">và</span><span data-hf-id="hf-mrj8" class="w" id="c6-ch6-w3">trọng</span><span data-hf-id="hf-jyqd" class="w" id="c6-ch6-w4">số.</span></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#im-kicker', { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' }, 0);
+    tl.fromTo('#im-head', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.2);
+    tl.fromTo('#im-spine-fill', { scaleY: 0 }, { scaleY: 1, duration: 1.5, ease: 'power1.inOut' }, 0.6);
+    tl.fromTo('#im-n1', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(2)' }, 0.65);
+    tl.fromTo('#im-c1', { autoAlpha: 0, x: 40, scale: 0.96 }, { autoAlpha: 1, x: 0, scale: 1, duration: 0.5, ease: 'power3.out' }, 0.85);
+    tl.fromTo('#im-n2', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(2)' }, 1.9);
+    tl.fromTo('#im-c2', { autoAlpha: 0, x: 40, scale: 0.96 }, { autoAlpha: 1, x: 0, scale: 1, duration: 0.5, ease: 'power3.out' }, 2.1);
+
+    tl.fromTo('#c6-ch0', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 0.000);
+    tl.to('#c6-ch0', {autoAlpha:0,duration:0.1}, 1.226);
+    tl.to('#c6-ch0-w0', {color:'#4C8DFF', duration:0.1}, 0.000);
+    tl.to('#c6-ch0-w1', {color:'#4C8DFF', duration:0.1}, 0.208);
+    tl.to('#c6-ch0-w2', {color:'#4C8DFF', duration:0.1}, 0.415);
+    tl.to('#c6-ch0-w3', {color:'#4C8DFF', duration:0.1}, 0.623);
+    tl.to('#c6-ch0-w4', {color:'#4C8DFF', duration:0.1}, 0.831);
+    tl.to('#c6-ch0-w5', {color:'#4C8DFF', duration:0.1}, 1.039);
+
+    tl.fromTo('#c6-ch1', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 1.246);
+    tl.to('#c6-ch1', {autoAlpha:0,duration:0.1}, 2.472);
+    tl.to('#c6-ch1-w0', {color:'#4C8DFF', duration:0.1}, 1.246);
+    tl.to('#c6-ch1-w1', {color:'#4C8DFF', duration:0.1}, 1.454);
+    tl.to('#c6-ch1-w2', {color:'#4C8DFF', duration:0.1}, 1.662);
+    tl.to('#c6-ch1-w3', {color:'#4C8DFF', duration:0.1}, 1.869);
+    tl.to('#c6-ch1-w4', {color:'#4C8DFF', duration:0.1}, 2.077);
+    tl.to('#c6-ch1-w5', {color:'#4C8DFF', duration:0.1}, 2.285);
+
+    tl.fromTo('#c6-ch2', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 2.492);
+    tl.to('#c6-ch2', {autoAlpha:0,duration:0.1}, 3.719);
+    tl.to('#c6-ch2-w0', {color:'#4C8DFF', duration:0.1}, 2.492);
+    tl.to('#c6-ch2-w1', {color:'#4C8DFF', duration:0.1}, 2.700);
+    tl.to('#c6-ch2-w2', {color:'#4C8DFF', duration:0.1}, 2.908);
+    tl.to('#c6-ch2-w3', {color:'#4C8DFF', duration:0.1}, 3.116);
+    tl.to('#c6-ch2-w4', {color:'#4C8DFF', duration:0.1}, 3.323);
+    tl.to('#c6-ch2-w5', {color:'#4C8DFF', duration:0.1}, 3.531);
+
+    tl.fromTo('#c6-ch3', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 3.739);
+    tl.to('#c6-ch3', {autoAlpha:0,duration:0.1}, 4.965);
+    tl.to('#c6-ch3-w0', {color:'#4C8DFF', duration:0.1}, 3.739);
+    tl.to('#c6-ch3-w1', {color:'#4C8DFF', duration:0.1}, 3.946);
+    tl.to('#c6-ch3-w2', {color:'#4C8DFF', duration:0.1}, 4.154);
+    tl.to('#c6-ch3-w3', {color:'#4C8DFF', duration:0.1}, 4.362);
+    tl.to('#c6-ch3-w4', {color:'#4C8DFF', duration:0.1}, 4.570);
+    tl.to('#c6-ch3-w5', {color:'#4C8DFF', duration:0.1}, 4.777);
+
+    tl.fromTo('#c6-ch4', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 4.985);
+    tl.to('#c6-ch4', {autoAlpha:0,duration:0.1}, 6.211);
+    tl.to('#c6-ch4-w0', {color:'#4C8DFF', duration:0.1}, 4.985);
+    tl.to('#c6-ch4-w1', {color:'#4C8DFF', duration:0.1}, 5.193);
+    tl.to('#c6-ch4-w2', {color:'#4C8DFF', duration:0.1}, 5.400);
+    tl.to('#c6-ch4-w3', {color:'#4C8DFF', duration:0.1}, 5.608);
+    tl.to('#c6-ch4-w4', {color:'#4C8DFF', duration:0.1}, 5.816);
+    tl.to('#c6-ch4-w5', {color:'#4C8DFF', duration:0.1}, 6.023);
+
+    tl.fromTo('#c6-ch5', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 6.231);
+    tl.to('#c6-ch5', {autoAlpha:0,duration:0.1}, 7.457);
+    tl.to('#c6-ch5-w0', {color:'#4C8DFF', duration:0.1}, 6.231);
+    tl.to('#c6-ch5-w1', {color:'#4C8DFF', duration:0.1}, 6.439);
+    tl.to('#c6-ch5-w2', {color:'#4C8DFF', duration:0.1}, 6.647);
+    tl.to('#c6-ch5-w3', {color:'#4C8DFF', duration:0.1}, 6.854);
+    tl.to('#c6-ch5-w4', {color:'#4C8DFF', duration:0.1}, 7.062);
+    tl.to('#c6-ch5-w5', {color:'#4C8DFF', duration:0.1}, 7.270);
+
+    tl.fromTo('#c6-ch6', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 7.477);
+    tl.to('#c6-ch6', {autoAlpha:0,duration:0.1}, 8.816);
+    tl.to('#c6-ch6-w0', {color:'#4C8DFF', duration:0.1}, 7.477);
+    tl.to('#c6-ch6-w1', {color:'#4C8DFF', duration:0.1}, 7.685);
+    tl.to('#c6-ch6-w2', {color:'#4C8DFF', duration:0.1}, 7.893);
+    tl.to('#c6-ch6-w3', {color:'#4C8DFF', duration:0.1}, 8.101);
+    tl.to('#c6-ch6-w4', {color:'#4C8DFF', duration:0.1}, 8.308);
+
+    window.__timelines['06-impact'] = tl;
+  </script>
+</template>

@@ -1,0 +1,140 @@
+<template>
+  <style>
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('assets/fonts/Montserrat-500-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('assets/fonts/Montserrat-600-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('assets/fonts/Montserrat-700-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('assets/fonts/Montserrat-800-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('assets/fonts/Montserrat-900-vietnamese.woff2') format('woff2'); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; font-family: "Montserrat", sans-serif; color: #fff; background: #0B0E14; }
+    #root::before { content: ""; position: absolute; inset: 0; background: radial-gradient(85% 50% at 25% 10%, rgba(76,141,255,0.12), transparent 60%); }
+
+    .wt-kicker-row { position: absolute; left: 64px; top: 260px; display: flex; align-items: center; gap: 16px; opacity: 0; }
+    .wt-kicker { font-weight: 700; font-size: 26px; letter-spacing: 0.24em; text-transform: uppercase; color: #4C8DFF; }
+    .wt-timebadge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 7px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); }
+    .wt-timebadge .d { width: 6px; height: 6px; border-radius: 50%; background: #FF8A5B; flex: none; }
+    .wt-timebadge span { font-weight: 600; font-size: 20px; color: rgba(255,255,255,0.75); }
+
+    .wt-head { position: absolute; left: 64px; right: 64px; top: 326px; font-weight: 800; font-size: 58px; line-height: 1.18; color: #fff; }
+    .wt-head .row { overflow: hidden; }
+    .wt-head .row > span { display: block; }
+
+    .wt-sub { position: absolute; left: 64px; right: 64px; top: 567px; font-weight: 600; font-size: 33px; line-height: 1.5; color: rgba(255,255,255,0.86); max-width: 952px; opacity: 0; }
+
+    .wt-imgcard { position: absolute; left: 64px; right: 64px; top: 760px; height: 500px; border-radius: 24px; overflow: hidden; box-shadow: 0 0 40px rgba(76,141,255,0.16); opacity: 0; background: #05070c; }
+    .wt-imgcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    .cap-chunk { position: absolute; left: 64px; right: 64px; top: 1460px; text-align: center; opacity: 0; }
+    .cap-chunk .w { display: inline-block; font-weight: 700; font-size: 38px; color: rgba(255,255,255,0.55); margin: 0 5px; }
+  </style>
+
+  <div data-hf-id="hf-h0h2" id="root" data-composition-id="02-what" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-tplt" class="wt-kicker-row" id="wt-kr">
+      <div data-hf-id="hf-dvbg" class="wt-kicker">Ra mắt</div>
+      <div data-hf-id="hf-gp3q" class="wt-timebadge"><span data-hf-id="hf-5jqr" class="d"></span><span data-hf-id="hf-bbh9">7/10/2026</span></div>
+    </div>
+
+    <div data-hf-id="hf-inms" class="wt-head">
+      <div data-hf-id="hf-thy4" class="row"><span data-hf-id="hf-0gea" id="wt-h1">Reflection AI ra mắt Beam —</span></div>
+      <div data-hf-id="hf-lt04" class="row"><span data-hf-id="hf-hft1" id="wt-h2">mô hình AI mở trọng số</span></div>
+      <div data-hf-id="hf-km31" class="row"><span data-hf-id="hf-vdeo" id="wt-h3">501 tỷ tham số</span></div>
+    </div>
+
+    <div data-hf-id="hf-zkjw" class="wt-sub" id="wt-sub">Hướng tới lập trình, suy luận và vận hành tác nhân AI nhiều bước, cho phép nhà phát triển toàn cầu tải về, triển khai hoặc tinh chỉnh.</div>
+
+    <div data-hf-id="hf-xr18" class="wt-imgcard" id="wt-img"><img data-hf-id="hf-x8zs" src="assets/img/article-hero.png" alt=""></div>
+
+    <div data-hf-id="hf-2yjh" class="cap-chunk" id="c2-ch0"><span data-hf-id="hf-m54g" class="w" id="c2-ch0-w0">Beam</span><span data-hf-id="hf-uv8q" class="w" id="c2-ch0-w1">là</span><span data-hf-id="hf-am2s" class="w" id="c2-ch0-w2">mô</span><span data-hf-id="hf-kj92" class="w" id="c2-ch0-w3">hình</span><span data-hf-id="hf-vrgv" class="w" id="c2-ch0-w4">mở</span><span data-hf-id="hf-30s4" class="w" id="c2-ch0-w5">trọng</span></div>
+    <div data-hf-id="hf-26vo" class="cap-chunk" id="c2-ch1"><span data-hf-id="hf-ny5o" class="w" id="c2-ch1-w0">số,</span><span data-hf-id="hf-wll9" class="w" id="c2-ch1-w1">hướng</span><span data-hf-id="hf-2cwu" class="w" id="c2-ch1-w2">tới</span><span data-hf-id="hf-immw" class="w" id="c2-ch1-w3">lập</span><span data-hf-id="hf-h7sc" class="w" id="c2-ch1-w4">trình,</span><span data-hf-id="hf-nv1o" class="w" id="c2-ch1-w5">suy</span></div>
+    <div data-hf-id="hf-aurj" class="cap-chunk" id="c2-ch2"><span data-hf-id="hf-u7n9" class="w" id="c2-ch2-w0">luận</span><span data-hf-id="hf-vkqe" class="w" id="c2-ch2-w1">và</span><span data-hf-id="hf-vg1s" class="w" id="c2-ch2-w2">vận</span><span data-hf-id="hf-685w" class="w" id="c2-ch2-w3">hành</span><span data-hf-id="hf-moiv" class="w" id="c2-ch2-w4">tác</span><span data-hf-id="hf-1l6i" class="w" id="c2-ch2-w5">nhân</span></div>
+    <div data-hf-id="hf-6wni" class="cap-chunk" id="c2-ch3"><span data-hf-id="hf-4f1b" class="w" id="c2-ch3-w0">trí</span><span data-hf-id="hf-osxp" class="w" id="c2-ch3-w1">tuệ</span><span data-hf-id="hf-ejt2" class="w" id="c2-ch3-w2">nhân</span><span data-hf-id="hf-0v7r" class="w" id="c2-ch3-w3">tạo</span><span data-hf-id="hf-yp5l" class="w" id="c2-ch3-w4">nhiều</span></div>
+    <div data-hf-id="hf-fkjd" class="cap-chunk" id="c2-ch4"><span data-hf-id="hf-t1qh" class="w" id="c2-ch4-w0">bước,</span><span data-hf-id="hf-mupm" class="w" id="c2-ch4-w1">cho</span><span data-hf-id="hf-n72g" class="w" id="c2-ch4-w2">phép</span><span data-hf-id="hf-4t4v" class="w" id="c2-ch4-w3">bất</span><span data-hf-id="hf-d7px" class="w" id="c2-ch4-w4">kỳ</span></div>
+    <div data-hf-id="hf-esvk" class="cap-chunk" id="c2-ch5"><span data-hf-id="hf-7zb2" class="w" id="c2-ch5-w0">nhà</span><span data-hf-id="hf-qk60" class="w" id="c2-ch5-w1">phát</span><span data-hf-id="hf-z1m6" class="w" id="c2-ch5-w2">triển</span><span data-hf-id="hf-cjii" class="w" id="c2-ch5-w3">nào</span><span data-hf-id="hf-vugk" class="w" id="c2-ch5-w4">tải</span></div>
+    <div data-hf-id="hf-pod7" class="cap-chunk" id="c2-ch6"><span data-hf-id="hf-p4f0" class="w" id="c2-ch6-w0">về,</span><span data-hf-id="hf-5exw" class="w" id="c2-ch6-w1">triển</span><span data-hf-id="hf-yyde" class="w" id="c2-ch6-w2">khai</span><span data-hf-id="hf-r0i9" class="w" id="c2-ch6-w3">hoặc</span><span data-hf-id="hf-sjbo" class="w" id="c2-ch6-w4">tinh</span></div>
+    <div data-hf-id="hf-lq96" class="cap-chunk" id="c2-ch7"><span data-hf-id="hf-sj42" class="w" id="c2-ch7-w0">chỉnh</span><span data-hf-id="hf-bt07" class="w" id="c2-ch7-w1">theo</span><span data-hf-id="hf-x27x" class="w" id="c2-ch7-w2">nhu</span><span data-hf-id="hf-npri" class="w" id="c2-ch7-w3">cầu</span><span data-hf-id="hf-83t6" class="w" id="c2-ch7-w4">riêng.</span></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#wt-kr', { autoAlpha: 0, x: -18 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: 'power2.out' }, 0);
+    tl.fromTo('#wt-h1', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.18);
+    tl.fromTo('#wt-h2', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.32);
+    tl.fromTo('#wt-h3', { yPercent: 118 }, { yPercent: 0, duration: 0.55, ease: 'power4.out' }, 0.46);
+    tl.fromTo('#wt-sub', { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 0.95);
+    tl.fromTo('#wt-img', { autoAlpha: 0, scale: 0.97 }, { autoAlpha: 1, scale: 1, duration: 0.55, ease: 'power2.out' }, 1.35);
+
+    tl.fromTo('#c2-ch0', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 0.000);
+    tl.to('#c2-ch0', {autoAlpha:0,duration:0.1}, 1.267);
+    tl.to('#c2-ch0-w0', {color:'#4C8DFF', duration:0.1}, 0.000);
+    tl.to('#c2-ch0-w1', {color:'#4C8DFF', duration:0.1}, 0.214);
+    tl.to('#c2-ch0-w2', {color:'#4C8DFF', duration:0.1}, 0.429);
+    tl.to('#c2-ch0-w3', {color:'#4C8DFF', duration:0.1}, 0.643);
+    tl.to('#c2-ch0-w4', {color:'#4C8DFF', duration:0.1}, 0.858);
+    tl.to('#c2-ch0-w5', {color:'#4C8DFF', duration:0.1}, 1.072);
+
+    tl.fromTo('#c2-ch1', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 1.287);
+    tl.to('#c2-ch1', {autoAlpha:0,duration:0.1}, 2.553);
+    tl.to('#c2-ch1-w0', {color:'#4C8DFF', duration:0.1}, 1.287);
+    tl.to('#c2-ch1-w1', {color:'#4C8DFF', duration:0.1}, 1.501);
+    tl.to('#c2-ch1-w2', {color:'#4C8DFF', duration:0.1}, 1.716);
+    tl.to('#c2-ch1-w3', {color:'#4C8DFF', duration:0.1}, 1.930);
+    tl.to('#c2-ch1-w4', {color:'#4C8DFF', duration:0.1}, 2.144);
+    tl.to('#c2-ch1-w5', {color:'#4C8DFF', duration:0.1}, 2.359);
+
+    tl.fromTo('#c2-ch2', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 2.573);
+    tl.to('#c2-ch2', {autoAlpha:0,duration:0.1}, 3.840);
+    tl.to('#c2-ch2-w0', {color:'#4C8DFF', duration:0.1}, 2.573);
+    tl.to('#c2-ch2-w1', {color:'#4C8DFF', duration:0.1}, 2.788);
+    tl.to('#c2-ch2-w2', {color:'#4C8DFF', duration:0.1}, 3.002);
+    tl.to('#c2-ch2-w3', {color:'#4C8DFF', duration:0.1}, 3.217);
+    tl.to('#c2-ch2-w4', {color:'#4C8DFF', duration:0.1}, 3.431);
+    tl.to('#c2-ch2-w5', {color:'#4C8DFF', duration:0.1}, 3.646);
+
+    tl.fromTo('#c2-ch3', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 3.860);
+    tl.to('#c2-ch3', {autoAlpha:0,duration:0.1}, 4.912);
+    tl.to('#c2-ch3-w0', {color:'#4C8DFF', duration:0.1}, 3.860);
+    tl.to('#c2-ch3-w1', {color:'#4C8DFF', duration:0.1}, 4.074);
+    tl.to('#c2-ch3-w2', {color:'#4C8DFF', duration:0.1}, 4.289);
+    tl.to('#c2-ch3-w3', {color:'#4C8DFF', duration:0.1}, 4.503);
+    tl.to('#c2-ch3-w4', {color:'#4C8DFF', duration:0.1}, 4.718);
+
+    tl.fromTo('#c2-ch4', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 4.932);
+    tl.to('#c2-ch4', {autoAlpha:0,duration:0.1}, 5.985);
+    tl.to('#c2-ch4-w0', {color:'#4C8DFF', duration:0.1}, 4.932);
+    tl.to('#c2-ch4-w1', {color:'#4C8DFF', duration:0.1}, 5.147);
+    tl.to('#c2-ch4-w2', {color:'#4C8DFF', duration:0.1}, 5.361);
+    tl.to('#c2-ch4-w3', {color:'#4C8DFF', duration:0.1}, 5.576);
+    tl.to('#c2-ch4-w4', {color:'#4C8DFF', duration:0.1}, 5.790);
+
+    tl.fromTo('#c2-ch5', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 6.005);
+    tl.to('#c2-ch5', {autoAlpha:0,duration:0.1}, 7.057);
+    tl.to('#c2-ch5-w0', {color:'#4C8DFF', duration:0.1}, 6.005);
+    tl.to('#c2-ch5-w1', {color:'#4C8DFF', duration:0.1}, 6.219);
+    tl.to('#c2-ch5-w2', {color:'#4C8DFF', duration:0.1}, 6.433);
+    tl.to('#c2-ch5-w3', {color:'#4C8DFF', duration:0.1}, 6.648);
+    tl.to('#c2-ch5-w4', {color:'#4C8DFF', duration:0.1}, 6.862);
+
+    tl.fromTo('#c2-ch6', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 7.077);
+    tl.to('#c2-ch6', {autoAlpha:0,duration:0.1}, 8.129);
+    tl.to('#c2-ch6-w0', {color:'#4C8DFF', duration:0.1}, 7.077);
+    tl.to('#c2-ch6-w1', {color:'#4C8DFF', duration:0.1}, 7.291);
+    tl.to('#c2-ch6-w2', {color:'#4C8DFF', duration:0.1}, 7.506);
+    tl.to('#c2-ch6-w3', {color:'#4C8DFF', duration:0.1}, 7.720);
+    tl.to('#c2-ch6-w4', {color:'#4C8DFF', duration:0.1}, 7.935);
+
+    tl.fromTo('#c2-ch7', {autoAlpha:0}, {autoAlpha:1,duration:0.1}, 8.149);
+    tl.to('#c2-ch7', {autoAlpha:0,duration:0.1}, 9.321);
+    tl.to('#c2-ch7-w0', {color:'#4C8DFF', duration:0.1}, 8.149);
+    tl.to('#c2-ch7-w1', {color:'#4C8DFF', duration:0.1}, 8.363);
+    tl.to('#c2-ch7-w2', {color:'#4C8DFF', duration:0.1}, 8.578);
+    tl.to('#c2-ch7-w3', {color:'#4C8DFF', duration:0.1}, 8.792);
+    tl.to('#c2-ch7-w4', {color:'#4C8DFF', duration:0.1}, 9.007);
+
+    window.__timelines['02-what'] = tl;
+  </script>
+</template>
