@@ -1,0 +1,18 @@
+{
+  "name": "trung-quoc-kinh-te-token-ai",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "hyperframes preview",
+    "check": "hyperframes check",
+    "render": "hyperframes render",
+    "publish": "hyperframes publish"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "@hyperframes/core": "^0.8.139",
+    "hyperframes": "0.8.30"
+  }
+}
